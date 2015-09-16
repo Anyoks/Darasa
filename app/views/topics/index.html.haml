@@ -1,0 +1,23 @@
+%h1 Listing topics
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Code
+      %th Attachment
+      %th
+
+  %tbody
+    - @topics.each do |topic|
+      %tr
+        %td= link_to topic.name, topic
+        %td= topic.code
+        %td= image_tag topic.attachment_url(:thumb)
+        %td
+          = link_to 'Edit', edit_topic_path(topic)
+          = link_to 'Destroy', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+%p= link_to 'New topic', new_topic_path, class: "btn btn-primary"
