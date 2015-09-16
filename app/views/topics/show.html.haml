@@ -1,15 +1,10 @@
-%p#notice= notice
+%h1= @topic.name
+
+%p= @topic.code
+
+%p= image_tag @topic.attachment_url(:thumb), height: "300"
 
 %p
-  %b Name:
-  = @topic.name
-%p
-  %b Price:
-  = @topic.code
-%p
-  %b Attachment:
-  = image_tag @topic.attachment_url(:thumb)
-
-= link_to 'Edit', edit_topic_path(@topic)
-\|
-= link_to 'Back', topics_path
+	= link_to 'Edit', edit_topic_path(@topic)
+	\|
+	= link_to 'Back', topics_path

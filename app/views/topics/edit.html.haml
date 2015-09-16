@@ -1,6 +1,10 @@
 %h1 Editing topic
 
+= image_tag @topic.attachment_url(:thumb)
+
 = render 'form'
+
+
 
 = link_to 'Show', @topic
 \|
