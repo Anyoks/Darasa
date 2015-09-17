@@ -1,19 +1,5 @@
 %h1 Listing units
 
-%table.table.table-hover
-  %thead
-    %tr
-      %th Name
-      
-
-  %tbody
-    - @units.each do |unit|
-      %tr
-        %td= unit.name
-        %td
-          = link_to 'Edit', edit_unit_path(unit)
-          = link_to 'Destroy', unit, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+=render "units/table", units: @units #extracted the table from here to a helper
 
 = link_to 'New Unit', new_unit_path, class: "btn btn-primary"

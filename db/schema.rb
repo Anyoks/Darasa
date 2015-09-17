@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917102753) do
+ActiveRecord::Schema.define(version: 20150917125032) do
+
+  create_table "semesters", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "topics", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -25,10 +31,14 @@ ActiveRecord::Schema.define(version: 20150917102753) do
   add_index "topics", ["unit_id"], name: "index_topics_on_unit_id", using: :btree
 
   create_table "units", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",        limit: 255
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "semester_id", limit: 4,   default: 1
   end
 
+  add_index "units", ["semester_id"], name: "index_units_on_semester_id", using: :btree
+
   add_foreign_key "topics", "units"
+  add_foreign_key "units", "semesters"
 end

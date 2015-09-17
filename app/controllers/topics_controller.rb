@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all
+    @semesters = Semester.all #II need to look into this.
   end
 
   # GET /topics/1

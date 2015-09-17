@@ -5,6 +5,7 @@ class UnitsController < ApplicationController
   # GET /units.json
   def index
     @units = Unit.all
+    @semesters = Semester.all #II need to look into this.
   end
 
   # GET /units/1
@@ -20,6 +21,7 @@ class UnitsController < ApplicationController
 
   # GET /units/1/edit
   def edit
+   @semesters = Semester.all #II need to look into this.
   end
 
   # POST /units
@@ -43,7 +45,7 @@ class UnitsController < ApplicationController
   def update
     respond_to do |format|
       if @unit.update(unit_params)
-        format.html { redirect_to @unit, notice: 'Unit was successfully updated.' }
+        format.html { redirect_to units_url, notice: 'Unit was successfully updated.' }
         format.json { render :show, status: :ok, location: @unit }
       else
         format.html { render :edit }
@@ -70,6 +72,6 @@ class UnitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_params
-      params.require(:unit).permit(:name)
+      params.require(:unit).permit(:name, :semester_id)
     end
 end
