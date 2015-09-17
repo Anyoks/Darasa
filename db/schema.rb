@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909071707) do
+ActiveRecord::Schema.define(version: 20150917102753) do
 
   create_table "topics", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "code",       limit: 255
     t.string   "attachment", limit: 255
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "unit_id",    limit: 4,   default: 1
+  end
+
+  add_index "topics", ["unit_id"], name: "index_topics_on_unit_id", using: :btree
+
+  create_table "units", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "topics", "units"
 end

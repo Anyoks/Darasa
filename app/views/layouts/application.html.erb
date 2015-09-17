@@ -9,7 +9,11 @@
 <body>
 
 <%= render 'nav' %>
+
+
 <div class='container'>
+	<%= content_tag :div, notice, class: "bg-success"%>
+	<%= content_tag :div, alert, class: "bg-danger"%>
 	<%= yield %>
 </div>
 

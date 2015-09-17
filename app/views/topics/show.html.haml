@@ -3,6 +3,7 @@
 %p= @topic.code
 
 %p= image_tag @topic.attachment_url(:thumb), height: "300"
+%p= @topic.unit.name
 
 %p
 	= link_to 'Edit', edit_topic_path(@topic)

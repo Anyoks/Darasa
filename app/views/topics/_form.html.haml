@@ -15,5 +15,8 @@
   .field
     = f.label :attachment
     = f.file_field :attachment
+  .field
+    =f.label :unit
+    =f.select :unit_id, Unit.all.map { |u| [u.name, u.id]}
   .actions
     = f.submit 'Save'
