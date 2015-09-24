@@ -1,0 +1,16 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      
+
+  %tbody
+    - semesters.each do |semester|
+      %tr
+        %td= semester.name
+        %td= link_to semester.year.year, year_path(semester.year)
+        %td
+          = link_to 'Edit', edit_semester_path(semester)
+          = link_to 'Destroy', semester, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br

@@ -1,19 +1,5 @@
-%h1 Listing semesters
+%h1 Semesters
 
-%table.table.table-hover
-  %thead
-    %tr
-      %th Name
-      
-
-  %tbody
-    - @semesters.each do |semester|
-      %tr
-        %td= link_to semester.name, units_path
-        %td
-          = link_to 'Edit', edit_semester_path(semester)
-          = link_to 'Destroy', semester, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+=render "semesters/table", semesters: @semesters
 
 = link_to 'New semester', new_semester_path, class: "btn btn-primary"

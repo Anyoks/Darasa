@@ -1,0 +1,45 @@
+%h1 Universities 
+/ =@university.name
+
+/ %table
+/   %thead
+/     %tr
+/       %th Name
+/       %th
+/       %th
+/       %th
+
+/   %tbody
+/     - @universities.each do |university|
+/       %tr
+/         %td= university.name
+/         %td= link_to 'Show', university
+/         %td= link_to 'Edit', edit_university_path(university)
+/         %td= link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+
+
+/ %table.table.table-hover
+/   %thead
+/     %tr
+/       %th Name
+      
+
+/   %tbody
+/     - @universities.each do |university|
+/       %tr
+/         %td= university.name
+/         / %td= link_to university.course.name, courses_path
+/         %td
+/           = link_to 'Edit', edit_university_path(university)
+/           = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+=render "courses/table"
+
+/ =@course.university.name
+
+= link_to 'New University', new_university_path, class: "btn btn-primary"

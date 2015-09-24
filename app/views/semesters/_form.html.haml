@@ -9,6 +9,9 @@
   .field
     = f.label :name
     = f.text_field :name
+  .field
+    =f.label :Year
+    =f.select :year_id, Year.all.map { |y| [y.year, y.id] }
 
-  .actions
+    .actions
     = f.submit 'Save'

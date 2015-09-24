@@ -21,7 +21,7 @@ class UnitsController < ApplicationController
 
   # GET /units/1/edit
   def edit
-   @semesters = Semester.all #II need to look into this.
+   # @semesters = Semester.all #II need to look into this.
   end
 
   # POST /units

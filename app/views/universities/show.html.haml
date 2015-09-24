@@ -1,0 +1,8 @@
+%h1 Courses for 
+=@university.name
+
+=render "courses/table"
+
+= link_to 'Edit', edit_university_path(@university)
+\|
+= link_to 'Back', universities_path

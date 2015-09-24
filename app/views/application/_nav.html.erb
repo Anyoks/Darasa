@@ -37,7 +37,40 @@
               <li><%= link_to sem.name, sem %></li>
               <% end %>
           </ul>
-        </li>      
+        </li>
+        <li class="dropdown">
+          <%= link_to "#", data: { toggle: "dropdown"} do %>
+            Years
+            <span class="caret"></span>
+            <%- end %>
+          <ul class="dropdown-menu">
+            <% @years.each do |year|%>
+              <li><%= link_to year.year, year %></li>
+              <% end %>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <%= link_to "#", data: { toggle: "dropdown"} do %>
+            Courses
+            <span class="caret"></span>
+            <%- end %>
+          <ul class="dropdown-menu">
+            <% @courses.each do |course|%>
+              <li><%= link_to course.name, course %></li>
+              <% end %>
+          </ul>
+        </li> 
+        <li class="dropdown">
+          <%= link_to "#", data: { toggle: "dropdown"} do %>
+            Universities
+            <span class="caret"></span>
+            <%- end %>
+          <ul class="dropdown-menu">
+            <% @universities.each do |uni|%>
+              <li><%= link_to uni.name, uni %></li>
+              <% end %>
+          </ul>
+        </li>        
       </ul>
 
 

@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917125032) do
+ActiveRecord::Schema.define(version: 20150924135902) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "university_id", limit: 4,   default: 1
+  end
+
+  add_index "courses", ["university_id"], name: "index_courses_on_university_id", using: :btree
 
   create_table "semesters", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "year_id",    limit: 4,   default: 4
   end
+
+  add_index "semesters", ["year_id"], name: "index_semesters_on_year_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -39,6 +51,24 @@ ActiveRecord::Schema.define(version: 20150917125032) do
 
   add_index "units", ["semester_id"], name: "index_units_on_semester_id", using: :btree
 
+  create_table "universities", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "years", force: :cascade do |t|
+    t.string   "year",       limit: 255
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "course_id",  limit: 4,   default: 1
+  end
+
+  add_index "years", ["course_id"], name: "index_years_on_course_id", using: :btree
+
+  add_foreign_key "courses", "universities"
+  add_foreign_key "semesters", "years"
   add_foreign_key "topics", "units"
   add_foreign_key "units", "semesters"
+  add_foreign_key "years", "courses"
 end
