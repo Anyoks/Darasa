@@ -21,24 +21,35 @@
 
 
 
-/ %table.table.table-hover
-/   %thead
-/     %tr
-/       %th Name
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
       
 
-/   %tbody
-/     - @universities.each do |university|
-/       %tr
-/         %td= university.name
-/         / %td= link_to university.course.name, courses_path
-/         %td
-/           = link_to 'Edit', edit_university_path(university)
-/           = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %tbody
+    - @universities.each do |university|
+      %tr
+        %td= university.name
+        / %td= link_to university.course.name, courses_path
+        %td
+          = link_to 'Edit', edit_university_path(university)
+          = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-/ %br
+%br
 
-=render "courses/table"
+/ =render "courses/table"
+.row
+  .col-sm-6.col-md-4
+    - @universities.each do |university|
+      .thumbnail
+        %img{:alt => "...", :src => "..."}
+          .caption
+            %h3 #{university.name}
+            %p ...
+            %p
+              %a.btn.btn-primary{:href => "#", :role => "button"} Button
+              %a.btn.btn-default{:href => "#", :role => "button"} Button
 
 / =@course.university.name
 

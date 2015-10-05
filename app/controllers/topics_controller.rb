@@ -1,5 +1,7 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy, :download]
+  
+  #before_action 
 
   # GET /topics
   # GET /topics.json
@@ -11,6 +13,12 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
+      @topics = Topic.find(params[:id])
+   
+      respond_to do |format|
+        format.html
+        format.pdf { render pdf: generate_pdf(@topics) }
+      end
   end
 
   # GET /topics/new
@@ -60,6 +68,14 @@ class TopicsController < ApplicationController
       format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+   def download
+    #{}"#{Rails.root}/uploads/topic/attachment/#{topic.id}/topic.name.pdf",
+    @topic = Topic.find(params[:id])
+    send_file(@topic.attachment.path,
+              filename: "#{@topic.name}.pdf",
+              type: "application/pdf")
   end
 
   private

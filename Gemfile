@@ -54,3 +54,4 @@ gem 'carrierwave' #used image uploads
 gem 'mini_magick' #used image uploads 
 gem 'puma' #web server
 gem 'haml-rails'
+gem 'devise'
