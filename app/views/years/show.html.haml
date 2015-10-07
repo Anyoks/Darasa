@@ -1,3 +1,21 @@
 %h1= @year.year
 
-=render "semesters/table", semesters: @semesters
+/ =render "semesters/table", semesters: @semesters
+
+%h1 Year
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      
+
+  %tbody
+    - @years.each do |year|
+      %tr
+        %td=  year.year
+        %td
+          = link_to 'Edit', edit_year_path(year)
+          = link_to 'Destroy', year, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br

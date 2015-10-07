@@ -1,8 +1,10 @@
 %h1= @course.name
 
+=render "courses/table"
 
+/ = link_to 'View Units', unit_path, class: "btn btn-success"
 / = link_to 'Edit', edit_course_path(@course)
 / \|
 / = link_to 'Back', courses_path
 
-=render "years/table", years: @years
+/ =render "years/table", years: @years

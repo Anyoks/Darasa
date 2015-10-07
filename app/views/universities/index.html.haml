@@ -40,16 +40,20 @@
 
 / =render "courses/table"
 .row
-  .col-sm-6.col-md-4
+  .col-sm-15.col-md-15
     - @universities.each do |university|
-      .thumbnail
-        %img{:alt => "...", :src => "..."}
-          .caption
-            %h3 #{university.name}
-            %p ...
-            %p
-              %a.btn.btn-primary{:href => "#", :role => "button"} Button
-              %a.btn.btn-default{:href => "#", :role => "button"} Button
+      .col-sm-6.col-md-4
+        .thumbnail
+          %img{:alt => "...", :src => "..."}
+            .caption
+              %h3 #{university.name}
+              %p ...
+              %p
+                = link_to 'Edit', edit_university_path(university), class: "btn btn-primary"
+                = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"                
+                = link_to 'View Courses', university_path(university), class: "btn btn-success"
+                / %a.btn.btn-primary{:href => "#", :role => "button"} Button
+                / %a.btn.btn-default{:href => "#", :role => "button"} Button
 
 / =@course.university.name
 

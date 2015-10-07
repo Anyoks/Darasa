@@ -10,7 +10,7 @@ class YearsController < ApplicationController
   # GET /years/1
   # GET /years/1.json
   def show
-    # @years = Year.all
+    @years = @course.years
     @semesters = @year.semesters
   end
 
