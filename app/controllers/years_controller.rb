@@ -1,5 +1,6 @@
 class YearsController < ApplicationController
   before_action :set_year, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, only:[:new, :edit, :update, :create, :destroy]
 
   # GET /years
   # GET /years.json
@@ -10,7 +11,7 @@ class YearsController < ApplicationController
   # GET /years/1
   # GET /years/1.json
   def show
-    @years = @course.years
+    # @years = @course.years
     @semesters = @year.semesters
   end
 

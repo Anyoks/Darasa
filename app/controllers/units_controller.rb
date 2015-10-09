@@ -1,5 +1,6 @@
 class UnitsController < ApplicationController
   before_action :set_unit, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, only:[:new, :edit, :update, :create, :destroy]
 
   # GET /units
   # GET /units.json

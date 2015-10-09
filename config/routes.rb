@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  devise_scope :user do
+    authenticated :user do
+      root 'topics#index'
+    end
+    unauthenticated :user do
+      root :to => 'devise/registrations#new', as: :unauthenticated_root
+    end
+end
+
+
   resources :universities
   resources :courses
   resources :years
@@ -16,7 +27,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'topics#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

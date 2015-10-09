@@ -15,7 +15,8 @@
       %tr
         %td=  year.year
         %td
-          = link_to 'Edit', edit_year_path(year)
-          = link_to 'Destroy', year, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          -if current_user && current_user.admin?
+            = link_to 'Edit', edit_year_path(year)
+            = link_to 'Destroy', year, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br

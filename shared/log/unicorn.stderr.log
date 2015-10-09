@@ -1,0 +1,29 @@
+I, [2015-10-08T15:56:32.607623 #13162]  INFO -- : Refreshing Gem list
+I, [2015-10-08T15:56:38.506799 #13162]  INFO -- : listening on addr=/home/orinamokaya/Desktop/project/darasa/heroku/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-08T15:56:38.507276 #13162]  INFO -- : worker=0 spawning...
+I, [2015-10-08T15:56:38.511030 #13162]  INFO -- : worker=1 spawning...
+I, [2015-10-08T15:56:38.512390 #13165]  INFO -- : worker=0 spawned pid=13165
+I, [2015-10-08T15:56:38.518026 #13162]  INFO -- : master process ready
+I, [2015-10-08T15:56:38.519406 #13168]  INFO -- : worker=1 spawned pid=13168
+I, [2015-10-08T15:56:38.547958 #13165]  INFO -- : worker=0 ready
+I, [2015-10-08T15:56:38.548045 #13168]  INFO -- : worker=1 ready
+I, [2015-10-08T21:43:10.661243 #2580]  INFO -- : Refreshing Gem list
+I, [2015-10-08T21:43:40.185948 #2580]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-08T21:43:40.186203 #2580]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-08T21:43:40.186335 #2580]  INFO -- : worker=0 spawning...
+I, [2015-10-08T21:43:40.187804 #2580]  INFO -- : worker=1 spawning...
+I, [2015-10-08T21:43:40.188297 #2823]  INFO -- : worker=0 spawned pid=2823
+I, [2015-10-08T21:43:40.190451 #2580]  INFO -- : master process ready
+I, [2015-10-08T21:43:40.190967 #2826]  INFO -- : worker=1 spawned pid=2826
+I, [2015-10-08T21:43:40.198379 #2826]  INFO -- : worker=1 ready
+I, [2015-10-08T21:43:40.198563 #2823]  INFO -- : worker=0 ready
+I, [2015-10-09T08:49:19.419303 #2227]  INFO -- : Refreshing Gem list
+I, [2015-10-09T08:49:21.715181 #2227]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-09T08:49:21.715343 #2227]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-09T08:49:21.715441 #2227]  INFO -- : worker=0 spawning...
+I, [2015-10-09T08:49:21.716757 #2227]  INFO -- : worker=1 spawning...
+I, [2015-10-09T08:49:21.717220 #2230]  INFO -- : worker=0 spawned pid=2230
+I, [2015-10-09T08:49:21.718885 #2230]  INFO -- : worker=0 ready
+I, [2015-10-09T08:49:21.719844 #2227]  INFO -- : master process ready
+I, [2015-10-09T08:49:21.720308 #2233]  INFO -- : worker=1 spawned pid=2233
+I, [2015-10-09T08:49:21.722089 #2233]  INFO -- : worker=1 ready
