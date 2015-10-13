@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :exams
+  resources :cats
   devise_for :users
 
   devise_scope :user do
@@ -22,7 +24,19 @@ end
     member do
       get :download
     end
+  end
+
+  resources :cats do
+    member do
+      get :download
+    end
   end    
+
+  resources :exams do
+    member do
+      get :download
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

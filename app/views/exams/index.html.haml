@@ -1,0 +1,6 @@
+%h1 Listing exams
+
+=render "exams/table", exams: @exams
+
+-if current_user && current_user.admin?
+  = link_to 'New Exam', new_exam_path

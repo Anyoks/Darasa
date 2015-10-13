@@ -36,8 +36,12 @@ class PdfUploader < CarrierWave::Uploader::Base
   #   manipulate! do |frame, index|
   #     frame if index.zero?
   #   end
-  # end   
-
+  # end  
+  version :large do
+    process resize_to_fit: [500, 300]
+    process :convert => 'png'
+  end 
+  
   # Create different versions of your uploaded files:
   version :thumb do
     # process :cover    

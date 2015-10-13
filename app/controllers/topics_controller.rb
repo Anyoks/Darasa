@@ -74,11 +74,11 @@ class TopicsController < ApplicationController
 
    def download
     #{}"#{Rails.root}/uploads/topic/attachment/#{topic.id}/topic.name.pdf",
-    @topic = Topic.find(params[:id])
-    send_file(@topic.attachment.path,
-              filename: "#{@topic.name}.pdf",
-              type: "application/pdf")
-  end
+      @topic = Topic.find(params[:id])
+      send_file(@topic.attachment.path,
+                filename: "#{@topic.name}.pdf",
+                type: "application/pdf")
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

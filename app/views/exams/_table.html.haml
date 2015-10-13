@@ -1,0 +1,19 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Unit
+      %th Attachment
+      %th
+
+  %tbody
+    - exams.each do |exam|
+      %tr
+        %td= link_to exam.exam_name, exam
+        %td= link_to exam.unit.name, units_path
+        %td= image_tag exam.attachment_url(:thumb)
+        %td
+          -if current_user && current_user.admin?
+            = link_to 'Edit', edit_exam_path(exam), class: "label label-warning"
+            = link_to 'Destroy', exam, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+            = link_to "Download", download_exam_path(exam), class: "label label-success"

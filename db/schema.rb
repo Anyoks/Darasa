@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005122312) do
+ActiveRecord::Schema.define(version: 20151013114912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cats", force: :cascade do |t|
+    t.string   "cat_name"
+    t.string   "attachment"
+    t.datetime "date"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "unit_id",    default: 3
+  end
+
+  add_index "cats", ["unit_id"], name: "index_cats_on_unit_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +35,17 @@ ActiveRecord::Schema.define(version: 20151005122312) do
   end
 
   add_index "courses", ["university_id"], name: "index_courses_on_university_id", using: :btree
+
+  create_table "exams", force: :cascade do |t|
+    t.string   "exam_name"
+    t.string   "attachment"
+    t.datetime "date"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "unit_id",    default: 4
+  end
+
+  add_index "exams", ["unit_id"], name: "index_exams_on_unit_id", using: :btree
 
   create_table "semesters", force: :cascade do |t|
     t.string   "name"
@@ -92,7 +114,9 @@ ActiveRecord::Schema.define(version: 20151005122312) do
 
   add_index "years", ["course_id"], name: "index_years_on_course_id", using: :btree
 
+  add_foreign_key "cats", "units"
   add_foreign_key "courses", "universities"
+  add_foreign_key "exams", "units"
   add_foreign_key "semesters", "years"
   add_foreign_key "topics", "units"
   add_foreign_key "units", "semesters"

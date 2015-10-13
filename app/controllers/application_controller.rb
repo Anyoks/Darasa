@@ -36,6 +36,15 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  def find_cats
+    @cat = Cat.all
+  end
+
+  def find_exam
+    @exam = Exam.all
+  end
+  
   def authenticate_user
     authenticate_user!
     unless current_user

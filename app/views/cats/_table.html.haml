@@ -1,0 +1,19 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Unit
+      %th Attachment
+      %th
+
+  %tbody
+    - cats.each do |cat|
+      %tr
+        %td= link_to cat.cat_name, cat
+        %td= link_to cat.unit.name, units_path
+        %td= image_tag cat.attachment_url(:thumb)
+        %td
+          -if current_user && current_user.admin?
+            = link_to 'Edit', edit_cat_path(cat), class: "label label-warning"
+            = link_to 'Destroy', cat, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+            = link_to "Download", download_cat_path(cat), class: "label label-success"

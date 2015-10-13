@@ -1,0 +1,10 @@
+%h1= @cat.cat_name
+
+%p= image_tag @cat.attachment_url(:thumb), height: "300"
+%p= @cat.unit.name
+
+%p
+	-if current_user && current_user.admin?
+		= link_to 'Edit', edit_cat_path(@cat)
+		\|
+		= link_to 'Back', cats_path
