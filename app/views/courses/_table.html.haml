@@ -24,7 +24,8 @@
               %h3 #{course.name}
               %p ...
               %p
-                = link_to 'Edit', edit_course_path(course), class: "label label-warning"
-                = link_to 'Destroy', course, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"               
-                = link_to 'View Years', years_path(course), class: "btn btn-success"
+                -if current_user && current_user.admin?
+                  = link_to 'Edit', edit_course_path(course), class: "label label-warning"
+                  = link_to 'Destroy', course, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"               
+                  = link_to 'View Years', years_path(course), class: "btn btn-success"
 

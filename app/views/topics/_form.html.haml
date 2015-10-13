@@ -18,5 +18,8 @@
   .field
     =f.label :unit
     =f.select :unit_id, Unit.all.map { |u| [u.name, u.id]}
+  / .field
+  /   =f.label :semester
+  /   =f.select :unit_id, Semester.all.map { |e| [s.name, s.id]}
   .actions
     = f.submit 'Save'

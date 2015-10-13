@@ -1,0 +1,118 @@
+I, [2015-10-08T15:56:32.607623 #13162]  INFO -- : Refreshing Gem list
+I, [2015-10-08T15:56:38.506799 #13162]  INFO -- : listening on addr=/home/orinamokaya/Desktop/project/darasa/heroku/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-08T15:56:38.507276 #13162]  INFO -- : worker=0 spawning...
+I, [2015-10-08T15:56:38.511030 #13162]  INFO -- : worker=1 spawning...
+I, [2015-10-08T15:56:38.512390 #13165]  INFO -- : worker=0 spawned pid=13165
+I, [2015-10-08T15:56:38.518026 #13162]  INFO -- : master process ready
+I, [2015-10-08T15:56:38.519406 #13168]  INFO -- : worker=1 spawned pid=13168
+I, [2015-10-08T15:56:38.547958 #13165]  INFO -- : worker=0 ready
+I, [2015-10-08T15:56:38.548045 #13168]  INFO -- : worker=1 ready
+I, [2015-10-08T21:43:10.661243 #2580]  INFO -- : Refreshing Gem list
+I, [2015-10-08T21:43:40.185948 #2580]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-08T21:43:40.186203 #2580]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-08T21:43:40.186335 #2580]  INFO -- : worker=0 spawning...
+I, [2015-10-08T21:43:40.187804 #2580]  INFO -- : worker=1 spawning...
+I, [2015-10-08T21:43:40.188297 #2823]  INFO -- : worker=0 spawned pid=2823
+I, [2015-10-08T21:43:40.190451 #2580]  INFO -- : master process ready
+I, [2015-10-08T21:43:40.190967 #2826]  INFO -- : worker=1 spawned pid=2826
+I, [2015-10-08T21:43:40.198379 #2826]  INFO -- : worker=1 ready
+I, [2015-10-08T21:43:40.198563 #2823]  INFO -- : worker=0 ready
+I, [2015-10-09T08:49:19.419303 #2227]  INFO -- : Refreshing Gem list
+I, [2015-10-09T08:49:21.715181 #2227]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-09T08:49:21.715343 #2227]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-09T08:49:21.715441 #2227]  INFO -- : worker=0 spawning...
+I, [2015-10-09T08:49:21.716757 #2227]  INFO -- : worker=1 spawning...
+I, [2015-10-09T08:49:21.717220 #2230]  INFO -- : worker=0 spawned pid=2230
+I, [2015-10-09T08:49:21.718885 #2230]  INFO -- : worker=0 ready
+I, [2015-10-09T08:49:21.719844 #2227]  INFO -- : master process ready
+I, [2015-10-09T08:49:21.720308 #2233]  INFO -- : worker=1 spawned pid=2233
+I, [2015-10-09T08:49:21.722089 #2233]  INFO -- : worker=1 ready
+I, [2015-10-09T15:25:12.222777 #2227]  INFO -- : reaped #<Process::Status: pid 2230 exit 0> worker=0
+I, [2015-10-09T15:25:12.222931 #2227]  INFO -- : reaped #<Process::Status: pid 2233 exit 0> worker=1
+I, [2015-10-09T15:25:12.223018 #2227]  INFO -- : master complete
+I, [2015-10-11T18:51:59.838320 #2062]  INFO -- : Refreshing Gem list
+I, [2015-10-11T18:52:02.340535 #2062]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-11T18:52:02.340783 #2062]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-11T18:52:02.340930 #2062]  INFO -- : worker=0 spawning...
+I, [2015-10-11T18:52:02.342379 #2062]  INFO -- : worker=1 spawning...
+I, [2015-10-11T18:52:02.342891 #2220]  INFO -- : worker=0 spawned pid=2220
+I, [2015-10-11T18:52:02.344574 #2220]  INFO -- : worker=0 ready
+I, [2015-10-11T18:52:02.346348 #2062]  INFO -- : master process ready
+I, [2015-10-11T18:52:02.346821 #2224]  INFO -- : worker=1 spawned pid=2224
+I, [2015-10-11T18:52:02.348624 #2224]  INFO -- : worker=1 ready
+I, [2015-10-11T21:26:41.397432 #2062]  INFO -- : reaped #<Process::Status: pid 2220 exit 0> worker=0
+I, [2015-10-11T21:26:41.397596 #2062]  INFO -- : reaped #<Process::Status: pid 2224 exit 0> worker=1
+I, [2015-10-11T21:26:41.397686 #2062]  INFO -- : master complete
+I, [2015-10-12T13:30:50.377490 #2052]  INFO -- : Refreshing Gem list
+I, [2015-10-12T13:30:52.657290 #2052]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-12T13:30:52.657554 #2052]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-12T13:30:52.657701 #2052]  INFO -- : worker=0 spawning...
+I, [2015-10-12T13:30:52.659169 #2052]  INFO -- : worker=1 spawning...
+I, [2015-10-12T13:30:52.659661 #2060]  INFO -- : worker=0 spawned pid=2060
+I, [2015-10-12T13:30:52.661919 #2060]  INFO -- : worker=0 ready
+I, [2015-10-12T13:30:52.663614 #2052]  INFO -- : master process ready
+I, [2015-10-12T13:30:52.664072 #2063]  INFO -- : worker=1 spawned pid=2063
+I, [2015-10-12T13:30:52.666602 #2063]  INFO -- : worker=1 ready
+I, [2015-10-12T16:43:35.725333 #2052]  INFO -- : reaped #<Process::Status: pid 2060 exit 0> worker=0
+I, [2015-10-12T16:43:35.801703 #2052]  INFO -- : reaped #<Process::Status: pid 2063 exit 0> worker=1
+I, [2015-10-12T16:43:35.801800 #2052]  INFO -- : master complete
+I, [2015-10-13T08:23:06.547937 #2275]  INFO -- : Refreshing Gem list
+I, [2015-10-13T08:23:09.117829 #2275]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-13T08:23:09.118012 #2275]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-13T08:23:09.118119 #2275]  INFO -- : worker=0 spawning...
+I, [2015-10-13T08:23:09.119581 #2275]  INFO -- : worker=1 spawning...
+I, [2015-10-13T08:23:09.120132 #2423]  INFO -- : worker=0 spawned pid=2423
+I, [2015-10-13T08:23:09.121382 #2275]  INFO -- : master process ready
+I, [2015-10-13T08:23:09.122503 #2423]  INFO -- : worker=0 ready
+I, [2015-10-13T08:23:09.126055 #2428]  INFO -- : worker=1 spawned pid=2428
+I, [2015-10-13T08:23:09.127939 #2428]  INFO -- : worker=1 ready
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:206:in `pid=': Already running on PID:2275 (or pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid is stale) (ArgumentError)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:135:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-10-13T08:52:01.827662 #4972]  INFO -- : executing ["/home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn", "-c", "config/unicorn.rb", "-E", "production", "-D", {11=>#<Kgio::UNIXServer:/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock>}] (in /home/orinamokaya/deploy/darasa_app)
+I, [2015-10-13T08:52:01.827918 #4972]  INFO -- : forked child re-executing...
+I, [2015-10-13T08:52:02.203545 #4972]  INFO -- : inherited addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-13T08:52:02.203844 #4972]  INFO -- : Refreshing Gem list
+I, [2015-10-13T08:52:04.112668 #4972]  INFO -- : worker=0 spawning...
+I, [2015-10-13T08:52:04.114455 #4972]  INFO -- : worker=1 spawning...
+I, [2015-10-13T08:52:04.115572 #4976]  INFO -- : worker=0 spawned pid=4976
+I, [2015-10-13T08:52:04.118884 #4972]  INFO -- : master process ready
+I, [2015-10-13T08:52:04.119213 #4976]  INFO -- : worker=0 ready
+I, [2015-10-13T08:52:04.119994 #4979]  INFO -- : worker=1 spawned pid=4979
+I, [2015-10-13T08:52:04.125274 #4979]  INFO -- : worker=1 ready
+E, [2015-10-13T08:53:19.712543 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T08:55:23.344574 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T09:23:37.076324 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T09:28:11.332422 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T09:40:57.740204 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T10:10:45.846402 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T10:14:42.761631 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T10:19:15.578720 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T10:25:21.140700 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T10:40:39.796751 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T10:42:34.788266 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T10:53:06.287525 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T11:17:20.352610 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T11:25:19.402489 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+E, [2015-10-13T11:33:31.801053 #4972] ERROR -- : old PID:2275 running with existing pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid.oldbin, refusing rexec
+I, [2015-10-13T11:48:21.047374 #4972]  INFO -- : reaped #<Process::Status: pid 4976 exit 0> worker=0
+I, [2015-10-13T11:48:21.047702 #4972]  INFO -- : reaped #<Process::Status: pid 4979 exit 0> worker=1
+I, [2015-10-13T11:48:21.047887 #4972]  INFO -- : master complete
+E, [2015-10-13T11:48:21.123153 #2275] ERROR -- : reaped #<Process::Status: pid 4972 exit 0> exec()-ed
+I, [2015-10-13T11:48:38.481413 #2275]  INFO -- : reaped #<Process::Status: pid 2423 exit 0> worker=0
+I, [2015-10-13T11:48:38.481780 #2275]  INFO -- : reaped #<Process::Status: pid 2428 exit 0> worker=1
+I, [2015-10-13T11:48:38.482065 #2275]  INFO -- : master complete
+I, [2015-10-13T11:49:00.420946 #10331]  INFO -- : Refreshing Gem list
+I, [2015-10-13T11:49:03.216220 #10331]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-10-13T11:49:03.216513 #10331]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=11
+I, [2015-10-13T11:49:03.216701 #10331]  INFO -- : worker=0 spawning...
+I, [2015-10-13T11:49:03.219149 #10331]  INFO -- : worker=1 spawning...
+I, [2015-10-13T11:49:03.220381 #10334]  INFO -- : worker=0 spawned pid=10334
+I, [2015-10-13T11:49:03.223633 #10334]  INFO -- : worker=0 ready
+I, [2015-10-13T11:49:03.223959 #10331]  INFO -- : master process ready
+I, [2015-10-13T11:49:03.224742 #10337]  INFO -- : worker=1 spawned pid=10337
+I, [2015-10-13T11:49:03.228332 #10337]  INFO -- : worker=1 ready

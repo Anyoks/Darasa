@@ -15,6 +15,7 @@
         %td= link_to topic.unit.name, units_path
         %td= image_tag topic.attachment_url(:thumb)
         %td
-          = link_to 'Edit', edit_topic_path(topic), class: "label label-warning"
-          = link_to 'Destroy', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
-          = link_to "Download", download_topic_path(topic), class: "label label-success"
+          -if current_user && current_user.admin?
+            = link_to 'Edit', edit_topic_path(topic), class: "label label-warning"
+            = link_to 'Destroy', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+            = link_to "Download", download_topic_path(topic), class: "label label-success"

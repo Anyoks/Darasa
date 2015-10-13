@@ -10,7 +10,8 @@
         %td= unit.name
         %td= link_to unit.semester.name, semesters_path
         %td
-          = link_to 'Edit', edit_unit_path(unit), class: "label label-warning"
-          = link_to 'Destroy', unit, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+          -if current_user && current_user.admin?
+            = link_to 'Edit', edit_unit_path(unit), class: "label label-warning"
+            = link_to 'Destroy', unit, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
 
 %br

@@ -2,6 +2,7 @@
 
 =render "courses/table"
 
-= link_to 'Edit', edit_university_path(@university)
-\|
-= link_to 'Back', universities_path
+-if current_user && current_user.admin?
+	= link_to 'Edit', edit_university_path(@university)
+	\|
+	= link_to 'Back', universities_path

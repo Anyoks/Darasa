@@ -33,8 +33,9 @@
         %td= university.name
         / %td= link_to university.course.name, courses_path
         %td
-          = link_to 'Edit', edit_university_path(university)
-          = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          -if current_user && current_user.admin?
+            = link_to 'Edit', edit_university_path(university)
+            = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
@@ -49,12 +50,14 @@
               %h3 #{university.name}
               %p ...
               %p
-                = link_to 'Edit', edit_university_path(university), class: "btn btn-primary"
-                = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"                
-                = link_to 'View Courses', university_path(university), class: "btn btn-success"
+                -if current_user && current_user.admin?
+                  = link_to 'Edit', edit_university_path(university), class: "btn btn-primary"
+                  = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"                
+                  = link_to 'View Courses', university_path(university), class: "btn btn-success"
                 / %a.btn.btn-primary{:href => "#", :role => "button"} Button
                 / %a.btn.btn-default{:href => "#", :role => "button"} Button
 
 / =@course.university.name
 
-= link_to 'New University', new_university_path, class: "btn btn-primary"
+-if current_user.admin?
+  = link_to 'New University', new_university_path, class: "btn btn-primary"

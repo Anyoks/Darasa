@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :find_units, :find_semesters, :find_years, :find_courses, :find_universities #every singel action in this app will run this code
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_admin, only:[:new, :edit, :update, :create, :destroy,:download]
+  before_action :authenticate_user, only: [:show ]
 
 
 
@@ -30,9 +30,18 @@ class ApplicationController < ActionController::Base
 
   def authenticate_admin
     authenticate_user!
-    unless current_user.admin?
-      redirect_to root_path, alert: "You are not authorised to perform that Operation"
+    if current_user
+      unless current_user.admin?
+        redirect_to root_path, alert: "You are not authorised to perform that Operation"
+      end
     end
+  end
+  def authenticate_user
+    authenticate_user!
+    unless current_user
+      redirect_to new_user_session_path 
+    end
+
   end
 
   protected

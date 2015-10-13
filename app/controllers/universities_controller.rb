@@ -1,5 +1,6 @@
 class UniversitiesController < ApplicationController
   before_action :set_university, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin, only:[:new, :edit, :update, :create, :destroy]
 
   # GET /universities
   # GET /universities.json
