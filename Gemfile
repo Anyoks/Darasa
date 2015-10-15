@@ -31,6 +31,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'unicorn'
 group :development do
 	gem 'html2haml'
+	gem 'activeadmin', github: 'gregbell/active_admin' #styling up my admin
+	gem 'capistrano', '~> 3.4.0'
+	gem 'capistrano-rails', '~> 1.1.5'
+	gem 'capistrano-rvm', github: "capistrano/rvm"
 end
 
 # Use Capistrano for deployment
@@ -47,9 +51,7 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'pry-rails'
-gem 'pry-byebug'
-gem 'annotate'
+
 gem 'bootstrap-sass' #enables bootstrap in te app
 gem 'carrierwave' #used image uploads 
 gem 'mini_magick' #used image uploads 
@@ -58,3 +60,5 @@ gem 'haml-rails'
 gem 'devise'
 gem 'pesapal' #intergrating Mpesa payment
 gem 'unicorn' #better deployment server for deployment
+
+

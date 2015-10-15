@@ -14,3 +14,6 @@
 
 #ignore rbenv-vars
 .rbenv-vars
+config/database.yml
+config/secrets.yml
+config/pesapal.yml
