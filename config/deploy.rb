@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'darasa'
-set :repo_url, 'dennOrina@bitbucket.org/dennOrina/darasa.git'
+set :repo_url, 'git@bitbucket.org:dennOrina/darasa.git'
 
 
 # Default branch is :master
