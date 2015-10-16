@@ -9,14 +9,26 @@
 </head>
 <body>
 
-<%= render 'nav' %>
+<!-- User Login  -->
+<% if user_signed_in? %>
+	<%= render 'nav' %>
+	<% else %>
+	   
+<%end%>
 
 
-<div class='container'>
-	<%= content_tag :div, notice, class: "bg-success"%>
-	<%= content_tag :div, alert, class: "bg-danger"%>
+
+
+
+
+<div class='container'>	
+	<%= content_tag :div, alert, class: "alert-danger"%>
+	<%= content_tag :div, notice, class: "alert-success"%>
 	<%= yield %>
 </div>
+
+
+
 
 </body>
 </html>
