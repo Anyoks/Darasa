@@ -16,9 +16,12 @@
               <%= f.email_field :email, autofocus: true, placeholder: "Your email" ,class: "form-control" %> 
             </div>
 
-          <div style="margin-bottom: 25px" class="input-group">
-           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "password", class: "form-control" %>
+
+          <div class="form-group">
+            <div style="margin-bottom: 25px" class="input-group">
+             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <%= f.password_field :password, autocomplete: "off", placeholder: "password", class: "form-control" %>
+            </div> 
           </div>
 
           <% if devise_mapping.rememberable? -%>
@@ -57,3 +60,5 @@
         </div>
       </div>
 </div>
+
+

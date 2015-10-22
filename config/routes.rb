@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     unauthenticated :user do
       root :to => 'devise/registrations#new', as: :unauthenticated_root
     end
-end
+  end
+
+  # root "public/index"
 
 
   resources :universities

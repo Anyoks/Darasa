@@ -28,6 +28,14 @@ class ApplicationController < ActionController::Base
     @universities = University.all
   end
 
+  def find_cats
+    @cats = Cat.all
+  end
+
+  def find_exams
+    @exams = Exam.all
+  end
+
   def authenticate_admin
     authenticate_user!
     if current_user
