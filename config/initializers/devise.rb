@@ -232,10 +232,28 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 
+  require 'omniauth-google-oauth2'
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :google_oauth2, "638152837740-pab0ksln0lqiuosiamcvfr6umtav830v.apps.googleusercontent.com", "A8_xi6d_rDarn3OFD1Mj3po3", { 
+    #name: 'google',
+    scope: 'email, profile, plus.me',
+    :client_options => { :ssl => { :ca_file => 'C:\Ruby21\cacert.pem'}},
+    provider_ignores_state: true,
+    redirect_uri: 'http://localhost:3000/users/auth/google_oauth2/callback/',
+    prompt: 'select_account',
+    setup: (lambda do |env|
+      request = Rack::Request.new(env)
+      env['omniauth.strategy'].options['token_params'] = {
+        redirect_uri: 'http://localhost:3000/users/auth/google_oauth2/callback/'
+      }
+    end)
+  }
+
+  #, scope:'userinfo.email'#{ access_type: "offline", approval_prompt: "" } ,access_type: 'offline',approval_prompt:'' 
+  #config.omniauth.full_host = 'http://localhost:3000' 
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

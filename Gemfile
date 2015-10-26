@@ -60,8 +60,11 @@ gem 'carrierwave' #used image uploads
 gem 'mini_magick' #used image uploads 
 gem 'puma' #web server
 gem 'haml-rails'
-gem 'devise'
+gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'pesapal' #intergrating Mpesa payment
 gem 'unicorn' #better deployment server for deployment
-
+#** enabling google signs
+gem 'omniauth'
+gem 'omniauth-google-oauth2', git: 'https://github.com/zquestz/omniauth-google-oauth2.git'
+gem 'omniauth-oauth2', '~> 1.4'
 
