@@ -77,6 +77,7 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 
 gem 'unicorn' #better deployment server for deployment
 #** enabling google signs
+gem 'omniauth-facebook'
 
 
 

@@ -252,8 +252,9 @@ Devise.setup do |config|
     end)
   }
 
-  #, scope:'userinfo.email'#{ access_type: "offline", approval_prompt: "" } ,access_type: 'offline',approval_prompt:'' 
-  #config.omniauth.full_host = 'http://localhost:3000' 
+  #facebook Login intergration
+  config.omniauth :facebook, "530023173816084", "9f4f50c7ae95157af953957007a9b5b2", callback_url: "http://localhost:3000/users/auth/facebook/callback/",
+      :scope => 'email,user_birthday,public_profile', info_fields: 'email, first_name, last_name'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
