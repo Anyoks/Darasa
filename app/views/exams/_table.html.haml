@@ -3,14 +3,16 @@
     %tr
       %th Name
       %th Unit
+      %th Question
       %th Attachment
       %th
 
   %tbody
     - exams.each do |exam|
       %tr
-        %td= link_to exam.exam_name, exam
+        %td= link_to exam.title, exam
         %td= link_to exam.unit.name, units_path
+        %td=  exam.question
         %td= image_tag exam.attachment_url(:thumb)
         %td
           -if current_user && current_user.admin?

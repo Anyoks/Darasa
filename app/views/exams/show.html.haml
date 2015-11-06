@@ -1,7 +1,16 @@
-%h1= @exam.exam_name
+%h1= @exam.title
 
 
-%p= image_tag @exam.attachment_url(:large), height: "300"
+/ %p= image_tag @exam.attachment_url(:large), height: "300"
+
+/ %p= @exam.questions.question
+%ol
+	-for question in @exam.questions
+		%li= question.question
+		%ul
+			=question.response.answer
+				
+
 %p= @exam.unit.name
 
 %p

@@ -1,4 +1,4 @@
-= form_for @exam do |f|
+= simple_form_for @exam do |f|
   - if @exam.errors.any?
     #error_explanation
       %h2= "#{pluralize(@exam.errors.count, "error")} prohibited this exam from being saved:"
@@ -7,16 +7,24 @@
           %li= msg
 
   .field
-    = f.label :exam_name
-    = f.text_field :exam_name
-  .field
-    = f.label :attachment
-    = f.file_field :attachment
-  .field
-    =f.label :unit
-    =f.select :unit_id, Unit.all.map { |u| [u.name, u.id]}
+    = f.label :Exam_Title
+    = f.text_field :title , size: 100
   .field
     = f.label :date
     = f.datetime_select :date
+  / .field
+  /   = f.fields_for :questions do |builder|
+  /     =render "questions/question_fields", :f => builder
+  .field
+    = f.simple_fields_for :questions do |question|
+      = render "question_fields", f: question
+    .links
+      = link_to_add_association 'Add Question', f, :questions
+
+  .field
+    =f.label :unit
+    =f.select :unit_id, Unit.all.map { |u| [u.name, u.id]}
+
+
   .actions
     = f.submit 'Save'

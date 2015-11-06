@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023064709) do
+ActiveRecord::Schema.define(version: 20151106044941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "response"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "question_id"
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "cats", force: :cascade do |t|
     t.string   "cat_name"
@@ -27,6 +36,22 @@ ActiveRecord::Schema.define(version: 20151023064709) do
 
   add_index "cats", ["unit_id"], name: "index_cats_on_unit_id", using: :btree
 
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",                null: false
@@ -37,15 +62,34 @@ ActiveRecord::Schema.define(version: 20151023064709) do
   add_index "courses", ["university_id"], name: "index_courses_on_university_id", using: :btree
 
   create_table "exams", force: :cascade do |t|
-    t.string   "exam_name"
+    t.string   "title"
     t.string   "attachment"
     t.datetime "date"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "unit_id",    default: 4
+    t.text     "question"
   end
 
   add_index "exams", ["unit_id"], name: "index_exams_on_unit_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "question"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "exam_id",    default: 5
+  end
+
+  add_index "questions", ["exam_id"], name: "index_questions_on_exam_id", using: :btree
+
+  create_table "responses", force: :cascade do |t|
+    t.string   "answer"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "question_id", default: 27
+  end
+
+  add_index "responses", ["question_id"], name: "index_responses_on_question_id", using: :btree
 
   create_table "semesters", force: :cascade do |t|
     t.string   "name"
@@ -116,9 +160,12 @@ ActiveRecord::Schema.define(version: 20151023064709) do
 
   add_index "years", ["course_id"], name: "index_years_on_course_id", using: :btree
 
+  add_foreign_key "answers", "questions"
   add_foreign_key "cats", "units"
   add_foreign_key "courses", "universities"
   add_foreign_key "exams", "units"
+  add_foreign_key "questions", "exams"
+  add_foreign_key "responses", "questions"
   add_foreign_key "semesters", "years"
   add_foreign_key "topics", "units"
   add_foreign_key "units", "semesters"

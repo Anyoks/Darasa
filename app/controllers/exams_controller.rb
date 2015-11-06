@@ -15,6 +15,13 @@ class ExamsController < ApplicationController
   # GET /exams/new
   def new
     @exam = Exam.new
+    # 2.times do
+      # question = @exam.questions.build()
+      # 1.times{ question.build.build_answer }
+      2.times do
+        @exam.questions.build.build_response
+      end
+    # end
   end
 
   # GET /exams/1/edit
@@ -65,7 +72,7 @@ class ExamsController < ApplicationController
     #{}"#{Rails.root}/uploads/topic/attachment/#{topic.id}/topic.name.pdf",
       @exam = Exam.find(params[:id])
       send_file(@exam.attachment.path,
-                filename: "#{@topic.exam_name}.pdf",
+                filename: "#{@topic.title}.pdf",
                 type: "application/pdf")
     end
 
@@ -75,8 +82,15 @@ class ExamsController < ApplicationController
       @exam = Exam.find(params[:id])
     end
 
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
-      params.require(:exam).permit(:exam_name, :attachment, :date, :unit_id)
+      params.require(:exam).permit(:title, :attachment, :date, :unit_id, 
+        questions_attributes:[ :id, :question, :exam_id,  :_destroy,
+        response_attributes:[:id, :answer, :question_id, :_destroy]]
+        # responses:[:id, :response, :question_id, :_destroy]]
+        )
     end
 end
+

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :questions
+  mount Ckeditor::Engine => '/ckeditor'
   resources :exams
   resources :cats
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
