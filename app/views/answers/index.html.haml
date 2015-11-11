@@ -19,5 +19,5 @@
 
 %br
 
--if current_user && current_user.is_moderator?
+-if current_user && current_user.is_moderator?|| current_user.is_admin?
   = link_to 'New Answer', new_answer_path

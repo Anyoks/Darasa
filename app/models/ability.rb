@@ -32,7 +32,7 @@ class Ability
             user ||= User.new # guest user (not logged in)
             if user.is_admin?
                 can :manage, :all
-            if user.role? :moderator
+            if user.is_moderator?
                 can :manage, Exam
                 # can :manage, Response
                 # can :manage, Question

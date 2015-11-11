@@ -10,8 +10,7 @@
 
 
 
--if current_user.is_moderator?
-	= link_to 'New Exam', new_exam_path
+-if current_user.is_moderator? || current_user.is_admin?
+	= link_to 'New Exam', new_exam_path, class: "btn btn-primary" 
 -else
 	=render "terms", exam: @exams
-
