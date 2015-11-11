@@ -17,3 +17,6 @@
 config/database.yml
 config/secrets.yml
 config/pesapal.yml
+public/uploads
+shared/log/*
+b/shared/log/*

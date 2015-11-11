@@ -22,3 +22,9 @@ $('.ckeditor').ckeditor({
   // optional config
 });
 
+
+
+$('a[data-popup]').on('click', function(e) {
+	 window.open($(this).attr('href')); e.preventDefault(); 
+	});
+

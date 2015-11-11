@@ -1,7 +1,8 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  
+  # load_and_authorize_resource
   # GET /exams
   # GET /exams.json
   def index
@@ -16,6 +17,7 @@ class ExamsController < ApplicationController
 
   # GET /exams/new
   def new
+
     @exam = Exam.new
       1.times do
         @exam.questions.build.build_response
@@ -68,6 +70,7 @@ class ExamsController < ApplicationController
 
   def accept_tos
     # @exam = Exam.find(params[:id])
+    
      @user = User.find(current_user.id)
 
      @user.agree_tos #(terms_params)
