@@ -36,6 +36,11 @@ class ApplicationController < ActionController::Base
     @exams = Exam.all
   end
 
+  # def accept_tos
+  #   user = current_user
+  #   User.find(user.id).update_attributes( :terms => true)
+  # end
+
   def authenticate_admin
     authenticate_user!
     if current_user

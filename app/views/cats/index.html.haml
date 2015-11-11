@@ -2,5 +2,5 @@
 
 =render "cats/table", cats: @cats
 
--if current_user && current_user.admin?
+-if current_user && current_user.is_moderator?
   = link_to 'New Cat', new_cat_path

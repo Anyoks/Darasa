@@ -81,4 +81,4 @@ gem 'omniauth-facebook'
 gem 'ckeditor'
 gem 'simple_form', '~> 3.2'
 gem 'cocoon', '~> 1.2', '>= 1.2.6'
-
+gem "cancan"

@@ -6,15 +6,15 @@
 / %p= @exam.questions.question
 %ol
 	-for question in @exam.questions
-		%li= question.question
+		%li= raw question.question
 		%ul
-			=question.response.answer
+			=raw question.response.answer
 				
 
 %p= @exam.unit.name
 
 %p
-	-if current_user && current_user.admin?
+	- if can? :manage, @exam
 		= link_to 'Edit', edit_exam_path(@exam)
 		\|
 		= link_to 'Back', exams_path

@@ -2,5 +2,5 @@
 
 =render "courses/table"
 
--if current_user && current_user.admin?
+-if current_user && current_user.is_moderator?
 	= link_to 'New Course', new_course_path, class: "btn btn-primary"

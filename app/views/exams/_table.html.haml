@@ -15,7 +15,7 @@
         %td=  exam.question
         %td= image_tag exam.attachment_url(:thumb)
         %td
-          -if current_user && current_user.admin?
+          - if can? :update, @exam
             = link_to 'Edit', edit_exam_path(exam), class: "label label-warning"
             = link_to 'Destroy', exam, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
             = link_to "Download", download_exam_path(exam), class: "label label-success"

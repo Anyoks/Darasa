@@ -10,5 +10,5 @@ class Exam < ActiveRecord::Base
 
 	has_many :answers, :through => :questions
 
-	accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:question].blank? }, :allow_destroy => true
+	accepts_nested_attributes_for :questions, :reject_if => :all_blank, :allow_destroy => true
 end

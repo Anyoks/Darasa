@@ -1,10 +1,12 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /exams
   # GET /exams.json
   def index
     @exams = Exam.all
+    # @user = current_user
   end
 
   # GET /exams/1
@@ -15,13 +17,9 @@ class ExamsController < ApplicationController
   # GET /exams/new
   def new
     @exam = Exam.new
-    # 2.times do
-      # question = @exam.questions.build()
-      # 1.times{ question.build.build_answer }
-      2.times do
+      1.times do
         @exam.questions.build.build_response
       end
-    # end
   end
 
   # GET /exams/1/edit
@@ -68,6 +66,16 @@ class ExamsController < ApplicationController
     end
   end
 
+  def accept_tos
+    # @exam = Exam.find(params[:id])
+     @user = User.find(current_user.id)
+
+     @user.agree_tos #(terms_params)
+    # redirect_to new_exam_path
+    # puts "hahaha"
+   redirect_to new_exam_path, notice: 'You have accepted The terms of Service.'
+  end
+
    def download
     #{}"#{Rails.root}/uploads/topic/attachment/#{topic.id}/topic.name.pdf",
       @exam = Exam.find(params[:id])
@@ -83,7 +91,9 @@ class ExamsController < ApplicationController
     end
 
 
-
+    def terms_params
+      params.permit(:id, :terms)
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
       params.require(:exam).permit(:title, :attachment, :date, :unit_id, 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :answers
+  resources :response
+    # resources :answerss
+  
   resources :questions
   mount Ckeditor::Engine => '/ckeditor'
   resources :exams
@@ -40,6 +42,7 @@ Rails.application.routes.draw do
   resources :exams do
     member do
       get :download
+      put :accept_tos
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

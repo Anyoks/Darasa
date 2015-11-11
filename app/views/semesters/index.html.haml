@@ -2,5 +2,5 @@
 
 =render "semesters/table", semesters: @semesters
 
--if current_user && current_user.admin?
+-if current_user && current_user.is_moderator?
 	= link_to 'New semester', new_semester_path, class: "btn btn-primary"

@@ -5,5 +5,13 @@
 
 =render "exams/table", exams: @exams
 
--if current_user && current_user.admin?
-  = link_to 'New Exam', new_exam_path
+
+
+
+
+
+-if current_user.is_moderator?
+	= link_to 'New Exam', new_exam_path
+-else
+	=render "terms", exam: @exams
+
