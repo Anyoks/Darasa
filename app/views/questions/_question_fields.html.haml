@@ -1,0 +1,16 @@
+%br/
+= f.label :question, "Question"
+%br/
+= f.text_area :question
+%br/
+= f.check_box :_destroy
+= f.label :_destroy, "Remove Question"
+
+= f.fields_for :response do |builder|
+	=render "answers/answer_fields", :f => builder
+
+
+/ = f.simple_fields_for :tasks do |task|
+/       = render 'task_fields', f: task
+/     .links
+/       = link_to_add_association 'add task', f, :tasks

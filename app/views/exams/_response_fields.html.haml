@@ -1,0 +1,5 @@
+.nested-fields
+	%br/
+	= f.label :response, "Answer"
+	= link_to_remove_association "Remove Answer", f
+	= f.cktext_area :answer, :cols => 10, :ckeditor => {:uiColor => '#f7931e', :toolbar => 'mini'}
