@@ -45,6 +45,16 @@ Rails.application.routes.draw do
       put :accept_tos
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      devise_scope :user do
+        post "/sign_in", :to => 'sessions#create'
+        delete "/sign_out", :to => 'sessions#destroy'
+        post "/sign_up", :to => 'registrations#create'#, :as => 'register'
+      end
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

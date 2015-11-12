@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  before_save :ensure_authentication_token
     belongs_to :role
     before_create :set_default_role
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :token_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
   # validates_acceptance_of :tos_agreement, :allow_nil => true, :accept => true, :on => :create
+
 
 	def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
 		# byebug
@@ -27,6 +29,12 @@ class User < ActiveRecord::Base
 					)
 				end
 		end
+	end
+
+	def ensure_authentication_token
+		if authentication_token.blank?
+			self.authentication_token = generate_authentication_token
+	 	end
 	end
 
 	def check_user_role
@@ -63,6 +71,13 @@ class User < ActiveRecord::Base
 	# Making all users' role to be registered as they sign up.
 	def set_default_role
 		self.role ||= Role.find_by_name('registered') 
+	end
+
+	def generate_authentication_token
+		loop do
+			token = Devise.friendly_token
+			break token unless User.where(authentication_token: token).first
+		end
 	end
 
 	# def is_dmin?
