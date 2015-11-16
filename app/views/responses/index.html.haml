@@ -1,0 +1,23 @@
+%h1 Listing responses
+
+%table
+  %thead
+    %tr
+      %th response
+      %th
+      %th
+      %th
+
+  %tbody
+    - @responses.each do |response|
+      %tr
+        -if current_user && current_user.is_moderator?
+          %td= response.answer
+          %td= link_to 'Show', response
+          %td= link_to 'Edit', edit_response_path(response)
+          %td= link_to 'Destroy', response, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+-if current_user && current_user.is_moderator?|| current_user.is_admin?
+  = link_to 'New response', new_response_path
