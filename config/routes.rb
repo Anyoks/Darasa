@@ -47,6 +47,9 @@ Rails.application.routes.draw do
 
   resources :exams do
     member do
+      resources :questions do 
+        resources :responses
+      end
       get :download
       put :accept_tos
     end
