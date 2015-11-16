@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112063734) do
+ActiveRecord::Schema.define(version: 20151112173826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,19 @@ ActiveRecord::Schema.define(version: 20151112063734) do
   end
 
   add_index "exams", ["unit_id"], name: "index_exams_on_unit_id", using: :btree
+
+  create_table "payments", force: :cascade do |t|
+    t.boolean  "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "unit_id"
+    t.integer  "semester_id"
+  end
+
+  add_index "payments", ["semester_id"], name: "index_payments_on_semester_id", using: :btree
+  add_index "payments", ["unit_id"], name: "index_payments_on_unit_id", using: :btree
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.text     "question"
@@ -175,6 +188,9 @@ ActiveRecord::Schema.define(version: 20151112063734) do
   add_foreign_key "cats", "units"
   add_foreign_key "courses", "universities"
   add_foreign_key "exams", "units"
+  add_foreign_key "payments", "semesters"
+  add_foreign_key "payments", "units"
+  add_foreign_key "payments", "users"
   add_foreign_key "questions", "exams"
   add_foreign_key "responses", "questions"
   add_foreign_key "semesters", "years"

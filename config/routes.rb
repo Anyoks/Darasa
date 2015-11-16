@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :response
+  namespace :api do
+  namespace :v1 do
+    get 'processpayment/process'
+    end
+  end
+
+  resources :responses
     # resources :answerss
   
   resources :questions
@@ -48,6 +54,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      post "/pay", :to => 'payments#pay'
       devise_scope :user do
         post "/sign_in", :to => 'sessions#create'
         delete "/sign_out", :to => 'sessions#destroy'
@@ -55,6 +62,14 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # namespace :api do
+  #   namespace :v1 do
+  #     post "/pay", :to => 'payments#pay'
+  #   end
+  # end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
