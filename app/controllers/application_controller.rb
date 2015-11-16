@@ -44,12 +44,16 @@ class ApplicationController < ActionController::Base
   # end
 
   def authenticate_admin
-    authenticate_user!
-    if current_user
-      unless current_user.admin?
-        redirect_to root_path, alert: "You are not authorised to perform that Operation"
+    if authenticate_user!
+      if current_user
+        unless current_user.admin?
+          redirect_to root_path, alert: "You are not authorised to perform that Operation"
+        end
       end
+    else
+      redirect_to new_user_session_path, alert: "You need to be signed !"
     end
+
   end
 
   def find_cats
@@ -61,11 +65,13 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate_user
-    authenticate_user!
-    unless current_user
-      redirect_to new_user_session_path 
+    if authenticate_user!
+      unless current_user
+        redirect_to new_user_session_path , alert: "You are not authorised to perform that Operation"
+      end
+    else
+      redirect_to new_user_session_path, alert: "You need to be signed !"
     end
-
   end
 
   protected

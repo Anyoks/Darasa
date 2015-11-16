@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: topics
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  code       :string
+#  attachment :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  unit_id    :integer          default(1)
+#
+
 class Topic < ActiveRecord::Base
 
 	mount_uploader :attachment, PdfUploader #mount the pdf uploader

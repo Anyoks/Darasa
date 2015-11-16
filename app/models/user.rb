@@ -1,3 +1,32 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string           not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
+#  first_name             :string
+#  phone_number           :string
+#  university             :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  second_name            :string
+#  terms                  :boolean          default(FALSE)
+#  provider               :string
+#  uid                    :string
+#  role_id                :integer
+#  terms_updated_at       :datetime
+#  authentication_token   :text
+#
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -7,6 +36,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :token_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
   # validates_acceptance_of :tos_agreement, :allow_nil => true, :accept => true, :on => :create
+  has_many :payments
 
 
 	def self.find_for_google_oauth2(access_token, signed_in_resource=nil)

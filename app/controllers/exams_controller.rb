@@ -1,6 +1,7 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  require 'json'
   
   # load_and_authorize_resource
   # GET /exams
@@ -13,6 +14,8 @@ class ExamsController < ApplicationController
   # GET /exams/1
   # GET /exams/1.json
   def show
+    @exam = Exam.find(params[:id])
+    @current_user = current_user
   end
 
   # GET /exams/new
@@ -87,10 +90,15 @@ class ExamsController < ApplicationController
                 type: "application/pdf")
     end
 
+    # def as_json(options={})
+    #   super(:only => [:questions]
+    #   )
+    # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_exam
-      @exam = Exam.find(params[:id])
+      @exam = Exam.includes(:questions).find(params[:id])
     end
 
 
