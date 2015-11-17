@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117092857) do
+ActiveRecord::Schema.define(version: 20151117100202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,9 +135,11 @@ ActiveRecord::Schema.define(version: 20151117092857) do
 
   create_table "units", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "semester_id", default: 1
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "semester_id",   default: 1
+    t.float    "answers_price"
+    t.float    "videos_price"
   end
 
   add_index "units", ["semester_id"], name: "index_units_on_semester_id", using: :btree
