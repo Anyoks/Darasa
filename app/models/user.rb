@@ -93,6 +93,7 @@ class User < ActiveRecord::Base
 
 	def agree_tos
 		self.update_attributes :terms => true, :terms_updated_at => Time.now
+		self.update_attributes :role_id => 3
 	end
 
 	#checking if the user has paid to view the answers
