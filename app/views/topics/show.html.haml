@@ -24,7 +24,7 @@
 								%i.glyphicon.glyphicon-gift
 							02, 1988
 						/ Split button
-						-if current_user && current_user.admin?
+						-if current_user && current_user.is_admin?
 							= link_to 'Edit', edit_topic_path(@topic), class: "btn btn-primary"
 							= link_to 'Back', topics_path, class: "btn btn-default"
 						.btn-group

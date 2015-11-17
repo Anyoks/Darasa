@@ -11,7 +11,7 @@
   %tbody
     - @responses.each do |response|
       %tr
-        -if current_user && current_user.is_moderator?
+        -if current_user && current_user.is_moderator?|| || current_user.is_admin?
           %td= response.answer
           %td= link_to 'Show', response
           %td= link_to 'Edit', edit_response_path(response)

@@ -10,7 +10,7 @@
         %td= semester.name
         %td= link_to semester.year.year, year_path(semester.year)
         %td
-          -if current_user && current_user.admin?
+          -if current_user && current_user.is_admin?
             = link_to 'Edit', edit_semester_path(semester), class: "label label-warning"
             = link_to 'Destroy', semester, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
 

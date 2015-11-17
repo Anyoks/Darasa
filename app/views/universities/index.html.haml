@@ -33,7 +33,7 @@
         %td= university.name
         / %td= link_to university.course.name, courses_path
         %td
-          -if current_user && current_user.admin?
+          -if current_user && current_user.is_admin?
             = link_to 'Edit', edit_university_path(university)
             = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
