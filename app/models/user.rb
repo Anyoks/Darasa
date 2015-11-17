@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
 	#if the user has not accepted terms and conditions, they are not a moderator!
 	def is_moderator?
 		if accept_terms
-			if self.role.nil?
+			if self.role.nil? #they could be an admin!
 				make_moderator
 			elsif
 				self.role.name =='moderator'
@@ -97,13 +97,26 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def has_admin_previlages?
+		if is_admin? || is_moderator?
+			if is_moderator?
+				 "Yes moderator"
+			elsif is_admin?
+				 "Yes Admin"
+			end
+		else
+			false
+		end
+	end
+
 	def agree_tos
 		self.update_attributes :terms => true, :terms_updated_at => Time.now
 		make_moderator
 	end
 
 	def make_moderator
-		self.role ||= Role.find_by_name('moderator') 
+		self.update_attributes :role_id => 3
+		# self.role ||= Role.find_by_name('moderator') 
 	end
 
 	#checking if the user has paid to view the answers
