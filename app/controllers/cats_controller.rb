@@ -1,5 +1,6 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin
 
   # GET /cats
   # GET /cats.json

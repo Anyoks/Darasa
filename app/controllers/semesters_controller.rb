@@ -1,6 +1,7 @@
 class SemestersController < ApplicationController
   before_action :set_semester, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin, only:[:new, :edit, :update, :create, :destroy]
+  
 
   # GET /semesters
   # GET /semesters.json

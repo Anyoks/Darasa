@@ -1,5 +1,7 @@
 class ResponsesController < ApplicationController
   before_action :set_Response, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user
+
 
   # GET /Responses
   # GET /Responses.json

@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   # before_action :authenticate_user! #, only: [:show ]
   before_action :authenticate_user!
+  # before_action :authenticate_user
   protect_from_forgery with: :null_session,
      if: Proc.new { |c| c.request.format =~ %r{application/json} }
 # byebug
@@ -67,22 +68,21 @@ class ApplicationController < ActionController::Base
     @exam = Exam.all
   end
   
-  def authenticate_user
-    #  if authenticate_user!
-    #    unless current_user
-    #     # byebug
-    #     redirect_to new_user_session_path #, notice: "You need to be signed"
-    #     return
-    #   end
-    #   else
-    #     redirect_to new_user_session_path #, notice: "You need to be signed"
-    #     return
-    # end
-    # # if current_user.is_admin?
-    # #   alert: "You are not authorised to perform that Operation !"
-    # # end
-    "haha"
-  end
+  # def authenticate_user
+  #    if authenticate_user!
+  #      unless current_user
+  #       # byebug
+  #       redirect_to new_user_session_path , notice: "You need to be signed"
+  #     end
+  #     else
+  #       redirect_to new_user_session_path , notice: "You need to be signed"
+      
+  #   end
+  #   # # if current_user.is_admin?
+  #   # #   alert: "You are not authorised to perform that Operation !"
+  #   # # end
+  #   "haha"
+  # end
 
   protected
 
@@ -102,7 +102,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource_or_scope)
-    byebug
+    #byebug
         root_path #request.referrer #root_url#new_user_session #signed_in_root_path(resource)#new_user_session_path
   end
 

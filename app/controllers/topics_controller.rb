@@ -1,6 +1,9 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy, :download]
   before_action :authenticate_admin, only:[:new, :edit, :update, :create, :destroy, :download]
+  # before_action :authenticate_user!
+
+
   
   #before_action 
 
