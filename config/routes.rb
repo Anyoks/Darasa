@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   
   resources :questions
   mount Ckeditor::Engine => '/ckeditor'
-  resources :exams
+ # resources :exams
   resources :cats
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   devise_scope :user do
     authenticated :user do
-      root 'topics#index'
+      root 'exams#index'
     end
     unauthenticated :user do
       root :to => 'devise/registrations#new', as: :unauthenticated_root
