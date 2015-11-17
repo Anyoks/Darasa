@@ -3,17 +3,15 @@
     %tr
       %th Name
       %th Unit
-      %th Question
-      %th Attachment
+      %th University
       %th
 
   %tbody
     - exams.each do |exam|
       %tr
         %td= link_to exam.title, exam
-        %td= link_to exam.unit.name, units_path
-        %td=  exam.question
-        %td= image_tag exam.attachment_url(:thumb)
+        %td= exam.unit.name
+        %td= exam.unit.semester.year.course.university.name
         %td
           - if can? :update, @exam
             = link_to 'Edit', edit_exam_path(exam), class: "label label-warning"

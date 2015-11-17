@@ -1,12 +1,11 @@
 .nested-fields
 	%br/
 	= f.label :question, "Question"
-	= link_to_remove_association "Remove Question", f
+	= link_to_remove_association "Remove Question", f, class: "label label-danger"
 	%br/
-	= f.cktext_area :question, :cols => 30, :ckeditor => {:uiColor => '#f7931e', :toolbar => 'mini'}
+	= f.cktext_area :question, :cols => 30, :ckeditor => { :toolbar => 'mini'}
 	%br/
-	.link
-		= link_to_add_association 'Add Answer', f, :response
+	= link_to_add_association 'Add Answer', f, :response, class: "label label-primary"
 
 
 	= f.fields_for :response do |answer|
