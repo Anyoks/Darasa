@@ -105,7 +105,7 @@ module Pesapal
       # @param details [Hash] the order details, see above for details on it's contents.
       #
       # @return [String] encoded XML formated order data.
-      byebug
+      #byebug
       def self.generate_post_xml(details)
         post_xml = ''
         post_xml.concat '<?xml version="1.0" encoding="utf-8"?>'
