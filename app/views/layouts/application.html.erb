@@ -17,13 +17,15 @@
 <%end%>
 
 
-
+	<!-- <p class="notice"><%= notice %></p> -->
+<!-- <p class="alert"><%= alert %></p> -->
 
 
 
 <div class='container'>	
-	<%= content_tag :div, alert, class: "alert-danger"%>
-	<%= content_tag :div, notice, class: "alert-success"%>
+
+
+	<%= render 'flash'%>
 	<%= yield %>
 </div>
 
