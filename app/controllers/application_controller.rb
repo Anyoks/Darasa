@@ -2,13 +2,15 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   before_filter :authenticate_user_from_token!
+  # before_action :authenticate_user!
   protect_from_forgery with: :exception
   before_action :find_units, :find_semesters, :find_years, :find_courses, :find_universities #every singel action in this app will run this code
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_user, only: [:show ]
+  # before_action :authenticate_user! #, only: [:show ]
+  before_action :authenticate_user!
   protect_from_forgery with: :null_session,
      if: Proc.new { |c| c.request.format =~ %r{application/json} }
-
+# byebug
 
   def find_units
   	@units = Unit.all
@@ -43,13 +45,14 @@ class ApplicationController < ActionController::Base
   #   User.find(user.id).update_attributes( :terms => true)
   # end
 
+  
   def authenticate_admin
     if authenticate_user!
-      if current_user
-        unless current_user.admin?
+      # if current_user
+        unless current_user
           redirect_to root_path, alert: "You are not authorised to perform that Operation"
-        end
-      end
+        # end
+    end
     else
       redirect_to new_user_session_path, alert: "You need to be signed !"
     end
@@ -65,13 +68,20 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate_user
-    if authenticate_user!
-      unless current_user
-        redirect_to new_user_session_path , alert: "You are not authorised to perform that Operation"
-      end
-    else
-      redirect_to new_user_session_path, alert: "You need to be signed !"
-    end
+    #  if authenticate_user!
+    #    unless current_user
+    #     # byebug
+    #     redirect_to new_user_session_path #, notice: "You need to be signed"
+    #     return
+    #   end
+    #   else
+    #     redirect_to new_user_session_path #, notice: "You need to be signed"
+    #     return
+    # end
+    # # if current_user.is_admin?
+    # #   alert: "You are not authorised to perform that Operation !"
+    # # end
+    "haha"
   end
 
   protected
@@ -82,6 +92,16 @@ class ApplicationController < ActionController::Base
     end
 
   private
+
+  def after_sign_in_path_for(resource)
+   session["user_return_to"] || exams_path #{}"/exams/index"#, :contorller => "exams_controller" #_path #redirect_to  exams_path
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    byebug
+        root_path #request.referrer #root_url#new_user_session #signed_in_root_path(resource)#new_user_session_path
+  end
+
 
     def authenticate_user_from_token!
         user_email = params[:email].presence
