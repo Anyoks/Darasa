@@ -9,6 +9,7 @@
 #  user_id     :integer
 #  unit_id     :integer
 #  semester_id :integer
+#  exam_id     :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -9,6 +9,7 @@
 #  user_id     :integer
 #  unit_id     :integer
 #  semester_id :integer
+#  exam_id     :integer
 #
 
 class Payment < ActiveRecord::Base

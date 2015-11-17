@@ -16,16 +16,17 @@ class Api::V1::PaymentsController < ApplicationController
 		
 		pesapal = Pesapal::Merchant.new
 		# byebug
-		order_details = {
+		data = {
 			:amount => 1000,
-			:description => "payment for this #{@exam.title}",
+			:description => "payment for this exam #{@exam.title}",
 			:type => 'MERCHANT',
-			:reference => '808-707-606',
+			:reference => Time.now.to_i.to_s,
 			:first_name => "#{current_user.first_name}",
 			:last_name => "#{current_user.first_name}",
-			:email => "current_user.email",
-			:phonenumber => " ",
-			:currency => 'KES'
+			:email => "#{current_user.email}",
+			:phonenumber => "#{current_user.phone_number}",
+			:currency => 'KES',
+			:answers_boought => []
 		}
 
 		# callback_url = 
@@ -35,8 +36,30 @@ class Api::V1::PaymentsController < ApplicationController
 		                    :consumer_secret =>"IS8Grtl5tsypX2jMexTg3CTORxU="
                   		}
 		# pay = Payment.new(payment_params)
+		 api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id, :unit_id => @exam.unit.id, :semester_id => @exam.unit.semester.id })
 		#generate iframe
-		@order_url = pesapal.generate_order_url
+		unit_bought = {}
+		 @xml = %[<?xml version="1.0" encoding="utf-8"?>
+		<PesapalDirectOrderInfo
+		        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+
+		        Amount="#{data[:amount]}"
+		        Currency="#{data[:currency] || 'USD'}"
+		        Description="#{data[:description]}"
+		        Type="#{data[:merchant] ||'MERCHANT'}"
+		        Reference="#{data[:reference]}"
+		        FirstName="#{data[:first_name]}"
+		        LastName="#{data[:last_name]}"
+		        Email="#{data[:email]}"
+		        PhoneNumber="#{data[:phone]}"
+		        xmlns="http://www.pesapal.com">
+		  <lineitems>
+		    #{line_items}
+		  </lineitems>
+		</PesapalDirectOrderInfo>]
+
+		@order_url = @xml
 		# byebug
 		# if pay
 		# 	pay.save 
