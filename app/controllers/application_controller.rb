@@ -94,7 +94,11 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-   session["user_return_to"] || exams_path #{}"/exams/index"#, :contorller => "exams_controller" #_path #redirect_to  exams_path
+    if current_user.is_moderator? || current_user.is_admin?
+      session["user_return_to"] || exams_path #{}"/exams/index"#, :contorller => "exams_controller" #_path #redirect_to  exams_path
+    else
+      root_path
+    end
   end
 
   def after_sign_out_path_for(resource_or_scope)
