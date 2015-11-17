@@ -22,7 +22,7 @@
 %p= @exam.unit.name
 
 %p
-	- if can? :manage, @exam
+	-if current_user.is_moderator? || current_user.is_admin?
 		= link_to 'Edit', edit_exam_path(@exam)
 		\|
 		= link_to 'Back', exams_path
