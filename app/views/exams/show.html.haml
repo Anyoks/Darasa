@@ -21,7 +21,7 @@
 					-else
 						= raw question.response.answer
 				-else
-					=link_to 'Pay to get the answer', api_v1_pay_path(:params =>{ :exam_id => @exam.uuid, :user_id => current_user.uuid}), method: :post, class: "btn btn-success"
+					=link_to 'Pay to get the answer', api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id}), method: :post, class: "btn btn-success"
 
 				
 

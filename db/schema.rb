@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120085531) do
+ActiveRecord::Schema.define(version: 20151120134051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20151120085531) do
 
   create_table "courses", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "university_id", default: 1
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.uuid     "university_id"
   end
 
   add_index "courses", ["university_id"], name: "index_courses_on_university_id", using: :btree
@@ -46,42 +46,43 @@ ActiveRecord::Schema.define(version: 20151120085531) do
     t.string   "title"
     t.string   "attachment"
     t.datetime "date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "unit_id",    default: 4
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text     "question"
+    t.uuid     "unit_id"
   end
+
+  add_index "exams", ["unit_id"], name: "index_exams_on_unit_id", using: :btree
 
   create_table "payments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.boolean  "status"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.integer  "unit_id"
-    t.integer  "semester_id"
-    t.integer  "exam_id"
     t.string   "pesapal_merchant_reference"
     t.string   "pesapal_transaction_tracking_id"
-    t.uuid     "user_uuid"
+    t.uuid     "unit_id"
+    t.uuid     "user_id"
+    t.uuid     "semester_id"
   end
 
-  add_index "payments", ["exam_id"], name: "index_payments_on_exam_id", using: :btree
   add_index "payments", ["semester_id"], name: "index_payments_on_semester_id", using: :btree
   add_index "payments", ["unit_id"], name: "index_payments_on_unit_id", using: :btree
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
   create_table "questions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "question"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "exam_id",    default: 5
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid     "exam_id"
   end
 
   add_index "questions", ["exam_id"], name: "index_questions_on_exam_id", using: :btree
 
   create_table "responses", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "answer"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "question_id", default: 27
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.uuid     "question_id"
   end
 
   add_index "responses", ["question_id"], name: "index_responses_on_question_id", using: :btree
@@ -95,9 +96,9 @@ ActiveRecord::Schema.define(version: 20151120085531) do
 
   create_table "semesters", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "year_id",    default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid     "year_id"
   end
 
   add_index "semesters", ["year_id"], name: "index_semesters_on_year_id", using: :btree
@@ -115,11 +116,11 @@ ActiveRecord::Schema.define(version: 20151120085531) do
 
   create_table "units", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "semester_id",   default: 1
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.float    "answers_price"
     t.float    "videos_price"
+    t.uuid     "semester_id"
   end
 
   add_index "units", ["semester_id"], name: "index_units_on_semester_id", using: :btree
@@ -161,9 +162,9 @@ ActiveRecord::Schema.define(version: 20151120085531) do
 
   create_table "years", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "year"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "course_id",  default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid     "course_id"
   end
 
   add_index "years", ["course_id"], name: "index_years_on_course_id", using: :btree
