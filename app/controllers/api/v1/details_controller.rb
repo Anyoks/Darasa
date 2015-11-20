@@ -8,7 +8,7 @@ class Api::V1::DetailsController < ApplicationController
 	def show
 
 		resource =  User.find_by_authentication_token(params[:auth_token])
-		byebug
+		# byebug
 		return invalid_user unless resource
 		
 		if resource.valid_for_authentication?  
