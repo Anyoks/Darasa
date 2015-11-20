@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #  unit_id    :integer          default(4)
 #  question   :text
+#  uuid       :uuid
 #
 
 require 'test_helper'

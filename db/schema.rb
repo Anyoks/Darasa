@@ -11,30 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117100202) do
+ActiveRecord::Schema.define(version: 20151120085531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answers", force: :cascade do |t|
-    t.string   "response"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "question_id"
-  end
-
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
-
-  create_table "cats", force: :cascade do |t|
-    t.string   "cat_name"
-    t.string   "attachment"
-    t.datetime "date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "unit_id",    default: 3
-  end
-
-  add_index "cats", ["unit_id"], name: "index_cats_on_unit_id", using: :btree
+  enable_extension "uuid-ossp"
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -52,7 +33,7 @@ ActiveRecord::Schema.define(version: 20151117100202) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
-  create_table "courses", force: :cascade do |t|
+  create_table "courses", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -61,7 +42,7 @@ ActiveRecord::Schema.define(version: 20151117100202) do
 
   add_index "courses", ["university_id"], name: "index_courses_on_university_id", using: :btree
 
-  create_table "exams", force: :cascade do |t|
+  create_table "exams", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "title"
     t.string   "attachment"
     t.datetime "date"
@@ -71,24 +52,23 @@ ActiveRecord::Schema.define(version: 20151117100202) do
     t.text     "question"
   end
 
-  add_index "exams", ["unit_id"], name: "index_exams_on_unit_id", using: :btree
-
-  create_table "payments", force: :cascade do |t|
+  create_table "payments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.boolean  "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "unit_id"
     t.integer  "semester_id"
     t.integer  "exam_id"
+    t.string   "pesapal_merchant_reference"
+    t.string   "pesapal_transaction_tracking_id"
+    t.uuid     "user_uuid"
   end
 
   add_index "payments", ["exam_id"], name: "index_payments_on_exam_id", using: :btree
   add_index "payments", ["semester_id"], name: "index_payments_on_semester_id", using: :btree
   add_index "payments", ["unit_id"], name: "index_payments_on_unit_id", using: :btree
-  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
-  create_table "questions", force: :cascade do |t|
+  create_table "questions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "question"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -97,7 +77,7 @@ ActiveRecord::Schema.define(version: 20151117100202) do
 
   add_index "questions", ["exam_id"], name: "index_questions_on_exam_id", using: :btree
 
-  create_table "responses", force: :cascade do |t|
+  create_table "responses", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "answer"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -113,7 +93,7 @@ ActiveRecord::Schema.define(version: 20151117100202) do
     t.boolean  "terms",      default: false
   end
 
-  create_table "semesters", force: :cascade do |t|
+  create_table "semesters", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -122,7 +102,7 @@ ActiveRecord::Schema.define(version: 20151117100202) do
 
   add_index "semesters", ["year_id"], name: "index_semesters_on_year_id", using: :btree
 
-  create_table "topics", force: :cascade do |t|
+  create_table "topics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.string   "code"
     t.string   "attachment"
@@ -133,7 +113,7 @@ ActiveRecord::Schema.define(version: 20151117100202) do
 
   add_index "topics", ["unit_id"], name: "index_topics_on_unit_id", using: :btree
 
-  create_table "units", force: :cascade do |t|
+  create_table "units", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -144,13 +124,13 @@ ActiveRecord::Schema.define(version: 20151117100202) do
 
   add_index "units", ["semester_id"], name: "index_units_on_semester_id", using: :btree
 
-  create_table "universities", force: :cascade do |t|
+  create_table "universities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "email",                                  null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
@@ -179,7 +159,7 @@ ActiveRecord::Schema.define(version: 20151117100202) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
-  create_table "years", force: :cascade do |t|
+  create_table "years", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "year"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -188,19 +168,5 @@ ActiveRecord::Schema.define(version: 20151117100202) do
 
   add_index "years", ["course_id"], name: "index_years_on_course_id", using: :btree
 
-  add_foreign_key "answers", "questions"
-  add_foreign_key "cats", "units"
-  add_foreign_key "courses", "universities"
-  add_foreign_key "exams", "units"
-  add_foreign_key "payments", "exams"
-  add_foreign_key "payments", "semesters"
-  add_foreign_key "payments", "units"
-  add_foreign_key "payments", "users"
-  add_foreign_key "questions", "exams"
-  add_foreign_key "responses", "questions"
-  add_foreign_key "semesters", "years"
-  add_foreign_key "topics", "units"
-  add_foreign_key "units", "semesters"
   add_foreign_key "users", "roles"
-  add_foreign_key "years", "courses"
 end

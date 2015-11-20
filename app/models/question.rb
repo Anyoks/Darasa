@@ -7,6 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  exam_id    :integer          default(5)
+#  uuid       :uuid
 #
 
 class Question < ActiveRecord::Base

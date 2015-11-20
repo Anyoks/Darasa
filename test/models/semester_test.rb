@@ -7,6 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  year_id    :integer          default(1)
+#  uuid       :uuid
 #
 
 require 'test_helper'

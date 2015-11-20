@@ -1,44 +1,91 @@
 class Api::V1::PaymentsController < ApplicationController
 	before_filter :authenticate_user!
+	respond_to :json
 
 	# require 'oauth.rb'
-	require 'api/v1/oauths_controller'
-	require 'api/v1/merchants_controller'
-	require 'api/v1/posts_controller'
-	require 'htmlentities'
+	# require 'api/v1/oauths_controller'
+	# require 'api/v1/merchants_controller'
+	# require 'api/v1/posts_controller'
+	# require 'htmlentities'
+	# require 'api/v1/orders_controller'
+	# load_and_authorize_resource
+
 
 
 
 	def pay
-		@exam = Exam.find(params[:exam_id])
-			
+		@exam = Exam.find_by_uuid(params[:exam_id])
 
+		# order_params = {
+		# 	unit_id: params[:unit_id],
+		# 	user_id: params[:user]
+		# }
+
+		# pesapal = Pesapal::Merchant.new
 		
-		pesapal = Pesapal::Merchant.new
-		# byebug
 		data = {
-			:amount => 1000,
-			:description => "payment for this exam #{@exam.title}",
-			:type => 'MERCHANT',
-			:reference => Time.now.to_i.to_s,
-			:first_name => "#{current_user.first_name}",
-			:last_name => "#{current_user.first_name}",
-			:email => "#{current_user.email}",
-			:phonenumber => "#{current_user.phone_number}",
-			:currency => 'KES',
-			:answers_boought => []
+			amount: @exam.unit.answers_price,
+			description: "payment for this exam #{@exam.title}",
+			type: 'MERCHANT',
+			reference: Time.now.to_i.to_s, #must be unique
+			first_name: "#{current_user.first_name}",
+			last_name: "#{current_user.first_name}",
+			email: "#{current_user.email}",
+			phonenumber: "#{current_user.phone_number}",
+			currency: 'KES',
+			answers_bought: [] # line_items for the pesapal pesapal_request_data XML
 		}
 
-		# callback_url = 
 
-		pesapal.config = {  :callback_url => 'http://0.0.0.0:3000/pesapal/callback',
-		                    :consumer_key => "qdThc4z4QDjVI96cM7Oi5F1MF/WPMRbN",
-		                    :consumer_secret =>"IS8Grtl5tsypX2jMexTg3CTORxU="
-                  		}
-		# pay = Payment.new(payment_params)
-		 api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id, :unit_id => @exam.unit.id, :semester_id => @exam.unit.semester.id })
-		#generate iframe
-		unit_bought = {}
+		#*****MUST CHANGE THIS TO A MORE DRY AND SECURE PLACE *****###
+		# pesapal.config = {  :callback_url => 'http://0.0.0.0:3000/pesapal/callback',
+		                  #   :consumer_key => "qdThc4z4QDjVI96cM7Oi5F1MF/WPMRbN",
+		                  #   :consumer_secret =>"IS8Grtl5tsypX2jMexTg3CTORxU="
+                  		# }
+
+
+		#Now insert the details required to know exactly what they are buying
+		
+
+		data[:answers_bought] << {
+			user_id: current_user.uuid,
+			unit_id: @exam.unit.uuid,
+			exam_id: @exam.uuid,
+			semester_id: @exam.unit.semester.uuid,
+			unit_cost: @exam.unit.answers_price,
+			sub_total: @exam.unit.answers_price
+		}
+
+		###required attributes  ###
+			# Required Atributes:
+
+			# UniqueId = <unique id of the purchased item>
+
+			# Particulars = <description of the item>
+
+			# Quantity = <quantity purchased>
+
+			# UnitCost = <cost per unit of the purchased item>
+
+			# SubTotal =
+
+
+	
+		line_items = ""
+
+		data[:answers_bought].each do |line_item|
+			line_items << %Q[<lineitem uniqueid="#{line_item[:user_id]}"
+                              particulars="#{line_item[:exam_id]}"
+                              quantity="#{line_item[:quantity] || '1'}"
+                              unitcost="#{line_item[:unit_cost]}"
+                              subtotal="#{line_item[:sub_total]}">
+                            </lineitem>]
+        end
+
+
+
+		##***GENERATING THE XML TO POST WITH THE REQUIRED DATA***##
+
 		 @xml = %[<?xml version="1.0" encoding="utf-8"?>
 		<PesapalDirectOrderInfo
 		        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -59,22 +106,43 @@ class Api::V1::PaymentsController < ApplicationController
 		  </lineitems>
 		</PesapalDirectOrderInfo>]
 
-		@order_url = @xml
-		# byebug
-		# if pay
-		# 	pay.save 
-		# 		redirect_to @exam, notice: 'Payment was successful.'
-		# else
-		# 	redirect_to @exam, notice: 'Payment was not successful.'
-		# end
+		 @call_back_url = "localhost:3000/api/v1/processpayment/process"
 
-		
+		 # @order_url = Pesapal::Order.generate_order_url#(data)
+
+		 #****Send this to mobile app****#
+		@order_url = Pesapal::OrderUrl.new(@xml, @call_back_url, true).url.html_safe
+
+		   # byebug
+
+		 #**Now I need to execute the url**#
+
+		 #**Make sure the url is uri**#
+
+		@get_order_execute =  URI(@order_url)
+
+		 #**this returns a page**#
+
+		@set_order = Net::HTTP.get(@get_order_execute)
+
+
+		byebug
+		redirect_to api_v1_processpayment_process_path(data)  #/api/v1/processpayment/process
+
+	end
+
+	def index
+		    @payments = Payment.all
+	    # @user = current_user
+	end
+
+	def show
 	end
 
 	protected
 
 		def payment_params
 			@exam = Exam.find(params[:exam_id])
-			params.permit(:user_id, :unit_id, :semester_id)
+			params.permit(:user_id, :unit_id, :semester_id, :exam_id)
 		end
 end

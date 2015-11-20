@@ -2,14 +2,17 @@
 #
 # Table name: payments
 #
-#  id          :integer          not null, primary key
-#  status      :boolean
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :integer
-#  unit_id     :integer
-#  semester_id :integer
-#  exam_id     :integer
+#  id                                                              :integer          not null, primary key
+#  status                                                          :boolean
+#  created_at                                                      :datetime         not null
+#  updated_at                                                      :datetime         not null
+#  unit_id                                                         :integer
+#  semester_id                                                     :integer
+#  exam_id                                                         :integer
+#  pesapal_merchant_reference                                      :string
+#  pesapal_transaction_tracking_id                                 :string
+#  user_uuid                                                       :uuid
+#  {:foreign_key_type=>:uuid, :index=>true, :foreign_key=>true}_id :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

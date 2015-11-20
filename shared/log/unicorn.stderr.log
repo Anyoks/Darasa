@@ -819,3 +819,132 @@ I, [2015-11-17T05:29:36.279642 #2270]  INFO -- : Refreshing Gem list
 	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
 	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
 	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-11-18T05:24:46.310422 #2300]  INFO -- : Refreshing Gem list
+I, [2015-11-18T05:24:49.536772 #2300]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-11-18T05:24:49.545777 #2300]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-11-18T05:24:49.545995 #2300]  INFO -- : worker=0 spawning...
+I, [2015-11-18T05:24:49.547461 #2300]  INFO -- : worker=1 spawning...
+I, [2015-11-18T05:24:49.547999 #2309]  INFO -- : worker=0 spawned pid=2309
+I, [2015-11-18T05:24:49.549082 #2300]  INFO -- : master process ready
+I, [2015-11-18T05:24:49.549636 #2312]  INFO -- : worker=1 spawned pid=2312
+I, [2015-11-18T05:24:49.550818 #2309]  INFO -- : worker=0 ready
+I, [2015-11-18T05:24:49.553212 #2312]  INFO -- : worker=1 ready
+I, [2015-11-18T14:26:42.776119 #2517]  INFO -- : pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid possibly stale, got EPERM signalling PID:2300
+I, [2015-11-18T14:26:42.789408 #2517]  INFO -- : Refreshing Gem list
+I, [2015-11-18T14:26:46.451203 #2517]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-11-18T14:26:46.460305 #2517]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-11-18T14:26:46.460574 #2517]  INFO -- : worker=0 spawning...
+I, [2015-11-18T14:26:46.462020 #2517]  INFO -- : worker=1 spawning...
+I, [2015-11-18T14:26:46.462523 #2520]  INFO -- : worker=0 spawned pid=2520
+I, [2015-11-18T14:26:46.465450 #2520]  INFO -- : worker=0 ready
+I, [2015-11-18T14:26:46.465941 #2517]  INFO -- : master process ready
+I, [2015-11-18T14:26:46.466427 #2523]  INFO -- : worker=1 spawned pid=2523
+I, [2015-11-18T14:26:46.469318 #2523]  INFO -- : worker=1 ready
+I, [2015-11-18T16:42:31.435174 #2517]  INFO -- : reaped #<Process::Status: pid 2520 exit 0> worker=0
+I, [2015-11-18T16:42:31.435375 #2517]  INFO -- : reaped #<Process::Status: pid 2523 exit 0> worker=1
+I, [2015-11-18T16:42:31.435500 #2517]  INFO -- : master complete
+I, [2015-11-18T16:45:24.540783 #2275]  INFO -- : Refreshing Gem list
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require': /home/orinamokaya/deploy/darasa_app/app/controllers/api/v1/processpayment_controller.rb:77: syntax error, unexpected end-of-input, expecting keyword_end (SyntaxError)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:360:in `require_or_load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:317:in `depend_on'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:233:in `require_dependency'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:472:in `block (2 levels) in eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:471:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:471:in `block in eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:469:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:469:in `eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:346:in `eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/finisher.rb:56:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/finisher.rb:56:in `block in <module:Finisher>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:226:in `block in tsort_each'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:348:in `block (2 levels) in each_strongly_connected_component'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:429:in `each_strongly_connected_component_from'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:347:in `block in each_strongly_connected_component'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `call'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each_strongly_connected_component'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:224:in `tsort_each'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:203:in `tsort_each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+	from /home/orinamokaya/deploy/darasa_app/config/environment.rb:5:in `<top (required)>'
+	from config.ru:4:in `require'
+	from config.ru:4:in `block in <main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+	from config.ru:1:in `new'
+	from config.ru:1:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn.rb:48:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn.rb:48:in `block in builder'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:768:in `call'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:768:in `build_app!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:137:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-11-19T06:40:24.532335 #2302]  INFO -- : Refreshing Gem list
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require': /home/orinamokaya/deploy/darasa_app/app/controllers/api/v1/processpayment_controller.rb:63: syntax error, unexpected ']', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END (SyntaxError)
+/home/orinamokaya/deploy/darasa_app/app/controllers/api/v1/processpayment_controller.rb:85: syntax error, unexpected end-of-input, expecting keyword_end
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `block in require'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:274:in `require'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:360:in `require_or_load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:317:in `depend_on'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/activesupport-4.2.3/lib/active_support/dependencies.rb:233:in `require_dependency'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:472:in `block (2 levels) in eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:471:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:471:in `block in eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:469:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:469:in `eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/engine.rb:346:in `eager_load!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/finisher.rb:56:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application/finisher.rb:56:in `block in <module:Finisher>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `instance_exec'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:30:in `run'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:226:in `block in tsort_each'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:348:in `block (2 levels) in each_strongly_connected_component'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:429:in `each_strongly_connected_component_from'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:347:in `block in each_strongly_connected_component'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `call'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each_strongly_connected_component'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:224:in `tsort_each'
+	from /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:203:in `tsort_each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/initializable.rb:54:in `run_initializers'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/railties-4.2.3/lib/rails/application.rb:352:in `initialize!'
+	from /home/orinamokaya/deploy/darasa_app/config/environment.rb:5:in `<top (required)>'
+	from config.ru:4:in `require'
+	from config.ru:4:in `block in <main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/builder.rb:55:in `instance_eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/builder.rb:55:in `initialize'
+	from config.ru:1:in `new'
+	from config.ru:1:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn.rb:48:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn.rb:48:in `block in builder'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:768:in `call'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:768:in `build_app!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:137:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-11-20T09:03:08.115487 #2093]  INFO -- : Refreshing Gem list
+I, [2015-11-20T09:03:11.297254 #2093]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-11-20T09:03:11.306367 #2093]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-11-20T09:03:11.306490 #2093]  INFO -- : worker=0 spawning...
+I, [2015-11-20T09:03:11.307963 #2093]  INFO -- : worker=1 spawning...
+I, [2015-11-20T09:03:11.308477 #2102]  INFO -- : worker=0 spawned pid=2102
+I, [2015-11-20T09:03:11.310940 #2102]  INFO -- : worker=0 ready
+I, [2015-11-20T09:03:11.312561 #2093]  INFO -- : master process ready
+I, [2015-11-20T09:03:11.313019 #2105]  INFO -- : worker=1 spawned pid=2105
+I, [2015-11-20T09:03:11.315668 #2105]  INFO -- : worker=1 ready

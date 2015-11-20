@@ -10,6 +10,7 @@
 #  updated_at :datetime         not null
 #  unit_id    :integer          default(4)
 #  question   :text
+#  uuid       :uuid
 #
 
 class Exam < ActiveRecord::Base

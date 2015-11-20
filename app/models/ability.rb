@@ -33,7 +33,7 @@ class Ability
             if user.is_admin?
                 can :manage, :all
             if user.is_moderator?
-                can :manage, Exam
+                can :manage, :all
                 # can :manage, Response
                 # can :manage, Question
             end

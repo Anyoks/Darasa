@@ -7,6 +7,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  university_id :integer          default(1)
+#  uuid          :uuid
 #
 
 class Course < ActiveRecord::Base

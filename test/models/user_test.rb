@@ -25,6 +25,7 @@
 #  role_id                :integer
 #  terms_updated_at       :datetime
 #  authentication_token   :text
+#  uuid                   :uuid
 #
 
 require 'test_helper'
