@@ -1,235 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Darasa</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-        /*
-Free App template for Bootstrap 3
-Code snippet by maridlcrmn for Bootsnipp.com
-Follow me on Twitter @maridlcrmn
-Image credits: unsplash.com
-Image placeholders: placemi.com
-*/
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Landing Page - Start Bootstrap Theme</title>
 
-.mt-100 {
-    margin-top: 100px; 
-}
-.mb-100 {
-    margin-bottom: 100px;
-}
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-.icon {
-    width: 32px;
-    height: 32px;
-    text-align: center;
-    padding: 7px 8px;
-    border: 2px solid;
-    border-radius: 50%;
-}
+    <link href="bootstrap.css" rel="stylesheet">
 
-.header {
-    padding-top: 50px;
-    background-color: #eee;
-    overflow: hidden;
-}
-.footer {
-    color: #887;
-    background-color: #eee;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
 
-.content {
-    position: relative;
-    display: table;
-    width: 100%;
-    min-height: 100vh;
-}
-.pull-middle {
-    display: table-cell;
-    vertical-align: middle;
-}
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-.btn {
-    padding-left: 25px;
-    padding-right: 25px;
-}
-.btn-circle {
-    border-radius: 20px;
-}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-.input-group input {
-    border: 0;
-    box-shadow: none;
-    padding-right: 30px;
-}
-.input-group input:focus,
-.input-group input:active {
-    outline: 0;
-    box-shadow: none;
-}
-.input-group-btn:last-child>.btn {
-    z-index: 2;
-    margin-left: -18px;   
-    border-radius: 20px;
-}
-
-.phone {
-    position: relative;
-    max-width: 263px;
-    margin: 0 auto;
-    padding: 65px 15px 55px;
-    border: 2px solid #ddd;
-    border-radius: 20px;
-    background-color: #222;
-    box-shadow: 20px 20px 40px #887;
-}
-    </style>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div class="wrapper">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand text-uppercase" href="#">Darasa <span class="label label-warning text-capitalize">Free</span></a>
+
+<body class="container-fluid">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" >
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">DARASA</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#about">Home</a>
+                    </li>
+                    <li>
+                        <a href="#Pastpapers">Pastpapers</a>
+                    </li>
+                    <li>
+                        <a href="#"><div class="btn-success btn-sm btn-block btn-sm-footer"><i class="droid fa fa-android fa-1x"></i>&nbsp;Download on Android</div></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-                <li><button type="button" class="btn btn-warning navbar-btn btn-circle">Sign in</button></li>
-                <!-- <li>render </li> -->
-            </ul>
-        </div>
-      </div>
+        <!-- /.container -->
     </nav>
-    <header class="header">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5 col-md-offset-1">
-                <div class="content">
-                  <div class="pull-middle">
-                    <h1 class="page-header">Just Pass All your Exams!</h1>
-                    <p class="lead">Sign up and Download Darasa, Easy Access to all your Past paper and all the Answers!</p>
+
+
+    <!-- Header -->
+
+    <a name="about"></a>
+    
+        <div class="intro-header">
+
+            <div>
+
+                <div class="row">
                     
-                      <button class="btn btn-warning btn-circle" type="submit"><a href>Sign up for free</a></button>
+                    
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                       
-                                   
-                  </div>              
+                           <div class = "clearfix visible-lg-block visible-sm-block" >  
+
+                            <img class="img-responsive iphone" src="img/phone_img.png" alt=""  width="65%">
+                              </div>
+
+
+
+                    </div>
+                    
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                       
+
+                        <div class="lightbox"> 
+
+                        <div class="clearfix"></div>
+
+                            <h2 class="section-heading" style="color:rgba(0,0,0,0,0.7) "> <p style = "font-size:65px">DARASA</p>
+                            PAST<br>PAPER<br><p style="color:#f7931e">ANSWERS</p></font></h2>
+
+                            
+
+                            <!--<div class="btn-success btn-lg btn-block">Download Mobile App</div>-->
+
+                            <div class ="download-icons">
+
+                                <a href="#"><i class="droid fa fa-android fa-3x"></i></a>
+                                
+                                &nbsp;&nbsp;&nbsp;
+
+                                <a href="#"><i class="droid fa fa-apple fa-3x"></i></a>
+
+                                <p style="color:#fff">Download for your device</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class ="lilline"></div>
+
+                        <br> 
+
+                        <p>View our papers</p>
+
+                        <a href="#Pastpapers"><i class="fa fa-chevron-down fa-2x"></i></a>
+
+                    </div>
+
                 </div>
+
             </div>
-            <div class="col-md-4 col-md-offset-1 text-center mt-100 mb-100">
-                <div class="phone">
-                    <img class="img-responsive img-rounded" src="http://placemi.com/djlnr/263x480">
+
+                    <!--<div class="introbox">
+                        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+                                            
+                            <div class="clearfix"></div>
+
+
+                             <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+
+                                    <img class="phone img-responsive" src="file:///private/var/folders/bm/nqrm7nnd0x1_r96fwltdp8nr0000gn/T/Cleanup%20At%20Startup/Save%20For%20Web%20AI/Main%20image_004/Main-image.jpg" alt="" height="100%" width:"100%">
+
+                                </div>
+
+                                
+
+                                    <h2 class="section-heading" style="color:#fff" style="font-weight:100"><font weight="100px">Get Past Paper Answers for:</font></h2>
+                                
+                                    <br>
+
+                                    <p class="lead" style="color:#fff"> <span class= "glyphicon glyphicon-piggy-bank" aria hidden="true"></span> &nbsp; Financial Accounting II: 2012 - 2015</p>
+
+                                    <br>
+
+                                    <p class="lead" style="color:#fff"> <span class= "glyphicon glyphicon-piggy-bank" aria hidden="true"></span> &nbsp; Financial Accounting II: 2012 - 2015</p>
+
+                                    <div class="btn-success btn-lg btn-block">Download Mobile App</div>
+
+                                </div>-->
+
+                        </div>
+
+
+                                
+                               
                 </div>
+
             </div>
-          </div>
+
         </div>
-    </header>
-    <section class="section">
+
+
+    <!-- /.container -->
+
+
+    <!-- Page Content -->
+
+    <a  name="Pastpapers"></a>
+    
+        <div class="content-section-a">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-5 col-sm-6">
+
+                        <hr class="section-heading-spacer" style="color:#fff">
+
+                        <div class="clearfix"></div>
+
+                        <h2 class="section-heading" style="color:#fff"> Unit:&nbsp;Financial Management <br><br> Degree:&nbsp;Bcom</font></h2>
+
+                        <br>
+
+                        <div class ="download-icons2">
+
+                            <p style="color:#fff">DOWNLOAD ON:</p>&nbsp;
+
+                            <a href="#"><i class="droid fa fa-android fa-3x"></i></a>
+                            
+                            &nbsp;&nbsp;&nbsp;
+
+                            <a href="#"><i class="droid fa fa-apple fa-3x"></i></a>
+
+                        </div>
+                        
+                    </div>
+                    
+
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+
+                            <table style = "width:100%" id="FMtable">
+                                
+                                <tr>
+                                    <th>Features</td>
+                                    <th>Price</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Financial Management Past Papers (2012-2015)</td>
+                                    <td>Free!</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Financial Management Past Papers + Written Answers </td>
+                                    <td>Ks 150/=</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Financial Management Past Papers + Written Answers + Video Answers</td>
+                                    <td>Ks 500/=</td>
+                                </tr>
+
+                            </table> 
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                        
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+                            
+                    <hr class="section-heading-spacer">
+
+                    <div class="clearfix"></div>
+
+                    <h2 class="section-heading" style="color:#fff"> Unit:&nbsp;Financial Accounting II <br><br> Degree:&nbsp;Bcom</font></h2>
+
+                    <br>
+
+                    <div class ="download-icons2">
+
+                        <p style="color:#fff">DOWNLOAD ON:</p>&nbsp;
+
+                        <a href="#"><i class="droid fa fa-android fa-3x"></i></a>
+                        
+                        &nbsp;&nbsp;&nbsp;
+
+                        <a href="#"><i class="droid fa fa-apple fa-3x"></i></a>
+
+                    </div>
+                         
+                </div>
+
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+
+                    <table style = "width:100%" id="FMtable">
+                            
+                            <tr>
+                                <th>Features</td>
+                                <th>Price</td>
+                            </tr>
+
+                            <tr>
+                                <td>Financial Accounting II Past Papers (2012-2015)</td>
+                                <td>Free!</td>
+                            </tr>
+
+                            <tr>
+                                <td>Financial Accounting II Past Papers + Written Answers </td>
+                                <td>Ks 150/=</td>
+                            </tr>
+
+                            <tr>
+                                <td>Financial Accounting II Past Papers + Written Answers + Video Answers</td>
+                                <td>Ks 500/=</td>
+                            </tr>
+
+                        </table> 
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+        <!-- /.container -->
+
+    </div>
+    
+    <!-- /.content-section-a
+
+    <a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Get in touch</h2>
+                    <br>
+
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="emaganjo@gmail.com" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">EMAIL</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    <!--</div>-->
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="row">
-               <div class="col-md-4 col-md-offset-1 text-center mt-100 mb-100">
-                    <div class="phone">
-                        <img class="img-responsive img-rounded" src="http://placemi.com/djlnr/263x480">
-                    </div>
-                </div>
-                <div class="col-md-5 col-md-offset-1">
-                    <div class="content">
-                        <div class="pull-middle">
-                            <h2 class="h1 page-header">Have them all in one Place!</h2>
-                            <ul class="media-list">
-                              <li class="media">
-                                <a class="media-left" href="#">
-                                  <span class="glyphicon glyphicon-cloud icon text-success"></span>
-                                </a>
-                                <div class="media-body">
-                                  <h3 class="media-heading">First year to graduation date.</h3>
-                                  <p>No more hustle, no more printing, Revision is now a <strong>click away</strong>.</p>
-                                </div>
-                              </li>
-                              <li class="media">
-                                <a class="media-left" href="#">
-                                  <span class="glyphicon glyphicon-lock icon text-success"></span>
-                                </a>
-                                <div class="media-body">
-                                  <h3 class="media-heading">Revision Just got Easier.</h3>
-                                  <p>Test papers and Cats for the past <strong> 3 years</strong>, now all in your reach.</p>
-                                </div>
-                              </li>
-                              <li class="media">
-                                <a class="media-left" href="#">
-                                  <span class="glyphicon glyphicon-user icon text-success"></span>
-                                </a>
-                                <div class="media-body">
-                                  <h3 class="media-heading">Answers, Anywhere, Anytime.</h3>
-                                  <p>Imagine all exam papers and their answers in your phone. Yes, <strong> get them all on Darasa!</strong></p>
-                                </div>
-                              </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#services">Features</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Terms</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#"><div class="btn-success btn-sm btn-block btn-sm-footer"><i class="droid fa fa-android fa-1x"></i>&nbsp;Download on Android</div></a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="#"><div class="btn-success btn-sm btn-block btn-sm-footer"><i class="droid fa fa-apple fa-1x"></i>&nbsp;Download on Itunes</div></a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Awesome Nairobi 2015. All Rights Reserved<br><br>From Nairobi with &nbsp; <i class="fa fa-heart"></i> </p>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 text-right">
-                    <div class="content">
-                        <div class="pull-middle">
-                            <h4><strong>Darasa, all about success </strong></h4>
-                            <p> At Darasa, we are focused on making your campus life better and happier. We understand that
-                                the most important thing to you as a student, is passing your exams. We have specialized in helping you achieve your acadaemic goals, giving you more time and freedom to live and enjoy
-                                your student life.
-                            </p>
-                            <!-- <small>Phasellus feugiat at lorem a tincidunt. Nam hendrerit leo vitae orci pellentesque, nec euismod dolor condimentum.</small> -->
-                        </div>
-                    </div>
-                </div>
-               <div class="col-md-4 col-md-offset-1 mt-100 mb-100">
-                    <div class="phone">
-                        <img class="img-responsive img-rounded" src="http://placemi.com/djlnr/263x480">
-                    </div>
-                </div>
-                <div class="col-md-3 col-md-offset-1">
-                    <div class="content">
-                        <div class="pull-middle">
-                            <h4><strong>Past papers and answers</strong></h4>
-                            <p>We have gone throught the trouble of compiling all test papers, organized them their relevant courses and units and further filtered them according to their dates; just for you. Now you can have all these, in an intuitive mobile application. <strong>With Answers too!</strong>
-                            </p>
-                            <a class="btn btn-warning btn-circle" href="#">Get your darasa</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer text-center">
-        <div class="container">
-            <small>© Copyright 2015. Crafted by <a href="#">@darasa</a></small>
         </div>
     </footer>
-</div>
-<script type="text/javascript">
 
-</script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

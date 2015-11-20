@@ -1,0 +1,390 @@
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+    color:#fffff;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 80px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    background: white;
+    z-index: 1;
+}
+
+.download-icons {
+    padding-top:10px;
+    padding-bottom:1px;
+    background-color: #f29100;
+    opacity: 0.9;
+    border-radius: 5px;
+    width:50%;
+    margin:auto;
+}
+
+.fa-android {
+    color: white;
+}
+
+.fa-apple {
+    color: white;
+}
+
+.btn-success{
+    width:237px;
+    height:20%;
+    top: 5px;
+    right:-25px;
+    border-radius: 10px;
+    margin:auto;
+}
+
+.pricebtn.btn-success{
+    width:150px;
+    height:auto;
+    top: 5px;
+    margin-right:325px;
+    border-radius: 10px;
+    text-align: auto;
+    padding-left: -5px;
+    vertical-align: middle;
+}
+
+.btn-sm-footer.btn-success {
+    width:150px;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.landingpagecopy {
+    font-size: 30px;
+    font-weight: 600; 
+    left:900px;
+    top:150px;
+}
+
+.landingpagecopy .col-sm-12 {
+    font-size: 10px;
+    font-weight: 600; 
+    left:100px;
+    top:150px;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    top:100px;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.prices {
+    font-size: 20px;
+    padding-right:-300px;
+}
+
+.pricebtn {
+    text-indent: 50px;
+    top:10px;
+    left:10px;
+}
+
+.pricingtable
+
+{
+    width:100%;
+    height:100%;
+}
+
+.pricebox { 
+    padding-left: 20px;
+    padding-top:10px;
+    padding-bottom: -60px;
+    background: #13484D;
+    margin-left:-17px;
+}
+
+.pricebox2 { 
+    padding-left: 20px;
+    padding-top:10px;
+    padding-bottom: 20px;
+    background: #13484D;
+    margin-left:-17px;
+}
+
+
+.col-xs-12 {
+    padding-bottom: 50px;
+}
+
+
+
+.pricingrows: {
+    left:100px;
+}
+
+
+.lightbox {
+    background-color: rgba(255,255,255,0.1);    
+    z-index: 1;
+    padding-bottom: 40px;
+    padding-left: -20px;
+}
+
+
+.lilline {
+    height:10px;
+    background-color: #f7931e;
+}
+
+.download-icons2 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color:black;
+    opacity: 0.9;
+    border-radius: 5px;
+    width:50%;
+    margin:auto;
+    margin-left: 1px;
+}
+
+table#FMtable {
+    background-color: rgba(255,255,255,0.3);
+    margin-top: 30px;
+}
+
+th {
+    font-size: 20px;
+}
+
+th, td {
+    padding: 15px;
+}
+
+table, th, td {
+    border:3px solid white;
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    border-top: -500px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #ffa500; 
+}
+
+.content-section-a2 {
+    padding: 40px 0;
+    background-color: #491AB1;    
+}
+
+.content-section-b {
+    padding: 50px 0;
+    background-color:#f16765;
+}
+
+
+.introbox {
+    margin-right: -50px;
+    margin:auto;
+}
+
+h2.secion-heading {
+    margin-top:10px;
+    margin:auto;
+    color:black;
+}
+
+.clearfix {
+    padding-bottom:-10px;
+    font-weight: 100px;
+}
+
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 5px solid #ffffff;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img-responsive.iphone{
+   margin-left: 9em;
+    max-width: 58%;
+}
