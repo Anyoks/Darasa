@@ -50,7 +50,7 @@
               %h3 #{university.name}
               %p ...
               %p
-                -if current_user && current_user.admin?
+                -if current_user && current_user.is_admin?
                   = link_to 'Edit', edit_university_path(university), class: "btn btn-primary"
                   = link_to 'Destroy', university, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default"                
                   = link_to 'View Courses', university_path(university), class: "btn btn-success"

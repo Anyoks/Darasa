@@ -14,14 +14,14 @@
 		-for question in @exam.questions
 			%li= raw question.question
 			%ul
-				-if current_user.has_paid? @exam.unit.id, @exam.unit.semester.id
-					- if question.response.nil?
-						%p
-							This question has no answer yet
-					-else
-						= raw question.response.answer
+				/ -if current_user.has_paid? @exam.unit.id, @exam.unit.semester.id
+				- if question.response.nil?
+					%p
+						This question has no answer yet
 				-else
-					=link_to 'Pay to get the answer', api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id, :unit_id => @exam.unit.id, :semester_id => @exam.unit.semester.id }), method: :post, class: "btn btn-success"
+					= raw question.response.answer
+				/ -else
+				/ 	=link_to 'Pay to get the answer', api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id, :unit_id => @exam.unit.id, :semester_id => @exam.unit.semester.id }), method: :post, class: "btn btn-success"
 
 				
 
