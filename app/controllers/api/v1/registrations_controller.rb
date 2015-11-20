@@ -6,7 +6,7 @@ class Api::V1::RegistrationsController < ApplicationController
 	  user = User.new(user_params)
 	  # byebug
 	  if user.save
-	    render json: user.as_json(auth_token: user.authentication_token, email: user.email), status: :created
+	    render json: user.as_json(auth_token: user.authentication_token), status: :created
 	    return
 	  else
 	    warden.custom_failure!
