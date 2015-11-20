@@ -229,6 +229,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    seed_dump (3.2.2)
+      activerecord (~> 4)
+      activesupport (~> 4)
     sexp_processor (4.6.0)
     simple_form (3.2.0)
       actionpack (~> 4.0)
@@ -304,6 +307,7 @@ DEPENDENCIES
   rails (= 4.2.3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  seed_dump (~> 3.2, >= 3.2.2)
   simple_form (~> 3.2)
   spring
   turbolinks

@@ -68,7 +68,7 @@ byebug
 
 		if @status == "pesapal_response_data=COMPLETED"
 			#**save if it's successful
-			@payment = Payment.new#(payment_params)
+			@payment = Payment.new(payment_params)
 			# render "/exams"
 			byebug
 			 if @payment.save(payment_params)
@@ -107,10 +107,9 @@ byebug
 		}
 
 		data[:answers_bought] << {
-			user_id: "51f8ae92-bd4b-429d-a0e7-eccffc0f0b2e", #current_user.uuid,
-			unit_id: "bb02e272-96bb-4d68-b05f-fe59ea2cd456",#@exam.unit.uuid,
-			exam_id: "4b42b8da-c045-4416-890e-e229e817b960",#@exam.uuid,
-			semester_id: "cf66f118-e0e6-4e93-9001-15c40b5bcfaa" ,#@exam.unit.semester.uuid,
+			user_id:  "0e9312f9-508f-4086-8bf3-5aa59d120406" , #current_user.uuid,
+			unit_id: "5e9e8ed3-052f-41a4-b732-9b4e4020ca02",#@exam.unit.uuid,
+			semester_id: "4fe26d09-18a2-49b4-b9a9-6a5918c4f3c0" ,#@exam.unit.semester.uuid,
 			unit_cost: 150,#@exam.unit.answers_price,
 			sub_total: 150,#@exam.unit.answers_price
 		}
@@ -126,9 +125,9 @@ byebug
 		end
 		# params.permit(params[:pesapal_merchant_reference, :pesapal_transaction_tracking_id ])
 		#########*********END TEST DATA**************#########
-		@exam = Exam.find_by_uuid(@user_payment_details[:exam_id])
+		# @exam = Exam.find(@user_payment_details[:exam_id])
 
-		params.permit(params[:pesapal_merchant_reference],params[:pesapal_transaction_tracking_id],@user_payment_details[:user_id], @user_payment_details[:exam_id], @user_payment_details[:semester_id], @user_payment_details[:unit_id])
+		params.permit(@user_payment_details[:user_id], @user_payment_details[:semester_id], @user_payment_details[:unit_id])
 	end
 
 	

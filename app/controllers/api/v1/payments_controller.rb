@@ -14,7 +14,7 @@ class Api::V1::PaymentsController < ApplicationController
 
 
 	def pay
-		@exam = Exam.find_by_uuid(params[:exam_id])
+		@exam = Exam.find(params[:exam_id])
 
 		# order_params = {
 		# 	unit_id: params[:unit_id],
@@ -24,7 +24,7 @@ class Api::V1::PaymentsController < ApplicationController
 		# pesapal = Pesapal::Merchant.new
 		
 		data = {
-			amount: @exam.unit.answers_price,
+			amount: @exam.unit.price.amount,
 			description: "payment for this exam #{@exam.title}",
 			type: 'MERCHANT',
 			reference: Time.now.to_i.to_s, #must be unique
@@ -48,10 +48,10 @@ class Api::V1::PaymentsController < ApplicationController
 		
 
 		data[:answers_bought] << {
-			user_id: current_user.uuid,
-			unit_id: @exam.unit.uuid,
-			exam_id: @exam.uuid,
-			semester_id: @exam.unit.semester.uuid,
+			user_id: current_user.id,
+			unit_id: @exam.unit.id,
+			exam_id: @exam.id,
+			semester_id: @exam.unit.semester.id,
 			unit_cost: @exam.unit.answers_price,
 			sub_total: @exam.unit.answers_price
 		}
