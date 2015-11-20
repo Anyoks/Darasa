@@ -2,12 +2,11 @@
 #
 # Table name: years
 #
-#  id         :integer          not null, primary key
 #  year       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  course_id  :integer          default(1)
-#  uuid       :uuid
+#  id         :uuid             not null, primary key
+#  course_id  :uuid
 #
 
 require 'test_helper'

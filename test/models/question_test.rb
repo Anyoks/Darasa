@@ -2,12 +2,11 @@
 #
 # Table name: questions
 #
-#  id         :integer          not null, primary key
 #  question   :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  exam_id    :integer          default(5)
-#  uuid       :uuid
+#  id         :uuid             not null, primary key
+#  exam_id    :uuid
 #
 
 require 'test_helper'

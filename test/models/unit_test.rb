@@ -2,14 +2,14 @@
 #
 # Table name: units
 #
-#  id            :integer          not null, primary key
 #  name          :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  semester_id   :integer          default(1)
 #  answers_price :float
 #  videos_price  :float
-#  uuid          :uuid
+#  id            :uuid             not null, primary key
+#  semester_id   :uuid
+#  price_id      :uuid
 #
 
 require 'test_helper'
