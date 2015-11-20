@@ -2,12 +2,11 @@
 #
 # Table name: semesters
 #
-#  id         :integer          not null, primary key
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  year_id    :integer          default(1)
-#  uuid       :uuid
+#  id         :uuid             not null, primary key
+#  year_id    :uuid
 #
 
 class Semester < ActiveRecord::Base
