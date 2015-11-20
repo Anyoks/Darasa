@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120134051) do
+ActiveRecord::Schema.define(version: 20151120144839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,11 @@ ActiveRecord::Schema.define(version: 20151120134051) do
   add_index "payments", ["unit_id"], name: "index_payments_on_unit_id", using: :btree
   add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
+  create_table "prices", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.float  "amount"
+    t.string "content"
+  end
+
   create_table "questions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "question"
     t.datetime "created_at", null: false
@@ -103,6 +108,11 @@ ActiveRecord::Schema.define(version: 20151120134051) do
 
   add_index "semesters", ["year_id"], name: "index_semesters_on_year_id", using: :btree
 
+  create_table "table_prices", force: :cascade do |t|
+    t.string "content"
+    t.float  "price"
+  end
+
   create_table "topics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.string   "code"
@@ -121,8 +131,10 @@ ActiveRecord::Schema.define(version: 20151120134051) do
     t.float    "answers_price"
     t.float    "videos_price"
     t.uuid     "semester_id"
+    t.uuid     "price_id"
   end
 
+  add_index "units", ["price_id"], name: "index_units_on_price_id", using: :btree
   add_index "units", ["semester_id"], name: "index_units_on_semester_id", using: :btree
 
   create_table "universities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
