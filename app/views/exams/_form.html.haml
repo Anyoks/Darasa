@@ -20,12 +20,6 @@
     = f.simple_fields_for :questions do |question|
       = render "question_fields", f: question
   %br/
-  = link_to_add_association 'Add Question', f, :questions, class: "label label-primary"
-
-  / .field
-  /   =f.label :unit
-  /   =f.select :unit_id, Unit.all.map { |u| [u.name, u.id]}
-  %br/
 
   .actions
     = f.submit 'Save Changes', class: "btn btn-success pull-right"#, "pull-right"
