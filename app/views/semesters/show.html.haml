@@ -1,5 +1,15 @@
-%h1= @semester.name
+%h1 Units for #{@semester.name}
 
-= render "units/table", units: @units #Rendering a partial
+-unit_for_this_semester = []
+- @units.each do |unit|
+	-if unit.semester.name == @semester.name 
+		-unit_for_this_semester << unit
+
+-if unit_for_this_semester.empty?
+	%p
+		There are no units for this semester yet
+-else
+	=render "units/table", units: unit_for_this_semester
+
 
 
