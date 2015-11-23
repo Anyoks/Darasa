@@ -1,0 +1,31 @@
+/ %table.table.table-hover
+/   %thead
+/     %tr
+/       %th Name
+      
+
+/   %tbody
+/     - @courses.each do |course|
+/       %tr
+/         %td= course.name
+/         %td
+/           = link_to 'Edit', edit_course_path(course), class: "label label-warning"
+/           = link_to 'Destroy', course, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+
+/ %br
+
+.row
+  .col-sm-15.col-md-15
+    - courses.each do |course|
+      .col-sm-6.col-md-4
+        .thumbnail
+          %img{:alt => "...", :src => "..."}
+            .caption
+              %h3 #{course.name}
+              %p ...
+              %p
+                -if current_user && current_user.is_admin?
+                  = link_to 'Edit', edit_course_path(course), class: "label label-warning"
+                  = link_to 'Destroy', course, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"               
+                  = link_to 'View Years', years_path(course), class: "btn btn-success"
+
