@@ -948,3 +948,13 @@ I, [2015-11-20T09:03:11.310940 #2102]  INFO -- : worker=0 ready
 I, [2015-11-20T09:03:11.312561 #2093]  INFO -- : master process ready
 I, [2015-11-20T09:03:11.313019 #2105]  INFO -- : worker=1 spawned pid=2105
 I, [2015-11-20T09:03:11.315668 #2105]  INFO -- : worker=1 ready
+I, [2015-11-23T09:40:23.217639 #2373]  INFO -- : Refreshing Gem list
+I, [2015-11-23T09:40:37.078785 #2373]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-11-23T09:40:37.078987 #2373]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-11-23T09:40:37.079111 #2373]  INFO -- : worker=0 spawning...
+I, [2015-11-23T09:40:37.080722 #2373]  INFO -- : worker=1 spawning...
+I, [2015-11-23T09:40:37.081253 #2999]  INFO -- : worker=0 spawned pid=2999
+I, [2015-11-23T09:40:37.083892 #2373]  INFO -- : master process ready
+I, [2015-11-23T09:40:37.085068 #3002]  INFO -- : worker=1 spawned pid=3002
+I, [2015-11-23T09:40:37.085677 #2999]  INFO -- : worker=0 ready
+I, [2015-11-23T09:40:37.089144 #3002]  INFO -- : worker=1 ready
