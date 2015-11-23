@@ -25,13 +25,7 @@ class Exam < ActiveRecord::Base
 
 	has_many :answers, :through => :questions
 
-	accepts_nested_attributes_for :questions, :reject_if => :all_blank, :allow_destroy => true
-
-	 # def as_json(options={})
-  #     super(:only => [:questions]
-  #     )
-    # end
-
+	accepts_nested_attributes_for :questions,  :allow_destroy => true
 
 
 

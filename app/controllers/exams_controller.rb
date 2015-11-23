@@ -23,13 +23,17 @@ class ExamsController < ApplicationController
   def new
 
     @exam = Exam.new
-      1.times do
+    # @exam.questions.build
+      # 1.times do
         @exam.questions.build.build_response
-      end
+      # end
   end
 
   # GET /exams/1/edit
   def edit
+     @exam = Exam.find(params[:id])
+     # @exam.questions.build
+     @exam.questions.build.build_response
   end
 
   # POST /exams
@@ -108,10 +112,9 @@ class ExamsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
-      params.require(:exam).permit(:title, :attachment, :date, :unit_id, 
+      params.require(:exam).permit(:title, :date, :unit_id, 
         questions_attributes:[ :id, :question, :exam_id,  :_destroy,
         response_attributes:[:id, :answer, :question_id, :_destroy]]
-        # responses:[:id, :response, :question_id, :_destroy]]
         )
     end
 end

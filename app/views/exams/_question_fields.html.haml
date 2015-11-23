@@ -5,8 +5,6 @@
 	%br/
 	= f.cktext_area :question, :cols => 30, :ckeditor => { :toolbar => 'mini'}
 	%br/
-	= link_to_add_association 'Add Answer', f, :response, class: "label label-primary"
-
 
 	= f.fields_for :response do |answer|
 		=render "response_fields", f: answer
