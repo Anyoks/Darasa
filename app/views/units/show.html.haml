@@ -1,3 +1,13 @@
-%h1 Topics for #{@unit.name}
+%h1 Exams for #{@unit.name}
 
-=render "topics/table", topics: @topics #the table that was previously here was extracted to the partial to be DRY. seems like I needed it more than I thought! :-)
+-exam_for_this_unit = []
+- @exams.each do |exam|
+	-if exam.unit.name == @unit.name 
+		-exam_for_this_unit << exam
+
+-if exam_for_this_unit.empty?
+	%p
+		There are no Exams for this Unit yet
+-else
+	=render "exams/table", exams: exam_for_this_unit#the table that was previously here was extracted to the partial to be DRY. seems like I needed it more than I thought! :-)
+
