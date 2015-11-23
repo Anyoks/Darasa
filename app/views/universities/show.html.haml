@@ -1,8 +1,22 @@
 %h1 Courses for #{@university.name}
 
-=render "courses/table"
+-course_for_this_uni = []
 
--if current_user && current_user.is_admin?
+- @courses.each do |course|
+	-if course.university.name == @university.name 
+		-course_for_this_uni << course
+
+
+-if course_for_this_uni.empty?
+	%p
+		There are no courses for this university yet
+-else
+	=render "courses/table1", courses: course_for_this_uni
+
+
+
+-if current_user && current_user.is_admin? || current_user.is_moderator?
 	= link_to 'Edit', edit_university_path(@university)
 	\|
 	= link_to 'Back', universities_path
+
