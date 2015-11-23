@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: prices
+#
+#  amount  :float
+#  id      :uuid             not null, primary key
+#  content :string
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1.5
+  content: MyString
+
+two:
+  price: 1.5
+  content: MyString

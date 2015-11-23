@@ -8,3 +8,11 @@
 ['registered', 'banned', 'moderator', 'admin'].each do |role|
   Role.find_or_create_by({name: role})
 end
+
+['answer', 'video_ans'].each do |content|
+  Price.find_or_create_by({content: content})
+end
+
+['150.00', '500.00'].each do |price|
+  Price.find_or_create_by({price: price})
+end

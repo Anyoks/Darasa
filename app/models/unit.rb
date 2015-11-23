@@ -2,11 +2,14 @@
 #
 # Table name: units
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  semester_id :integer          default(1)
+#  name          :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  answers_price :float
+#  videos_price  :float
+#  id            :uuid             not null, primary key
+#  semester_id   :uuid
+#  price_id      :uuid
 #
 
 class Unit < ActiveRecord::Base
@@ -14,4 +17,5 @@ class Unit < ActiveRecord::Base
 	belongs_to :semester
 	has_many :cats
 	has_many :exams
+	belongs_to :price
 end

@@ -2,14 +2,15 @@
 #
 # Table name: payments
 #
-#  id          :integer          not null, primary key
-#  status      :boolean
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :integer
-#  unit_id     :integer
-#  semester_id :integer
-#  exam_id     :integer
+#  status                          :boolean
+#  created_at                      :datetime         not null
+#  updated_at                      :datetime         not null
+#  pesapal_merchant_reference      :string
+#  pesapal_transaction_tracking_id :string
+#  id                              :uuid             not null, primary key
+#  unit_id                         :uuid
+#  user_id                         :uuid
+#  semester_id                     :uuid
 #
 
 require 'test_helper'

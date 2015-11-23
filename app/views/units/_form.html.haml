@@ -12,5 +12,8 @@
   .field
     =f.label :Semester
     =f.select :semester_id, Semester.all.map { |s| [s.name, s.id]}
+  .field
+    = f.label :price
+    = f.select:price_id, Price.all.map {|p| [p.content, p.id]}
   .actions
     = f.submit 'Save'

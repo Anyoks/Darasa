@@ -5,6 +5,14 @@
       %ul
         - @exam.errors.full_messages.each do |msg|
           %li= msg
+  
+  / -elsif  @payment.errors.any?
+  /   #error_explanation
+  /     %h2= "#{pluralize(@payment.errors.count, "error")} prohibited this payment from being saved:"
+  /     %ul
+  /       - @payment.errors.full_messages.each do |msg|
+  /         %li= msg
+
 
   .field
     = f.label :Exam_Title

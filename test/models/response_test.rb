@@ -2,11 +2,11 @@
 #
 # Table name: responses
 #
-#  id          :integer          not null, primary key
 #  answer      :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  question_id :integer          default(27)
+#  id          :uuid             not null, primary key
+#  question_id :uuid
 #
 
 require 'test_helper'
