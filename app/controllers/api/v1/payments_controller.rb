@@ -123,7 +123,7 @@ class Api::V1::PaymentsController < ApplicationController
 			 #****Send this to mobile app****#
 			@order_url = Pesapal::OrderUrl.new(@xml, @call_back_url, true).url.html_safe
 
-			   # byebug
+			   # 
 
 			 #**Now I need to execute the url**#
 
@@ -140,7 +140,7 @@ class Api::V1::PaymentsController < ApplicationController
 			@data = data
 
 
-			byebug
+			
 
 			# render @set_order
 

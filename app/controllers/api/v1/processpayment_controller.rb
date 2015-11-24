@@ -44,7 +44,7 @@ class Api::V1::ProcesspaymentController < ApplicationController
 		@status = Net::HTTP.get(@status_check)
 
 		#**Now to query pesapal until we get a failed or Success result"
-byebug
+# 
 		def query_every_second_pesapal_every_so_many_seconds(seconds)
 			last_time = Time.now
 			loop do
@@ -74,7 +74,7 @@ byebug
 			#**save if it's successful
 			@reference = @query_params[:pesapal_merchant_reference].split("888")
 			@payment = Payment.find_by_unit_id(@reference[1]) # unit_id is the second value in the array
-			byebug
+			
 			 if @payment.update_attribute :status, "COMPLETED"#(payment_params)
 			# 	respond_to do |format|
 			# 		format.html { redirect_to "/exam/20", notice: 'you have successfully paid.' }
