@@ -121,11 +121,11 @@ class User < ActiveRecord::Base
 
 	#checking if the user has paid to view the answers
 
-	def has_paid? unit_id, semester_id
+	def has_paid? unit_id
 		if self.payments.first.nil? #check if there's a payment record, before we do a look up in the db will save us some time :-)
 			false
 		else
-			check_if_this_unit_is_paid_for unit_id, semester_id # have you really paid fro this unit?
+			check_if_this_unit_is_paid_for unit_id # have you really paid fro this unit?
 		end
 	end
 
@@ -142,15 +142,21 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def check_if_this_unit_is_paid_for unit_id, semester_id
+	def check_if_this_unit_is_paid_for unit_id
+		@payment = Payment.find_by_unit_id(unit_id)
+
 		this_unit = self.payments.find_by_unit_id(unit_id).nil? #check is this unit is in the payment table. if it is in there, this will be false.
-		this_sem = self.payments.find_by_unit_id(unit_id).nil? #check is this semis in the payment table. if it is in there, this will be false.
+		# this_sem = self.payments.find_by_unit_id(unit_id).nil? #check is this semis in the payment table. if it is in there, this will be false.
 		
-		if (this_unit == false && this_sem == false)  #if both are false, They have paid for that unit's answers
+
+		if (@payment.status == "COMPLETED" )  #if both are false, They have paid for that unit's answers
 			"He has paid"
 			true
-		else
-			"Not paid for this unit, maybe another one!"
+		elsif(@payment.status == nil || @payment.status == "PENDING" )
+			"Payment is being processed"
+			false
+		elsif(@payment.status == "INVALID" || @payment.status == "FAILED" )
+			"Has not  paid"
 			false
 		end
 	end
