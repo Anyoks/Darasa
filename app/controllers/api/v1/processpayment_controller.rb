@@ -6,11 +6,11 @@ class Api::V1::ProcesspaymentController < ApplicationController
 		
 	# end
 
-	def process (data)
+	def process(data)
 
 		##****lets now de-mistify the data we have recieceved*****##
 
-		
+		@info = data
 
 
 
@@ -127,7 +127,7 @@ byebug
 		#########*********END TEST DATA**************#########
 		# @exam = Exam.find(@user_payment_details[:exam_id])
 
-		params.permit(@user_payment_details[:user_id], @user_payment_details[:semester_id], @user_payment_details[:unit_id])
+		params.permit(@user_payment_details[:user_id], @user_payment_details[:unit_id])
 	end
 
 	

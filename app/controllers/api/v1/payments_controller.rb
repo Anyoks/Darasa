@@ -1,6 +1,6 @@
 class Api::V1::PaymentsController < ApplicationController
 	before_filter :authenticate_user!
-	respond_to :json
+	# respond_to :json
 
 	# require 'oauth.rb'
 	# require 'api/v1/oauths_controller'
@@ -106,7 +106,13 @@ class Api::V1::PaymentsController < ApplicationController
 		  </lineitems>
 		</PesapalDirectOrderInfo>]
 
-		 @call_back_url = "localhost:3000/api/v1/processpayment/process"
+
+		if Rails.env == "development"
+			@call_back_url = "localhost:3000/api/v1/processpayment/process"
+		else
+			@call_back_url =  "darasa.co.ke/api/v1/processpayment/process"
+		end
+
 
 		 # @order_url = Pesapal::Order.generate_order_url#(data)
 
@@ -125,9 +131,35 @@ class Api::V1::PaymentsController < ApplicationController
 
 		@set_order = Net::HTTP.get(@get_order_execute)
 
+		$order_url = @order_url
+
+		@data = data
+
 
 		byebug
-		redirect_to api_v1_processpayment_process_path(data)  #/api/v1/processpayment/process
+
+		# render @set_order
+
+		render "index" #:inline => "<%= @set_order.html_content %>"
+
+
+
+		  # respond_to do |format|
+		  #   format.html { render :text => @set_order.html_content }
+		  # end
+
+		# redirect_to api_v1_processpayment_process_path(@data)  #/api/v1/processpayment/process
+
+		# respond_to do |format|
+		# 	if @order_url.nil?
+		# 		# format.html { redirect_to @exam, notice: 'Exam was successfully created.' }
+		# 	    format.json { render :show, order_url: @order_url}
+		# 	else
+		# 		format.html { redirect_to api_v1_processpayment_process_path(data) } # redirect_to api_v1_processpayment_process_path(data)# format.html { render :show, order_url: @order_url}
+		# 		format.json { render :show, order_url: @order_url}
+		# 	end
+		# # redirect_to api_v1_processpayment_process_path(data)# format.html { render :show, order_url: @order_url}
+		# end
 
 	end
 
@@ -137,6 +169,9 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	def show
+		@order_url = $order_url  #Pesapal::OrderUrl.new(@xml, @call_back_url, true).url.html_safe
+		# $order_url 
+
 	end
 
 	protected

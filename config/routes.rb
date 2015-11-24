@@ -57,8 +57,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :details, defaults: { format: 'json' }
+      # resources :details, defaults: { format: 'json' }
       post "/pay", :to => 'payments#pay'
+      get "/pay", :to => 'payments#show'
+      get "/index", :to => 'payments#index'
       get "/user_details", :to => 'details#show'
       devise_scope :user do
         post "/sign_in", :to => 'sessions#create'
