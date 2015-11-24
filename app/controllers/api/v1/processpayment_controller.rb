@@ -8,6 +8,8 @@ class Api::V1::ProcesspaymentController < ApplicationController
 
 	def process(data)
 
+		params.permit! # Permit all Paypal input params
+
 		##****lets now de-mistify the data we have recieceved*****##
 
 		@info = data
@@ -56,7 +58,9 @@ byebug
 
 		query_every_second_pesapal_every_so_many_seconds(1) do
 			if @status == "pesapal_response_data=PENDING"
-				@status_check =  URI(@payment_status_url)
+				# @status_check =  URI(@payment_status_url)
+				@status = Net::HTTP.get(@status_check)
+				p "querying server"
 			else
 				@status
 				break
@@ -68,15 +72,15 @@ byebug
 
 		if @status == "pesapal_response_data=COMPLETED"
 			#**save if it's successful
-			@payment = Payment.new(payment_params)
-			# render "/exams"
+			@reference = @query_params[:pesapal_merchant_reference].split("888")
+			@payment = Payment.find_by_unit_id(@reference[1]) # unit_id is the second value in the array
 			byebug
-			 if @payment.save(payment_params)
+			 if @payment.update_attribute :status, "COMPLETED"#(payment_params)
 			# 	respond_to do |format|
 			# 		format.html { redirect_to "/exam/20", notice: 'you have successfully paid.' }
 			# 		format.json { render :show, status: :created }
 			# 	end
-			redirect_to "/exams", notice: 'Payment was  successful.'
+			redirect_to "/exams" , notice: 'Payment was  successful.' #
 			else
 				redirect_to "/exams", notice: 'Payment was not successful.'
 				# format.json { render json: @payment.errors, status: :unprocessable_entity }
@@ -109,9 +113,9 @@ byebug
 		data[:answers_bought] << {
 			user_id:  "0e9312f9-508f-4086-8bf3-5aa59d120406" , #current_user.uuid,
 			unit_id: "5e9e8ed3-052f-41a4-b732-9b4e4020ca02",#@exam.unit.uuid,
-			semester_id: "4fe26d09-18a2-49b4-b9a9-6a5918c4f3c0" ,#@exam.unit.semester.uuid,
+			# semester_id: "4fe26d09-18a2-49b4-b9a9-6a5918c4f3c0" ,#@exam.unit.semester.uuid,
 			unit_cost: 150,#@exam.unit.answers_price,
-			sub_total: 150,#@exam.unit.answers_price
+			sub_total: 150#@exam.unit.answers_price
 		}
 
 	
@@ -127,7 +131,7 @@ byebug
 		#########*********END TEST DATA**************#########
 		# @exam = Exam.find(@user_payment_details[:exam_id])
 
-		params.permit(@user_payment_details[:user_id], @user_payment_details[:unit_id])
+		params.merge(@user_payment_details[:user_id])
 	end
 
 	

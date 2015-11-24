@@ -14,7 +14,7 @@
 		-for question in @exam.questions
 			%li= raw question.question
 			%ul
-				-if current_user.has_paid? @exam.unit.id, @exam.unit.semester.id
+				-if current_user.has_paid? @exam.unit.id
 					- if question.response.nil?
 						%p
 							This question has no answer yet
@@ -22,7 +22,7 @@
 
 						= raw question.response.answer
 				-else
-					=link_to 'Pay to get the answer', api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id, :unit_id => @exam.unit.id, :semester_id => @exam.unit.semester.id }), method: :post, class: "btn btn-success"
+					=link_to 'Pay to get the answer', api_v1_pay_path(:params =>{:user_id => current_user.id, :unit_id => @exam.unit.id }), method: :post, class: "btn btn-success"
 				
 	= link_to 'Add questions!', edit_exam_path(@exam), class: "label label-pill label-success"
 / =link_to 'Pay to get the answer', api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id}), method: :post, class: "btn btn-success"
