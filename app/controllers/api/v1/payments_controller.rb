@@ -121,7 +121,7 @@ class Api::V1::PaymentsController < ApplicationController
 			 # @order_url = Pesapal::Order.generate_order_url#(data)
 
 			 #****Send this to mobile app****#
-			@order_url = Pesapal::OrderUrl.new(@xml, @call_back_url, true).url.html_safe
+			@order_url = Pesapal::OrderUrl.new(@xml, @call_back_url, true).url.html_safe #change true to false when live
 
 			   # 
 
