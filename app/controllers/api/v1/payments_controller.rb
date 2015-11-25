@@ -143,6 +143,7 @@ class Api::V1::PaymentsController < ApplicationController
 			
 
 			# render @set_order
+			# order_url @order_url
 
 			render "index" #:inline => "<%= @set_order.html_content %>"
 		else
@@ -177,6 +178,16 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def invalid_details
 	  render json: { success: false, message: "Error with your payment details"}, status: :unauthorized
+	end
+
+	def order_url url
+		@order_url = url
+		respond_to do |format|
+			format.html {render "index"}
+			format.json { render json: { success: true, order_url: @order_url }, status: :ok }
+		end
+
+		# render json: { success: true, order_url: @order_url }, status: :ok
 	end
 
 	def show

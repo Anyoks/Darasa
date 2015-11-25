@@ -6,17 +6,11 @@ class Api::V1::ProcesspaymentController < ApplicationController
 		
 	# end
 
-	def process(data)
+	def process data
 
 		params.permit! # Permit all Paypal input params
 
 		##****lets now de-mistify the data we have recieceved*****##
-
-		@info = data
-
-
-
-		# @user = current_user
 
 		#**We should be receiving this from pesapal**#
 		# pesapal_merchant_reference: this is the reference (a unique order id), that you passed to PesaPal when posting the transaction.
@@ -44,7 +38,7 @@ class Api::V1::ProcesspaymentController < ApplicationController
 		@status = Net::HTTP.get(@status_check)
 
 		#**Now to query pesapal until we get a failed or Success result"
-# 
+
 		def query_every_second_pesapal_every_so_many_seconds(seconds)
 			last_time = Time.now
 			loop do
@@ -56,42 +50,103 @@ class Api::V1::ProcesspaymentController < ApplicationController
 			end
 		end
 
-		query_every_second_pesapal_every_so_many_seconds(1) do
-			if @status == "pesapal_response_data=PENDING"
-				# @status_check =  URI(@payment_status_url)
-				@status = Net::HTTP.get(@status_check)
-				p "querying server"
+		@reference = @query_params[:pesapal_merchant_reference].split("888") #decode the reference for db lookup
+		@payment = Payment.find_by_unit_id(@reference[1]) # unit_id is the second value in the array
+		@payment.update_attribute :pesapal_merchant_reference, @query_params[:pesapal_merchant_reference]
+		@payment.update_attribute :pesapal_transaction_tracking_id, @query_params[:pesapal_transaction_tracking_id]
+
+		if @status == "pesapal_response_data=PENDING"
+			 if @payment.update_attribute :status, "PENDING"
+			 	# payment_is_being_processed
+			 	redirect_to "/exams", notice: 'Payment is being processed.'
+			 else
+			 	invalid_request
+			 end
+			# query_every_second_pesapal_every_so_many_seconds(1) do
+			# 	# @status_check =  URI(@payment_status_url)
+			# 	@status = Net::HTTP.get(@status_check)
+			# 	# p "querying server #{@status}"
+			# 	if  @status == "pesapal_response_data=COMPLETED"
+			# 		break
+			# 		@reference = @query_params[:pesapal_merchant_reference].split("888")
+			# 		@payment = Payment.find_by_unit_id(@reference[1]) # unit_id is the second value in the array
+			# 		if @payment.update_attribute :status, "COMPLETED"
+			# 			redirect_to "/exams" , notice: 'Payment was  successful.'
+			# 		else
+			# 			redirect_to "/exams", notice: 'Payment was not successful.'
+			# 		end
+			# 	end
+			# end
+		elsif @status == "pesapal_response_data=COMPLETED"
+			if @payment.update_attribute :status, "COMPLETED"
+				# payment_complete
+				redirect_to "/exams", notice: 'Payment is being processed.'
 			else
-				@status
-				break
+				# invalid_request
+				redirect_to "/exams", notice: 'Payment could not be saved.'
+			end
+		elsif @status == "pesapal_response_data=INVALID"
+			if @payment.update_attribute :status, "INVALID"
+				# payment_invalid
+				redirect_to "/exams", notice: 'Payment invalid.'
+			else
+				# invalid_request
+				redirect_to "/exams", notice: 'Payment could not be saved.'
+			end
+		elsif @status == "pesapal_response_data=FAILED"
+			if @payment.update_attribute :status, "FAILED"
+				# payment_failed
+				redirect_to "/exams", notice: 'Payment failed.'
+			else
+				# invalid_request
+				redirect_to "/exams", notice: 'Payment could not be saved.'
 			end
 		end
+
 
 		#***************Now lets check the @status and respond appriately***************#
 		#***********pesapal_response_data =<PENDING|COMPLETED|FAILED|INVALID>***********#
 
-		if @status == "pesapal_response_data=COMPLETED"
-			#**save if it's successful
-			@reference = @query_params[:pesapal_merchant_reference].split("888")
-			@payment = Payment.find_by_unit_id(@reference[1]) # unit_id is the second value in the array
+		# if @status == "pesapal_response_data=COMPLETED"
+		# 	#**save if it's successful
+		# 	@reference = @query_params[:pesapal_merchant_reference].split("888")
+		# 	@payment = Payment.find_by_unit_id(@reference[1]) # unit_id is the second value in the array
 			
-			 if @payment.update_attribute :status, "COMPLETED"#(payment_params)
-			# 	respond_to do |format|
-			# 		format.html { redirect_to "/exam/20", notice: 'you have successfully paid.' }
-			# 		format.json { render :show, status: :created }
-			# 	end
-			redirect_to "/exams" , notice: 'Payment was  successful.' #
-			else
-				redirect_to "/exams", notice: 'Payment was not successful.'
-				# format.json { render json: @payment.errors, status: :unprocessable_entity }
-			end
+		# 	 if @payment.update_attribute :status, "COMPLETED"#(payment_params)
+		# 	# 	respond_to do |format|
+		# 	# 		format.html { redirect_to "/exam/20", notice: 'you have successfully paid.' }
+		# 	# 		format.json { render :show, status: :created }
+		# 	# 	end
+		# 	redirect_to "/exams" , notice: 'Payment was  successful.' #
+		# 	else
+		# 		redirect_to "/exams", notice: 'Payment was not successful.'
+		# 		# format.json { render json: @payment.errors, status: :unprocessable_entity }
+		# 	end
+		# else
 
 			
-		end
+		# end
 	end
 
 	
 	private
+
+	def payment_is_being_processed
+		render json: { success: :pending, message: "Your payment is being processed"}, status: :processing
+	end
+
+	def invalid_request
+		render json: { success: :false, message: "invalid credentails"}, status: :unprocessable_entity
+	end
+	def payment_complete
+		render json: { success: :true, message: "You have successfully paid"}, status: :done
+	end
+	def payment_invalid
+		render json: { success: :false, message: "You have made an invalid payment"}, status: :done
+	end
+	def payment_failed
+		render json: { success: :false, message: "Your payment has failed"}, status: :done
+	end
 
 	def payment_params
 

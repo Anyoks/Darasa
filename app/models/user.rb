@@ -123,7 +123,7 @@ class User < ActiveRecord::Base
 
 	def has_paid? unit_id
 		if self.payments.first.nil? #check if there's a payment record, before we do a look up in the db will save us some time :-)
-			false
+			check_if_this_unit_is_paid_for unit_id
 		else
 			check_if_this_unit_is_paid_for unit_id # have you really paid fro this unit?
 		end
@@ -145,7 +145,7 @@ class User < ActiveRecord::Base
 	def check_if_this_unit_is_paid_for unit_id
 		@payment = Payment.find_by_unit_id(unit_id)
 
-		this_unit = self.payments.find_by_unit_id(unit_id).nil? #check is this unit is in the payment table. if it is in there, this will be false.
+		# this_unit = self.payments.find_by_unit_id(unit_id).nil? #check is this unit is in the payment table. if it is in there, this will be false.
 		# this_sem = self.payments.find_by_unit_id(unit_id).nil? #check is this semis in the payment table. if it is in there, this will be false.
 		
 
