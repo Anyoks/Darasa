@@ -2,7 +2,6 @@
 #
 # Table name: payments
 #
-#  status                          :boolean
 #  created_at                      :datetime         not null
 #  updated_at                      :datetime         not null
 #  pesapal_merchant_reference      :string
@@ -10,13 +9,13 @@
 #  id                              :uuid             not null, primary key
 #  unit_id                         :uuid
 #  user_id                         :uuid
-#  semester_id                     :uuid
+#  status                          :string
 #
 
 class Payment < ActiveRecord::Base
 	belongs_to :user
 
-	validates_presence_of :user_id, :unit_id, :semester_id
+	validates_presence_of :user_id, :unit_id
 
 	# params.permit(params[:pesapal_merchant_reference],params[:pesapal_transaction_tracking_id],@user_payment_details[:user_id], @user_payment_details[:exam_id], @user_payment_details[:semester_id], @user_payment_details[:unit_id])
 
