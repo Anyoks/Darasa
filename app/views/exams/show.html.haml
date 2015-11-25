@@ -23,8 +23,8 @@
 						= raw question.response.answer
 				-else
 					=link_to 'Pay to get the answer', api_v1_pay_path(:params =>{:user_id => current_user.id, :unit_id => @exam.unit.id }), method: :post, class: "btn btn-success"
-				
-	= link_to 'Add questions!', edit_exam_path(@exam), class: "label label-pill label-success"
+	-if current_user.is_moderator? || current_user.is_admin?			
+		= link_to 'Add questions!', edit_exam_path(@exam), class: "label label-pill label-success"
 / =link_to 'Pay to get the answer', api_v1_pay_path(:params =>{ :exam_id => @exam.id, :user_id => current_user.id}), method: :post, class: "btn btn-success"
 
 
@@ -32,7 +32,7 @@
 %p= @exam.unit.name
 
 %p
+	= link_to 'Back', exams_path, class: "btn btn-default"
 	-if current_user.is_moderator? || current_user.is_admin?
 		.btn-group{"aria-label" => "...", :role => "group"}
 			= link_to 'Edit', edit_exam_path(@exam), class: "btn btn-primary"
-			= link_to 'Back', exams_path, class: "btn btn-default"
