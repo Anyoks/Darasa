@@ -96,3 +96,6 @@ gem 'rufus-scheduler', '~> 3.1', '>= 3.1.10'
 #for to mount sidekiq dashboar
 gem 'sinatra' , require: false
 gem 'slim'
+
+#capistrano-sidekiq for deployment
+gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'

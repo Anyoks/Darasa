@@ -7,6 +7,14 @@ GIT
       sshkit (~> 1.2)
 
 GIT
+  remote: git://github.com/seuros/capistrano-sidekiq.git
+  revision: b5155675554e35f4ec3311b072bafad2b7b5b563
+  specs:
+    capistrano-sidekiq (0.5.4)
+      capistrano
+      sidekiq (>= 3.4)
+
+GIT
   remote: https://github.com/zquestz/omniauth-google-oauth2.git
   revision: b4419041b684d51ab2e7824cb065d9ab16251a7a
   specs:
@@ -304,6 +312,7 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-rails (~> 1.1.5)
   capistrano-rvm!
+  capistrano-sidekiq!
   carrierwave
   ckeditor
   cocoon (~> 1.2, >= 1.2.6)

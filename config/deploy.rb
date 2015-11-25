@@ -31,6 +31,11 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
+####*****setup sidekiq configs
+set :sidekiq_role, :app  
+set :sidekiq_config, "#{current_path}/config/sidekiq.yml"  
+set :sidekiq_env, 'production' 
+
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
