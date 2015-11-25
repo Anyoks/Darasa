@@ -144,20 +144,23 @@ class User < ActiveRecord::Base
 
 	def check_if_this_unit_is_paid_for unit_id
 		@payment = Payment.find_by_unit_id(unit_id)
-
-		# this_unit = self.payments.find_by_unit_id(unit_id).nil? #check is this unit is in the payment table. if it is in there, this will be false.
-		# this_sem = self.payments.find_by_unit_id(unit_id).nil? #check is this semis in the payment table. if it is in there, this will be false.
 		
+		if @payment.nil?
+			false
+		else
 
-		if (@payment.status == "COMPLETED" )  #if both are false, They have paid for that unit's answers
-			"He has paid"
-			true
-		elsif(@payment.status == nil || @payment.status == "PENDING" )
-			"Payment is being processed"
-			false
-		elsif(@payment.status == "INVALID" || @payment.status == "FAILED" )
-			"Has not  paid"
-			false
+			if (@payment.status == "COMPLETED" )  #if both are false, They have paid for that unit's answers
+				"He has paid"
+				true
+			else
+				false
+			# elsif(@payment.status == nil || @payment.status == "PENDING" )
+			# 	"Payment is being processed"
+			# 	false
+			# elsif(@payment.status == "INVALID" || @payment.status == "FAILED" )
+			# 	"Has not  paid"
+			# 	false
+			end
 		end
 	end
 

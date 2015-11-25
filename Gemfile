@@ -89,3 +89,10 @@ gem 'annotate', '~> 2.6', '>= 2.6.10'
 gem 'mobile-money'
 gem 'oauth', '~> 0.4.7'
 gem 'seed_dump', '~> 3.2', '>= 3.2.2'
+gem 'sidekiq'
+gem 'httparty', '~> 0.13.7'
+gem 'rufus-scheduler', '~> 3.1', '>= 3.1.10'
+
+#for to mount sidekiq dashboar
+gem 'sinatra' , require: false
+gem 'slim'

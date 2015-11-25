@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   namespace :api do
   namespace :v1 do
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
  # resources :exams
   resources :cats
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-
+  mount Sidekiq::Web => '/sidekiq'
   devise_scope :user do
     authenticated :user do
       root 'exams#index'
