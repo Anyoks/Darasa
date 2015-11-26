@@ -64,14 +64,14 @@ class Api::V1::SessionsController <  Api::V1::BaseController
 
   def ensure_param_exists(param)
     return unless params[param].blank?
-    render json:{ success: false, message: "Missing #{param} parameter"}, status: :unprocessable_entity
+    render json:{ success: false, error: "Missing #{param} parameter"}, status: :unprocessable_entity
   end
 
   def invalid_credentials
-    render json: { success: false, message: "Error with your credentials"}, status: :unprocessable_entity
+    render json: { success: false, error: "Error with your credentials"}, status: :unprocessable_entity
   end
 
   def invalid_login_attempt
-    render json: { success: false, message: "Error with your login or password"}, status: :unauthorized
+    render json: { success: false, error: "Error with your login or password"}, status: :unauthorized
   end
 end
