@@ -20,9 +20,14 @@ class Api::V1::SessionsController <  Api::V1::BaseController
   end
 
   def destroy
-    current_user.reset_authentication_token
+    resource =  User.find_by_authentication_token(params[:auth_token])
+    return invalid_credentials unless resource
+
+    resource.reset_authentication_token
     render json: { success: true }, status: :ok
   end
+
+
 
    def ensure_authentication_token
      if authentication_token.blank?
@@ -60,6 +65,10 @@ class Api::V1::SessionsController <  Api::V1::BaseController
   def ensure_param_exists(param)
     return unless params[param].blank?
     render json:{ success: false, message: "Missing #{param} parameter"}, status: :unprocessable_entity
+  end
+
+  def invalid_credentials
+    render json: { success: false, message: "Error with your credentials"}, status: :unprocessable_entity
   end
 
   def invalid_login_attempt

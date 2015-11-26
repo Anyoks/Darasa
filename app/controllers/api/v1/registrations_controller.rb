@@ -24,6 +24,16 @@ class Api::V1::RegistrationsController < ApplicationController
 	  end
 	end
 
+	# def update
+	#   resource =  User.find_by_authentication_token(params[:auth_token])
+
+	#   return invalid_user unless resource
+	  
+	#   if resource.valid_for_authentication?  
+	#   	resource.
+
+	# end
+
 	 def user_params
       params.require(:user).permit(:first_name, :second_name, :email, :password, :provider)
     end
