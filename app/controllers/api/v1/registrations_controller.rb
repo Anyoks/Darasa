@@ -40,7 +40,7 @@ class Api::V1::RegistrationsController < ApplicationController
 		end
 
 		if resource.update(update_params) #resource.valid_for_authentication?  
-			render json: { success: true, authentication_token: resource.authentication_token }, status: :ok
+			render json: { success: true }, status: :ok
 		else
 			invalid_credentials
 		end
