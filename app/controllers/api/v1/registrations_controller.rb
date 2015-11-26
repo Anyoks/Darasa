@@ -11,7 +11,18 @@ class Api::V1::RegistrationsController < ApplicationController
 	    return
 	  else
 	    warden.custom_failure!
-	    render json: user.errors, status: :unprocessable_entity
+	    # render json: { success: false, message: "Wrong Credentials"}, status: :failed
+	    error = ""
+	    message = ""
+	    user.errors.messages.each do |k,v|
+	    	error = v 
+	    	message = k
+	    end
+	    err = error[0]
+	    itm = message.to_s
+
+	    msg = itm + ' ' + err
+	    render json: {success: false, message: msg, status: :unprocessable_entity}
 	  end
 	end
 
