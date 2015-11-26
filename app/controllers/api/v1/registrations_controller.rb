@@ -31,8 +31,18 @@ class Api::V1::RegistrationsController < ApplicationController
 
 		return invalid_credentials unless resource
 
-		if resource.update(user_params) #resource.valid_for_authentication?  
-			render json: { success: true, authentication_token: resource.authentication_token }, status: :updated
+		update_params = {}
+
+		user_params.each do |k,v|
+			unless v.blank? || k == "auth_token"
+				update_params [k] = v
+			end
+		end
+
+		if resource.update(update_params) #resource.valid_for_authentication?  
+			render json: { success: true, authentication_token: resource.authentication_token }, status: :ok
+		else
+			invalid_credentials
 		end
 	end
 
