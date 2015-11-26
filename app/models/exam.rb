@@ -15,7 +15,7 @@
 class Exam < ActiveRecord::Base
 	require 'json'
 
-	mount_uploader :attachment, PdfUploader #mount the pdf uploader
+	# mount_uploader :attachment, PdfUploader #mount the pdf uploader
 
 	validates_presence_of :title, :date, :unit 
 

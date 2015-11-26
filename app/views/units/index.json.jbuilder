@@ -1,4 +1,15 @@
-json.array!(@units) do |unit|
-  json.extract! unit, :id, :name
-  json.url unit_url(unit, format: :json)
+if @units
+      @status = "OK"
+      @error = "none"
+    else
+      @status = "bad"
+      @error = " can't load units"
+end
+
+json.status @status
+json.error  @error
+
+json.data  @units.each do |unit|
+	json.id unit.id
+	json.title unit.name
 end
