@@ -65,6 +65,7 @@ Rails.application.routes.draw do
       get "/index", :to => 'payments#index'
       get "/user_details", :to => 'details#show'
       devise_scope :user do
+        post"/update", :to => 'registrations#update'
         post "/sign_in", :to => 'sessions#create'
         delete "/sign_out", :to => 'sessions#destroy'
         post "/sign_up", :to => 'registrations#create'#, :as => 'register'

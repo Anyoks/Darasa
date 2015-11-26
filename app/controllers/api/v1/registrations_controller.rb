@@ -25,12 +25,14 @@ class Api::V1::RegistrationsController < ApplicationController
 	end
 
 	def update
+		params.permit!
+
 		resource =  User.find_by_authentication_token(params[:auth_token])
 
 		return invalid_credentials unless resource
 
 		if resource.update(user_params) #resource.valid_for_authentication?  
-			render json: { success: true, authentication_token: user.authentication_token }, status: :updated
+			render json: { success: true, authentication_token: resource.authentication_token }, status: :updated
 		end
 	end
 
