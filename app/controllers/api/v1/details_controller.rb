@@ -22,7 +22,7 @@ class Api::V1::DetailsController < ApplicationController
 			end
 
 			render json: { success: true, user_id: resource.id, first_name: resource.first_name,
-			second_name: resource.second_name, email: resource.email, unit_owned: units_owned }, status: :ok
+			second_name: resource.second_name, email: resource.email, units_owned: units_owned }, status: :ok
 			return
 		end
 		invalid_user
