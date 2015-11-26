@@ -13,7 +13,7 @@ class Api::V1::DetailsController < ApplicationController
 		
 		if resource.valid_for_authentication?  
 			if resource.payments.empty?
-				units_owned = "none"
+				units_owned = []
 			else
 				units_owned = []
 				resource.payments.each do | owned|
