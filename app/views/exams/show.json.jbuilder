@@ -1,4 +1,4 @@
-@paid = @current_user.has_paid? @exam.unit.id, @exam.unit.semester.id
+@paid = @current_user.has_paid? @exam.unit.id
 
 if @exam.questions
       @status = "OK"
