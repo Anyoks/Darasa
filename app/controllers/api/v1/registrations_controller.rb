@@ -24,15 +24,19 @@ class Api::V1::RegistrationsController < ApplicationController
 	  end
 	end
 
-	# def update
-	#   resource =  User.find_by_authentication_token(params[:auth_token])
+	def update
+		resource =  User.find_by_authentication_token(params[:auth_token])
 
-	#   return invalid_user unless resource
-	  
-	#   if resource.valid_for_authentication?  
-	#   	resource.
+		return invalid_credentials unless resource
 
-	# end
+		if resource.update(user_params) #resource.valid_for_authentication?  
+			render json: { success: true, authentication_token: user.authentication_token }, status: :updated
+		end
+	end
+
+	def invalid_credentials
+	  render json: { success: false, error: "Error with your credentials"}, status: :unprocessable_entity
+	end
 
 	 def user_params
       params.require(:user).permit(:first_name, :second_name, :email, :password, :provider)

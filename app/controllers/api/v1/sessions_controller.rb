@@ -2,6 +2,7 @@ class Api::V1::SessionsController <  Api::V1::BaseController
 	before_filter :authenticate_user!, except: [:create]
   before_filter :ensure_user_login_param_exists, only: [:create]
   after_filter :set_csrf_header, only: [:new, :create]
+  # after_filter :ensure_token_exists, only: [:destroy]
   # before_filter :ensure_email_param_exists, only: [:create]
   # before_filter :ensure_password_param_exists, only: [:create]
   respond_to :json
@@ -23,8 +24,10 @@ class Api::V1::SessionsController <  Api::V1::BaseController
     resource =  User.find_by_authentication_token(params[:auth_token])
     return invalid_credentials unless resource
 
-    resource.reset_authentication_token
-    render json: { success: true }, status: :ok
+    if resource.reset_authentication_token
+      render json: { success: true }, status: :ok
+    end
+    # invalid_credentials
   end
 
 
@@ -60,6 +63,9 @@ class Api::V1::SessionsController <  Api::V1::BaseController
 
   def ensure_password_param_exists
     ensure_param_exists :password
+  end
+  def ensure_token_exists
+    ensure_param_exists :auth_token
   end
 
   def ensure_param_exists(param)
