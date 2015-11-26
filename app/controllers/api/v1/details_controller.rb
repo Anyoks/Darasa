@@ -12,9 +12,18 @@ class Api::V1::DetailsController < ApplicationController
 		return invalid_user unless resource
 		
 		if resource.valid_for_authentication?  
-			render json: { success: true, authentication_token: resource.authentication_token, first_name: resource.first_name,
-			 second_name: resource.second_name, email: resource.email }, status: :ok
-			 return
+			if resource.payments.empty?
+				units_owned = "none"
+			else
+				units_owned = []
+				resource.payments.each do | owned|
+					units_owned << owned.unit_id
+				end
+			end
+
+			render json: { success: true, user_id: resource.id, first_name: resource.first_name,
+			second_name: resource.second_name, email: resource.email, unit_owned: units_owned }, status: :ok
+			return
 		end
 		invalid_user
 	end
