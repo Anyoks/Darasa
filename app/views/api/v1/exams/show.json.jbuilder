@@ -1,4 +1,6 @@
-@paid = @current_user.has_paid? @exam.unit.id
+@paid = @resource.has_paid? @exam.unit.id
+
+
 
 if @exam.questions
       @status = "OK"
@@ -17,6 +19,7 @@ json.data  @exam.questions do |question|
 
 	if question.response.nil?
 		json.text "false"
+		json.video "false"
 	else if question.response.video.nil?
 		json.video "false"
 	else

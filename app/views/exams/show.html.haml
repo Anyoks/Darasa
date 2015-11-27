@@ -20,12 +20,9 @@
 						This question has no answer yet
 				-else
 					%li= raw question.response.answer
-					%ul
-						%video{:controls => "controls", :height => "240", :width => "320", :float => "left"}
-							%source{:src => "#{question.response.video.url}"}/
-							Your browser does not support the video tag.
-						= question.response.video.url unless question.response.video.nil?
-						/ - if question.response.video.nil?
+					
+					/ = question.response.video.url unless question.response.video.nil?
+					/ - if question.response.video.nil?
 							
 
 

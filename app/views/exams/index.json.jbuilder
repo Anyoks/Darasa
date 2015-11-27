@@ -11,7 +11,7 @@ json.error  @error
 
 json.data  @exams.each do |exam|
 	json.id exam.id
-	json.title exam.title
+	json.text exam.title
 end
 
 
