@@ -19,8 +19,11 @@ class Api::V1::UnitsController < ApplicationController
   # GET /units/1.json
   def show
      resource =  User.find_by_authentication_token(params[:auth_token])
+     return invalid_user unless resource
+
+     @unit = Unit.find(params[:id])
     # byebug
-    return invalid_user unless resource
+    
     # @topics = @unit.topics
   end
 
