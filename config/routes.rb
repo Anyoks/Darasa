@@ -63,6 +63,8 @@ Rails.application.routes.draw do
       get "/units", :to => 'units#index'
       get "/units/:id", :to => 'units#show'
 
+      
+
 
       post "/pay", :to => 'payments#pay'
       get "/pay", :to => 'payments#show'
