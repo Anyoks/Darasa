@@ -11,5 +11,5 @@ json.error  @error
 
 json.data  @units.each do |unit|
 	json.id unit.id
-	json.title unit.name
+	json.text unit.name
 end
