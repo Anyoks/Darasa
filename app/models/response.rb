@@ -12,4 +12,9 @@
 class Response < ActiveRecord::Base
 	belongs_to :question
 	mount_uploader :video, VideoUploader
+
+	def destroy_assets
+	  self.video.remove! if self.video
+	  self.save!
+	end
 end

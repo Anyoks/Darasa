@@ -60,12 +60,15 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       # resources :details, defaults: { format: 'json' }
+
+      #show units routes
       get "/units", :to => 'units#index'
       get "/units/:id", :to => 'units#show'
 
-      
+      get "/exams", :to => 'exams#index'
+      get "/exams/:id", :to => 'exams#show'
 
-
+      #payment routes
       post "/pay", :to => 'payments#pay'
       get "/pay", :to => 'payments#show'
       get "/index", :to => 'payments#index'
