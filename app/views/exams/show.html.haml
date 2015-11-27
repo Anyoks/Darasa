@@ -19,9 +19,21 @@
 					%p
 						This question has no answer yet
 				-else
-					= raw question.response.answer
+					%li= raw question.response.answer
+					%ul
+						= question.response.video.url unless question.response.video.nil?
+						%video{:controls => "controls", :height => "240", :width => "320"}
+							%source{:src => "#{question.response.video.url}"}/
+							Your browser does not support the video tag.
+						/ - if question.response.video.nil?
+							
+
+
 				/ -else
 				/ =link_to 'Pay to get the answer', api_v1_pay_path(:params =>{:user_id => current_user.id, :unit_id => @exam.unit.id }), method: :post, class: "btn btn-success"
+					
+
+
 	-if current_user.is_moderator? || current_user.is_admin?			
 		= link_to 'Add questions!', edit_exam_path(@exam), class: "label label-pill label-success"
 

@@ -4,7 +4,10 @@ class VideoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
+  # include CarrierWave::MiniMagick
+  include CarrierWave::Video
+  include CarrierWave::Video::Thumbnailer
+  # include CarrierWave::FFMPEG
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -37,17 +40,23 @@ class VideoUploader < CarrierWave::Uploader::Base
   #     frame if index.zero?
   #   end
   # end  
-  version :large do
-    process resize_to_fit: [500, 300]
-    process :convert => 'png'
-  end 
-  
-  # Create different versions of your uploaded files:
   version :thumb do
-    # process :cover    
-    process :resize_to_fit => [50, 50]
-    process :convert => 'png'
-  end
+      process thumbnail: [{format: 'jpg', quality: 7, size: 640, strip: false, logger: Rails.logger}]
+      def full_filename for_file
+        png_name for_file, version_name
+      end
+      process :set_content_type_jpg
+    end
+
+    def png_name for_file, version_name
+      %Q{#{version_name}_#{for_file.chomp(File.extname(for_file))}.jpg}
+    end
+
+    def set_content_type_jpg(*args)
+      Rails.logger.debug "#{file.content_type}"
+      self.file.instance_variable_set(:@content_type, "image/jpeg")
+    end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_white_list
