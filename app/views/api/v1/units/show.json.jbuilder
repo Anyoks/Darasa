@@ -24,7 +24,7 @@ json.error  @error
 	
 json.data  exam_for_this_unit do |exam|
 	json.id exam.id
-	json.title exam.title
+	json.text exam.title
 
 	
 end
