@@ -1,4 +1,4 @@
-= simple_form_for @exam do |f|
+= simple_form_for @exam, :html => {:multipart => true} do |f|
   - if @exam.errors.any?
     #error_explanation
       %h2= "#{pluralize(@exam.errors.count, "error")} prohibited this exam from being saved:"
