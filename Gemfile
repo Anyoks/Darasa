@@ -99,3 +99,7 @@ gem 'slim'
 
 #capistrano-sidekiq for deployment
 gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+#for formatting video
+gem 'carrierwave-video'
+#for video thumbs
+gem 'carrierwave-video-thumbnailer'

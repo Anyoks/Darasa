@@ -114,7 +114,7 @@ class ExamsController < ApplicationController
     def exam_params
       params.require(:exam).permit(:title, :date, :unit_id, 
         questions_attributes:[ :id, :question, :exam_id,  :_destroy,
-        response_attributes:[:id, :answer, :question_id, :_destroy]]
+        response_attributes:[:id, :answer, :question_id, :video,:_destroy]]
         )
     end
 end
