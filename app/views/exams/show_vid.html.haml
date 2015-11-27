@@ -1,0 +1,8 @@
+-if question.response.video.nil?
+	%p
+		This question has no answer yet
+	-else
+		/ %ul
+		.well
+			.embed-responsive.embed-responsive-4by3
+				%iframe.embed-responsive-item{:src => "#{question.response.video.url}"}
