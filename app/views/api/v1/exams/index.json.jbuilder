@@ -12,18 +12,21 @@ json.error  @error
 json.data  @exams.each do |exam|
 	exam.questions.each do |question|
 		json.id question.id
-		json.Question question.question
+		json.question question.question
 
 		if question.response.nil?
-			json.text "false"
+			@text = "false"
+			@video = "false"
 		else if question.response.video.nil?
-			json.video "false"
+			@video = "false"
 		else
-			json.text "true"
-			json.video "true"
-			json.paid @paid
+			@text = "true"
+			@video = "true"
 		end
 		end
+		json.text @text
+		json.video @video
+		
 	end
 end
 

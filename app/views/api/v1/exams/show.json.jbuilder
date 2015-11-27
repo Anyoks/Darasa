@@ -15,18 +15,24 @@ json.error  @error
 	
 json.data  @exam.questions do |question|
 	json.id question.id
-	json.Question question.question
+	json.question question.question
 
 	if question.response.nil?
-		json.text "false"
-		json.video "false"
+		@text = "false"
+		@video = "false"
 	else if question.response.video.nil?
+		@video = "false"
 		json.video "false"
 	else
-		json.text "true"
-		json.video "true"
-		json.paid @paid
+		@text = "true"
+		@video = "true"
 	end
+
+	json.text @text
+	json.video @video
+	json.paid @paid
+
+
 	end
 end
 
