@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126191739) do
+ActiveRecord::Schema.define(version: 20151129200029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,10 @@ ActiveRecord::Schema.define(version: 20151126191739) do
   create_table "table_prices", force: :cascade do |t|
     t.string "content"
     t.float  "price"
+  end
+
+  create_table "terms", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.text "terms"
   end
 
   create_table "topics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
