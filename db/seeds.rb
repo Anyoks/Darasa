@@ -17,7 +17,7 @@ end
 #   Price.find_or_create_by({price: price})
 # end
 
-['<html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body> <h4><center>DARASA TERMS AND CONDITIONS</center></h4>
+['<h4><center>DARASA TERMS AND CONDITIONS</center></h4>
     <h5>IT IS IMPORTANT THAT YOU READ THESE TERMS OF USE (&quot;TERMS&quot;) CAREFULLY AS THEY,
       TOGETHER WITH ANY POLICIES OR GUIDELINES ON THE DARASA WEBSITE AND APPLICATION
       GOVERN YOUR USE OF AWESOME NAIROBI (O/A DARASA) (&quot;DARASA&quot;)&#39;S SERVICES PROVIDED
@@ -198,10 +198,10 @@ end
     care which We Use in respect to Our own confidential and proprietary information of like nature, to prevent the unauthorized disclosure, reproduction or distribution of such Confidential Information to any other individual, corporation
     or entity. Such Confidential Information will exclude:</p>
   <ul>
-    <li>(a)	information that is already in the public domain;</li>
-    <li>(b)	information already known to the receiving party, as of the date of the disclosure, unless the receiving party agreed to keep such information in confidence at the time of its original receipt;</li>
-    <li>(c)	information hereafter obtained by the receiving party, from a source not otherwise under an obligation of confidentiality with the disclosing party;</li>
-    <li>(d)	information that the receiving party is obligated to produce under order of a court of competent jurisdiction, provided that the receiving party promptly notifies the disclosing party of such an event so that the disclosing party may seek an appropriate protective order.</li>
+    <li>(a) information that is already in the public domain;</li>
+    <li>(b) information already known to the receiving party, as of the date of the disclosure, unless the receiving party agreed to keep such information in confidence at the time of its original receipt;</li>
+    <li>(c) information hereafter obtained by the receiving party, from a source not otherwise under an obligation of confidentiality with the disclosing party;</li>
+    <li>(d) information that the receiving party is obligated to produce under order of a court of competent jurisdiction, provided that the receiving party promptly notifies the disclosing party of such an event so that the disclosing party may seek an appropriate protective order.</li>
   </ul>
   <h4>16. GENERAL</h4>
   <p>16.1 <u>Consents</u>. Any consent required under this Agreement will not be unreasonably withheld.</p>
@@ -216,7 +216,6 @@ end
   <p><em>[Surveyors Court, 1st Floor, Room A4, Westlands, PO BOX 1963 00606, <a href="mailto:edwin@awesomenairobi.com" target="_blank">edwin@awesomenairobi.com</a>]</em></p>
   <p>A notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this Agreement to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.</p>
   <p>16.10 <u>Revisions to this Agreement</u>. We may at any time revise the terms of this Agreement by updating these terms and by providing notice to You of that change.</p>
-
-</body></html>'].each do |term|
-	Term.find_or_create_by({terms: term})
+'].each do |term|
+  Term.find_or_create_by({terms: term})
  end
