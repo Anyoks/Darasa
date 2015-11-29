@@ -4,9 +4,13 @@ class Api::V1::TermsController < ApplicationController
 	def show
 
 		resource =  Term.first
-	# byebug
+
+		return no_terms unless resource
 		render json: { success: true, text: resource.terms}, status: :ok
-		# return
-		# invalid_user
+
+	end
+
+	def no_terms
+		render json: { success: false, error: "No terms"}, status: :unprocessable_entity
 	end
 end
