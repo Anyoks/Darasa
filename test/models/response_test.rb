@@ -7,6 +7,7 @@
 #  updated_at  :datetime         not null
 #  id          :uuid             not null, primary key
 #  question_id :uuid
+#  video       :string
 #
 
 require 'test_helper'

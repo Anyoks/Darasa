@@ -7,6 +7,7 @@
 #  updated_at  :datetime         not null
 #  id          :uuid             not null, primary key
 #  question_id :uuid
+#  video       :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
