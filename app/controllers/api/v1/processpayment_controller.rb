@@ -60,7 +60,7 @@ class Api::V1::ProcesspaymentController < ApplicationController
 					payment.update_attribute :pesapal_transaction_tracking_id, @query_params[:pesapal_transaction_tracking_id]# if payment.unit_id = "#{@reference[1]}"
 				end
 			
-				byebug
+				# byebug
 				if @status == "pesapal_response_data=PENDING"
 					 if payment.update_attribute :status, "PENDING"
 					 	# payment_is_being_processed

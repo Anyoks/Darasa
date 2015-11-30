@@ -10,16 +10,19 @@ class Api::V1::UrlController < ApplicationController
 		
 		# if 
 		url = []
+		status = []
 		url.clear
 
 		if url.empty?
 			resource.payments.each do |order|
 				url << order.order_url unless order.order_url.nil? && order.status.nil?
+				url  << order.status
 			end
 		else
 			url.clear
 			resource.payments.each do |order|
 				url << order.order_url unless order.order_url.nil? && order.status.nil?
+				url  << order.status
 			end
 		end
 
