@@ -5,7 +5,7 @@ class Api::V1::UrlController < ApplicationController
 
 	def show
 
-		resource =  User.find(params[:user_id]) #_by_authentication_token(params[:auth_token])
+		resource =  User.find_by_id(params[:user_id]) #_by_authentication_token(params[:auth_token])
 		return invalid_user unless resource
 		
 		# if 
@@ -37,6 +37,6 @@ class Api::V1::UrlController < ApplicationController
 
 
 	def invalid_user
-	  render json: { success: false, message: "Error with your credentials"}, status: :unauthorized
+	  render json: { success: false, error: "Error with your credentials"}, status: :unauthorized
 	end
 end
