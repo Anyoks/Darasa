@@ -141,26 +141,20 @@ class User < ActiveRecord::Base
 			break token unless User.where(authentication_token: token).first
 		end
 	end
+	def empty?
+		self.empty?
+	end
 
 	def check_if_this_unit_is_paid_for unit_id
-		@payment = Payment.find_by_unit_id(unit_id)
-		
-		if @payment.nil?
-			false
-		else
-
-			if (@payment.status == "COMPLETED" )  #if both are false, They have paid for that unit's answers
-				"He has paid"
-				true
-			else
+		@payment = self.payments
+		if @payment.present? #has the user made any Payments?
+			if @payment.find_by_unit_id(unit_id).nil? #If not no need to check further!
 				false
-			# elsif(@payment.status == nil || @payment.status == "PENDING" )
-			# 	"Payment is being processed"
-			# 	false
-			# elsif(@payment.status == "INVALID" || @payment.status == "FAILED" )
-			# 	"Has not  paid"
-			# 	false
+			elsif @payment.find_by_unit_id(unit_id).status== "COMPLETED" #if he has check if her has paid for this unit
+				true
 			end
+		else
+			false
 		end
 	end
 

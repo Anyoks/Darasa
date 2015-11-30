@@ -20,14 +20,14 @@
 						This question has no answer yet
 				-else
 					%li= raw question.response.answer
-					
+				
 					/ = question.response.video.url unless question.response.video.nil?
 					/ - if question.response.video.nil?
 							
 
 
-				/ -else
-				/ =link_to 'Pay to get the answer', api_v1_pay_path(:params =>{:user_id => current_user.id, :unit_id => @exam.unit.id }), method: :post, class: "btn btn-success"
+			/ -else
+			/ =link_to 'Pay to get the answer', api_v1_pay_path(:params =>{:user_id => current_user.id, :unit_id => @exam.unit.id }), method: :post, class: "btn btn-success"
 					
 
 

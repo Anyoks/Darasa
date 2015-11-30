@@ -14,9 +14,15 @@ class Api::V1::PaymentsController < ApplicationController
 
 
 	def pay
+
+		params.permit!
 		@unit = Unit.find(params[:unit_id])
 
+		# user_id = User.find_by_authentication_token(params[:auth_token]).id
+		# byebug
+		# unit_id = params[:unit_id]
 		@payment = Payment.new(payment_params)
+		# byebug
 
 		if @payment.save
 
@@ -118,13 +124,13 @@ class Api::V1::PaymentsController < ApplicationController
 			end
 
 
-			 # @order_url = Pesapal::Order.generate_order_url#(data)
+			
 
 			 #****Send this to mobile app****#
 			@order_url = Pesapal::OrderUrl.new(@xml, @call_back_url, true).url.html_safe #change true to false when live
-
-			   # 
-
+			
+			@payment.update_attribute :order_url, @order_url
+			 
 			 #**Now I need to execute the url**#
 
 			 #**Make sure the url is uri**#
@@ -132,6 +138,7 @@ class Api::V1::PaymentsController < ApplicationController
 			@get_order_execute =  URI(@order_url)
 
 			 #**this returns a page**#
+
 
 			@set_order = Net::HTTP.get(@get_order_execute)
 
@@ -149,25 +156,6 @@ class Api::V1::PaymentsController < ApplicationController
 		else
 			invalid_details
 		end
-
-
-
-		  # respond_to do |format|
-		  #   format.html { render :text => @set_order.html_content }
-		  # end
-
-		# redirect_to api_v1_processpayment_process_path(@data)  #/api/v1/processpayment/process
-
-		# respond_to do |format|
-		# 	if @order_url.nil?
-		# 		# format.html { redirect_to @unit, notice: 'unit was successfully created.' }
-		# 	    format.json { render :show, order_url: @order_url}
-		# 	else
-		# 		format.html { redirect_to api_v1_processpayment_process_path(data) } # redirect_to api_v1_processpayment_process_path(data)# format.html { render :show, order_url: @order_url}
-		# 		format.json { render :show, order_url: @order_url}
-		# 	end
-		# # redirect_to api_v1_processpayment_process_path(data)# format.html { render :show, order_url: @order_url}
-		# end
 
 	end
 
@@ -200,6 +188,13 @@ class Api::V1::PaymentsController < ApplicationController
 
 		def payment_params
 			@unit = Unit.find(params[:unit_id])
-			params.permit(:user_id, :unit_id)
+			
+			params.permit(:user_id, :unit_id, :auth_token)
+		end
+
+		def order_params
+			authentication_token = User.find(params[:user_id]).authentication_token
+			order_url = $order_url
+			params.permit(authentication_token,order_url)
 		end
 end

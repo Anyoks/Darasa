@@ -1,6 +1,6 @@
 class PaymentsWorker
 	include Sidekiq::Worker
-	# sidekiq_options queue: :update_payment_status
+	sidekiq_options queue: :update_payment_status
 
 	def perform
 		Payment.where(status: 'PENDING').each do |payment|
@@ -19,6 +19,7 @@ class PaymentsWorker
 
 					if status && status != payment.status
 						payment.status = status
+						payment.order_url =  nil
 
 						payment.save!
 					end

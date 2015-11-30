@@ -10,6 +10,7 @@
 #  unit_id                         :uuid
 #  user_id                         :uuid
 #  status                          :string
+#  order_url                       :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
