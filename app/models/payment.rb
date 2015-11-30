@@ -10,6 +10,7 @@
 #  unit_id                         :uuid
 #  user_id                         :uuid
 #  status                          :string
+#  order_url                       :string
 #
 
 class Payment < ActiveRecord::Base

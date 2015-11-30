@@ -70,6 +70,9 @@ Rails.application.routes.draw do
       #show terms and conditions
       get "/terms", :to => 'terms#show'
 
+      #show order_url
+      get "/url", :to => 'url#show'
+
       #payment routes
       post "/pay", :to => 'payments#pay'
       get "/pay", :to => 'payments#show'

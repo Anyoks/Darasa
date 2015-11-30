@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129200029) do
+ActiveRecord::Schema.define(version: 20151130013159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20151129200029) do
 
   add_index "exams", ["unit_id"], name: "index_exams_on_unit_id", using: :btree
 
+  create_table "order_urls", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.text   "order_url"
+    t.string "authentication_token"
+  end
+
   create_table "payments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
@@ -62,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151129200029) do
     t.uuid     "unit_id"
     t.uuid     "user_id"
     t.string   "status"
+    t.string   "order_url"
   end
 
   add_index "payments", ["unit_id"], name: "index_payments_on_unit_id", using: :btree
