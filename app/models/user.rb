@@ -78,7 +78,11 @@ class User < ActiveRecord::Base
 	end
 
 	def is_admin?
-		self.role.name == "admin"
+		if self.role.name == "admin"
+			true
+		else
+			false
+		end
 	end
 	
 	#if the user has not accepted terms and conditions, they are not a moderator!
