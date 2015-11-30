@@ -78,7 +78,9 @@ class User < ActiveRecord::Base
 	end
 
 	def is_admin?
-		if self.role.name == "admin"
+		if self.role.nil?
+			false
+		elsif self.role.name == "admin"
 			true
 		else
 			false
