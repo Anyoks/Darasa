@@ -4,7 +4,7 @@ class Api::V1::RegistrationsController < ApplicationController
 	def create
 
 	  user = User.new(user_params)
-	  # byebug
+	  byebug
 	  if user.save
 	    # render json: user.authentication_token #as_json(auth_token: user.authentication_token), status: :created
 	    render json: { success: true, authentication_token: user.authentication_token }, status: :created

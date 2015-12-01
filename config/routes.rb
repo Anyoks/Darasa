@@ -15,6 +15,7 @@ Rails.application.routes.draw do
  # resources :exams
   resources :cats
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
   mount Sidekiq::Web => '/sidekiq'
   devise_scope :user do
     authenticated :user do
@@ -56,7 +57,7 @@ Rails.application.routes.draw do
       put :accept_tos
     end
   end
-
+  
   namespace :api do
     namespace :v1 do
       # resources :details, defaults: { format: 'json' }
@@ -72,6 +73,13 @@ Rails.application.routes.draw do
 
       #show order_url
       get "/url", :to => 'url#show'
+
+      #facebook login
+      get "/auth/facebook_access_token/callback", :to => 'facebook#facebook'
+      post "/auth/facebook_access_token/callback", :to => 'facebook#facebook'
+
+      
+      # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
       #payment routes
       post "/pay", :to => 'payments#pay'

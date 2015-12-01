@@ -103,3 +103,5 @@ gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
 gem 'carrierwave-video'
 #for video thumbs
 gem 'carrierwave-video-thumbnailer'
+#remote fb login
+gem 'omniauth-facebook-access-token'

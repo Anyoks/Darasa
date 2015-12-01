@@ -195,6 +195,9 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (3.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-facebook-access-token (0.1.7)
+      oauth2 (~> 1.0.0)
+      omniauth (~> 1.2)
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
@@ -339,6 +342,7 @@ DEPENDENCIES
   oauth (~> 0.4.7)
   omniauth
   omniauth-facebook
+  omniauth-facebook-access-token
   omniauth-google-oauth2!
   omniauth-oauth2 (~> 1.4)
   pesapal
