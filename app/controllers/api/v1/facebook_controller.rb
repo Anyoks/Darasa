@@ -17,7 +17,9 @@ class  Api::V1::FacebookController < ApplicationController # Devise::OmniauthCal
 
 			if logged #check i user is in the database
 				sign_in(:user, logged) #if there are sign them in!
+				p "in the if statement"
 				render json: { success: true, authentication_token: logged.authentication_token }, status: :ok #return success!
+
 			else #if they are not in the DB create them!
 				user1 = User.create(first_name:user.first_name,
 								second_name:user.last_name,
@@ -26,8 +28,16 @@ class  Api::V1::FacebookController < ApplicationController # Devise::OmniauthCal
 								email: params[:facebook][:email],
 								password:Devise.friendly_token[0,20]
 								)
+				token = user1.authentication_token
+				puts "code is now here"
 
-				render json: { success: true, authentication_token: user1.authentication_token, status: "created" }, status: :ok
+				if token
+					render json: { success: true, authentication_token: user1.authentication_token, status: "created" }, status: :ok
+				else
+					token1 = user1.id
+					render json: { success: false, authentication_token:token1, status: "created but no Token" }, status: :ok
+				end
+				
 			end
 	end
 end
