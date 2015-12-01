@@ -105,3 +105,5 @@ gem 'carrierwave-video'
 gem 'carrierwave-video-thumbnailer'
 #remote fb login
 gem 'omniauth-facebook-access-token'
+#remote fb login
+gem 'fb_graph2'
