@@ -1,5 +1,8 @@
 class  Api::V1::FacebookController < ApplicationController # Devise::OmniauthCallbacksController   
 	# use OmniAuth::Strategies::FacebookAccessToken # ApplicationController # 
+	before_filter :authenticate_user!, except: [:facebook]
+	skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
+	respond_to :json
 
 	def facebook
 		FbGraph2.debug!
