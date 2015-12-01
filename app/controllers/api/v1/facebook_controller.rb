@@ -8,7 +8,7 @@ class  Api::V1::FacebookController < ApplicationController # Devise::OmniauthCal
 		user = FbGraph2::User.me(token)
 		# byebug
 		user = user.fetch
-		byebug
+		# byebug
 
 		logged = User.find_by_uid(user.identifier)
 
