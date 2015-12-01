@@ -20,7 +20,7 @@ class Api::V1::PaymentsController < ApplicationController
 		user =  User.find_by_authentication_token(params[:auth_token])
 		# byebug
 		return invalid_details unless user
-byebug
+# byebug
 
 		
 		unit = Unit.find_by_id(params[:payment][:unit_id])
@@ -30,7 +30,7 @@ byebug
 		# byebug
 		# unit_id = params[:unit_id]
 		@payment = Payment.new(payment_params)
-		byebug
+		# byebug
 
 		package= params[:payment][:package]
 

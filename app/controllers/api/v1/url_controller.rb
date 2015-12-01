@@ -31,7 +31,7 @@ class Api::V1::UrlController < ApplicationController
 			end
 		end
 
-		byebug
+		# byebug
 		render json: { success: true, text: url}, status: :ok
 
 		return
