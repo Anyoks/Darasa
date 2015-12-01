@@ -170,7 +170,7 @@ class Api::V1::PaymentsController < ApplicationController
 			# render @set_order
 			# order_url @order_url
 
-			render "index" #:inline => "<%= @set_order.html_content %>"
+			payment_is_being_processed # render "index" #:inline => "<%= @set_order.html_content %>"
 		else
 			invalid_details
 		end
@@ -182,13 +182,7 @@ class Api::V1::PaymentsController < ApplicationController
 	    # @user = user
 	end
 
-	def invalid_details
-	  render json: { success: false, error: "Error with your payment details"}, status: :unauthorized
-	end
-
-	def invalid_unit
-	  render json: { success: false, error: "couldn't find that unit"}, status: :unauthorized
-	end
+	
 
 
 
@@ -209,6 +203,18 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	protected
+
+	def invalid_details
+	  render json: { success: false, error: "Error with your payment details"}, status: :unauthorized
+	end
+
+	def invalid_unit
+	  render json: { success: false, error: "couldn't find that unit"}, status: :unauthorized
+	end
+
+	def payment_is_being_processed
+		render json: { success: true, msg: "Payment is being processed"}, status: :ok
+	end
 
 		def payment_params
 			params.permit!
