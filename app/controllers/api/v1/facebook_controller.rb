@@ -2,11 +2,13 @@ class  Api::V1::FacebookController < ApplicationController # Devise::OmniauthCal
 	# use OmniAuth::Strategies::FacebookAccessToken # ApplicationController # 
 
 	def facebook
+		FbGraph2.debug!
 		token = params[:facebook][:access_token]
 		# byebug
 		user = FbGraph2::User.me(token)
+		byebug
 		user = user.fetch
-		# byebug
+		byebug
 
 		logged = User.find_by_uid(user.identifier)
 
