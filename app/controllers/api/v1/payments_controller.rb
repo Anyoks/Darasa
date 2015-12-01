@@ -1,6 +1,7 @@
 class Api::V1::PaymentsController < ApplicationController
-	before_filter :authenticate_user!
-	# respond_to :json
+	# before_filter :authenticate_user!
+	before_filter :authenticate_user!, except: [:pay]
+	respond_to :json
 
 	# require 'oauth.rb'
 	# require 'api/v1/oauths_controller'
@@ -14,35 +15,50 @@ class Api::V1::PaymentsController < ApplicationController
 
 
 	def pay
-
 		params.permit!
-		@unit = Unit.find(params[:unit_id])
+
+		user =  User.find_by_authentication_token(params[:auth_token])
+		# byebug
+		return invalid_details unless user
+byebug
+
+		
+		unit = Unit.find_by_id(params[:payment][:unit_id])
+		return invalid_unit unless unit
 
 		# user_id = User.find_by_authentication_token(params[:auth_token]).id
 		# byebug
 		# unit_id = params[:unit_id]
 		@payment = Payment.new(payment_params)
-		# byebug
+		byebug
+
+		package= params[:payment][:package]
+
+
 
 		if @payment.save
-
-			# order_params = {
-			# 	unit_id: params[:unit_id],
-			# 	user_id: params[:user]
-			# }
-
+				
+				#price hard coded
+			if package  == "standard"
+				# @unit.
+				price = 150
+			else
+				price = 500
+			end
 			# pesapal = Pesapal::Merchant.new
-			@reference = params[:user_id] + '888' + params[:unit_id]
+			@reference = params[:payment][:user_id] + '888' + params[:payment][:unit_id]
+
+			# user  = User.find(params[:id])
 			
 			data = {
-				amount: @unit.price.amount,
-				description: "payment for this unit #{@unit.name}",
+				amount: price,
+				description: "payment for this unit #{unit.name}",
 				type: 'MERCHANT',
 				reference: "#{@reference}", #Time.now.to_i.to_s, #must be unique || I can generate a reference that is related to a user_id and unit_id and user this to identify a trasactions
-				first_name: "#{current_user.first_name}",
-				last_name: "#{current_user.first_name}",
-				email: "#{current_user.email}",
-				phonenumber: "#{current_user.phone_number}",
+				first_name: "#{user.first_name}",
+				last_name: "#{user.first_name}",
+				email: "#{user.email}",
+				phonenumber: "#{user.phone_number}",
 				currency: 'KES',
 				answers_bought: [] # line_items for the pesapal pesapal_request_data XML
 			}
@@ -58,12 +74,13 @@ class Api::V1::PaymentsController < ApplicationController
 			#Now insert the details required to know exactly what they are buying
 			
 
+
 			data[:answers_bought] << {
-				user_id: current_user.id,
-				unit_id: @unit.id,
-				semester_id: @unit.semester.id,
-				unit_cost: @unit.answers_price,
-				sub_total: @unit.answers_price
+				user_id: user.id,
+				unit_id: unit.id,
+				semester_id: unit.semester.id,
+				unit_cost: price,
+				sub_total: price
 			}
 
 			###required attributes  ###
@@ -130,6 +147,7 @@ class Api::V1::PaymentsController < ApplicationController
 			@order_url = Pesapal::OrderUrl.new(@xml, @call_back_url, true).url.html_safe #change true to false when live
 			
 			@payment.update_attribute :order_url, @order_url
+			@payment.update_attribute :status, "PENDING"
 			 
 			 #**Now I need to execute the url**#
 
@@ -161,12 +179,18 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def index
 		    @payments = Payment.all
-	    # @user = current_user
+	    # @user = user
 	end
 
 	def invalid_details
-	  render json: { success: false, message: "Error with your payment details"}, status: :unauthorized
+	  render json: { success: false, error: "Error with your payment details"}, status: :unauthorized
 	end
+
+	def invalid_unit
+	  render json: { success: false, error: "couldn't find that unit"}, status: :unauthorized
+	end
+
+
 
 	def order_url url
 		@order_url = url
@@ -187,13 +211,17 @@ class Api::V1::PaymentsController < ApplicationController
 	protected
 
 		def payment_params
-			@unit = Unit.find(params[:unit_id])
+			params.permit!
+
+			# unit = Unit.find(params[:payment][:unit_id])
+			# return invalid_unit unless unit
+			# params.permit(:auth_token, :payment)
 			
-			params.permit(:user_id, :unit_id, :auth_token)
+			params.require(:payment).permit(:user_id,:unit_id)
 		end
 
 		def order_params
-			authentication_token = User.find(params[:user_id]).authentication_token
+			authentication_token = User.find(params[:payment][:user_id]).authentication_token
 			order_url = $order_url
 			params.permit(authentication_token,order_url)
 		end
