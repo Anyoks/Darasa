@@ -11,7 +11,7 @@ class  Api::V1::FacebookController < ApplicationController # Devise::OmniauthCal
 		user = FbGraph2::User.me(token)
 		# byebug
 		user = user.fetch
-		# byebug
+		byebug
 
 		logged = User.find_by_uid(user.identifier)
 
@@ -28,13 +28,14 @@ class  Api::V1::FacebookController < ApplicationController # Devise::OmniauthCal
 								email: params[:facebook][:email],
 								password:Devise.friendly_token[0,20]
 								)
+				# byebug
 				token = user1.authentication_token
 				puts "code is now here"
-
+# byebug
 				if token
-					render json: { success: true, authentication_token: user1.authentication_token, status: "created" }, status: :ok
+					render json: { success: true, authentication_token: token, status: "created" }, status: :ok
 				else
-					token1 = user1.id
+					token1 = User.find_by_email(params[:facebook][:email]).authentication_token
 					render json: { success: false, authentication_token:token1, status: "created but no Token" }, status: :ok
 				end
 				
