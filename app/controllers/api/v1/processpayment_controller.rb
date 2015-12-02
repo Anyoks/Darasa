@@ -1,6 +1,6 @@
 class Api::V1::ProcesspaymentController < ApplicationController
 	require 'net/http'
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!,  except: [:process]
 
 	# def initialize
 		
@@ -99,7 +99,8 @@ class Api::V1::ProcesspaymentController < ApplicationController
 				end
 			end
 			# render "/exams", notice: 'Payment is being processed.'
-			redirect_to  '/'#:controller => 'exams', :action => 'index'
+			redirect_to  '/'
+			# redirect_to :controller => 'exams', :action => 'index'
 		else
 			payment_invalid
 		end

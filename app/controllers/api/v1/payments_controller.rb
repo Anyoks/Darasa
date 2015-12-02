@@ -141,7 +141,7 @@ class Api::V1::PaymentsController < ApplicationController
 			# 	# @call_back_url = "localhost:3000"
 			# else
 				@call_back_url =  "darasa.co.ke/api/v1/processpayment/process"
-			# end
+			# end 
 
 
 			
