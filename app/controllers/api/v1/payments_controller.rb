@@ -137,10 +137,10 @@ class Api::V1::PaymentsController < ApplicationController
 
 
 			# if Rails.env == "development"
-				@call_back_url = "localhost:3000/api/v1/processpayment/process"
+				# @call_back_url = "localhost:3000/api/v1/processpayment/process"
 			# 	# @call_back_url = "localhost:3000"
 			# else
-				# @call_back_url =  "darasa.co.ke/api/v1/processpayment/process"
+				@call_back_url =  "darasa.co.ke/api/v1/processpayment/process"
 			# end
 
 
