@@ -213,7 +213,8 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	def payment_is_being_processed
-		render json: { success: true, msg: "Payment is being processed"}, status: :ok
+
+		render json: { success: true, msg: "Order has been made"}, status: :ok
 	end
 
 		def payment_params
