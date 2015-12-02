@@ -16,14 +16,16 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def pay
 		params.permit!
-
+		# byebug
 		user =  User.find_by_authentication_token(params[:auth_token])
+		# user =  User.find_by_authentication_token(params[:pay][:auth_token])
 		# byebug
 		return invalid_details unless user
 # byebug
 
 		
 		unit = Unit.find_by_id(params[:payment][:unit_id])
+		# unit = Unit.find(params[:unit_id])
 		return invalid_unit unless unit
 
 		# user_id = User.find_by_authentication_token(params[:auth_token]).id
@@ -134,11 +136,12 @@ class Api::V1::PaymentsController < ApplicationController
 			</PesapalDirectOrderInfo>]
 
 
-			if Rails.env == "development"
+			# if Rails.env == "development"
 				@call_back_url = "localhost:3000/api/v1/processpayment/process"
-			else
-				@call_back_url =  "darasa.co.ke/api/v1/processpayment/process"
-			end
+			# 	# @call_back_url = "localhost:3000"
+			# else
+				# @call_back_url =  "darasa.co.ke/api/v1/processpayment/process"
+			# end
 
 
 			
@@ -169,8 +172,9 @@ class Api::V1::PaymentsController < ApplicationController
 
 			# render @set_order
 			# order_url @order_url
+			# render "index" #:inline => "<%= @set_order.html_content %>"
 
-			payment_is_being_processed # render "index" #:inline => "<%= @set_order.html_content %>"
+			payment_is_being_processed # 
 		else
 			invalid_details
 		end

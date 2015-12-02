@@ -8,6 +8,8 @@ class Api::V1::ProcesspaymentController < ApplicationController
 
 	def process data
 
+		# render "/exams", notice: 'Payment is being processed.'
+
 		params.permit! # Permit all Paypal input params
 
 		##****lets now de-mistify the data we have recieceved*****##
@@ -64,7 +66,8 @@ class Api::V1::ProcesspaymentController < ApplicationController
 				if @status == "pesapal_response_data=PENDING"
 					 if payment.update_attribute :status, "PENDING"
 					 	# payment_is_being_processed
-					 	redirect_to "/exams", notice: 'Payment is being processed.'
+					 	# redirect_to "/exams", notice: 'Payment is being processed.'
+					 	# redirect_to :controller => 'exams', :action => 'index'
 					 else
 					 	invalid_request
 					 end
@@ -72,29 +75,31 @@ class Api::V1::ProcesspaymentController < ApplicationController
 				elsif @status == "pesapal_response_data=COMPLETED"
 					if payment.update_attribute :status, "COMPLETED"
 						# payment_complete
-						redirect_to "/exams", notice: 'Payment is being processed.'
+						# redirect_to "/exams", notice: 'Payment is being processed.'
 					else
 						# invalid_request
-						redirect_to "/exams", notice: 'Payment could not be saved.'
+						# redirect_to "/exams", notice: 'Payment could not be saved.'
 					end
 				elsif @status == "pesapal_response_data=INVALID"
 					if payment.update_attribute :status, "INVALID"
 						# payment_invalid
-						redirect_to "/exams", notice: 'Payment invalid.'
+						# redirect_to "/exams", notice: 'Payment invalid.'
 					else
 						# invalid_request
-						redirect_to "/exams", notice: 'Payment could not be saved.'
+						# redirect_to "/exams", notice: 'Payment could not be saved.'
 					end
 				elsif @status == "pesapal_response_data=FAILED"
 					if payment.update_attribute :status, "FAILED"
 						# payment_failed
-						redirect_to "/exams", notice: 'Payment failed.'
+						# redirect_to "/exams", notice: 'Payment failed.'
 					else
 						# invalid_request
-						redirect_to "/exams", notice: 'Payment could not be saved.'
+						# redirect_to "/exams", notice: 'Payment could not be saved.'
 					end
 				end
 			end
+			# render "/exams", notice: 'Payment is being processed.'
+			redirect_to  '/'#:controller => 'exams', :action => 'index'
 		else
 			payment_invalid
 		end

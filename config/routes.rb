@@ -3,14 +3,14 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   namespace :api do
   namespace :v1 do
-    get 'processpayment/process'
-    end
-  end
-
-  resources :responses
-    # resources :answerss
-  
-  resources :questions
+    get 'processpayment/process(:parameters)' , :to => "processpayment#process"
+        end
+      end
+    
+      resources :responses
+        # resources :answerss
+      
+      resources :questions
   mount Ckeditor::Engine => '/ckeditor'
  # resources :exams
   resources :cats
@@ -82,6 +82,8 @@ Rails.application.routes.draw do
       # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
       #payment routes
+      # get "/processpayment/process/:id" :to => rocesspayment#process
+
       post "/pay", :to => 'payments#pay'
       get "/pay", :to => 'payments#show'
       get "/index", :to => 'payments#index'
