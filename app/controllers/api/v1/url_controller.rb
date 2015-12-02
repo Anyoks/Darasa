@@ -19,6 +19,7 @@ class Api::V1::UrlController < ApplicationController
 			else
 
 				resource.payments.each do |order|
+					url.clear
 					url << order.order_url unless order.order_url.nil? && order.status.nil?
 					# url  << order.status
 				end
@@ -26,6 +27,7 @@ class Api::V1::UrlController < ApplicationController
 		else
 			url.clear
 			resource.payments.each do |order|
+				url.clear
 				url << order.order_url unless order.order_url.nil? && order.status.nil?
 				# url  << order.status
 			end
