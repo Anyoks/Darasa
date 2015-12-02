@@ -20,19 +20,19 @@ class Api::V1::UrlController < ApplicationController
 
 				resource.payments.each do |order|
 					url << order.order_url unless order.order_url.nil? && order.status.nil?
-					url  << order.status
+					# url  << order.status
 				end
 			end
 		else
 			url.clear
 			resource.payments.each do |order|
 				url << order.order_url unless order.order_url.nil? && order.status.nil?
-				url  << order.status
+				# url  << order.status
 			end
 		end
 
 		# byebug
-		render json: { success: true, text: url}, status: :ok
+		render json: { success: true, text: url }, status: :ok
 
 		return
 
