@@ -1,5 +1,6 @@
 class Api::V1::ExamsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :ensure_question_id_exists, only: [:answer]
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
   respond_to :json
    # byebug
@@ -28,13 +29,33 @@ class Api::V1::ExamsController < ApplicationController
     return cannot_find_exam unless @exam
       
     # end
+  end
 
+  def answer
+    @resource =  User.find_by_authentication_token(params[:auth_token])
+    return invalid_user unless @resource
 
+    @answer = Question.find(params[:question_id]).response.answer
+
+    if @answer
+      render json: { success: true, text: @answer }, status: :ok
+    else
+      render json: { success: false, error: "No answer for this question" }, status: :ok
+    end
   end
 
   # GET /exams/new
   
   private
+
+  def ensure_param_exists(param)
+    return unless params[param].blank?
+    render json:{ success: false, error: "Missing #{param} parameter"}, status: :unprocessable_entity
+  end
+
+  def ensure_question_id_exists
+    ensure_param_exists :question_id
+  end
 
   def ensure_authentication_token_param_exists
     ensure_param_exists :authentication_token
