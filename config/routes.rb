@@ -87,7 +87,10 @@ Rails.application.routes.draw do
       post "/pay", :to => 'payments#pay'
       get "/pay", :to => 'payments#show'
       get "/index", :to => 'payments#index'
+
+      #user details
       get "/user_details", :to => 'details#show'
+      get "/unit_name", :to => 'details#show_unit'
       devise_scope :user do
         post"/update", :to => 'registrations#update'
         post "/sign_in", :to => 'sessions#create'
