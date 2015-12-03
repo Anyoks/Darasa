@@ -70,6 +70,8 @@ Rails.application.routes.draw do
       get "/exams/:id", :to => 'exams#show'
       #show terms and conditions
       get "/terms", :to => 'terms#show'
+      #show answers
+      get "/answers", :to => 'exams#answer'
 
       #show order_url
       get "/url", :to => 'url#show'
@@ -91,6 +93,7 @@ Rails.application.routes.draw do
       #user details
       get "/user_details", :to => 'details#show'
       get "/unit_name", :to => 'details#show_unit'
+
       devise_scope :user do
         post"/update", :to => 'registrations#update'
         post "/sign_in", :to => 'sessions#create'
