@@ -35,12 +35,18 @@ class Api::V1::ExamsController < ApplicationController
     @resource =  User.find_by_authentication_token(params[:auth_token])
     return invalid_user unless @resource
 
-    @answer = Question.find(params[:question_id]).response.answer
-
-    if @answer
-      render json: { success: true, text: @answer }, status: :ok
+    @question = Question.find_by_id(params[:question_id])
+    return invalid_question unless @question
+   
+    if @question
+       @answer = @question.response.answer
+      if @answer
+        render json: { success: true, text: @answer }, status: :ok
+      else
+        render json: { success: false, error: "No answer for this question" }, status: :unprocessable_entity
+      end
     else
-      render json: { success: false, error: "No answer for this question" }, status: :ok
+      render json: { success: false, error: "that question was not found" }, status: :unprocessable_entity
     end
   end
 
@@ -61,8 +67,12 @@ class Api::V1::ExamsController < ApplicationController
     ensure_param_exists :authentication_token
   end
 
+  def invalid_question
+    render json: { success: false, error: "Cannot find that question"}, status: :unauthorized
+  end
+
   def cannot_find_exam
-    render json: { success: false, error: "Cannot find exam with that id"}, status: :unauthorized
+    render json: { success: false, error: "Cannot find that exam "}, status: :unauthorized
   end
 
   def invalid_user
