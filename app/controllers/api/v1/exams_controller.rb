@@ -1,6 +1,8 @@
 class Api::V1::ExamsController < ApplicationController
   # before_filter :authenticate_user!
+  before_filter :authenticate_user! , except: [:answer]
   before_filter :ensure_question_id_exists, only: [:answer]
+  before_filter :ensure_token_exists
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
   respond_to :json
    # byebug
@@ -54,9 +56,14 @@ class Api::V1::ExamsController < ApplicationController
   
   private
 
+
   def ensure_param_exists(param)
     return unless params[param].blank?
     render json:{ success: false, error: "Missing #{param} parameter"}, status: :unprocessable_entity
+  end
+
+  def ensure_token_exists
+    ensure_param_exists :auth_token
   end
 
   def ensure_question_id_exists
