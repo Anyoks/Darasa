@@ -92,7 +92,7 @@ Rails.application.routes.draw do
 
       #user details
       get "/user_details", :to => 'details#show'
-      get "/unit_name", :to => 'details#show_unit'
+      get "/unit_name", :to => 'details#show_unit' # remove this end point
 
       devise_scope :user do
         post"/update", :to => 'registrations#update'
