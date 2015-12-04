@@ -1,8 +1,8 @@
 class Api::V1::SessionsController <  Api::V1::BaseController
-	before_filter :authenticate_user!, except: [:create]
+	before_filter :authenticate_user!, except: [:create, :destroy]
   before_filter :ensure_user_login_param_exists, only: [:create]
   after_filter :set_csrf_header, only: [:new, :create]
-  # after_filter :ensure_token_exists, only: [:destroy]
+  before_filter :ensure_token_exists, only: [:destroy]
   # before_filter :ensure_email_param_exists, only: [:create]
   # before_filter :ensure_password_param_exists, only: [:create]
   respond_to :json
