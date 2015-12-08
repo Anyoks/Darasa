@@ -26,9 +26,9 @@
 							
 
 
-					/-else
-					/ =link_to 'Pay to get the answer', api_v1_pay_path(:params =>{:user_id => current_user.id, :unit_id => @exam.unit.id }), method: :post, class: "btn btn-success"
-					
+				/ -else
+				/ =link_to 'Pay to get the answer', api_v1_pay_path(:payment =>{ :user_id => current_user.id, :unit_id => @exam.unit.id , :package => "standard"}, :auth_token => current_user.authentication_token), method: :post, class: "btn btn-success"
+				
 
 
 	-if current_user.is_moderator? || current_user.is_admin?			
