@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130013159) do
+ActiveRecord::Schema.define(version: 20151208041509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,6 +133,17 @@ ActiveRecord::Schema.define(version: 20151130013159) do
 
   add_index "topics", ["unit_id"], name: "index_topics_on_unit_id", using: :btree
 
+  create_table "trials", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.datetime "start_date"
+    t.datetime "expiry_date"
+    t.string   "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "trials", ["user_id"], name: "index_trials_on_user_id", using: :btree
+
   create_table "units", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",    null: false
@@ -153,12 +164,12 @@ ActiveRecord::Schema.define(version: 20151130013159) do
   end
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.string   "email",                                  null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                                             null: false
+    t.string   "encrypted_password",                default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                     default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -166,15 +177,16 @@ ActiveRecord::Schema.define(version: 20151130013159) do
     t.string   "first_name"
     t.string   "phone_number"
     t.string   "university"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "second_name"
-    t.boolean  "terms",                  default: false
+    t.boolean  "terms",                             default: false
     t.string   "provider"
     t.string   "uid"
     t.integer  "role_id"
     t.datetime "terms_updated_at"
     t.text     "authentication_token"
+    t.string   "unique_session_id",      limit: 20
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

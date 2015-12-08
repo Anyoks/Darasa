@@ -107,3 +107,5 @@ gem 'carrierwave-video-thumbnailer'
 gem 'omniauth-facebook-access-token'
 #remote fb login
 gem 'fb_graph2'
+#one session per user
+gem 'devise_security_extension'

@@ -131,6 +131,9 @@ GEM
       warden (~> 1.2.3)
     devise-token_authenticatable (0.4.0)
       devise (~> 3.5.0)
+    devise_security_extension (0.9.2)
+      devise (>= 2.0.0)
+      rails (>= 3.1.1)
     erubis (2.7.0)
     execjs (2.6.0)
     faraday (0.9.2)
@@ -345,6 +348,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise (~> 3.5, >= 3.5.2)
   devise-token_authenticatable (~> 0.4.0)
+  devise_security_extension
   fb_graph2
   haml-rails
   html2haml
