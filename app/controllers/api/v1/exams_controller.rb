@@ -1,6 +1,7 @@
 class Api::V1::ExamsController < ApplicationController
   # before_filter :authenticate_user!
-  before_filter :authenticate_user! , except: [:answer]
+  # byebug
+  before_filter :authenticate_user! #, except: [:answer]
   before_filter :ensure_question_id_exists, only: [:answer]
   before_filter :ensure_token_exists
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
@@ -11,6 +12,7 @@ class Api::V1::ExamsController < ApplicationController
   # load_and_authorize_resource
   # GET /exams
   # GET /exams.json
+  # byebug
   def index
 
     @resource =  User.find_by_authentication_token(params[:auth_token])
@@ -34,6 +36,7 @@ class Api::V1::ExamsController < ApplicationController
   end
 
   def answer
+    # byebug
     @resource =  User.find_by_authentication_token(params[:auth_token])
     return invalid_user unless @resource
 
