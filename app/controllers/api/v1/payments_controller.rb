@@ -1,7 +1,7 @@
 class Api::V1::PaymentsController < ApplicationController
 	# before_filter :authenticate_user!
 	before_filter :authenticate_user!, except: [:pay]
-	respond_to :json
+	# respond_to :json
 
 	# require 'oauth.rb'
 	# require 'api/v1/oauths_controller'
@@ -18,13 +18,14 @@ class Api::V1::PaymentsController < ApplicationController
 		params.permit!
 		# byebug
 		user =  User.find_by_authentication_token(params[:auth_token])
-		# user =  User.find_by_authentication_token(params[:pay][:auth_token])
+		# user =  User.find_by_authentication_token(params[:payment][:auth_token]) # for webtesting need to remove this
 		# byebug
 		return invalid_details unless user
 # byebug
 
 		
 		unit = Unit.find_by_id(params[:payment][:unit_id])
+		# byebug
 		# unit = Unit.find(params[:unit_id])
 		return invalid_unit unless unit
 
@@ -173,8 +174,10 @@ class Api::V1::PaymentsController < ApplicationController
 			# render @set_order
 			# order_url @order_url
 			# render "index" #:inline => "<%= @set_order.html_content %>"
-
-			payment_is_being_processed # 
+			#geting url to send to user for iframe rendering in user payment
+			 kk = request.original_url
+			 # byebug
+			# payment_is_being_processed # 
 		else
 			invalid_details
 		end
