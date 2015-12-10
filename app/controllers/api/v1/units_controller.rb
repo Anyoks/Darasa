@@ -11,9 +11,17 @@ class Api::V1::UnitsController < ApplicationController
     # byebug
     return invalid_user unless resource
 
-    @units = Unit.all
+    #********If the use is an admin they can view everything************#
+    #****if not, they'll view what we have approved*********####
+
+    if resource.is_admin?
+      @units = Unit.all
+    else
+      @units =  Unit.where("available = 'true'")
+    end
     # @semesters = Semester.all #II need to look into this.
   end
+  #***********end of admin privilage setting :-) *****#
 
   # GET /units/1
   # GET /units/1.json
