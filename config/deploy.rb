@@ -57,6 +57,9 @@ set :sidekiq_monit_default_hooks, false
 #   after :finishing, 'deploy:cleanup'
 # end
 
+#upload backup files
+set :backup_path,    "/home/Backup" #{}"/home/#{fetch(:deploy)}/Backup"
+
 namespace :deploy do
 
   after :restart, :clear_cache do

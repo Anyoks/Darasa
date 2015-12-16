@@ -1225,3 +1225,158 @@ I, [2015-12-10T17:06:47.579159 #2567]  INFO -- : worker=0 ready
 I, [2015-12-10T17:06:47.579937 #2277]  INFO -- : master process ready
 I, [2015-12-10T17:06:47.580415 #2570]  INFO -- : worker=1 spawned pid=2570
 I, [2015-12-10T17:06:47.583543 #2570]  INFO -- : worker=1 ready
+I, [2015-12-10T18:59:08.012025 #2277]  INFO -- : reaped #<Process::Status: pid 2567 exit 0> worker=0
+I, [2015-12-10T18:59:08.012185 #2277]  INFO -- : reaped #<Process::Status: pid 2570 exit 0> worker=1
+I, [2015-12-10T18:59:08.012285 #2277]  INFO -- : master complete
+I, [2015-12-11T17:33:40.744362 #2433]  INFO -- : Refreshing Gem list
+I, [2015-12-11T17:33:54.061866 #2433]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-11T17:33:54.062022 #2433]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-11T17:33:54.062118 #2433]  INFO -- : worker=0 spawning...
+I, [2015-12-11T17:33:54.063751 #2433]  INFO -- : worker=1 spawning...
+I, [2015-12-11T17:33:54.064226 #2819]  INFO -- : worker=0 spawned pid=2819
+I, [2015-12-11T17:33:54.066288 #2819]  INFO -- : worker=0 ready
+I, [2015-12-11T17:33:54.068107 #2433]  INFO -- : master process ready
+I, [2015-12-11T17:33:54.068547 #2822]  INFO -- : worker=1 spawned pid=2822
+I, [2015-12-11T17:33:54.070810 #2822]  INFO -- : worker=1 ready
+I, [2015-12-11T18:08:22.843281 #2433]  INFO -- : reaped #<Process::Status: pid 2819 exit 0> worker=0
+I, [2015-12-11T18:08:22.843448 #2433]  INFO -- : reaped #<Process::Status: pid 2822 exit 0> worker=1
+I, [2015-12-11T18:08:22.843600 #2433]  INFO -- : master complete
+I, [2015-12-12T22:12:13.490494 #2548]  INFO -- : Refreshing Gem list
+I, [2015-12-12T22:12:26.686273 #2548]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-12T22:12:26.686548 #2548]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-12T22:12:26.686700 #2548]  INFO -- : worker=0 spawning...
+I, [2015-12-12T22:12:26.688405 #2548]  INFO -- : worker=1 spawning...
+I, [2015-12-12T22:12:26.688905 #3065]  INFO -- : worker=0 spawned pid=3065
+I, [2015-12-12T22:12:26.691423 #3065]  INFO -- : worker=0 ready
+I, [2015-12-12T22:12:26.692106 #2548]  INFO -- : master process ready
+I, [2015-12-12T22:12:26.692572 #3068]  INFO -- : worker=1 spawned pid=3068
+I, [2015-12-12T22:12:26.695126 #3068]  INFO -- : worker=1 ready
+I, [2015-12-12T22:27:11.985782 #2548]  INFO -- : reaped #<Process::Status: pid 3065 exit 0> worker=0
+I, [2015-12-12T22:27:11.985956 #2548]  INFO -- : reaped #<Process::Status: pid 3068 exit 0> worker=1
+I, [2015-12-12T22:27:11.986081 #2548]  INFO -- : master complete
+I, [2015-12-13T09:27:38.242113 #2072]  INFO -- : Refreshing Gem list
+I, [2015-12-13T09:27:41.469907 #2072]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-13T09:27:41.478981 #2072]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-13T09:27:41.479113 #2072]  INFO -- : worker=0 spawning...
+I, [2015-12-13T09:27:41.480703 #2072]  INFO -- : worker=1 spawning...
+I, [2015-12-13T09:27:41.481341 #2083]  INFO -- : worker=0 spawned pid=2083
+I, [2015-12-13T09:27:41.484298 #2072]  INFO -- : master process ready
+I, [2015-12-13T09:27:41.484344 #2083]  INFO -- : worker=0 ready
+I, [2015-12-13T09:27:41.484740 #2086]  INFO -- : worker=1 spawned pid=2086
+I, [2015-12-13T09:27:41.487152 #2086]  INFO -- : worker=1 ready
+I, [2015-12-13T09:33:54.478298 #2072]  INFO -- : reaped #<Process::Status: pid 2083 exit 0> worker=0
+I, [2015-12-13T09:33:54.478445 #2072]  INFO -- : reaped #<Process::Status: pid 2086 exit 0> worker=1
+I, [2015-12-13T09:33:54.478535 #2072]  INFO -- : master complete
+I, [2015-12-14T10:27:33.489353 #2090]  INFO -- : Refreshing Gem list
+I, [2015-12-14T10:27:36.806200 #2090]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T10:27:36.815250 #2090]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T10:27:36.815434 #2090]  INFO -- : worker=0 spawning...
+I, [2015-12-14T10:27:36.816974 #2090]  INFO -- : worker=1 spawning...
+I, [2015-12-14T10:27:36.817500 #2100]  INFO -- : worker=0 spawned pid=2100
+I, [2015-12-14T10:27:36.819870 #2100]  INFO -- : worker=0 ready
+I, [2015-12-14T10:27:36.819932 #2090]  INFO -- : master process ready
+I, [2015-12-14T10:27:36.820525 #2103]  INFO -- : worker=1 spawned pid=2103
+I, [2015-12-14T10:27:36.823484 #2103]  INFO -- : worker=1 ready
+I, [2015-12-14T10:48:05.604087 #2229]  INFO -- : pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid possibly stale, got EPERM signalling PID:2090
+I, [2015-12-14T10:48:05.657679 #2229]  INFO -- : Refreshing Gem list
+I, [2015-12-14T10:48:08.854855 #2229]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T10:48:08.863960 #2229]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T10:48:08.864104 #2229]  INFO -- : worker=0 spawning...
+I, [2015-12-14T10:48:08.865666 #2229]  INFO -- : worker=1 spawning...
+I, [2015-12-14T10:48:08.866157 #2233]  INFO -- : worker=0 spawned pid=2233
+I, [2015-12-14T10:48:08.868690 #2233]  INFO -- : worker=0 ready
+I, [2015-12-14T10:48:08.869227 #2229]  INFO -- : master process ready
+I, [2015-12-14T10:48:08.869682 #2236]  INFO -- : worker=1 spawned pid=2236
+I, [2015-12-14T10:48:08.872129 #2236]  INFO -- : worker=1 ready
+I, [2015-12-14T12:13:44.517554 #2292]  INFO -- : Refreshing Gem list
+I, [2015-12-14T12:13:47.914654 #2292]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T12:13:47.923763 #2292]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T12:13:47.923873 #2292]  INFO -- : worker=0 spawning...
+I, [2015-12-14T12:13:47.925393 #2292]  INFO -- : worker=1 spawning...
+I, [2015-12-14T12:13:47.925886 #2386]  INFO -- : worker=0 spawned pid=2386
+I, [2015-12-14T12:13:47.928130 #2386]  INFO -- : worker=0 ready
+I, [2015-12-14T12:13:47.929890 #2292]  INFO -- : master process ready
+I, [2015-12-14T12:13:47.930355 #2389]  INFO -- : worker=1 spawned pid=2389
+I, [2015-12-14T12:13:47.932759 #2389]  INFO -- : worker=1 ready
+I, [2015-12-14T12:19:07.633526 #2398]  INFO -- : Refreshing Gem list
+I, [2015-12-14T12:19:10.952696 #2398]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T12:19:10.961805 #2398]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T12:19:10.962057 #2398]  INFO -- : worker=0 spawning...
+I, [2015-12-14T12:19:10.963565 #2398]  INFO -- : worker=1 spawning...
+I, [2015-12-14T12:19:10.964098 #2403]  INFO -- : worker=0 spawned pid=2403
+I, [2015-12-14T12:19:10.966246 #2398]  INFO -- : master process ready
+I, [2015-12-14T12:19:10.966591 #2403]  INFO -- : worker=0 ready
+I, [2015-12-14T12:19:10.966889 #2406]  INFO -- : worker=1 spawned pid=2406
+I, [2015-12-14T12:19:10.969974 #2406]  INFO -- : worker=1 ready
+I, [2015-12-14T12:40:08.142141 #2380]  INFO -- : Refreshing Gem list
+I, [2015-12-14T12:40:11.394903 #2380]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T12:40:11.403997 #2380]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T12:40:11.404209 #2380]  INFO -- : worker=0 spawning...
+I, [2015-12-14T12:40:11.405764 #2380]  INFO -- : worker=1 spawning...
+I, [2015-12-14T12:40:11.406264 #2384]  INFO -- : worker=0 spawned pid=2384
+I, [2015-12-14T12:40:11.408326 #2380]  INFO -- : master process ready
+I, [2015-12-14T12:40:11.408853 #2384]  INFO -- : worker=0 ready
+I, [2015-12-14T12:40:11.408947 #2387]  INFO -- : worker=1 spawned pid=2387
+I, [2015-12-14T12:40:11.412166 #2387]  INFO -- : worker=1 ready
+I, [2015-12-14T13:24:24.092493 #2380]  INFO -- : reaped #<Process::Status: pid 2384 exit 0> worker=0
+I, [2015-12-14T13:24:24.092680 #2380]  INFO -- : reaped #<Process::Status: pid 2387 exit 0> worker=1
+I, [2015-12-14T13:24:24.092799 #2380]  INFO -- : master complete
+I, [2015-12-14T14:00:09.169717 #2241]  INFO -- : Refreshing Gem list
+I, [2015-12-14T14:00:12.353063 #2241]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T14:00:12.362170 #2241]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T14:00:12.362288 #2241]  INFO -- : worker=0 spawning...
+I, [2015-12-14T14:00:12.363819 #2241]  INFO -- : worker=1 spawning...
+I, [2015-12-14T14:00:12.364437 #2251]  INFO -- : worker=0 spawned pid=2251
+I, [2015-12-14T14:00:12.366468 #2241]  INFO -- : master process ready
+I, [2015-12-14T14:00:12.366927 #2251]  INFO -- : worker=0 ready
+I, [2015-12-14T14:00:12.367047 #2254]  INFO -- : worker=1 spawned pid=2254
+I, [2015-12-14T14:00:12.370226 #2254]  INFO -- : worker=1 ready
+I, [2015-12-14T15:08:07.420686 #2241]  INFO -- : reaped #<Process::Status: pid 2251 exit 0> worker=0
+I, [2015-12-14T15:08:07.420872 #2241]  INFO -- : reaped #<Process::Status: pid 2254 exit 0> worker=1
+I, [2015-12-14T15:08:07.420990 #2241]  INFO -- : master complete
+I, [2015-12-14T20:03:42.823328 #2311]  INFO -- : Refreshing Gem list
+I, [2015-12-14T20:03:55.373565 #2311]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T20:03:55.373745 #2311]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T20:03:55.373851 #2311]  INFO -- : worker=0 spawning...
+I, [2015-12-14T20:03:55.375556 #2311]  INFO -- : worker=1 spawning...
+I, [2015-12-14T20:03:55.376006 #2936]  INFO -- : worker=0 spawned pid=2936
+I, [2015-12-14T20:03:55.378423 #2936]  INFO -- : worker=0 ready
+I, [2015-12-14T20:03:55.378525 #2311]  INFO -- : master process ready
+I, [2015-12-14T20:03:55.379043 #2939]  INFO -- : worker=1 spawned pid=2939
+I, [2015-12-14T20:03:55.381378 #2939]  INFO -- : worker=1 ready
+I, [2015-12-14T20:10:24.351140 #2369]  INFO -- : Refreshing Gem list
+I, [2015-12-14T20:10:27.599648 #2369]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-14T20:10:27.608623 #2369]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-14T20:10:27.608788 #2369]  INFO -- : worker=0 spawning...
+I, [2015-12-14T20:10:27.610336 #2369]  INFO -- : worker=1 spawning...
+I, [2015-12-14T20:10:27.610821 #2373]  INFO -- : worker=0 spawned pid=2373
+I, [2015-12-14T20:10:27.613257 #2373]  INFO -- : worker=0 ready
+I, [2015-12-14T20:10:27.614966 #2369]  INFO -- : master process ready
+I, [2015-12-14T20:10:27.615502 #2376]  INFO -- : worker=1 spawned pid=2376
+I, [2015-12-14T20:10:27.618644 #2376]  INFO -- : worker=1 ready
+I, [2015-12-14T20:58:05.658637 #2369]  INFO -- : reaped #<Process::Status: pid 2373 exit 0> worker=0
+I, [2015-12-14T20:58:05.658789 #2369]  INFO -- : reaped #<Process::Status: pid 2376 exit 0> worker=1
+I, [2015-12-14T20:58:05.658878 #2369]  INFO -- : master complete
+I, [2015-12-16T09:23:29.365053 #2094]  INFO -- : Refreshing Gem list
+I, [2015-12-16T09:23:32.626414 #2094]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-16T09:23:32.635520 #2094]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-16T09:23:32.635632 #2094]  INFO -- : worker=0 spawning...
+I, [2015-12-16T09:23:32.637179 #2094]  INFO -- : worker=1 spawning...
+I, [2015-12-16T09:23:32.637656 #2104]  INFO -- : worker=0 spawned pid=2104
+I, [2015-12-16T09:23:32.639775 #2104]  INFO -- : worker=0 ready
+I, [2015-12-16T09:23:32.641207 #2094]  INFO -- : master process ready
+I, [2015-12-16T09:23:32.641709 #2107]  INFO -- : worker=1 spawned pid=2107
+I, [2015-12-16T09:23:32.643849 #2107]  INFO -- : worker=1 ready
+I, [2015-12-16T09:25:30.401101 #2094]  INFO -- : reaped #<Process::Status: pid 2104 exit 0> worker=0
+I, [2015-12-16T09:25:30.401247 #2094]  INFO -- : reaped #<Process::Status: pid 2107 exit 0> worker=1
+I, [2015-12-16T09:25:30.401346 #2094]  INFO -- : master complete
+I, [2015-12-16T09:26:33.794384 #2238]  INFO -- : Refreshing Gem list
+I, [2015-12-16T09:26:38.433466 #2238]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-16T09:26:38.433711 #2238]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-16T09:26:38.433859 #2238]  INFO -- : worker=0 spawning...
+I, [2015-12-16T09:26:38.436408 #2238]  INFO -- : worker=1 spawning...
+I, [2015-12-16T09:26:38.439051 #2238]  INFO -- : master process ready
+I, [2015-12-16T09:26:38.440225 #2525]  INFO -- : worker=0 spawned pid=2525
+I, [2015-12-16T09:26:38.443866 #2525]  INFO -- : worker=0 ready
+I, [2015-12-16T09:26:38.444946 #2527]  INFO -- : worker=1 spawned pid=2527
+I, [2015-12-16T09:26:38.448673 #2527]  INFO -- : worker=1 ready

@@ -1,15 +1,15 @@
 # encoding: utf-8
 
 ##
-# Backup Generated: questions_backup
+# Backup Generated: responses_backup
 # Once configured, you can run the backup with the following command:
 #
-# $ backup perform -t questions_backup [-c <path_to_configuration_file>]
+# $ backup perform -t responses_backup [-c <path_to_configuration_file>]
 #
 # For more information about Backup's components, see the documentation at:
 # http://backup.github.io/backup
 #
-Model.new(:questions_backup, 'Description for questions_backup') do
+Model.new(:responses_backup, 'Description for responses_backup') do
 
   ##
   # PostgreSQL [Database]
@@ -25,7 +25,7 @@ Model.new(:questions_backup, 'Description for questions_backup') do
     # When dumping all databases, `skip_tables` and `only_tables` are ignored.
     # db.skip_tables        = ["skip", "these", "tables"]
     # db.only_tables        = ["only", "these", "tables"]
-    db.only_tables        = ["questions"]
+    db.only_tables        = ["responses"]
     db.additional_options = ["-xc", "-E=utf8"]
   end
 
