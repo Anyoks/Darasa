@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require ckeditor/config
 //= require_tree .
 //= require cocoon
 
