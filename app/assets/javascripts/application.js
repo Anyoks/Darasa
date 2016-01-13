@@ -19,12 +19,12 @@
 //= require_tree .
 //= require cocoon
 
-$('.ckeditor').ckeditor({
-  // optional config
-});
+// $('.ckeditor').ckeditor({
+//   // optional config
+// });
 
 
 
-$('a[data-popup]').on('click', function(e) {
-	 window.open($(this).attr('href')); e.preventDefault(); 
-	});
+// $('a[data-popup]').on('click', function(e) {
+// 	 window.open($(this).attr('href')); e.preventDefault(); 
+// 	});

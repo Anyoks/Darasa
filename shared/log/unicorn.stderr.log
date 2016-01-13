@@ -1380,3 +1380,531 @@ I, [2015-12-16T09:26:38.440225 #2525]  INFO -- : worker=0 spawned pid=2525
 I, [2015-12-16T09:26:38.443866 #2525]  INFO -- : worker=0 ready
 I, [2015-12-16T09:26:38.444946 #2527]  INFO -- : worker=1 spawned pid=2527
 I, [2015-12-16T09:26:38.448673 #2527]  INFO -- : worker=1 ready
+{ 48493580 rufus-scheduler intercepted an error:
+  48493580   job:
+  48493580     Rufus::Scheduler::EveryJob "1m" {}
+  48493580   error:
+  48493580     48493580
+  48493580     Redis::CannotConnectError
+  48493580     Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:332:in `rescue in establish_connection'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:318:in `establish_connection'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:94:in `block in connect'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:93:in `connect'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:351:in `ensure_connected'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:208:in `block in process'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:293:in `logging'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:207:in `process'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:178:in `call_pipelined'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:150:in `block in call_pipeline'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:148:in `call_pipeline'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2245:in `block in multi'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `block in synchronize'
+  48493580       /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `synchronize'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2237:in `multi'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:175:in `block in raw_push'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:64:in `block (2 levels) in with'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `handle_interrupt'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `block in with'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `handle_interrupt'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `with'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:174:in `raw_push'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:68:in `push'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:98:in `client_push'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:54:in `perform_async'
+  48493580       /home/orinamokaya/deploy/darasa_app/config/initializers/scheduler.rb:13:in `block in <top (required)>'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `call'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `do_call'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:258:in `do_trigger'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:300:in `block (3 levels) in start_work_thread'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `call'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `block (2 levels) in start_work_thread'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `loop'
+  48493580       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `block in start_work_thread'
+  48493580   tz:
+  48493580     ENV['TZ']: 
+  48493580     Time.now: 2015-12-16 17:50:16 +0300
+  48493580   scheduler:
+  48493580     object_id: 34636400
+  48493580     opts:
+  48493580       {}
+  48493580       frequency: 0.3
+  48493580       scheduler_lock: #<Rufus::Scheduler::NullLock:0x000000062ebea8>
+  48493580       trigger_lock: #<Rufus::Scheduler::NullLock:0x000000062ebe80>
+  48493580     uptime: 30220.314990695 (8h23m40s365)
+  48493580     down?: false
+  48493580     threads: 2
+  48493580       thread: #<Thread:0x000000062ebe30>
+  48493580       thread_key: rufus_scheduler_34636400
+  48493580       work_threads: 1
+  48493580         active: 1
+  48493580         vacant: 0
+  48493580         max_work_threads: 28
+  48493580       mutexes: {}
+  48493580     jobs: 1
+  48493580       at_jobs: 0
+  48493580       in_jobs: 0
+  48493580       every_jobs: 1
+  48493580       interval_jobs: 0
+  48493580       cron_jobs: 0
+  48493580     running_jobs: 1
+  48493580     work_queue: 0
+} 48493580 .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                I, [2015-12-16T21:34:01.385368 #2535]  INFO -- : Refreshing Gem list
+I, [2015-12-16T21:34:12.712778 #2535]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-16T21:34:12.713018 #2535]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-16T21:34:12.713135 #2535]  INFO -- : worker=0 spawning...
+I, [2015-12-16T21:34:12.714770 #2535]  INFO -- : worker=1 spawning...
+I, [2015-12-16T21:34:12.715237 #2872]  INFO -- : worker=0 spawned pid=2872
+I, [2015-12-16T21:34:12.717311 #2535]  INFO -- : master process ready
+I, [2015-12-16T21:34:12.717735 #2872]  INFO -- : worker=0 ready
+I, [2015-12-16T21:34:12.717885 #2875]  INFO -- : worker=1 spawned pid=2875
+I, [2015-12-16T21:34:12.721083 #2875]  INFO -- : worker=1 ready
+I, [2015-12-16T22:28:06.246004 #2251]  INFO -- : Refreshing Gem list
+I, [2015-12-16T22:28:09.487061 #2251]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-16T22:28:09.496145 #2251]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-16T22:28:09.496310 #2251]  INFO -- : worker=0 spawning...
+I, [2015-12-16T22:28:09.498279 #2251]  INFO -- : worker=1 spawning...
+I, [2015-12-16T22:28:09.498758 #2255]  INFO -- : worker=0 spawned pid=2255
+I, [2015-12-16T22:28:09.499919 #2251]  INFO -- : master process ready
+I, [2015-12-16T22:28:09.500501 #2258]  INFO -- : worker=1 spawned pid=2258
+I, [2015-12-16T22:28:09.501277 #2255]  INFO -- : worker=0 ready
+I, [2015-12-16T22:28:09.503562 #2258]  INFO -- : worker=1 ready
+I, [2015-12-16T23:36:03.688029 #2251]  INFO -- : reaped #<Process::Status: pid 2255 exit 0> worker=0
+I, [2015-12-16T23:36:03.688166 #2251]  INFO -- : reaped #<Process::Status: pid 2258 exit 0> worker=1
+I, [2015-12-16T23:36:03.688242 #2251]  INFO -- : master complete
+I, [2015-12-17T00:05:19.517251 #2094]  INFO -- : Refreshing Gem list
+I, [2015-12-17T00:05:22.822967 #2094]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-17T00:05:22.832050 #2094]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-17T00:05:22.832223 #2094]  INFO -- : worker=0 spawning...
+I, [2015-12-17T00:05:22.833779 #2094]  INFO -- : worker=1 spawning...
+I, [2015-12-17T00:05:22.834352 #2104]  INFO -- : worker=0 spawned pid=2104
+I, [2015-12-17T00:05:22.836751 #2104]  INFO -- : worker=0 ready
+I, [2015-12-17T00:05:22.836897 #2094]  INFO -- : master process ready
+I, [2015-12-17T00:05:22.837439 #2107]  INFO -- : worker=1 spawned pid=2107
+I, [2015-12-17T00:05:22.839869 #2107]  INFO -- : worker=1 ready
+I, [2015-12-17T00:12:59.899188 #2094]  INFO -- : reaped #<Process::Status: pid 2104 exit 0> worker=0
+I, [2015-12-17T00:12:59.899410 #2094]  INFO -- : reaped #<Process::Status: pid 2107 exit 0> worker=1
+I, [2015-12-17T00:12:59.899568 #2094]  INFO -- : master complete
+I, [2015-12-17T09:38:50.476149 #2235]  INFO -- : Refreshing Gem list
+I, [2015-12-17T09:38:53.826423 #2235]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-17T09:38:53.826681 #2235]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-17T09:38:53.826814 #2235]  INFO -- : worker=0 spawning...
+I, [2015-12-17T09:38:53.828409 #2235]  INFO -- : worker=1 spawning...
+I, [2015-12-17T09:38:53.828925 #2378]  INFO -- : worker=0 spawned pid=2378
+I, [2015-12-17T09:38:53.831194 #2378]  INFO -- : worker=0 ready
+I, [2015-12-17T09:38:53.832987 #2235]  INFO -- : master process ready
+I, [2015-12-17T09:38:53.833473 #2381]  INFO -- : worker=1 spawned pid=2381
+I, [2015-12-17T09:38:53.836064 #2381]  INFO -- : worker=1 ready
+I, [2015-12-17T12:02:38.962812 #2235]  INFO -- : reaped #<Process::Status: pid 2378 exit 0> worker=0
+I, [2015-12-17T12:02:38.962968 #2235]  INFO -- : reaped #<Process::Status: pid 2381 exit 0> worker=1
+I, [2015-12-17T12:02:38.963082 #2235]  INFO -- : master complete
+I, [2015-12-17T15:03:38.521855 #2257]  INFO -- : Refreshing Gem list
+I, [2015-12-17T15:03:41.772105 #2257]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-17T15:03:41.814541 #2257]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-17T15:03:41.814784 #2257]  INFO -- : worker=0 spawning...
+I, [2015-12-17T15:03:41.816398 #2257]  INFO -- : worker=1 spawning...
+I, [2015-12-17T15:03:41.816878 #2268]  INFO -- : worker=0 spawned pid=2268
+I, [2015-12-17T15:03:41.819138 #2268]  INFO -- : worker=0 ready
+I, [2015-12-17T15:03:41.820897 #2257]  INFO -- : master process ready
+I, [2015-12-17T15:03:41.821363 #2271]  INFO -- : worker=1 spawned pid=2271
+I, [2015-12-17T15:03:41.823821 #2271]  INFO -- : worker=1 ready
+{ 63073160 rufus-scheduler intercepted an error:
+  63073160   job:
+  63073160     Rufus::Scheduler::EveryJob "1m" {}
+  63073160   error:
+  63073160     63073160
+  63073160     Redis::CannotConnectError
+  63073160     Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:332:in `rescue in establish_connection'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:318:in `establish_connection'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:94:in `block in connect'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:93:in `connect'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:351:in `ensure_connected'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:208:in `block in process'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:293:in `logging'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:207:in `process'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:178:in `call_pipelined'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:150:in `block in call_pipeline'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:148:in `call_pipeline'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2245:in `block in multi'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `block in synchronize'
+  63073160       /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `synchronize'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2237:in `multi'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:175:in `block in raw_push'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:64:in `block (2 levels) in with'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `handle_interrupt'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `block in with'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `handle_interrupt'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `with'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:174:in `raw_push'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:68:in `push'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:98:in `client_push'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:54:in `perform_async'
+  63073160       /home/orinamokaya/deploy/darasa_app/config/initializers/scheduler.rb:13:in `block in <top (required)>'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `call'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `do_call'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:258:in `do_trigger'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:300:in `block (3 levels) in start_work_thread'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `call'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `block (2 levels) in start_work_thread'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `loop'
+  63073160       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `block in start_work_thread'
+  63073160   tz:
+  63073160     ENV['TZ']: 
+  63073160     Time.now: 2015-12-17 18:31:05 +0300
+  63073160   scheduler:
+  63073160     object_id: 40732260
+  63073160     opts:
+  63073160       {}
+  63073160       frequency: 0.3
+  63073160       scheduler_lock: #<Rufus::Scheduler::NullLock:0x00000004db0728>
+  63073160       trigger_lock: #<Rufus::Scheduler::NullLock:0x00000004db0638>
+  63073160     uptime: 12444.40116369 (3h27m24s405)
+  63073160     down?: false
+  63073160     threads: 2
+  63073160       thread: #<Thread:0x00000004db05e8>
+  63073160       thread_key: rufus_scheduler_40732260
+  63073160       work_threads: 1
+  63073160         active: 1
+  63073160         vacant: 0
+  63073160         max_work_threads: 28
+  63073160       mutexes: {}
+  63073160     jobs: 1
+  63073160       at_jobs: 0
+  63073160       in_jobs: 0
+  63073160       every_jobs: 1
+  63073160       interval_jobs: 0
+  63073160       cron_jobs: 0
+  63073160     running_jobs: 1
+  63073160     work_queue: 0
+} 63073160 .
+I, [2015-12-17T21:29:37.479912 #2091]  INFO -- : Refreshing Gem list
+I, [2015-12-17T21:29:40.720729 #2091]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-17T21:29:40.729909 #2091]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-17T21:29:40.730102 #2091]  INFO -- : worker=0 spawning...
+I, [2015-12-17T21:29:40.732064 #2091]  INFO -- : worker=1 spawning...
+I, [2015-12-17T21:29:40.732577 #2102]  INFO -- : worker=0 spawned pid=2102
+I, [2015-12-17T21:29:40.734912 #2102]  INFO -- : worker=0 ready
+I, [2015-12-17T21:29:40.735192 #2091]  INFO -- : master process ready
+I, [2015-12-17T21:29:40.735725 #2105]  INFO -- : worker=1 spawned pid=2105
+I, [2015-12-17T21:29:40.738496 #2105]  INFO -- : worker=1 ready
+I, [2015-12-17T21:44:24.386845 #2250]  INFO -- : Refreshing Gem list
+I, [2015-12-17T21:44:27.595175 #2250]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-17T21:44:27.604290 #2250]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-17T21:44:27.604547 #2250]  INFO -- : worker=0 spawning...
+I, [2015-12-17T21:44:27.606116 #2250]  INFO -- : worker=1 spawning...
+I, [2015-12-17T21:44:27.606589 #2254]  INFO -- : worker=0 spawned pid=2254
+I, [2015-12-17T21:44:27.608725 #2254]  INFO -- : worker=0 ready
+I, [2015-12-17T21:44:27.610093 #2250]  INFO -- : master process ready
+I, [2015-12-17T21:44:27.610538 #2257]  INFO -- : worker=1 spawned pid=2257
+I, [2015-12-17T21:44:27.612767 #2257]  INFO -- : worker=1 ready
+I, [2015-12-17T21:46:32.846812 #2257]  INFO -- : pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid possibly stale, got EPERM signalling PID:2250
+I, [2015-12-17T21:46:32.889769 #2257]  INFO -- : Refreshing Gem list
+I, [2015-12-17T21:46:39.553490 #2257]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-17T21:46:39.553684 #2257]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-17T21:46:39.553795 #2257]  INFO -- : worker=0 spawning...
+I, [2015-12-17T21:46:39.555418 #2257]  INFO -- : worker=1 spawning...
+I, [2015-12-17T21:46:39.555886 #2784]  INFO -- : worker=0 spawned pid=2784
+I, [2015-12-17T21:46:39.558145 #2784]  INFO -- : worker=0 ready
+I, [2015-12-17T21:46:39.559210 #2257]  INFO -- : master process ready
+I, [2015-12-17T21:46:39.559679 #2787]  INFO -- : worker=1 spawned pid=2787
+I, [2015-12-17T21:46:39.561887 #2787]  INFO -- : worker=1 ready
+I, [2015-12-17T22:48:00.617960 #2257]  INFO -- : reaped #<Process::Status: pid 2784 exit 0> worker=0
+I, [2015-12-17T22:48:00.618123 #2257]  INFO -- : reaped #<Process::Status: pid 2787 exit 0> worker=1
+I, [2015-12-17T22:48:00.618225 #2257]  INFO -- : master complete
+I, [2015-12-21T12:20:07.317209 #2265]  INFO -- : Refreshing Gem list
+I, [2015-12-21T12:20:10.556543 #2265]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-21T12:20:10.587915 #2265]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-21T12:20:10.588145 #2265]  INFO -- : worker=0 spawning...
+I, [2015-12-21T12:20:10.589709 #2265]  INFO -- : worker=1 spawning...
+I, [2015-12-21T12:20:10.590239 #2276]  INFO -- : worker=0 spawned pid=2276
+I, [2015-12-21T12:20:10.592474 #2276]  INFO -- : worker=0 ready
+I, [2015-12-21T12:20:10.594144 #2265]  INFO -- : master process ready
+I, [2015-12-21T12:20:10.594625 #2279]  INFO -- : worker=1 spawned pid=2279
+I, [2015-12-21T12:20:10.596924 #2279]  INFO -- : worker=1 ready
+I, [2015-12-21T16:48:50.979374 #2375]  INFO -- : Refreshing Gem list
+I, [2015-12-21T16:48:54.320611 #2375]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-21T16:48:54.329722 #2375]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-21T16:48:54.329857 #2375]  INFO -- : worker=0 spawning...
+I, [2015-12-21T16:48:54.331413 #2375]  INFO -- : worker=1 spawning...
+I, [2015-12-21T16:48:54.331889 #2380]  INFO -- : worker=0 spawned pid=2380
+I, [2015-12-21T16:48:54.334010 #2380]  INFO -- : worker=0 ready
+I, [2015-12-21T16:48:54.335733 #2375]  INFO -- : master process ready
+I, [2015-12-21T16:48:54.336281 #2383]  INFO -- : worker=1 spawned pid=2383
+I, [2015-12-21T16:48:54.339133 #2383]  INFO -- : worker=1 ready
+I, [2015-12-21T18:42:53.697491 #2375]  INFO -- : reaped #<Process::Status: pid 2380 exit 0> worker=0
+I, [2015-12-21T18:42:53.697643 #2375]  INFO -- : reaped #<Process::Status: pid 2383 exit 0> worker=1
+I, [2015-12-21T18:42:53.697735 #2375]  INFO -- : master complete
+I, [2015-12-22T14:40:17.370544 #2252]  INFO -- : Refreshing Gem list
+I, [2015-12-22T14:40:22.865464 #2252]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-22T14:40:22.865715 #2252]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-22T14:40:22.865840 #2252]  INFO -- : worker=0 spawning...
+I, [2015-12-22T14:40:22.867536 #2252]  INFO -- : worker=1 spawning...
+I, [2015-12-22T14:40:22.868080 #2580]  INFO -- : worker=0 spawned pid=2580
+I, [2015-12-22T14:40:22.870256 #2580]  INFO -- : worker=0 ready
+I, [2015-12-22T14:40:22.870796 #2252]  INFO -- : master process ready
+I, [2015-12-22T14:40:22.871276 #2583]  INFO -- : worker=1 spawned pid=2583
+I, [2015-12-22T14:40:22.873526 #2583]  INFO -- : worker=1 ready
+I, [2015-12-22T15:45:49.732330 #2252]  INFO -- : reaped #<Process::Status: pid 2580 exit 0> worker=0
+I, [2015-12-22T15:45:49.732484 #2252]  INFO -- : reaped #<Process::Status: pid 2583 exit 0> worker=1
+I, [2015-12-22T15:45:49.732579 #2252]  INFO -- : master complete
+I, [2015-12-22T16:09:58.192345 #2408]  INFO -- : Refreshing Gem list
+I, [2015-12-22T16:10:09.110061 #2408]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-22T16:10:09.110258 #2408]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-22T16:10:09.110390 #2408]  INFO -- : worker=0 spawning...
+I, [2015-12-22T16:10:09.111990 #2408]  INFO -- : worker=1 spawning...
+I, [2015-12-22T16:10:09.112500 #2732]  INFO -- : worker=0 spawned pid=2732
+I, [2015-12-22T16:10:09.115063 #2732]  INFO -- : worker=0 ready
+I, [2015-12-22T16:10:09.115534 #2408]  INFO -- : master process ready
+I, [2015-12-22T16:10:09.115982 #2735]  INFO -- : worker=1 spawned pid=2735
+I, [2015-12-22T16:10:09.118443 #2735]  INFO -- : worker=1 ready
+I, [2015-12-22T21:11:41.051381 #2408]  INFO -- : reaped #<Process::Status: pid 2732 exit 0> worker=0
+I, [2015-12-22T21:11:41.051539 #2408]  INFO -- : reaped #<Process::Status: pid 2735 exit 0> worker=1
+I, [2015-12-22T21:11:41.051643 #2408]  INFO -- : master complete
+I, [2015-12-28T16:58:27.639573 #2113]  INFO -- : Refreshing Gem list
+I, [2015-12-28T16:58:30.823111 #2113]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-28T16:58:30.832225 #2113]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-28T16:58:30.832446 #2113]  INFO -- : worker=0 spawning...
+I, [2015-12-28T16:58:30.834050 #2113]  INFO -- : worker=1 spawning...
+I, [2015-12-28T16:58:30.834552 #2124]  INFO -- : worker=0 spawned pid=2124
+I, [2015-12-28T16:58:30.836064 #2113]  INFO -- : master process ready
+I, [2015-12-28T16:58:30.836612 #2127]  INFO -- : worker=1 spawned pid=2127
+I, [2015-12-28T16:58:30.836917 #2124]  INFO -- : worker=0 ready
+I, [2015-12-28T16:58:30.839565 #2127]  INFO -- : worker=1 ready
+I, [2015-12-29T11:31:19.671554 #2113]  INFO -- : reaped #<Process::Status: pid 2124 exit 0> worker=0
+I, [2015-12-29T11:31:19.671736 #2113]  INFO -- : reaped #<Process::Status: pid 2127 exit 0> worker=1
+I, [2015-12-29T11:31:19.671852 #2113]  INFO -- : master complete
+I, [2015-12-31T23:28:31.391325 #2094]  INFO -- : Refreshing Gem list
+I, [2015-12-31T23:28:34.630407 #2094]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2015-12-31T23:28:34.639417 #2094]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2015-12-31T23:28:34.639585 #2094]  INFO -- : worker=0 spawning...
+I, [2015-12-31T23:28:34.641114 #2094]  INFO -- : worker=1 spawning...
+I, [2015-12-31T23:28:34.641640 #2105]  INFO -- : worker=0 spawned pid=2105
+I, [2015-12-31T23:28:34.643684 #2105]  INFO -- : worker=0 ready
+I, [2015-12-31T23:28:34.645372 #2094]  INFO -- : master process ready
+I, [2015-12-31T23:28:34.645873 #2108]  INFO -- : worker=1 spawned pid=2108
+I, [2015-12-31T23:28:34.648046 #2108]  INFO -- : worker=1 ready
+I, [2016-01-01T00:58:15.682492 #2094]  INFO -- : reaped #<Process::Status: pid 2105 exit 0> worker=0
+I, [2016-01-01T00:58:15.682643 #2094]  INFO -- : reaped #<Process::Status: pid 2108 exit 0> worker=1
+I, [2016-01-01T00:58:15.682732 #2094]  INFO -- : master complete
+I, [2016-01-03T00:30:12.507169 #2076]  INFO -- : Refreshing Gem list
+I, [2016-01-03T00:30:15.724060 #2076]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-03T00:30:15.733119 #2076]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-03T00:30:15.733335 #2076]  INFO -- : worker=0 spawning...
+I, [2016-01-03T00:30:15.734883 #2076]  INFO -- : worker=1 spawning...
+I, [2016-01-03T00:30:15.735353 #2086]  INFO -- : worker=0 spawned pid=2086
+I, [2016-01-03T00:30:15.737516 #2086]  INFO -- : worker=0 ready
+I, [2016-01-03T00:30:15.738297 #2076]  INFO -- : master process ready
+I, [2016-01-03T00:30:15.738755 #2089]  INFO -- : worker=1 spawned pid=2089
+I, [2016-01-03T00:30:15.740936 #2089]  INFO -- : worker=1 ready
+I, [2016-01-03T03:41:11.644140 #2076]  INFO -- : reaped #<Process::Status: pid 2086 exit 0> worker=0
+I, [2016-01-03T03:41:11.644295 #2076]  INFO -- : reaped #<Process::Status: pid 2089 exit 0> worker=1
+I, [2016-01-03T03:41:11.644391 #2076]  INFO -- : master complete
+I, [2016-01-05T12:55:10.914242 #2103]  INFO -- : Refreshing Gem list
+I, [2016-01-05T12:55:14.553414 #2103]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-05T12:55:14.553671 #2103]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-05T12:55:14.553795 #2103]  INFO -- : worker=0 spawning...
+I, [2016-01-05T12:55:14.555288 #2103]  INFO -- : worker=1 spawning...
+I, [2016-01-05T12:55:14.555806 #2286]  INFO -- : worker=0 spawned pid=2286
+I, [2016-01-05T12:55:14.557948 #2286]  INFO -- : worker=0 ready
+I, [2016-01-05T12:55:14.558839 #2103]  INFO -- : master process ready
+I, [2016-01-05T12:55:14.559330 #2289]  INFO -- : worker=1 spawned pid=2289
+I, [2016-01-05T12:55:14.561575 #2289]  INFO -- : worker=1 ready
+I, [2016-01-05T13:13:05.339398 #2103]  INFO -- : reaped #<Process::Status: pid 2286 exit 0> worker=0
+I, [2016-01-05T13:13:05.339570 #2103]  INFO -- : reaped #<Process::Status: pid 2289 exit 0> worker=1
+I, [2016-01-05T13:13:05.339680 #2103]  INFO -- : master complete
+I, [2016-01-05T14:26:08.645259 #2085]  INFO -- : Refreshing Gem list
+I, [2016-01-05T14:26:13.195542 #2085]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-05T14:26:13.195745 #2085]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-05T14:26:13.195855 #2085]  INFO -- : worker=0 spawning...
+I, [2016-01-05T14:26:13.197514 #2085]  INFO -- : worker=1 spawning...
+I, [2016-01-05T14:26:13.198015 #2393]  INFO -- : worker=0 spawned pid=2393
+I, [2016-01-05T14:26:13.200361 #2393]  INFO -- : worker=0 ready
+I, [2016-01-05T14:26:13.201521 #2085]  INFO -- : master process ready
+I, [2016-01-05T14:26:13.201989 #2396]  INFO -- : worker=1 spawned pid=2396
+I, [2016-01-05T14:26:13.204305 #2396]  INFO -- : worker=1 ready
+I, [2016-01-06T10:01:07.243216 #2224]  INFO -- : Refreshing Gem list
+I, [2016-01-06T10:01:10.707163 #2224]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-06T10:01:10.716162 #2224]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-06T10:01:10.716418 #2224]  INFO -- : worker=0 spawning...
+I, [2016-01-06T10:01:10.717980 #2224]  INFO -- : worker=1 spawning...
+I, [2016-01-06T10:01:10.718459 #2228]  INFO -- : worker=0 spawned pid=2228
+I, [2016-01-06T10:01:10.720558 #2228]  INFO -- : worker=0 ready
+I, [2016-01-06T10:01:10.721920 #2224]  INFO -- : master process ready
+I, [2016-01-06T10:01:10.722371 #2231]  INFO -- : worker=1 spawned pid=2231
+I, [2016-01-06T10:01:10.724623 #2231]  INFO -- : worker=1 ready
+I, [2016-01-07T00:32:13.105452 #2224]  INFO -- : reaped #<Process::Status: pid 2228 exit 0> worker=0
+I, [2016-01-07T00:32:13.105609 #2224]  INFO -- : reaped #<Process::Status: pid 2231 exit 0> worker=1
+I, [2016-01-07T00:32:13.105714 #2224]  INFO -- : master complete
+I, [2016-01-07T12:38:40.730271 #2079]  INFO -- : Refreshing Gem list
+I, [2016-01-07T12:38:43.924959 #2079]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-07T12:38:43.934090 #2079]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-07T12:38:43.934315 #2079]  INFO -- : worker=0 spawning...
+I, [2016-01-07T12:38:43.935863 #2079]  INFO -- : worker=1 spawning...
+I, [2016-01-07T12:38:43.936373 #2089]  INFO -- : worker=0 spawned pid=2089
+I, [2016-01-07T12:38:43.938715 #2089]  INFO -- : worker=0 ready
+I, [2016-01-07T12:38:43.938910 #2079]  INFO -- : master process ready
+I, [2016-01-07T12:38:43.939498 #2092]  INFO -- : worker=1 spawned pid=2092
+I, [2016-01-07T12:38:43.942354 #2092]  INFO -- : worker=1 ready
+{ 69074340 rufus-scheduler intercepted an error:
+  69074340   job:
+  69074340     Rufus::Scheduler::EveryJob "1m" {}
+  69074340   error:
+  69074340     69074340
+  69074340     Redis::CannotConnectError
+  69074340     Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:332:in `rescue in establish_connection'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:318:in `establish_connection'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:94:in `block in connect'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:93:in `connect'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:351:in `ensure_connected'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:208:in `block in process'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:293:in `logging'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:207:in `process'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:178:in `call_pipelined'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:150:in `block in call_pipeline'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:148:in `call_pipeline'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2245:in `block in multi'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `block in synchronize'
+  69074340       /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `synchronize'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2237:in `multi'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:175:in `block in raw_push'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:64:in `block (2 levels) in with'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `handle_interrupt'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `block in with'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `handle_interrupt'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `with'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:174:in `raw_push'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:68:in `push'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:98:in `client_push'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:54:in `perform_async'
+  69074340       /home/orinamokaya/deploy/darasa_app/config/initializers/scheduler.rb:13:in `block in <top (required)>'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `call'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `do_call'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:258:in `do_trigger'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:300:in `block (3 levels) in start_work_thread'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `call'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `block (2 levels) in start_work_thread'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `loop'
+  69074340       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `block in start_work_thread'
+  69074340   tz:
+  69074340     ENV['TZ']: 
+  69074340     Time.now: 2016-01-08 00:17:35 +0300
+  69074340   scheduler:
+  69074340     object_id: 61845760
+  69074340     opts:
+  69074340       {}
+  69074340       frequency: 0.3
+  69074340       scheduler_lock: #<Rufus::Scheduler::NullLock:0x000000075f5f30>
+  69074340       trigger_lock: #<Rufus::Scheduler::NullLock:0x000000075f5f08>
+  69074340     uptime: 41932.580210299 (11h38m52s591)
+  69074340     down?: false
+  69074340     threads: 2
+  69074340       thread: #<Thread:0x000000075f5eb8>
+  69074340       thread_key: rufus_scheduler_61845760
+  69074340       work_threads: 1
+  69074340         active: 1
+  69074340         vacant: 0
+  69074340         max_work_threads: 28
+  69074340       mutexes: {}
+  69074340     jobs: 1
+  69074340       at_jobs: 0
+  69074340       in_jobs: 0
+  69074340       every_jobs: 1
+  69074340       interval_jobs: 0
+  69074340       cron_jobs: 0
+  69074340     running_jobs: 1
+  69074340     work_queue: 0
+} 69074340 .
+I, [2016-01-11T09:56:00.899359 #2585]  INFO -- : Refreshing Gem list
+I, [2016-01-11T09:56:11.816909 #2585]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-11T09:56:11.817154 #2585]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-11T09:56:11.817303 #2585]  INFO -- : worker=0 spawning...
+I, [2016-01-11T09:56:11.819848 #2585]  INFO -- : worker=1 spawning...
+I, [2016-01-11T09:56:11.820282 #2979]  INFO -- : worker=0 spawned pid=2979
+I, [2016-01-11T09:56:11.822501 #2979]  INFO -- : worker=0 ready
+I, [2016-01-11T09:56:11.824959 #2585]  INFO -- : master process ready
+I, [2016-01-11T09:56:11.825389 #2982]  INFO -- : worker=1 spawned pid=2982
+I, [2016-01-11T09:56:11.827590 #2982]  INFO -- : worker=1 ready
+I, [2016-01-11T10:53:20.418918 #2386]  INFO -- : Refreshing Gem list
+I, [2016-01-11T10:53:26.004868 #2386]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-11T10:53:26.005113 #2386]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-11T10:53:26.005243 #2386]  INFO -- : worker=0 spawning...
+I, [2016-01-11T10:53:26.006920 #2386]  INFO -- : worker=1 spawning...
+I, [2016-01-11T10:53:26.007397 #2703]  INFO -- : worker=0 spawned pid=2703
+I, [2016-01-11T10:53:26.008714 #2386]  INFO -- : master process ready
+I, [2016-01-11T10:53:26.009319 #2706]  INFO -- : worker=1 spawned pid=2706
+I, [2016-01-11T10:53:26.009749 #2703]  INFO -- : worker=0 ready
+I, [2016-01-11T10:53:26.012329 #2706]  INFO -- : worker=1 ready
+I, [2016-01-11T11:25:36.160606 #2386]  INFO -- : reaped #<Process::Status: pid 2703 exit 0> worker=0
+I, [2016-01-11T11:25:36.160758 #2386]  INFO -- : reaped #<Process::Status: pid 2706 exit 0> worker=1
+I, [2016-01-11T11:25:36.160851 #2386]  INFO -- : master complete
+I, [2016-01-11T14:12:36.773685 #2283]  INFO -- : Refreshing Gem list
+I, [2016-01-11T14:12:39.923920 #2283]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-11T14:12:39.933032 #2283]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-11T14:12:39.933150 #2283]  INFO -- : worker=0 spawning...
+I, [2016-01-11T14:12:39.934671 #2283]  INFO -- : worker=1 spawning...
+I, [2016-01-11T14:12:39.935198 #2293]  INFO -- : worker=0 spawned pid=2293
+I, [2016-01-11T14:12:39.937234 #2293]  INFO -- : worker=0 ready
+I, [2016-01-11T14:12:39.937610 #2283]  INFO -- : master process ready
+I, [2016-01-11T14:12:39.938114 #2296]  INFO -- : worker=1 spawned pid=2296
+I, [2016-01-11T14:12:39.940238 #2296]  INFO -- : worker=1 ready
+I, [2016-01-11T14:14:43.984879 #2283]  INFO -- : reaped #<Process::Status: pid 2293 exit 0> worker=0
+I, [2016-01-11T14:14:43.985038 #2283]  INFO -- : reaped #<Process::Status: pid 2296 exit 0> worker=1
+I, [2016-01-11T14:14:43.985147 #2283]  INFO -- : master complete
+I, [2016-01-11T14:41:48.140047 #2255]  INFO -- : Refreshing Gem list
+I, [2016-01-11T14:41:51.423670 #2255]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-11T14:41:51.432782 #2255]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-11T14:41:51.432895 #2255]  INFO -- : worker=0 spawning...
+I, [2016-01-11T14:41:51.434483 #2255]  INFO -- : worker=1 spawning...
+I, [2016-01-11T14:41:51.434977 #2266]  INFO -- : worker=0 spawned pid=2266
+I, [2016-01-11T14:41:51.436178 #2255]  INFO -- : master process ready
+I, [2016-01-11T14:41:51.436794 #2269]  INFO -- : worker=1 spawned pid=2269
+I, [2016-01-11T14:41:51.437284 #2266]  INFO -- : worker=0 ready
+I, [2016-01-11T14:41:51.439804 #2269]  INFO -- : worker=1 ready
+I, [2016-01-11T14:42:18.545549 #2255]  INFO -- : reaped #<Process::Status: pid 2266 exit 0> worker=0
+I, [2016-01-11T14:42:18.545706 #2255]  INFO -- : reaped #<Process::Status: pid 2269 exit 0> worker=1
+I, [2016-01-11T14:42:18.545830 #2255]  INFO -- : master complete
+I, [2016-01-11T15:04:53.721909 #2171]  INFO -- : Refreshing Gem list
+I, [2016-01-11T15:04:56.916650 #2171]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-11T15:04:56.925731 #2171]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-11T15:04:56.925852 #2171]  INFO -- : worker=0 spawning...
+I, [2016-01-11T15:04:56.927425 #2171]  INFO -- : worker=1 spawning...
+I, [2016-01-11T15:04:56.927880 #2181]  INFO -- : worker=0 spawned pid=2181
+I, [2016-01-11T15:04:56.929983 #2181]  INFO -- : worker=0 ready
+I, [2016-01-11T15:04:56.930718 #2171]  INFO -- : master process ready
+I, [2016-01-11T15:04:56.931172 #2184]  INFO -- : worker=1 spawned pid=2184
+I, [2016-01-11T15:04:56.933399 #2184]  INFO -- : worker=1 ready
+I, [2016-01-11T15:14:36.191807 #2171]  INFO -- : reaped #<Process::Status: pid 2181 exit 0> worker=0
+I, [2016-01-11T15:14:36.192007 #2171]  INFO -- : reaped #<Process::Status: pid 2184 exit 0> worker=1
+I, [2016-01-11T15:14:36.192127 #2171]  INFO -- : master complete
+I, [2016-01-12T09:40:30.857195 #2444]  INFO -- : Refreshing Gem list
+I, [2016-01-12T09:40:40.518658 #2444]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-12T09:40:40.518854 #2444]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-12T09:40:40.518962 #2444]  INFO -- : worker=0 spawning...
+I, [2016-01-12T09:40:40.520627 #2444]  INFO -- : worker=1 spawning...
+I, [2016-01-12T09:40:40.521101 #2901]  INFO -- : worker=0 spawned pid=2901
+I, [2016-01-12T09:40:40.523647 #2901]  INFO -- : worker=0 ready
+I, [2016-01-12T09:40:40.524266 #2444]  INFO -- : master process ready
+I, [2016-01-12T09:40:40.524823 #2904]  INFO -- : worker=1 spawned pid=2904
+I, [2016-01-12T09:40:40.527711 #2904]  INFO -- : worker=1 ready
+I, [2016-01-13T12:27:16.396804 #2769]  INFO -- : Refreshing Gem list
+I, [2016-01-13T12:27:59.075133 #2769]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-13T12:27:59.075388 #2769]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-13T12:27:59.075557 #2769]  INFO -- : worker=0 spawning...
+I, [2016-01-13T12:27:59.077113 #2769]  INFO -- : worker=1 spawning...
+I, [2016-01-13T12:27:59.077697 #3190]  INFO -- : worker=0 spawned pid=3190
+I, [2016-01-13T12:27:59.080197 #2769]  INFO -- : master process ready
+I, [2016-01-13T12:27:59.080665 #3193]  INFO -- : worker=1 spawned pid=3193
+I, [2016-01-13T12:27:59.087802 #3193]  INFO -- : worker=1 ready
+I, [2016-01-13T12:27:59.088085 #3190]  INFO -- : worker=0 ready

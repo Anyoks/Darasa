@@ -78,7 +78,7 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'unicorn' #better deployment server for deployment
 #** enabling google signs
 gem 'omniauth-facebook'
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'simple_form', '~> 3.2'
 gem 'cocoon', '~> 1.2', '>= 1.2.6'
 gem "cancan"

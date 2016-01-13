@@ -41,12 +41,12 @@ Ckeditor.setup do |config|
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
   # config.assets_languages = ['en', 'uk']
-  config.assets_plugins = ['eqneditor']
+  config.assets_plugins = ['lineutils','dialogui','clipboard', 'widget', 'mathjax','eqneditor'] #,'dialogui', 'mathjax', 'widget', 'lineutils', 'clipboard']
 
   #handle custom addons
-   assets_root =  Rails.root.join('app','assets','javascripts')
-   ckeditor_plugins_root = assets_root.join('ckeditor','plugins')
-   %w(openlink sourcedialog).each do |ckeditor_plugin|
-     Ckeditor.assets += Dir[ckeditor_plugins_root.join(ckeditor_plugin, '**', '*.js')].map {|x| x.sub(assets_root.to_path, '').sub(/^\/+/, '')}
-   end
+   # assets_root =  Rails.root.join('app','assets','javascripts')
+   # ckeditor_plugins_root = assets_root.join('ckeditor','plugins')
+   # %w(openlink sourcedialog).each do |ckeditor_plugin|
+   #   Ckeditor.assets += Dir[ckeditor_plugins_root.join(ckeditor_plugin, '**', '*.js')].map {|x| x.sub(assets_root.to_path, '').sub(/^\/+/, '')}
+   # end
 end
