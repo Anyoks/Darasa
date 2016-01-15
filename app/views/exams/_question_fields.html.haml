@@ -4,7 +4,7 @@
 	= link_to_remove_association "Remove Question", f, class: "label label-danger"
 	
 	%br/
-	= f.cktext_area :question, :cols => 30, :ckeditor => { :toolbar => 'mini'}
+	= f.cktext_area :question, :cols => 30, :extraPlugins => 'eqneditor',:ckeditor => { :toolbar => 'mini'}
 	%br/
 
 

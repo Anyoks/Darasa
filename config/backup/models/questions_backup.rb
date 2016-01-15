@@ -16,7 +16,7 @@ Model.new(:questions_backup, 'Description for questions_backup') do
   #
   database PostgreSQL do |db|
     # To dump all databases, set `db.name = :all` (or leave blank)
-    db.name               = "darasa_app_development"
+    db.name               = "darasa_app_production"
     db.username           = "darasa"
     db.password           = "darasa"
     db.host               = "localhost"

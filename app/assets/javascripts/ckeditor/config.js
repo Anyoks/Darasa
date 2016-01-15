@@ -39,7 +39,7 @@ CKEDITOR.editorConfig = function( config )
 
   config.allowedContent = true;
 
-  config.extraPlugins ='lineutils,dialogui,clipboard,widget,mathjax,eqneditor,button,toolbar'; //,dialogui,mathjax,widget,lineutils,clipboard';
+  config.extraPlugins ='lineutils,widget,mathjax,eqneditor,'; //,dialogui,mathjax,widget,lineutils,clipboard';
 
   config.mathJaxLib = 'http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML';
 

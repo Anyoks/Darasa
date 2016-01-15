@@ -1908,3 +1908,106 @@ I, [2016-01-13T12:27:59.080197 #2769]  INFO -- : master process ready
 I, [2016-01-13T12:27:59.080665 #3193]  INFO -- : worker=1 spawned pid=3193
 I, [2016-01-13T12:27:59.087802 #3193]  INFO -- : worker=1 ready
 I, [2016-01-13T12:27:59.088085 #3190]  INFO -- : worker=0 ready
+{ 40182100 rufus-scheduler intercepted an error:
+  40182100   job:
+  40182100     Rufus::Scheduler::EveryJob "1m" {}
+  40182100   error:
+  40182100     40182100
+  40182100     Redis::CannotConnectError
+  40182100     Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:332:in `rescue in establish_connection'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:318:in `establish_connection'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:94:in `block in connect'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:93:in `connect'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:351:in `ensure_connected'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:208:in `block in process'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:293:in `logging'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:207:in `process'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:178:in `call_pipelined'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:150:in `block in call_pipeline'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:280:in `with_reconnect'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis/client.rb:148:in `call_pipeline'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2245:in `block in multi'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `block in synchronize'
+  40182100       /home/orinamokaya/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:57:in `synchronize'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/redis-3.2.2/lib/redis.rb:2237:in `multi'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:175:in `block in raw_push'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:64:in `block (2 levels) in with'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `handle_interrupt'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:63:in `block in with'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `handle_interrupt'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/connection_pool-2.2.0/lib/connection_pool.rb:60:in `with'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:174:in `raw_push'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/client.rb:68:in `push'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:98:in `client_push'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/sidekiq-4.0.1/lib/sidekiq/worker.rb:54:in `perform_async'
+  40182100       /home/orinamokaya/deploy/darasa_app/config/initializers/scheduler.rb:13:in `block in <top (required)>'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `call'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:234:in `do_call'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:258:in `do_trigger'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:300:in `block (3 levels) in start_work_thread'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `call'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:303:in `block (2 levels) in start_work_thread'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `loop'
+  40182100       /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/rufus-scheduler-3.1.10/lib/rufus/scheduler/jobs.rb:289:in `block in start_work_thread'
+  40182100   tz:
+  40182100     ENV['TZ']: 
+  40182100     Time.now: 2016-01-13 19:32:31 +0300
+  40182100   scheduler:
+  40182100     object_id: 59686700
+  40182100     opts:
+  40182100       {}
+  40182100       frequency: 0.3
+  40182100       scheduler_lock: #<Rufus::Scheduler::NullLock:0x000000071d7b88>
+  40182100       trigger_lock: #<Rufus::Scheduler::NullLock:0x000000071d7b60>
+  40182100     uptime: 25474.973011885 (7h4m34s998)
+  40182100     down?: false
+  40182100     threads: 2
+  40182100       thread: #<Thread:0x000000071d7b10>
+  40182100       thread_key: rufus_scheduler_59686700
+  40182100       work_threads: 1
+  40182100         active: 1
+  40182100         vacant: 0
+  40182100         max_work_threads: 28
+  40182100       mutexes: {}
+  40182100     jobs: 1
+  40182100       at_jobs: 0
+  40182100       in_jobs: 0
+  40182100       every_jobs: 1
+  40182100       interval_jobs: 0
+  40182100       cron_jobs: 0
+  40182100     running_jobs: 1
+  40182100     work_queue: 0
+} 40182100 .
+I, [2016-01-14T09:44:46.339664 #2177]  INFO -- : Refreshing Gem list
+I, [2016-01-14T09:44:49.681032 #2177]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-14T09:44:49.689889 #2177]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-14T09:44:49.690106 #2177]  INFO -- : worker=0 spawning...
+I, [2016-01-14T09:44:49.691640 #2177]  INFO -- : worker=1 spawning...
+I, [2016-01-14T09:44:49.692130 #2188]  INFO -- : worker=0 spawned pid=2188
+I, [2016-01-14T09:44:49.694408 #2177]  INFO -- : master process ready
+I, [2016-01-14T09:44:49.694994 #2191]  INFO -- : worker=1 spawned pid=2191
+I, [2016-01-14T09:44:49.695125 #2188]  INFO -- : worker=0 ready
+I, [2016-01-14T09:44:49.698849 #2191]  INFO -- : worker=1 ready
+I, [2016-01-14T10:06:04.174837 #2567]  INFO -- : Refreshing Gem list
+I, [2016-01-14T10:06:12.236183 #2567]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-14T10:06:12.236442 #2567]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-14T10:06:12.236608 #2567]  INFO -- : worker=0 spawning...
+I, [2016-01-14T10:06:12.238680 #2567]  INFO -- : worker=1 spawning...
+I, [2016-01-14T10:06:12.239214 #2919]  INFO -- : worker=0 spawned pid=2919
+I, [2016-01-14T10:06:12.241247 #2567]  INFO -- : master process ready
+I, [2016-01-14T10:06:12.241890 #2922]  INFO -- : worker=1 spawned pid=2922
+I, [2016-01-14T10:06:12.242367 #2919]  INFO -- : worker=0 ready
+I, [2016-01-14T10:06:12.245964 #2922]  INFO -- : worker=1 ready
+I, [2016-01-15T09:30:32.847367 #2292]  INFO -- : Refreshing Gem list
+I, [2016-01-15T09:30:35.705973 #2292]  INFO -- : unlinking existing socket=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+I, [2016-01-15T09:30:35.706163 #2292]  INFO -- : listening on addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock fd=9
+I, [2016-01-15T09:30:35.706272 #2292]  INFO -- : worker=0 spawning...
+I, [2016-01-15T09:30:35.707949 #2292]  INFO -- : worker=1 spawning...
+I, [2016-01-15T09:30:35.708465 #2417]  INFO -- : worker=0 spawned pid=2417
+I, [2016-01-15T09:30:35.711327 #2417]  INFO -- : worker=0 ready
+I, [2016-01-15T09:30:35.713308 #2292]  INFO -- : master process ready
+I, [2016-01-15T09:30:35.713808 #2420]  INFO -- : worker=1 spawned pid=2420
+I, [2016-01-15T09:30:35.717249 #2420]  INFO -- : worker=1 ready
