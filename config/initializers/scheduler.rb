@@ -10,7 +10,7 @@ payment_checker = Rufus::Scheduler.singleton
 payment_checker.every '1m' do
 
 	#Now call my payment chcecker workeer here to do some hard work. HardWorker.perform_async
-	PaymentsWorker.perform_async
+	# PaymentsWorker.perform_async
 
 
 end
