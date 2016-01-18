@@ -39,7 +39,7 @@ CKEDITOR.editorConfig = function( config )
 
   config.allowedContent = true;
 
-  config.extraPlugins ='lineutils,widget,mathjax,eqneditor'; //,dialogui,mathjax,widget,lineutils,clipboard';
+  config.extraPlugins ='eqneditor,lineutils,widget,mathjax'; //,dialogui,mathjax,widget,lineutils,clipboard';
 
   config.mathJaxLib = 'http://cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML';
 
@@ -122,6 +122,6 @@ CKEDITOR.editorConfig = function( config )
     { name: 'styles', items: [ 'Font', 'FontSize' ] },
     { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
-    { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar','Mathjax' ] }
+    { name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar','Mathjax', 'Eqneditor' ] }
   ];
 };
