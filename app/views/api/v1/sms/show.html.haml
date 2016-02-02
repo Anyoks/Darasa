@@ -1,0 +1,17 @@
+%h1 Api::V1::Sms#show
+
+
+.row
+  .col-sm-15.col-md-15
+    - @sms.each do |sms|
+      .col-sm-6.col-md-4
+        .thumbnail
+          %img{:alt => "...", :src => "..."}
+            .caption
+              %h3 #{sms.message}
+              %p ...
+              %p
+                -if current_user && current_user.is_admin?
+                  / = link_to 'Edit', edit_sm_path(sms), class: "label label-warning"
+                  / = link_to 'Destroy', sms, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"               
+                  / = link_to 'View Years', years_path(sms), class: "btn btn-success"	

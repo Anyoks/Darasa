@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: sms
+#
+#  id         :uuid             not null, primary key
+#  message    :text
+#  phone      :string
+#  code       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyText
+  phone: MyString
+  code: MyString
+
+two:
+  message: MyText
+  phone: MyString
+  code: MyString
