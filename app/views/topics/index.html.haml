@@ -2,5 +2,5 @@
 
 =render "topics/table", topics: @topics #the table that was previously here was extracted to the partial to be DRY. seems like I needed it more than I thought! :-)
 
--if current_user && current_user.is_moderator?
+-if current_user && current_user.is_moderator? || current_user.is_admin?
 	%p= link_to 'New topic', new_topic_path, class: "btn btn-primary"

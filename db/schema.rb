@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209115251) do
+ActiveRecord::Schema.define(version: 20160201091742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,23 @@ ActiveRecord::Schema.define(version: 20151209115251) do
 
   add_index "semesters", ["year_id"], name: "index_semesters_on_year_id", using: :btree
 
+  create_table "sms", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.text     "message"
+    t.string   "phone"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subtopics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.text     "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid     "topic_id"
+  end
+
+  add_index "subtopics", ["topic_id"], name: "index_subtopics_on_topic_id", using: :btree
+
   create_table "table_prices", force: :cascade do |t|
     t.string "content"
     t.float  "price"
@@ -126,9 +143,9 @@ ActiveRecord::Schema.define(version: 20151209115251) do
     t.string   "name"
     t.string   "code"
     t.string   "attachment"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "unit_id",    default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid     "unit_id"
   end
 
   add_index "topics", ["unit_id"], name: "index_topics_on_unit_id", using: :btree

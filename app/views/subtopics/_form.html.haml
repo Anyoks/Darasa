@@ -1,0 +1,17 @@
+= simple_form_for(@subtopic) do |f|
+  = f.error_notification
+
+  .field
+    = f.label :Title
+    = f.text_field :title
+  .field
+    =f.label :topic
+    =f.select :topic_id, Topic.all.map { |t| [t.name, t.id] }
+
+    / .actions
+    / = f.submit 'Save'
+
+  .form-inputs
+
+  .form-actions
+    = f.button :submit

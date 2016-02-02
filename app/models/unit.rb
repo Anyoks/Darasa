@@ -10,6 +10,7 @@
 #  id            :uuid             not null, primary key
 #  semester_id   :uuid
 #  price_id      :uuid
+#  available     :boolean          default(FALSE)
 #
 
 class Unit < ActiveRecord::Base

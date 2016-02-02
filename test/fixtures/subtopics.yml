@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: subtopics
+#
+#  id         :uuid             not null, primary key
+#  title      :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  topic_id   :uuid
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+
+two:
+  title: MyText

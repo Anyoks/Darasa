@@ -1,0 +1,40 @@
+%h1 Listing subtopics
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @subtopics.each do |subtopic|
+      %tr
+        %td= link_to 'Show', subtopic
+        %td= link_to 'Edit', edit_subtopic_path(subtopic)
+        %td= link_to 'Destroy', subtopic, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Topic
+      %th Options
+      %th
+
+  %tbody
+    - subtopics.each do |subtopic|
+      %tr
+        %td= subtopic.title
+        /%td= subtopics.code
+        %td= link_to subtopic.topic.name, topics_path
+        / %td= subtopics.unit.name
+        / %td= image_tag subtopics.attachment_url(:thumb)
+        %td
+          -if current_user && current_user.is_admin?
+            = link_to 'Edit', edit_topic_path(subtopic), class: "label label-warning"
+            = link_to 'Destroy', subtopic, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+            = link_to "Download", download_topic_path(subtopic), class: "label label-success"

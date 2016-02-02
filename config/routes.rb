@@ -1,6 +1,31 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'subtopics/index'
+
+  get 'subtopics/show'
+
+  get 'subtopics/edit'
+
+  get 'subtopics/destroy'
+
+  get 'subtopics/new'
+
+  get 'subtopics/create'
+
+  get 'subtopics/update'
+
+  get 'subtopics/destroy'
+
+  namespace :api do
+  namespace :v1 do
+    # post '/sms', :to => 'sms#sms'
+    get '/sms', :to => 'sms#create'
+    resources :sms
+     # get "/units", :to => 'units#index'
+    end
+  end
+
   namespace :api do
   namespace :v1 do
     get 'processpayment/process(:parameters)' , :to => "processpayment#process"
@@ -35,6 +60,7 @@ Rails.application.routes.draw do
   resources :semesters
   resources :units
   resources :topics
+  resources :subtopics
 
   resources :topics do
     member do

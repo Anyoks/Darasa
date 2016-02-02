@@ -18,11 +18,6 @@ class TopicsController < ApplicationController
   # GET /topics/1.json
   def show
       @topics = Topic.find(params[:id])
-   
-      respond_to do |format|
-        format.html
-        format.pdf { render pdf: generate_pdf(@topics) }
-      end
   end
 
   # GET /topics/new

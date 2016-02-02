@@ -25,6 +25,7 @@
 #  terms_updated_at       :datetime
 #  authentication_token   :text
 #  id                     :uuid             not null, primary key
+#  unique_session_id      :string(20)
 #
 
 class User < ActiveRecord::Base
