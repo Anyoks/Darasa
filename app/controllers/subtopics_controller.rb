@@ -10,15 +10,21 @@ class SubtopicsController < ApplicationController
   # GET /subtopics/1
   # GET /subtopics/1.json
   def show
+    @subtopic = Subtopic.find(params[:id])
   end
 
   # GET /subtopics/new
   def new
     @subtopic = Subtopic.new
+    @subtopic.questions.build.build_response
+      # end
   end
 
   # GET /subtopics/1/edit
   def edit
+    @subtopic = Subtopic.find(params[:id])
+    # @exam.questions.build
+    @subtopic.questions.build.build_response
   end
 
   # POST /subtopics
@@ -70,6 +76,11 @@ class SubtopicsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def subtopic_params
       # params[:subtopic]
-      params.require(:subtopic).permit(:title, :topic_id)
+      # params.require(:subtopic).permit(:title, :topic_id)
+
+      params.require(:subtopic).permit(:title, :topic_id,
+        questions_attributes:[ :id, :question, :subtopic_id,  :_destroy,
+        response_attributes:[:id, :answer, :question_id, :video,:_destroy]]
+        )
     end
 end

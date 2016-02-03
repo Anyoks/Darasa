@@ -11,4 +11,12 @@
 
 class Subtopic < ActiveRecord::Base
 	belongs_to :topic
+
+	validates_presence_of :title, :topic
+
+	has_many :questions, :dependent => :destroy
+
+	has_many :answers, :through => :questions
+
+	accepts_nested_attributes_for :questions,  :allow_destroy => true
 end

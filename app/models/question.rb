@@ -13,6 +13,8 @@ class Question < ActiveRecord::Base
 	require 'json'
 	belongs_to :exam
 
+	belongs_to :subtopic
+
 	has_one :response, :dependent => :destroy
 
 	accepts_nested_attributes_for :response#, :reject_if => lambda { |a| a[:response].blank? }, :allow_destroy => true

@@ -1,17 +1,27 @@
-= simple_form_for(@subtopic) do |f|
+= simple_form_for @subtopic, :html => {:multipart => true}  do |f|
   = f.error_notification
 
+  - if @subtopic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@subtopic.errors.count, "error")} prohibited this subtopic from being saved:"
+      %ul
+        - @subtopic.errors.full_messages.each do |msg|
+          %li= msg
+
+  
   .field
     = f.label :Title
-    = f.text_field :title
-  .field
+    = f.text_field :title, size: 100, :placeholder => "Enter the subtopic's title"
     =f.label :topic
     =f.select :topic_id, Topic.all.map { |t| [t.name, t.id] }
+  %br/
+  
+  .field
+    = f.simple_fields_for :questions do |question|
+      = render "question_fields", f: question
+  %br/
 
-    / .actions
-    / = f.submit 'Save'
+  .actions
+    = f.submit 'Save Changes', class: "btn btn-success pull-right"#, "pull-right"
 
-  .form-inputs
-
-  .form-actions
-    = f.button :submit
+  %br/
