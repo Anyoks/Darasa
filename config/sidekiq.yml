@@ -1,3 +1,3 @@
 :queues:
-  - default
-  - update_payment_status
+  # - default
+  # - update_payment_status
