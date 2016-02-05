@@ -18,4 +18,8 @@ class Topic < ActiveRecord::Base
 	validates_presence_of :name, :code, :unit # make sure these two are entered
 
 	belongs_to :unit
+
+	has_many :subtopics
+
+	has_many :purchases, :dependent => :destroy
 end
