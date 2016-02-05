@@ -37,7 +37,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :session_limitable,:token_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
   # validates_acceptance_of :tos_agreement, :allow_nil => true, :accept => true, :on => :create
-  has_many :payments
+  has_many :payments, dependent: :destroy
+  has_many :purchases, dependent: :destroy
+  has_many :failed_payments, dependent: :destroy
 
 
 	def self.find_for_google_oauth2(access_token, signed_in_resource=nil)

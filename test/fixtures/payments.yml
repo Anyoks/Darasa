@@ -2,15 +2,13 @@
 #
 # Table name: payments
 #
-#  created_at                      :datetime         not null
-#  updated_at                      :datetime         not null
-#  pesapal_merchant_reference      :string
-#  pesapal_transaction_tracking_id :string
-#  id                              :uuid             not null, primary key
-#  unit_id                         :uuid
-#  user_id                         :uuid
-#  status                          :string
-#  order_url                       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  mpesa_code :string           not null
+#  id         :uuid             not null, primary key
+#  topic_id   :uuid
+#  user_id    :uuid
+#  status     :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

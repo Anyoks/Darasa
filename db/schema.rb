@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203102122) do
+ActiveRecord::Schema.define(version: 20160205113630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,29 +54,51 @@ ActiveRecord::Schema.define(version: 20160203102122) do
 
   add_index "exams", ["unit_id"], name: "index_exams_on_unit_id", using: :btree
 
+  create_table "failed_payments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.uuid     "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "mpesa_code"
+  end
+
+  add_index "failed_payments", ["topic_id"], name: "index_failed_payments_on_topic_id", using: :btree
+  add_index "failed_payments", ["user_id"], name: "index_failed_payments_on_user_id", using: :btree
+
   create_table "order_urls", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text   "order_url"
     t.string "authentication_token"
   end
 
   create_table "payments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "pesapal_merchant_reference"
-    t.string   "pesapal_transaction_tracking_id"
-    t.uuid     "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "mpesa_code", null: false
+    t.uuid     "topic_id"
     t.uuid     "user_id"
     t.string   "status"
-    t.string   "order_url"
   end
 
-  add_index "payments", ["unit_id"], name: "index_payments_on_unit_id", using: :btree
+  add_index "payments", ["mpesa_code"], name: "index_payments_on_mpesa_code", unique: true, using: :btree
+  add_index "payments", ["topic_id"], name: "index_payments_on_topic_id", using: :btree
   add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
   create_table "prices", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.float  "amount"
     t.string "content"
   end
+
+  create_table "purchases", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.uuid     "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid     "payment_id"
+  end
+
+  add_index "purchases", ["payment_id"], name: "index_purchases_on_payment_id", using: :btree
+  add_index "purchases", ["topic_id"], name: "index_purchases_on_topic_id", using: :btree
+  add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
   create_table "questions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "question"

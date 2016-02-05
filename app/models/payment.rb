@@ -2,29 +2,44 @@
 #
 # Table name: payments
 #
-#  created_at                      :datetime         not null
-#  updated_at                      :datetime         not null
-#  pesapal_merchant_reference      :string
-#  pesapal_transaction_tracking_id :string
-#  id                              :uuid             not null, primary key
-#  unit_id                         :uuid
-#  user_id                         :uuid
-#  status                          :string
-#  order_url                       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  mpesa_code :string           not null
+#  id         :uuid             not null, primary key
+#  topic_id   :uuid
+#  user_id    :uuid
+#  status     :string
 #
 
 class Payment < ActiveRecord::Base
 	belongs_to :user
 
-	validates_presence_of :user_id, :unit_id
+	has_one :purchase, :dependent => :destroy # only one payment record corrensponds to one purchase record. i.e each purchase is authorised by a payment.
 
-	# params.permit(params[:pesapal_merchant_reference],params[:pesapal_transaction_tracking_id],@user_payment_details[:user_id], @user_payment_details[:exam_id], @user_payment_details[:semester_id], @user_payment_details[:unit_id])
+	validates_presence_of :user_id, :topic_id, :mpesa_code
 
-	# def save_user user_id, unit_id, semester_id, exam_id
-	# 	user_id = User.find_by_uuid(user_id)
-	# 	semester_id = Semester.find_by_uuid(semester_id)
-	# 	exam_id = Exam.find_by_uuid(exam_id)
-	# 	unit_id = Unit.find_by_uuid(unit_id)
-	# end
+	validates :mpesa_code, uniqueness: true #ensure the mpesa  codes are unique
+
+	after_commit :add_topic_to_user_purchases, on: [:create] # each time a user makes a confirmed purchase
+
+	private
+
+	def add_topic_to_user_purchases
+		user_id = self.user_id
+		topic_id = self.topic_id
+
+		@purchase = Purchase.new(purchase_params)
+		if @purchase.save
+			p "You now own this topic"
+		else
+			p "No you don't"
+		end
+	end
+
+	def purchase_params
+		# user_id = self.user_id
+		# topic_id = self.topic_id
+		{ "user_id"=> "#{self.user_id}", "topic_id"=> "#{self.topic_id}", "payment_id"=> "#{self.id}"  }
+	end
 
 end
