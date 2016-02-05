@@ -2,11 +2,12 @@
 #
 # Table name: questions
 #
-#  question   :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  id         :uuid             not null, primary key
-#  exam_id    :uuid
+#  question    :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  id          :uuid             not null, primary key
+#  exam_id     :uuid
+#  subtopic_id :uuid
 #
 
 class Question < ActiveRecord::Base

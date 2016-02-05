@@ -14,9 +14,9 @@
 #
 
 class Unit < ActiveRecord::Base
-	has_many :topics
+	has_many :topics,:dependent => :destroy
 	belongs_to :semester
-	has_many :cats
+	# has_many :cats
 	has_many :exams
 	belongs_to :price
 end
