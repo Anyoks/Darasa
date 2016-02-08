@@ -19,4 +19,24 @@ class Unit < ActiveRecord::Base
 	# has_many :cats
 	has_many :exams
 	belongs_to :price
+
+	def all_units
+		Unit.all.each do |unit|
+			p "#{unit.name} || #{unit.id} "
+		end
+	end
+
+
+	def make_unit_unavilble unit_id
+		# unit_id = unit_id
+		unit = Unit.find(unit_id)
+		unit.update_attribute(:available, false)
+	end
+
+	def make_unit_avilble unit_id
+		# unit_id = unit_id
+		unit = Unit.find(unit_id)
+		unit.update_attribute(:available, true)
+	end
+
 end
