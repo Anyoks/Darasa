@@ -5,9 +5,14 @@
 #  id         :uuid             not null, primary key
 #  message    :text
 #  phone      :string
-#  code       :string
+#  mpesa_code :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  amount     :string
+#  date       :string
+#  time       :string
+#  first_name :string
+#  last_name  :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
