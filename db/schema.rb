@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205113630) do
+ActiveRecord::Schema.define(version: 20160208120231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,9 +139,14 @@ ActiveRecord::Schema.define(version: 20160205113630) do
   create_table "sms", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "message"
     t.string   "phone"
-    t.string   "code"
+    t.string   "mpesa_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "amount"
+    t.string   "date"
+    t.string   "time"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "subtopics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

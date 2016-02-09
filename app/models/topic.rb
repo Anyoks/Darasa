@@ -19,7 +19,7 @@ class Topic < ActiveRecord::Base
 
 	belongs_to :unit
 
-	has_many :subtopics
+	has_many :subtopics,  :dependent => :destroy
 
 	has_many :purchases, :dependent => :destroy
 end
