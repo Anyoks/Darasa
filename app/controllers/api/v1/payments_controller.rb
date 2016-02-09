@@ -1,17 +1,6 @@
 class Api::V1::PaymentsController < ApplicationController
 	# before_filter :authenticate_user!
 	before_filter :authenticate_user!, except: [:pay]
-	# respond_to :json
-
-	# require 'oauth.rb'
-	# require 'api/v1/oauths_controller'
-	# require 'api/v1/merchants_controller'
-	# require 'api/v1/posts_controller'
-	# require 'htmlentities'
-	# require 'api/v1/orders_controller'
-	# load_and_authorize_resource
-
-
 
 
 	def pay
@@ -19,6 +8,8 @@ class Api::V1::PaymentsController < ApplicationController
 		# byebug
 		user =  User.find_by_authentication_token(params[:auth_token]) # when Axel says it's hard to get the id, I'll pick the Auth_token and in the Payment model find the user before saving. :-)
 		return invalid_details unless user
+
+		# user_id = user.id
 		
 		topic = Topic.find_by_id(params[:payment][:topic_id])
 		return invalid_topic unless topic
@@ -30,6 +21,7 @@ class Api::V1::PaymentsController < ApplicationController
 		###***somehwere here I have to check if the Mpesa code is in the Mpesa Payments table ***###
 
 		@payment = Payment.new(payment_params)
+		# byebug
 
 		if @payment.save
 			payment_successful topic_name
@@ -79,7 +71,10 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def payment_params
 		# params.permit!
-		params.require(:payment).permit(:user_id,:topic_id,:mpesa_code)
+		# user =  User.find_by_authentication_token(params[:auth_token]).id
+		# user_id = user.id
+		params.require(:payment).permit(:topic_id,:mpesa_code, :user_id)
+		# byebug
 	end
 
 	def order_params

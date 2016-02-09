@@ -22,7 +22,7 @@ class Payment < ActiveRecord::Base
 
 	after_commit :add_topic_to_user_purchases, on: [:create] # each time a user makes a confirmed purchase
 
-	private
+	# private
 
 	def add_topic_to_user_purchases
 		user_id = self.user_id
@@ -34,6 +34,15 @@ class Payment < ActiveRecord::Base
 		else
 			p "No you don't"
 		end
+	end
+
+	def find_by_topic_id topic_id
+		if self.find(topic_id)
+			true
+		else
+			false
+		end
+		
 	end
 
 	def purchase_params

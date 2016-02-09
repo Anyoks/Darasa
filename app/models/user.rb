@@ -130,11 +130,19 @@ class User < ActiveRecord::Base
 
 	#checking if the user has paid to view the answers
 
-	def has_paid? unit_id
+	def has_paid? topic_id
 		if self.payments.first.nil? #check if there's a payment record, before we do a look up in the db will save us some time :-)
-			check_if_this_unit_is_paid_for unit_id
+			check_if_this_unit_is_paid_for topic_id
 		else
-			check_if_this_unit_is_paid_for unit_id # have you really paid fro this unit?
+			check_if_this_unit_is_paid_for topic_id # have you really paid fro this unit?
+		end
+	end
+
+	def owns? topic_id
+		if self.purchases.first.nil?
+			false
+		else
+			check_if_topic_is_in_my_assets topic_id
 		end
 	end
 
@@ -154,12 +162,23 @@ class User < ActiveRecord::Base
 		self.empty?
 	end
 
-	def check_if_this_unit_is_paid_for unit_id
+	def check_if_topic_is_in_my_assets topic_id
+		@assets = self.purchases
+		if @assets.find_by_topic_id(topic_id).nil?
+			false
+		else
+			true
+		end
+	end
+
+
+
+	def check_if_this_unit_is_paid_for topic_id
 		@payment = self.payments
 		if @payment.present? #has the user made any Payments?
-			if @payment.find_by_unit_id(unit_id).nil? #If not no need to check further!
+			if @payment.find_by_topic_id(topic_id).nil? #If not no need to check further!
 				false
-			elsif @payment.find_by_unit_id(unit_id).status== "COMPLETED" #if he has check if her has paid for this unit
+			else
 				true
 			end
 		else
