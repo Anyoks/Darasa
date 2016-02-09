@@ -88,6 +88,17 @@ Rails.application.routes.draw do
     namespace :v1 do
       # resources :details, defaults: { format: 'json' }
 
+      #show subtopics
+      get  "/subtopics", :to => 'subtopics#index'
+       # get  "/subtopics", :to => 'subtopics#all_questions_in_topic'
+      # get "/"
+      # get "/toics/:id", :to => 'topics#show'
+
+      #show topics 
+      get  "/topics", :to => 'topics#index'
+      #show all questions in this topic (i.e questions in all subtopics)
+      get "/questions/:id", :to => 'topics#show'
+
       #show units routes
       get "/units", :to => 'units#index'
       get "/units/:id", :to => 'units#show'
