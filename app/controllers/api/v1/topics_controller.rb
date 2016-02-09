@@ -15,8 +15,8 @@ class Api::V1::TopicsController < ApplicationController
 	    # byebug
 	    return invalid_user unless resource
 
-	    @unit = Unit.find(params[:unit_id])
-	    return invalid_unit unless  @unit
+	    @unit = Unit.where(:id =>"#{params[:unit_id]}").first
+	    return invalid_unit unless  @unit.present?
 
 	     @topics = Topic.where(:unit_id => params[:unit_id])
 	     return no_topics unless  @topics.count >0
