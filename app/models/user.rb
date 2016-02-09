@@ -128,6 +128,18 @@ class User < ActiveRecord::Base
 		# self.role ||= Role.find_by_name('moderator') 
 	end
 
+	def make_admin
+		self.update_attributes :role_id => 4
+	end
+
+	def make_normal_user
+		self.update_attributes :role_id => 1
+	end
+
+	def show_admins
+		User.where(:role_id => 4 )
+	end
+
 	#checking if the user has paid to view the answers
 
 	def has_paid? topic_id
