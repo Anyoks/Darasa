@@ -15,10 +15,12 @@ class Api::V1::TopicsController < ApplicationController
 	    # byebug
 	    return invalid_user unless resource
 
+	    @unit = Unit.find(params[:unit_id])
+	    return invalid_unit unless  @unit
+
 	     @topics = Topic.where(:unit_id => params[:unit_id])
-	     return invalid_unit unless  @topics.count>0
+	     return no_topics unless  @topics.count >0
 	end
-	  #***********end of admin privilage setting :-) *****#
 
 	  # GET /topics/1
 	  # GET /topics/1.json
@@ -26,14 +28,11 @@ class Api::V1::TopicsController < ApplicationController
 	     resource =  User.find_by_authentication_token(params[:auth_token])
 	     return invalid_user unless resource
 
-	     #if the user has this topic in their purchases, then can they view the questions,
-	     
-
 	     @topic = Topic.find(params[:topic_id])
 	     return invalid_topic unless @topic
-	     	
-	     # end
-	 
+		
+		#check if user has for the topic if yes, desplay the questions, or else say they haven't paid yet.
+	     return you_dont_own_topic unless resource.owns? @topic.id
 	  end
 
 
@@ -42,6 +41,10 @@ class Api::V1::TopicsController < ApplicationController
 
 	  def ensure_authentication_token_param_exists
 	    ensure_param_exists :authentication_token
+	  end
+
+	  def you_dont_own_topic
+	  	render json: { success: false, msg: "Error you don't own this topic"}, status: :unauthorized
 	  end
 
 	  def invalid_user
@@ -58,7 +61,7 @@ class Api::V1::TopicsController < ApplicationController
 
 
 	  def no_topics
-	    render json: { success: false, msg: "Error no topics for this unit"}, status: :unauthorized
+	    render json: { success: true, msg: "No topics for this unit"}, status: :ok
 	  end
 
 	  def set_csrf_header
