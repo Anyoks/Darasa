@@ -1,5 +1,5 @@
 class Api::V1::TopicsController < ApplicationController
-	 before_filter :authenticate_user! #, except: [:answer]
+	 before_filter :authenticate_user! , except: [:answer, :show,:index]
 	# before_filter :ensure_question_id_exists, only: [:answer]
 	# before_filter :ensure_token_exists
 	skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
