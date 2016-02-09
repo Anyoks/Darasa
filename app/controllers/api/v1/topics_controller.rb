@@ -26,7 +26,10 @@ class Api::V1::TopicsController < ApplicationController
 	     resource =  User.find_by_authentication_token(params[:auth_token])
 	     return invalid_user unless resource
 
-	     @topic = Topic.find(params[:id])
+	     #if the user has this topic in their purchases, then can they view the questions,
+	     
+
+	     @topic = Topic.find(params[:topic_id])
 	     return invalid_topic unless @topic
 	     	
 	     # end

@@ -97,7 +97,7 @@ Rails.application.routes.draw do
       #show topics 
       get  "/topics", :to => 'topics#index'
       #show all questions in this topic (i.e questions in all subtopics)
-      get "/questions/:id", :to => 'topics#show'
+      get "/questions", :to => 'topics#show'
 
       #show units routes
       get "/units", :to => 'units#index'

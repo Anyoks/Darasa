@@ -40,6 +40,7 @@ class Api::V1::ExamsController < ApplicationController
     @resource =  User.find_by_authentication_token(params[:auth_token])
     return invalid_user unless @resource
 
+
     @question = Question.find_by_id(params[:question_id])
     return invalid_question unless @question
    
