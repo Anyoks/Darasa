@@ -20,7 +20,6 @@ class Sms < ActiveRecord::Base
 
 	def extract text
 		text_message = text
-		# text_message.message = text
 		data_raw = text.split
 		data_parse_one = get_stuff data_raw
 		data_parse_two = remove_unnecessary data_parse_one
@@ -31,8 +30,9 @@ class Sms < ActiveRecord::Base
 
 		if @sms.save
 			@sms.update_attribute(:message, text_message)
+		else
+			p "Error saving the message"
 		end
-		# convert to hash then save this in the db now
 	end
 
 	def get_stuff arr
@@ -49,15 +49,6 @@ class Sms < ActiveRecord::Base
 		arr
 	end
 
-	# def remove_unnecessary arr
-	# 	i = arr.length
-	# 	while i > 11 do
-	#  		result = arr.delete_at(-1)
-	#   	i = arr.length
-	# 	end
-	# 	result
-	# end
-
 	def remove_unnecessary arr
 		i = arr.length
 		while i > 11 do
@@ -65,13 +56,13 @@ class Sms < ActiveRecord::Base
 			i = arr.length
 		end
 		arr.delete_at(1)
-		p " just removed at 1 || #{arr} "
+		# p " just removed at 1 || #{arr} "
 		arr.delete_at(2)
-		p "  just removed at 2 ||  #{arr} "
+		# p "  just removed at 2 ||  #{arr} "
 		arr.delete_at(4)
-		p "  just removed at 4 || #{arr} "
+		# p "  just removed at 4 || #{arr} "
 		arr.delete_at(4)
-		p "  just removed at 5 ||  #{arr} "
+		# p "  just removed at 5 ||  #{arr} "
 		return arr
 	end
 
