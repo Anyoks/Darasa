@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   namespace :api do
   namespace :v1 do
     # post '/sms', :to => 'sms#sms'
-    get '/sms', :to => 'sms#create'
+    post '/sms', :to => 'sms#sms'
     resources :sms
      # get "/units", :to => 'units#index'
     end
