@@ -41,8 +41,8 @@ class Api::V1::ExamsController < ApplicationController
     return invalid_user unless @resource
 
 
-    @question = Question.find_by_id(params[:question_id])
-    return invalid_question unless @question
+    @question = Question.where(:id => "#{params[:question_id]}").first
+    return invalid_question unless @question.present?
    
     if @question
        @answer = @question.response.answer
