@@ -44,46 +44,41 @@ class Api::V1::ExamsController < ApplicationController
     @question = Question.where(:id => "#{params[:question_id]}").first
     return invalid_question unless @question.present?
 
+    topic_id =  @question.subtopic.topic.id
+    return there_no_topic unless topic_id
+
     #check if user has for the topic if yes, desplay the questions, or else say they haven't paid yet.
     #Except Admins! :-) Like a boss!
-
-##*****DUDe I really need to refactor this!!******#######
     if @resource.is_admin? #the boss sees it all
-      if @question
-         @answer = @question.response.answer
-        if @answer
-          render json: { success: true, text: @answer }, status: :ok
-        else
-          render json: { success: false, error: "No answer for this question" }, status: :unprocessable_entity
-        end
-      else
-        render json: { success: false, error: "that question was not found" }, status: :unprocessable_entity
-      end
-    elsif @resource.owns? @question.subtopic.topic.id #the payer sees what they have paid for
-      if @question
-         @answer = @question.response.answer
-        if @answer
-          render json: { success: true, text: @answer }, status: :ok
-        else
-          render json: { success: false, error: "No answer for this question" }, status: :unprocessable_entity
-        end
-      else
-        render json: { success: false, error: "that question was not found" }, status: :unprocessable_entity
-      end
+    	@answer = @question.response.answer
+    	return no_answer unless @answer
+    elsif  @resource.owns? topic_id
+    	@answer = @question.response.answer
+    	return no_answer unless @answer
     else
-      render json: { success: false, error: "Error you don't own this topic"}, status: :unauthorized
-      # return you_dont_own_topic unless @resource.owns? @question.subtopic.topic.id
+    	return you_dont_own_topic
     end
-   
-   
+
   end
 
   # GET /exams/new
   
   private
 
+  def there_no_topic
+  	render json: { success: false, error: "This question has no topic" }, status: :unprocessable_entity
+  end
+
   def you_dont_own_topic
   	render json: { success: false, error: "Error you don't own this topic"}, status: :unauthorized
+  end
+
+  def no_question
+  	render json: { success: false, error: "that question was not found" }, status: :unprocessable_entity
+  end
+
+  def no_answer
+  	render json: { success: false, error: "No answer for this question" }, status: :unprocessable_entity
   end
 
 
