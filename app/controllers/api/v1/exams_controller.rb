@@ -1,7 +1,7 @@
 class Api::V1::ExamsController < ApplicationController
   # before_filter :authenticate_user!
   # byebug
-  before_filter :authenticate_user! #, except: [:answer]
+  before_filter :authenticate_user! , except: [:answer]
   before_filter :ensure_question_id_exists, only: [:answer]
   before_filter :ensure_token_exists
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
@@ -43,22 +43,48 @@ class Api::V1::ExamsController < ApplicationController
 
     @question = Question.where(:id => "#{params[:question_id]}").first
     return invalid_question unless @question.present?
-   
-    if @question
-       @answer = @question.response.answer
-      if @answer
-        render json: { success: true, text: @answer }, status: :ok
+
+    #check if user has for the topic if yes, desplay the questions, or else say they haven't paid yet.
+    #Except Admins! :-) Like a boss!
+
+##*****DUDe I really need to refactor this!!******#######
+    if @resource.is_admin? #the boss sees it all
+      if @question
+         @answer = @question.response.answer
+        if @answer
+          render json: { success: true, text: @answer }, status: :ok
+        else
+          render json: { success: false, error: "No answer for this question" }, status: :unprocessable_entity
+        end
       else
-        render json: { success: false, error: "No answer for this question" }, status: :unprocessable_entity
+        render json: { success: false, error: "that question was not found" }, status: :unprocessable_entity
+      end
+    elsif @resource.owns? @question.subtopic.topic.id #the payer sees what they have paid for
+      if @question
+         @answer = @question.response.answer
+        if @answer
+          render json: { success: true, text: @answer }, status: :ok
+        else
+          render json: { success: false, error: "No answer for this question" }, status: :unprocessable_entity
+        end
+      else
+        render json: { success: false, error: "that question was not found" }, status: :unprocessable_entity
       end
     else
-      render json: { success: false, error: "that question was not found" }, status: :unprocessable_entity
+      render json: { success: false, error: "Error you don't own this topic"}, status: :unauthorized
+      # return you_dont_own_topic unless @resource.owns? @question.subtopic.topic.id
     end
+   
+   
   end
 
   # GET /exams/new
   
   private
+
+  def you_dont_own_topic
+  	render json: { success: false, error: "Error you don't own this topic"}, status: :unauthorized
+  end
 
 
   def ensure_param_exists(param)
