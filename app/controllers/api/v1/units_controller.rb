@@ -21,7 +21,6 @@ class Api::V1::UnitsController < ApplicationController
     end
     # @semesters = Semester.all #II need to look into this.
   end
-  #***********end of admin privilage setting :-) *****#
 
   # GET /units/1
   # GET /units/1.json

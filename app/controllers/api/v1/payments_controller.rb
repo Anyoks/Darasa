@@ -18,10 +18,11 @@ class Api::V1::PaymentsController < ApplicationController
 	
 		return invalid_topic unless topic
 
-		###***somehwere here I have to check if the Mpesa code is in the Mpesa Payments table ***###
 
 		@payment = Payment.new(payment_params)
-		# byebug
+
+		###***somehwere here I have to check if the Mpesa code is in the Sms table ***###
+		###***I think it should be here ***###
 
 		if @payment.save
 			payment_successful topic_name
