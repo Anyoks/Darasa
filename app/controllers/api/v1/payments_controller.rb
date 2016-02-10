@@ -55,7 +55,6 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	def payment_successful topic_name
-
 		render json: { success: true, msg: "The payment was successful, you now own #{topic_name}" }, status: :ok
 		return
 	end

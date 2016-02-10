@@ -42,7 +42,7 @@ class Api::V1::UnitsController < ApplicationController
   end
 
   def invalid_user
-    render json: { success: false, message: "Error with your credentials"}, status: :unauthorized
+    render json: { success: false, error: "Error with your credentials"}, status: :unauthorized
   end
 
   def set_csrf_header

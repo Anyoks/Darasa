@@ -49,24 +49,24 @@ class Api::V1::TopicsController < ApplicationController
 	  end
 
 	  def you_dont_own_topic
-	  	render json: { success: false, msg: "Error you don't own this topic"}, status: :unauthorized
+	  	render json: { success: false, error: "Error you don't own this topic"}, status: :unauthorized
 	  end
 
 	  def invalid_user
-	    render json: { success: false, msg: "Error with your credentials"}, status: :unauthorized
+	    render json: { success: false, error: "Error with your credentials"}, status: :unauthorized
 	  end
 
 	  def invalid_topic
-	    render json: { success: false, msg: "Error couldn't find that topic"}, status: :unauthorized
+	    render json: { success: false, error: "Error couldn't find that topic"}, status: :unauthorized
 	  end
 
 	  def invalid_unit
-	    render json: { success: false, msg: "Error couldn't find that unit"}, status: :unauthorized
+	    render json: { success: false, error: "Error couldn't find that unit"}, status: :unauthorized
 	  end
 
 
 	  def no_topics
-	    render json: { success: true, msg: "No topics for this unit"}, status: :ok
+	    render json: { success: true, error: "No topics for this unit"}, status: :ok
 	  end
 
 	  def set_csrf_header
