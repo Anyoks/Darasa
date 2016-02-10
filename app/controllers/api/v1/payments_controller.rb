@@ -24,11 +24,16 @@ class Api::V1::PaymentsController < ApplicationController
 		###***somehwere here I have to check if the Mpesa code is in the Sms table ***###
 		###***I think it should be here ***###
 
-		if @payment.save
-			payment_successful topic_name
-			return
+		#basicallically all i want to do is check does this @payment.mpesa_code exist in the Sms table? if yes, 
+		#user has paid, if not, that's a fake mpesa code.
+		if mpesa_payment_text_exists @payment.mpesa_code
+			if @payment.save
+				return payment_successful topic_name
+			else
+				return invalid_payment_details
+			end
 		else
-			invalid_payment_details
+			return payment_has_not_been_recieved
 		end
 
 	end
@@ -42,6 +47,15 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	protected
+
+	def mpesa_payment_text_exists code
+		d = Sms.where(:mpesa_code => code)
+		d.present?
+	end
+
+	def payment_has_not_been_recieved
+		render json: { success: false, error: "The mpesa Payment has not been received, please try again shortly "}, status: :unauthorized
+	end
 
 	def invalid_details
 	  render json: { success: false, error: "Error with your user details"}, status: :unauthorized
@@ -57,7 +71,7 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def payment_successful topic_name
 		render json: { success: true, msg: "The payment was successful, you now own #{topic_name}" }, status: :ok
-		return
+		# return
 	end
 
 	def payment_failed
