@@ -31,13 +31,12 @@ class Api::V1::TopicsController < ApplicationController
 	     @topic = Topic.where(:id => "#{params[:topic_id]}").first
 	     return invalid_topic unless @topic.present?
 		
-		#check if user has for the topic if yes, desplay the questions, or else say they haven't paid yet.
-		#Except Admins! :-) Like a boss!
-		if resource.is_admin?
-			@topic
-		else
-			return you_dont_own_topic unless resource.owns? @topic.id
-	 	end
+		
+		# if resource.is_admin?
+		# 	@topic
+		# else
+		# 	return you_dont_own_topic unless resource.owns? @topic.id
+	 # 	end
 	  end
 
 
