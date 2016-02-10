@@ -16,14 +16,22 @@
 #
 
 class Sms < ActiveRecord::Base
+	# before_save :extract
 
 	def extract text
-		# text_message = Sms.new
+		text_message = text
 		# text_message.message = text
-		data = text.split
-		data_parse_one = get_stuff data
-		remove_unnecessary data_parse_one
+		data_raw = text.split
+		data_parse_one = get_stuff data_raw
+		data_parse_two = remove_unnecessary data_parse_one
 
+		save_params = sms_params data_parse_two
+
+		@sms = Sms.new(save_params)
+
+		if @sms.save
+			@sms.update_attribute(:message, text_message)
+		end
 		# convert to hash then save this in the db now
 	end
 
@@ -65,6 +73,12 @@ class Sms < ActiveRecord::Base
 		arr.delete_at(4)
 		p "  just removed at 5 ||  #{arr} "
 		return arr
+	end
+
+	def sms_params data
+		name = ["mpesa_code", "date", "time", "amount", "phone", "first_name", "last_name"] 
+		hash = Hash[*name.zip(data).flatten]
+		return hash
 	end
 
 
