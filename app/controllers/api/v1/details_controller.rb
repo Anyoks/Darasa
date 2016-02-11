@@ -1,32 +1,34 @@
 class Api::V1::DetailsController < ApplicationController
-	# before_filter :authenticate_user!
+	before_filter :authenticate_user!, except: [:do_i_own_this_topic, :show]
 	# after_filter :set_csrf_header
 	skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 	respond_to :json
 	before_filter :ensure_unit_id_exists, only: [:show_unit]
+	before_filter :ensure_topic_id_exists, only: [:do_i_own_this_topic]
+	before_filter :ensure_user_id_exists, only: [:do_i_own_this_topic]
 
 
-	def show
+	def show_user_details
 
-		resource =  User.find_by_authentication_token(params[:auth_token])
+		@resource =  User.find_by_authentication_token(params[:auth_token])
 		# byebug
+		return invalid_user unless @resource
+	end
+
+	def do_i_own_this_topic
+		resource = User.find_by_authentication_token(params[:auth_token])
 		return invalid_user unless resource
 		
-		if resource.valid_for_authentication?  
-			if resource.payments.empty?
-				units_owned = []
+		if resource.valid_for_authentication?
+			if resource.owns? params[:topic_id]
+				return i_own_this_topic
 			else
-				units_owned = []
-				resource.payments.each do | owned|
-					units_owned << owned.unit_id
-				end
+				return dont_own_this_unit
 			end
-
-			render json: { success: true, user_id: resource.id, first_name: resource.first_name,
-			second_name: resource.second_name, email: resource.email, units_owned: units_owned }, status: :ok
-			return
+		else
+			invalid_user
 		end
-		invalid_user
+
 	end
 
 	def show_unit
@@ -44,7 +46,7 @@ class Api::V1::DetailsController < ApplicationController
 			unit_name = unit.name
 			render json: { success: true, text: unit_name }, status: :ok
 		else
-			invalid_unit
+			return invalid_unit
 		end
 
 	end
@@ -60,8 +62,24 @@ class Api::V1::DetailsController < ApplicationController
 	  render json:{ success: false, error: "Missing #{param} parameter"}, status: :unprocessable_entity
 	end
 
+	def i_own_this_topic
+		render json:{ success: true}, status: :ok
+	end
+
+	def dont_own_this_unit
+	  render json:{ success: false }, status: :ok
+	end
+
 	def ensure_unit_id_exists
 		ensure_param_exists :unit_id
+	end
+
+	def ensure_topic_id_exists
+		ensure_param_exists :topic_id
+	end
+
+	def ensure_user_id_exists
+		ensure_param_exists :user_id
 	end
 
 	# def ensure_param_exists(param)

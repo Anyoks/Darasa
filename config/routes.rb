@@ -128,7 +128,8 @@ Rails.application.routes.draw do
       get "/index", :to => 'payments#index'
 
       #user details
-      get "/user_details", :to => 'details#show'
+      get "/user_details", :to => 'details#show_user_details'
+      get "/is_owner", :to => 'details#do_i_own_this_topic'
       get "/unit_name", :to => 'details#show_unit' # remove this end point
 
       devise_scope :user do
