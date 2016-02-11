@@ -27,9 +27,12 @@ class Api::V1::PaymentsController < ApplicationController
 		#basicallically all i want to do is check does this @payment.mpesa_code exist in the Sms table? if yes, 
 		#user has paid, if not, that's a fake mpesa code.
 		if mpesa_payment_text_exists @payment.mpesa_code
+			#check if it has been used i.e it is in the payments
 			if @payment.save
 				return payment_successful topic_name
 			else
+				@failed_payment = FailedPayment.new(payment_params)
+				@failed_payment.save
 				return invalid_payment_details
 			end
 		else
@@ -62,7 +65,7 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	def invalid_payment_details
-	  render json: { success: false, error: "Error with your payment details"}, status: :unauthorized
+	  render json: { success: false, error: "Error that Mpesa code has been used or does not exist!"}, status: :unauthorized
 	end
 
 	def invalid_topic
