@@ -29,6 +29,4 @@ json.data  questions_for_this_topic do |questions|
 	json.subtopic questions.subtopic.title
 	json.id questions.id
 	json.text questions.question
-
-	
 end
