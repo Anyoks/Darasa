@@ -116,13 +116,8 @@ Rails.application.routes.draw do
       #facebook login
       get "/auth/facebook_access_token/callback", :to => 'facebook#facebook'
       post "/auth/facebook_access_token/callback", :to => 'facebook#facebook'
-
       
-      # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-
-      #payment routes
-      # get "/processpayment/process/:id" :to => rocesspayment#process
-
+      #payments
       post "/pay", :to => 'payments#pay'
       get "/pay", :to => 'payments#show'
       get "/index", :to => 'payments#index'

@@ -30,13 +30,6 @@ class Api::V1::TopicsController < ApplicationController
 
 	     @topic = Topic.where(:id => "#{params[:topic_id]}").first
 	     return invalid_topic unless @topic.present?
-		
-		
-		# if resource.is_admin?
-		# 	@topic
-		# else
-		# 	return you_dont_own_topic unless resource.owns? @topic.id
-	 # 	end
 	  end
 
 

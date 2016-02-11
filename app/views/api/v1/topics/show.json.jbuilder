@@ -1,7 +1,7 @@
 questions_for_this_topic = []
 
 @topic.subtopics.each do |subtopic|
-	subtopic.questions.each do |question|
+	subtopic.questions.order(:created_at).each do |question|
 		questions_for_this_topic << question
 	end
 end
