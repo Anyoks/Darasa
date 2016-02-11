@@ -26,17 +26,12 @@ class Unit < ActiveRecord::Base
 		end
 	end
 
-
-	def make_unit_unavilble unit_id
-		# unit_id = unit_id
-		unit = Unit.find(unit_id)
-		unit.update_attribute(:available, false)
+	def make_unavailable 
+		self.update_attribute(:available, false)
 	end
 
-	def make_unit_avilble unit_id
-		# unit_id = unit_id
-		unit = Unit.find(unit_id)
-		unit.update_attribute(:available, true)
+	def make_available 
+		self.update_attribute(:available, true)
 	end
 
 end
