@@ -56,13 +56,9 @@ class Sms < ActiveRecord::Base
 			i = arr.length
 		end
 		arr.delete_at(1)
-		# p " just removed at 1 || #{arr} "
 		arr.delete_at(2)
-		# p "  just removed at 2 ||  #{arr} "
 		arr.delete_at(4)
-		# p "  just removed at 4 || #{arr} "
 		arr.delete_at(4)
-		# p "  just removed at 5 ||  #{arr} "
 		return arr
 	end
 

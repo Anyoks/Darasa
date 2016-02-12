@@ -4,13 +4,14 @@ class Api::V1::PaymentsController < ApplicationController
 
 
 	def pay
-		params.permit!
+		# params.permit!
 		# byebug
 		user =  User.find_by_authentication_token(params[:auth_token]) # when Axel says it's hard to get the id, I'll pick the Auth_token and in the Payment model find the user before saving. :-)
 		return invalid_details unless user
-
-		# user_id = user.id
 		
+		#also check that the user_id is valid
+		return invalid_details unless user.id == params[:payment][:user_id]
+
 		topic = Topic.find_by_id(params[:payment][:topic_id])
 		return invalid_topic unless topic
 
@@ -26,7 +27,7 @@ class Api::V1::PaymentsController < ApplicationController
 
 		#basicallically all i want to do is check does this @payment.mpesa_code exist in the Sms table? if yes, 
 		#user has paid, if not, that's a fake mpesa code.
-		if mpesa_payment_text_exists @payment.mpesa_code
+		# if mpesa_payment_text_exists @payment.mpesa_code
 			#check if it has been used i.e it is in the payments
 			if @payment.save
 				return payment_successful topic_name
@@ -35,9 +36,9 @@ class Api::V1::PaymentsController < ApplicationController
 				@failed_payment.save
 				return invalid_payment_details
 			end
-		else
-			return payment_has_not_been_recieved
-		end
+		# else
+			# return payment_has_not_been_recieved
+		# end
 
 	end
 

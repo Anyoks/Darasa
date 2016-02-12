@@ -46,8 +46,6 @@ class Payment < ActiveRecord::Base
 	end
 
 	def purchase_params
-		# user_id = self.user_id
-		# topic_id = self.topic_id
 		{ "user_id"=> "#{self.user_id}", "topic_id"=> "#{self.topic_id}", "payment_id"=> "#{self.id}"  }
 	end
 
