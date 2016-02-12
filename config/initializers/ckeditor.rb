@@ -41,7 +41,7 @@ Ckeditor.setup do |config|
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
   config.assets_languages = ['en', 'uk']
-  config.assets_plugins = ['lineutils','widget', 'mathjax','eqneditor'] #,'dialogui', 'mathjax', 'widget', 'lineutils', 'clipboard']
+  config.assets_plugins = ['lineutils','widget', 'mathjax','eqneditor', 'image2'] #,'dialogui', 'mathjax', 'widget', 'lineutils', 'clipboard']
 
   # handle custom addons
    assets_root =  Rails.root.join('app','assets','javascripts')
