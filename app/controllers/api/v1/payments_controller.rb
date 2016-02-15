@@ -27,18 +27,27 @@ class Api::V1::PaymentsController < ApplicationController
 
 		#basicallically all i want to do is check does this @payment.mpesa_code exist in the Sms table? if yes, 
 		#user has paid, if not, that's a fake mpesa code.
-		# if mpesa_payment_text_exists @payment.mpesa_code
+		cash = mpesa_payment_text_exists @payment.mpesa_code
+		# byebug
+		if cash.present?
+			if cash.amount.to_i >= 50 #i'll have to change this to seperate the large payments from the smaller ones
 			#check if it has been used i.e it is in the payments
-			if @payment.save
-				return payment_successful topic_name
+				if @payment.save
+					return payment_successful topic_name
+				else
+					@failed_payment = FailedPayment.new(payment_params)
+					@failed_payment.save
+					return invalid_payment_details
+				end
 			else
 				@failed_payment = FailedPayment.new(payment_params)
 				@failed_payment.save
-				return invalid_payment_details
+				@failed_payment.update_attribute(:amount, cash.amount)
+				return invalid_amount
 			end
-		# else
-			# return payment_has_not_been_recieved
-		# end
+		else
+			return payment_has_not_been_recieved
+		end
 
 	end
 
@@ -53,9 +62,14 @@ class Api::V1::PaymentsController < ApplicationController
 	protected
 
 	def mpesa_payment_text_exists code
-		d = Sms.where(:mpesa_code => code)
-		d.present?
+		d = Sms.where(:mpesa_code => code).first
+		# d.present?
 	end
+
+	# def mpesa_payment_amount code
+	# 	d = Sms.where(:mpesa_code => code)
+	# 	d.present?
+	# end
 
 	def payment_has_not_been_recieved
 		render json: { success: false, error: "The mpesa Payment has not been received, please try again shortly "}, status: :unauthorized
@@ -67,6 +81,10 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def invalid_payment_details
 	  render json: { success: false, error: "Error that Mpesa code has been used or does not exist!"}, status: :unauthorized
+	end
+
+	def invalid_amount
+	  render json: { success: false, error: "Error You paid Much less than expected for this service!"}, status: :unauthorized
 	end
 
 	def invalid_topic
