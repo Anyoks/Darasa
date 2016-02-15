@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210105919) do
+ActiveRecord::Schema.define(version: 20160215084731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160210105919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "mpesa_code"
+    t.string   "amount"
   end
 
   add_index "failed_payments", ["topic_id"], name: "index_failed_payments_on_topic_id", using: :btree
@@ -68,6 +69,15 @@ ActiveRecord::Schema.define(version: 20160210105919) do
   create_table "order_urls", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text   "order_url"
     t.string "authentication_token"
+  end
+
+  create_table "over_pays", force: :cascade do |t|
+    t.string   "topic_id"
+    t.string   "mpesa_code"
+    t.string   "user_id"
+    t.string   "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "payments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
