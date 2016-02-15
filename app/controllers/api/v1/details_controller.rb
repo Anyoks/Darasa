@@ -28,7 +28,11 @@ class Api::V1::DetailsController < ApplicationController
 		else
 			invalid_user
 		end
+	end
 
+	def my_topics
+		@resource = User.find_by_authentication_token(params[:auth_token])
+		return invalid_user unless @resource
 	end
 
 	def show_unit

@@ -126,6 +126,7 @@ Rails.application.routes.draw do
       get "/user_details", :to => 'details#show_user_details'
       get "/is_owner", :to => 'details#do_i_own_this_topic'
       get "/unit_name", :to => 'details#show_unit' # remove this end point
+      get "/my_topics", :to => 'details#my_topics'
 
       devise_scope :user do
         post"/update", :to => 'registrations#update'
