@@ -5,6 +5,7 @@
       %th Last Name
       %th Email
       %th Phone Number
+      %th Since Sign up it has been
       %th Topics bought
       %th
 
@@ -15,6 +16,8 @@
         %td= user.second_name
         %td= user.email
         %td= user.phone_number
+        - from_time = user.created_at
+        %td= time_ago_in_words(from_time)
         %td 
           %span.label.label-default.label-pill.pull-xs-right  #{user.purchases.count} 
         %td

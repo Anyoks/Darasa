@@ -7,6 +7,7 @@
       %th Phone Number
       %th Topic Name
       %th Unit Name
+      %th Since Purchase it has been
       %th
 
   %tbody
@@ -18,6 +19,8 @@
         %td= purchase.user.phone_number
         %td= purchase.topic.name
         %td= purchase.topic.unit.name
+        - from_time = purchase.created_at
+        %td= time_ago_in_words(from_time)
         %td
           / -if current_user && current_user.is_moderator? || current_user.is_admin?
           /   = link_to 'Edit', edit_exam_path(purchase), class: "label label-warning"
