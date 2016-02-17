@@ -1,0 +1,45 @@
+%h1 #{@user.first_name}  User details
+
+.container
+	.row
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-4
+						/ %p= image_tag @user.attachment_url(:large), height: "200", class: "img.img-rounded.img-responsive"
+					.col-sm-6.col-md-8
+						%h4
+							%p #{@user.first_name} #{@user.second_name}
+						%p
+							%p #{@user.email} ,  #{@user.phone_number}
+						%small
+							%cite{:title => "Unit Code"}
+								%p #{@user.phone_number}
+						%p
+							%i.glyphicon.glyphicon-usd
+							Number of Payments made  #{@user.payments.count}
+							%br/
+							%i.glyphicon.glyphicon-thumbs-up
+							Number of Purchases made  #{@user.purchases.count}
+							%br/
+							%i.glyphicon.glyphicon-thumbs-down
+							Number of failed Payments  #{@user.failed_payments.count}
+						/ Split button
+						-if current_user && current_user.is_admin?
+							/ Topics owned
+						/ %ul 
+						/ 	- @user.purchases.each do |purchase|
+						/ 		%li	
+						/ 			#{purchase.topic.name}
+						/ = link_to 'Edit', edit_topic_path(@user), class: "btn btn-primary"
+						= link_to 'Back',  user_index_path, class: "btn btn-default"
+						.btn-group.dropup
+							%button.btn.btn-primary{:type => "button"}
+								Topics owned
+							%button.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+								%span.caret
+								%span.sr-only Social
+							%ul.dropdown-menu{:role => "menu"}
+								- @user.purchases.each do |purchase|
+									%li	
+										#{purchase.topic.name}

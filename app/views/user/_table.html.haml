@@ -1,0 +1,24 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Email
+      %th Phone Number
+      %th Topics bought
+      %th
+
+  %tbody
+    - users.each do |user|
+      %tr
+        %td= user.first_name
+        %td= user.second_name
+        %td= user.email
+        %td= user.phone_number
+        %td 
+          %span.label.label-default.label-pill.pull-xs-right  #{user.purchases.count} 
+        %td
+          -if current_user && current_user.is_moderator? || current_user.is_admin?
+            = link_to 'Show Details',  user, class: "label label-warning"
+            = link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+            / = link_to "Download", download_exam_path(user), class: "label label-success"

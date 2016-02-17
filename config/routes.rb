@@ -1,6 +1,10 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'user/index'
+
+  get 'user/show'
+
   get 'purchases/index'
 
   get 'purchases/show'
@@ -140,6 +144,11 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # devise_for :users    
+  delete 'user/:id' => 'user#destroy', :via => :delete #, :as => :admin_destroy_user
+  get 'user/:id' => 'user#show', as: :user
+  
 
   # namespace :api do
   #   namespace :v1 do
