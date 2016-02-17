@@ -1,0 +1,21 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th First Name
+      %th Last Name
+      %th Topic Name
+      %th Unit Name
+      %th
+
+  %tbody
+    - purchases.each do |purchase|
+      %tr
+        %td= purchase.user.first_name
+        %td= purchase.user.second_name
+        %td= purchase.topic.name
+        %td= purchase.topic.unit.name
+        %td
+          / -if current_user && current_user.is_moderator? || current_user.is_admin?
+          /   = link_to 'Edit', edit_exam_path(purchase), class: "label label-warning"
+          /   = link_to 'Destroy', purchase, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+          /   = link_to "Download", download_exam_path(purchase), class: "label label-success"

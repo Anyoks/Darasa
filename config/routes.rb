@@ -1,6 +1,10 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'purchases/index'
+
+  get 'purchases/show'
+
   get 'subtopics/index'
 
   get 'subtopics/show'
