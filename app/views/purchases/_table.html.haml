@@ -3,6 +3,8 @@
     %tr
       %th First Name
       %th Last Name
+      %th Email
+      %th Phone Number
       %th Topic Name
       %th Unit Name
       %th
@@ -12,6 +14,8 @@
       %tr
         %td= purchase.user.first_name
         %td= purchase.user.second_name
+        %td= purchase.user.email
+        %td= purchase.user.phone_number
         %td= purchase.topic.name
         %td= purchase.topic.unit.name
         %td
