@@ -41,6 +41,12 @@ class User < ActiveRecord::Base
   has_many :purchases, dependent: :destroy
   has_many :failed_payments, dependent: :destroy
 
+  #lOGGIN USER ACTIVITIES
+  has_many :unit_activities
+  has_many :topic_activities
+  has_many :question_activities
+
+
 
 	def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
 		# byebug

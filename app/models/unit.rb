@@ -19,6 +19,10 @@ class Unit < ActiveRecord::Base
 	# has_many :cats
 	has_many :exams
 	belongs_to :price
+	
+	#lOGGIN USER ACTIVITIES
+	has_many :unit_activities
+	
 
 	def all_units
 		Unit.all.each do |unit|

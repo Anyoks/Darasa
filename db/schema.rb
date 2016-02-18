@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215084731) do
+ActiveRecord::Schema.define(version: 20160218063745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,17 @@ ActiveRecord::Schema.define(version: 20160215084731) do
   add_index "purchases", ["topic_id"], name: "index_purchases_on_topic_id", using: :btree
   add_index "purchases", ["user_id"], name: "index_purchases_on_user_id", using: :btree
 
+  create_table "question_activities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.uuid     "question_id"
+    t.datetime "time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "question_activities", ["question_id"], name: "index_question_activities_on_question_id", using: :btree
+  add_index "question_activities", ["user_id"], name: "index_question_activities_on_user_id", using: :btree
+
   create_table "questions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "question"
     t.datetime "created_at",  null: false
@@ -177,6 +188,17 @@ ActiveRecord::Schema.define(version: 20160215084731) do
     t.text "terms"
   end
 
+  create_table "topic_activities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.uuid     "topic_id"
+    t.datetime "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "topic_activities", ["topic_id"], name: "index_topic_activities_on_topic_id", using: :btree
+  add_index "topic_activities", ["user_id"], name: "index_topic_activities_on_user_id", using: :btree
+
   create_table "topics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.string   "code"
@@ -198,6 +220,17 @@ ActiveRecord::Schema.define(version: 20160215084731) do
   end
 
   add_index "trials", ["user_id"], name: "index_trials_on_user_id", using: :btree
+
+  create_table "unit_activities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.uuid     "unit_id"
+    t.datetime "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "unit_activities", ["unit_id"], name: "index_unit_activities_on_unit_id", using: :btree
+  add_index "unit_activities", ["user_id"], name: "index_unit_activities_on_user_id", using: :btree
 
   create_table "units", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
