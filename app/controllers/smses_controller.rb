@@ -1,6 +1,6 @@
 class SmsesController < ApplicationController
   def index
-  	@smses = Sms.all
+  	@smses = Sms.all.order(created_at: :desc)
   end
 
   def show
