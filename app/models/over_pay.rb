@@ -1,2 +1,15 @@
+# == Schema Information
+#
+# Table name: over_pays
+#
+#  id         :integer          not null, primary key
+#  topic_id   :string
+#  mpesa_code :string
+#  user_id    :string
+#  amount     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class OverPay < ActiveRecord::Base
 end

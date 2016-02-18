@@ -33,19 +33,23 @@ class Api::V1::PaymentsController < ApplicationController
 			if cash.amount.to_i >= 50 #i'll have to change this to seperate the large payments from the smaller ones
 			#check if it has been used i.e it is in the payments
 				if @payment.save
+					log_payment_activity user, "#{user.first_name} successfully purchased this topic, #{topic.name}"
 					return payment_successful topic_name
 				else
 					@failed_payment = FailedPayment.new(payment_params)
 					@failed_payment.save
+					log_payment_activity user, "#{user.first_name} just attempted to purchase this topic, #{topic.name} ,with a fake or duplicate Mpesa code"
 					return invalid_payment_details
 				end
 			else
 				@failed_payment = FailedPayment.new(payment_params)
 				@failed_payment.save
 				@failed_payment.update_attribute(:amount, cash.amount)
+				log_payment_activity user, "#{user.first_name} paid less while purchasing this topic, #{topic.name}"
 				return invalid_amount
 			end
 		else
+			log_payment_activity user, "#{user.first_name} just attempted to purchase this topic, #{topic.name}, with an Mpesa code that is not in our Database"
 			return payment_has_not_been_recieved
 		end
 
@@ -60,6 +64,16 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	protected
+
+	def log_payment_activity user, note
+		@activity = PaymentActivity.new
+		@activity.user_id = user.id
+		@activity.topic_id = params[:payment][:topic_id]
+		@activity.mpesa_code = params[:payment][:mpesa_code]
+		@activity.note = note
+		@activity.time = Time.now
+		@activity.save
+	end
 
 	def mpesa_payment_text_exists code
 		d = Sms.where(:mpesa_code => code).first
