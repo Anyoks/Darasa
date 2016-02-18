@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218063745) do
+ActiveRecord::Schema.define(version: 20160218075739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 20160218063745) do
     t.datetime "time"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "note"
   end
 
   add_index "question_activities", ["question_id"], name: "index_question_activities_on_question_id", using: :btree
@@ -194,6 +195,7 @@ ActiveRecord::Schema.define(version: 20160218063745) do
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "note"
   end
 
   add_index "topic_activities", ["topic_id"], name: "index_topic_activities_on_topic_id", using: :btree
@@ -227,6 +229,7 @@ ActiveRecord::Schema.define(version: 20160218063745) do
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "note"
   end
 
   add_index "unit_activities", ["unit_id"], name: "index_unit_activities_on_unit_id", using: :btree
