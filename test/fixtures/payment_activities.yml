@@ -2,7 +2,7 @@
 #
 # Table name: payment_activities
 #
-#  id         :integer          not null, primary key
+#  id         :uuid             not null, primary key
 #  user_id    :uuid
 #  topic_id   :uuid
 #  note       :string

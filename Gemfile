@@ -109,3 +109,6 @@ gem 'omniauth-facebook-access-token'
 gem 'fb_graph2'
 #one session per user
 gem 'devise_security_extension'
+#charts
+gem 'groupdate'
+gem "chartkick"
