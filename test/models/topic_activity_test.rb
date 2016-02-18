@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: topic_activities
+#
+#  id         :uuid             not null, primary key
+#  user_id    :uuid
+#  topic_id   :uuid
+#  time       :datetime
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  note       :string
+#
+
 require 'test_helper'
 
 class TopicActivityTest < ActiveSupport::TestCase

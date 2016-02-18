@@ -22,7 +22,9 @@ class Topic < ActiveRecord::Base
 	has_many :subtopics,  :dependent => :destroy
 
 	has_many :purchases, :dependent => :destroy
-
+	
+	#LOGGING USER ACTIVITES
 	has_many :topic_activities
+	has_many :payment_activities
 	
 end

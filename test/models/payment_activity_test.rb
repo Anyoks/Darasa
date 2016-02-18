@@ -1,19 +1,20 @@
 # == Schema Information
 #
-# Table name: unit_activities
+# Table name: payment_activities
 #
-#  id         :uuid             not null, primary key
+#  id         :integer          not null, primary key
 #  user_id    :uuid
-#  unit_id    :uuid
+#  topic_id   :uuid
+#  note       :string
+#  mpesa_code :string
 #  time       :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  note       :string
 #
 
 require 'test_helper'
 
-class UnitActivityTest < ActiveSupport::TestCase
+class PaymentActivityTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

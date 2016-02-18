@@ -58,12 +58,21 @@ class Api::V1::ExamsController < ApplicationController
 		else
 			return you_dont_own_topic
 		end
-
+		log_question_activity @resource, "#{@resource.first_name} clicked on this question"
 	end
 
 	# GET /exams/new
 	
 	private
+
+	def log_question_activity resource, note
+		@activity = QuestionActivity.new
+		@activity.user_id = resource.id
+		@activity.question_id = params[:question_id]
+		@activity.note = note
+		@activity.time = Time.now
+		@activity.save
+	end
 
 	def there_no_topic
 		render json: { success: false, error: "This question has no topic" }, status: :unprocessable_entity

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218075739) do
+ActiveRecord::Schema.define(version: 20160218090415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,19 @@ ActiveRecord::Schema.define(version: 20160218075739) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "payment_activities", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.uuid     "topic_id"
+    t.string   "note"
+    t.string   "mpesa_code"
+    t.datetime "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "payment_activities", ["topic_id"], name: "index_payment_activities_on_topic_id", using: :btree
+  add_index "payment_activities", ["user_id"], name: "index_payment_activities_on_user_id", using: :btree
 
   create_table "payments", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.datetime "created_at", null: false

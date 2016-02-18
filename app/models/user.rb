@@ -45,6 +45,7 @@ class User < ActiveRecord::Base
   has_many :unit_activities
   has_many :topic_activities
   has_many :question_activities
+  has_many :payment_activities
 
 
 

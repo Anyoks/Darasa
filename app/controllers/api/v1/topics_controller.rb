@@ -20,6 +20,8 @@ class Api::V1::TopicsController < ApplicationController
 
 	     @topics = Topic.where(:unit_id => params[:unit_id])
 	     return no_topics unless  @topics.count >0
+	     log_unit_activity resource, "#{resource.first_name} clicked this unit, #{@unit.name}"
+	     # byebug
 	end
 
 	  # GET /topics/1
@@ -30,11 +32,30 @@ class Api::V1::TopicsController < ApplicationController
 
 	     @topic = Topic.where(:id => "#{params[:topic_id]}").first
 	     return invalid_topic unless @topic.present?
+		log_topic_activity resource , "#{resource.first_name} clicked this topic, #{@topic.name}"
 	  end
 
 
 
 	  private
+
+	  def log_unit_activity resource, note
+	  	@activity = UnitActivity.new
+	  	@activity.user_id = resource.id
+	  	@activity.unit_id = params[:unit_id]
+	  	@activity.note = note
+	  	@activity.time = Time.now
+	  	@activity.save
+	  end
+
+	  def log_topic_activity resource, note
+	  	@activity = TopicActivity.new
+	  	@activity.user_id = resource.id
+	  	@activity.topic_id = params[:topic_id]
+	  	@activity.note = note
+	  	@activity.time = Time.now
+	  	@activity.save
+	  end
 
 	  def ensure_authentication_token_param_exists
 	    ensure_param_exists :authentication_token

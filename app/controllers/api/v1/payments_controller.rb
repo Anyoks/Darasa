@@ -106,11 +106,7 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	def payment_params
-		# params.permit!
-		# user =  User.find_by_authentication_token(params[:auth_token]).id
-		# user_id = user.id
 		params.require(:payment).permit(:topic_id,:mpesa_code, :user_id)
-		# byebug
 	end
 
 	def order_params

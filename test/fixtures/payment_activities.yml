@@ -1,14 +1,15 @@
 # == Schema Information
 #
-# Table name: topic_activities
+# Table name: payment_activities
 #
-#  id         :uuid             not null, primary key
+#  id         :integer          not null, primary key
 #  user_id    :uuid
 #  topic_id   :uuid
+#  note       :string
+#  mpesa_code :string
 #  time       :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  note       :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
@@ -16,9 +17,11 @@
 one:
   user_id: 
   topic_id: 
-  time: 
+  note: MyString
+  time: 2016-02-18 12:01:51
 
 two:
   user_id: 
   topic_id: 
-  time: 
+  note: MyString
+  time: 2016-02-18 12:01:51
