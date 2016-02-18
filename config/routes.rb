@@ -1,6 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'smses/index'
+
+  get 'smses/show'
+
+  get 'smses/destroy'
+
   get 'user/index'
 
   get 'user/show'

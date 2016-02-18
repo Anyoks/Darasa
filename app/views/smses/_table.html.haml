@@ -1,0 +1,22 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th Mpesa Code
+      %th Message
+      %th Phone Number
+      %th Since reception it has been
+      %th
+
+  %tbody
+    - smses.each do |sms|
+      %tr
+        %td= sms.mpesa_code
+        %td= sms.message
+        %td= sms.phone
+        - from_time = sms.created_at
+        %td= time_ago_in_words(from_time)
+        %td
+          / -if current_user && current_user.is_moderator? || current_user.is_admin?
+          /   = link_to 'Edit', edit_exam_path(sms), class: "label label-warning"
+          /   = link_to 'Destroy', sms, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+          /   = link_to "Download", download_exam_path(sms), class: "label label-success"
