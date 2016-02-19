@@ -83,11 +83,6 @@ class Api::V1::PaymentsController < ApplicationController
 		# d.present?
 	end
 
-	# def mpesa_payment_amount code
-	# 	d = Sms.where(:mpesa_code => code)
-	# 	d.present?
-	# end
-
 	def payment_has_not_been_recieved
 		render json: { success: false, error: "The mpesa Payment has not been received, please try again shortly "}, status: :unauthorized
 	end
