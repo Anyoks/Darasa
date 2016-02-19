@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   before_save :ensure_authentication_token
     belongs_to :role
     before_create :set_default_role
-  devise :database_authenticatable, :registerable, :session_limitable,:token_authenticatable,
+  devise :database_authenticatable, :lastseenable, :registerable, :session_limitable,:token_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
   # validates_acceptance_of :tos_agreement, :allow_nil => true, :accept => true, :on => :create
   has_many :payments, dependent: :destroy

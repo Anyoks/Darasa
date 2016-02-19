@@ -235,6 +235,9 @@ Devise.setup do |config|
   config.sign_out_via = :delete
   # config.token_authentication_key = :authentication_token
 
+  # Configure lastseenable interval to update last_seen_at every 10 minutes
+config.lastseenable_interval = 10
+
   require 'omniauth-google-oauth2'
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
