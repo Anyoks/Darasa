@@ -1,7 +1,7 @@
 %h1 #{@user.first_name}  User details
 
 .container
-	.row
+	.row-fluid
 		.col-xs-12.col-sm-6.col-md-6
 			.well.well-sm
 				.row
@@ -43,3 +43,48 @@
 								- @user.purchases.each do |purchase|
 									%li	
 										#{purchase.topic.name}
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							%p Units that #{@user.first_name} clicked
+				= pie_chart @user.unit_activities.group(:name).count
+.container
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							%p Topics that #{@user.first_name} clicked
+				= pie_chart @user.topic_activities.group(:name).count
+				
+
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							%p Questions that #{@user.first_name} clicked
+				= pie_chart @user.question_activities.group(:question_id).count
+
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							%p Topics that #{@user.first_name} attempted to purchase
+				= pie_chart @user.payment_activities.group(:name).count
+
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							%p Failed Payments for #{@user.first_name} 
+				= pie_chart @user.failed_payments.group(:topic_id).count

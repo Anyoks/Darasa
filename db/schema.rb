@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218110542) do
+ActiveRecord::Schema.define(version: 20160219090922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160218110542) do
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   add_index "payment_activities", ["topic_id"], name: "index_payment_activities_on_topic_id", using: :btree
@@ -130,6 +131,7 @@ ActiveRecord::Schema.define(version: 20160218110542) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "note"
+    t.string   "name"
   end
 
   add_index "question_activities", ["question_id"], name: "index_question_activities_on_question_id", using: :btree
@@ -209,6 +211,7 @@ ActiveRecord::Schema.define(version: 20160218110542) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "note"
+    t.string   "name"
   end
 
   add_index "topic_activities", ["topic_id"], name: "index_topic_activities_on_topic_id", using: :btree
@@ -243,6 +246,7 @@ ActiveRecord::Schema.define(version: 20160218110542) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "note"
+    t.string   "name"
   end
 
   add_index "unit_activities", ["unit_id"], name: "index_unit_activities_on_unit_id", using: :btree
@@ -292,6 +296,8 @@ ActiveRecord::Schema.define(version: 20160218110542) do
     t.datetime "terms_updated_at"
     t.text     "authentication_token"
     t.string   "unique_session_id",      limit: 20
+    t.datetime "last_seen_at"
+    t.datetime "last_seen"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -20,7 +20,7 @@ class Api::V1::TopicsController < ApplicationController
 
 	     @topics = Topic.where(:unit_id => params[:unit_id])
 	     return no_topics unless  @topics.count >0
-	     log_unit_activity resource, "#{resource.first_name} clicked this unit, #{@unit.name}"
+	     log_unit_activity resource, @unit.name, "#{resource.first_name} clicked this unit, #{@unit.name}"
 	     # byebug
 	end
 
@@ -32,27 +32,29 @@ class Api::V1::TopicsController < ApplicationController
 
 	     @topic = Topic.where(:id => "#{params[:topic_id]}").first
 	     return invalid_topic unless @topic.present?
-		log_topic_activity resource , "#{resource.first_name} clicked this topic, #{@topic.name}"
+		log_topic_activity resource , @topic.name, "#{resource.first_name} clicked this topic, #{@topic.name}"
 	  end
 
 
 
 	  private
 
-	  def log_unit_activity resource, note
+	  def log_unit_activity resource, unit_name, note
 	  	@activity = UnitActivity.new
 	  	@activity.user_id = resource.id
 	  	@activity.unit_id = params[:unit_id]
 	  	@activity.note = note
+	  	@activity.name  = unit_name
 	  	@activity.time = Time.now
 	  	@activity.save
 	  end
 
-	  def log_topic_activity resource, note
+	  def log_topic_activity resource, topic_name, note
 	  	@activity = TopicActivity.new
 	  	@activity.user_id = resource.id
 	  	@activity.topic_id = params[:topic_id]
 	  	@activity.note = note
+	  	@activity.name = topic_name
 	  	@activity.time = Time.now
 	  	@activity.save
 	  end
