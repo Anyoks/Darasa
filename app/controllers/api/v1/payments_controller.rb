@@ -49,6 +49,8 @@ class Api::V1::PaymentsController < ApplicationController
 				return invalid_amount
 			end
 		else
+			@failed_payment = FailedPayment.new(payment_params)
+			@failed_payment.save
 			log_payment_activity user, topic_name,"#{user.first_name} just attempted to purchase this topic with an Mpesa code that is not in our Database, #{topic.name}"
 			return payment_has_not_been_recieved
 		end
