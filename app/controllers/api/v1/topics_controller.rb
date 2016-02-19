@@ -5,8 +5,6 @@ class Api::V1::TopicsController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 	respond_to :json
 	
-
-
 	  # GET api/v1/topics
 	  # GET api/v1/topics.json
 	def index
