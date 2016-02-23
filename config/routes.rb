@@ -1,6 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :api do
+  namespace :v1 do
+    get 'google/google'
+    end
+  end
+
   get 'smses/index'
 
   get 'smses/show'
@@ -130,6 +136,8 @@ Rails.application.routes.draw do
       #facebook login
       get "/auth/facebook_access_token/callback", :to => 'facebook#facebook'
       post "/auth/facebook_access_token/callback", :to => 'facebook#facebook'
+      #google Login
+      post "/google_sign_up", :to => 'google#google'#, :as => 'register'
       
       #payments
       post "/pay", :to => 'payments#pay'

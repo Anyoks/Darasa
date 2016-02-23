@@ -1,5 +1,5 @@
 class Api::V1::RegistrationsController < ApplicationController
-	before_filter :authenticate_user!, except: [:create]
+	before_filter :authenticate_user!, except: [:create, :google]
 	skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 	respond_to :json
 	def create
@@ -25,6 +25,7 @@ class Api::V1::RegistrationsController < ApplicationController
 	  end
 	end
 
+
 	def update
 		params.permit!
 
@@ -46,12 +47,14 @@ class Api::V1::RegistrationsController < ApplicationController
 			invalid_credentials
 		end
 	end
+	
+private
 
 	def invalid_credentials
 	  render json: { success: false, error: "Error with your credentials"}, status: :unprocessable_entity
 	end
 
 	 def user_params
-      params.require(:user).permit(:first_name, :second_name, :email, :phone_number, :password, :provider)
+      params.require(:user).permit(:first_name, :second_name, :email, :phone_number, :password, :provider, :authentication_token)
     end
 end
