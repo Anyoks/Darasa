@@ -10,7 +10,7 @@ class Api::V1::GoogleController < ApplicationController
 
 	  	if logged
 	  		sign_in(:user, logged) #if there are sign them in!
-			render json: { success: true, msg: "logged in", authentication_token: logged.authentication_token, user_id: logged.id }, status: :ok #return success!
+			render json: { success: true, authentication_token: logged.authentication_token, user_id: logged.id }, status: :ok #return success!
 		else
 
 			user = User.new(user_params)
