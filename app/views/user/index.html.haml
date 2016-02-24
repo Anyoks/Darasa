@@ -1,5 +1,4 @@
 %h1 We have a total of #{@users.all.count} Users
 
-= line_chart User.group_by_day(:created_at).count
 
 =render "user/table", users: @users

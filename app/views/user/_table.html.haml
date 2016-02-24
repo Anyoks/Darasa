@@ -1,3 +1,29 @@
+.row
+  .span6
+    - Time.zone = 'Nairobi'
+  /   = line_chart User.group_by_day(:created_at).count
+  / .span6
+  /   = line_chart User.group_by_day(:created_at).count
+.container
+  .row-fluid
+    .col-xs-12.col-sm-6.col-md-6
+      .well.well-sm
+        .row
+          .col-sm-6.col-md-8
+            %h4
+              %p Haha
+        = line_chart User.group_by_day(:created_at).count
+
+  .row-fluid
+    .col-xs-12.col-sm-6.col-md-6
+      .well.well-sm
+        .row
+          .col-sm-6.col-md-8
+            %h4
+              %p Haha
+        = pie_chart  UnitActivity.group_by_hour_of_day(:created_at, range: 1.day.ago..Time.now).count
+
+
 %table.table.table-hover
   %thead
     %tr
