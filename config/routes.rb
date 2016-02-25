@@ -1,6 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'actvities/unit'
+
+  get 'actvities/topic'
+
+  get 'actvities/question'
+
   namespace :api do
   namespace :v1 do
     get 'google/google'

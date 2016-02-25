@@ -14,4 +14,24 @@
 class UnitActivity < ActiveRecord::Base
 	belongs_to :unit 
 	belongs_to :user
+
+	def self.user
+		user_name = []
+		time_accessed = []
+
+		together = []
+
+		UnitActivity.all.each do |activity|
+			user_name << activity.user.first_name
+			time_accessed << activity.time
+			together << activity.user.first_name
+			together << activity.time
+
+		end
+		return together
+		# hash = Hash[*user_name.zip(time_accessed).flatten]
+		# hash = Hash[*user_name.zip(time_accessed)]
+
+	end
+
 end

@@ -1,0 +1,55 @@
+%h1 Actvities#question
+%p Find me in app/views/actvities/question.html.haml
+- Time.zone = 'Nairobi'
+.container
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							%p Topic Activities
+				/ = pie_chart	QuestionActivity.group_by_hour_of_day(:created_at, range: 1.day.ago..Time.now).count
+				= pie_chart	QuestionActivity.group(:question_id).count
+				
+
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							%p Topic Activites Today (Midnight - Now)
+				= pie_chart	QuestionActivity.group_by_hour_of_day(:time, range: 1.day.ago..Time.now).count
+
+	.row-fluid
+		.col-xs-12.col-sm-6.col-md-6
+			.well.well-sm
+				.row
+					.col-sm-6.col-md-8
+						%h4
+							/ % p Topics that #{@user.first_name} attempted to purchase
+				/ = line_chart @goals.map{|goal|				 
+
+%table.table.table-hover
+	%thead
+		%tr
+			%th First Name
+			%th Last Name
+			%th Phone Number
+			%th Last seen
+			%th
+
+	%tbody
+		- @question.each do |question|
+			%tr
+				%td= question.user.first_name
+				%td= question.user.second_name
+				%td= question.user.phone_number
+				- from_time = question.created_at
+				%td= time_ago_in_words(from_time)
+				%td
+					-if current_user && current_user.is_moderator? || current_user.is_admin?
+						/ = link_to 'Show Details',	user, class: "label label-warning"
+						/ = link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
+						/ = link_to "Download", download_exam_path(user), class: "label label-success"
