@@ -12,13 +12,17 @@ class Api::V1::TopicsController < ApplicationController
 	    resource =  User.find_by_authentication_token(params[:auth_token])
 	    # byebug
 	    return invalid_user unless resource
+		
 
 	    @unit = Unit.where(:id =>"#{params[:unit_id]}").first
 	    return invalid_unit unless  @unit.present?
 
 	     @topics = Topic.where(:unit_id => params[:unit_id])
 	     return no_topics unless  @topics.count >0
-	     log_unit_activity resource, @unit.name, "#{resource.first_name} clicked this unit, #{@unit.name}"
+
+	     unless resource.has_admin_previlages?
+	     	 log_unit_activity resource, @unit.name, "#{resource.first_name} clicked this unit, #{@unit.name}"
+	     end
 	     # byebug
 	end
 
@@ -30,7 +34,10 @@ class Api::V1::TopicsController < ApplicationController
 
 	     @topic = Topic.where(:id => "#{params[:topic_id]}").first
 	     return invalid_topic unless @topic.present?
-		log_topic_activity resource , @topic.name, "#{resource.first_name} clicked this topic, #{@topic.name}"
+
+	     unless resource.has_admin_previlages?
+			log_topic_activity resource , @topic.name, "#{resource.first_name} clicked this topic, #{@topic.name}" 
+		end
 	  end
 
 

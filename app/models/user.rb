@@ -115,11 +115,13 @@ class User < ActiveRecord::Base
 
 	def has_admin_previlages?
 		if is_admin? || is_moderator?
-			if is_moderator?
-				 "Yes moderator"
-			elsif is_admin?
-				 "Yes Admin"
-			end
+			# if is_moderator?
+			# 	 p "Yes moderator"
+			# 	 true
+			# elsif is_admin?
+			# 	 "Yes Admin"
+			# end
+			true
 		else
 			false
 		end
