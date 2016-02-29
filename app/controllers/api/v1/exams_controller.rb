@@ -59,7 +59,7 @@ class Api::V1::ExamsController < ApplicationController
 			return you_dont_own_topic
 		end
 		
-		unless resource.has_admin_previlages?
+		unless @resource.has_admin_previlages?
 			log_question_activity @resource, "#{@resource.first_name} clicked on this question"
 		end
 	end
