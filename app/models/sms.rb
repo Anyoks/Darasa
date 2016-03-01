@@ -21,17 +21,22 @@ class Sms < ActiveRecord::Base
 	def extract text
 		text_message = text
 		data_raw = text.split
-		data_parse_one = get_stuff data_raw
-		data_parse_two = remove_unnecessary data_parse_one
+		if data_raw [1] == "Confirmed.on"
+			data_parse_one = get_stuff data_raw
+			data_parse_two = remove_unnecessary data_parse_one
 
-		save_params = sms_params data_parse_two
+			save_params = sms_params data_parse_two
 
-		@sms = Sms.new(save_params)
+			@sms = Sms.new(save_params)
 
-		if @sms.save
-			@sms.update_attribute(:message, text_message)
+			if @sms.save
+				@sms.update_attribute(:message, text_message)
+			else
+				p "Error saving the message"
+			end
 		else
-			p "Error saving the message"
+			p "zzzzzzzzzzzzzzzz"
+			false
 		end
 	end
 
