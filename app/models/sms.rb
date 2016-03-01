@@ -84,7 +84,7 @@ class Sms < ActiveRecord::Base
 		duplicate_row_values = Sms.select('mpesa_code count(*)').group('mpesa_code').having('count(*) > 1').pluck('mpesa_code')
 
 		duplicate_row_values.each do |mpesa_code|
-			Sms.where(mpesa_code: mpesa_code).order(id: :desc)[1..-1].map(&:destroy)
+			Sms.where(mpesa_code: mpesa_code).order(id: :desc)[1..-1].map(&:destroy)	
 		end
 	end
 

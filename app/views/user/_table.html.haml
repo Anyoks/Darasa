@@ -11,7 +11,7 @@
         .row
           .col-sm-6.col-md-8
             %h4
-              %p Haha
+              %p User signups
         = line_chart User.group_by_day(:created_at).count
 
   .row-fluid
@@ -20,7 +20,7 @@
         .row
           .col-sm-6.col-md-8
             %h4
-              %p Haha
+              %p Unit Activities Today
         = pie_chart  UnitActivity.group_by_hour_of_day(:created_at, range: 1.day.ago..Time.now).count
 
 
