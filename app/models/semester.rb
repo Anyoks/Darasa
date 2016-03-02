@@ -10,6 +10,7 @@
 #
 
 class Semester < ActiveRecord::Base
+	acts_as_paranoid
 	has_many :units , :dependent => :destroy
 	belongs_to :year
 	# has_many :topics, through: :units

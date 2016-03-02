@@ -115,3 +115,6 @@ gem "chartkick"
 #last seen user
 gem 'rego-devise-lastseenable', '~> 0.1.0'
 gem 'devise_lastseenable', '~> 0.0.6'
+
+#Act as Paranoid
+gem "paranoia", "~> 2.0"

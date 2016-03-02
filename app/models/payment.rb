@@ -12,6 +12,8 @@
 #
 
 class Payment < ActiveRecord::Base
+	acts_as_paranoid
+	
 	belongs_to :user
 
 	has_one :purchase, :dependent => :destroy # only one payment record corrensponds to one purchase record. i.e each purchase is authorised by a payment.

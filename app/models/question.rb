@@ -11,7 +11,9 @@
 #
 
 class Question < ActiveRecord::Base
-	require 'json'
+	# require 'json'
+	acts_as_paranoid
+	
 	belongs_to :exam
 
 	belongs_to :subtopic

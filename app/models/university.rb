@@ -9,5 +9,6 @@
 #
 
 class University < ActiveRecord::Base
+	acts_as_paranoid
 	has_many :courses, :dependent => :destroy
 end

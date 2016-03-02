@@ -15,6 +15,8 @@ class Topic < ActiveRecord::Base
 
 	# mount_uploader :attachment, PdfUploader #mount the pdf uploader
 
+	acts_as_paranoid
+
 	validates_presence_of :name, :unit # make sure these two are entered
 
 	belongs_to :unit

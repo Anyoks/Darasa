@@ -17,6 +17,7 @@
 
 class Sms < ActiveRecord::Base
 	# before_save :extract
+	acts_as_paranoid
 
 	def extract text
 		text_message = text

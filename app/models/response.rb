@@ -11,6 +11,7 @@
 #
 
 class Response < ActiveRecord::Base
+	acts_as_paranoid
 	belongs_to :question
 	mount_uploader :video, VideoUploader
 

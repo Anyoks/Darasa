@@ -10,6 +10,7 @@
 #
 
 class Year < ActiveRecord::Base
+	acts_as_paranoid
 	has_many :semesters, :dependent => :destroy
 	belongs_to :course
 

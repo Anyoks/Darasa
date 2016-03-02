@@ -8,5 +8,6 @@
 #
 
 class Price < ActiveRecord::Base
-	has_many :units, :dependent => :destroy
+	# has_many :units, :dependent => :destroy
+	acts_as_paranoid
 end

@@ -10,6 +10,8 @@
 #
 
 class Subtopic < ActiveRecord::Base
+	acts_as_paranoid
+	
 	belongs_to :topic
 
 	validates_presence_of :title, :topic

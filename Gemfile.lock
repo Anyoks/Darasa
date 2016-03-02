@@ -224,6 +224,8 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    paranoia (2.1.5)
+      activerecord (~> 4.0)
     pesapal (1.6.0)
       htmlentities
     pg (0.18.3)
@@ -380,6 +382,7 @@ DEPENDENCIES
   omniauth-facebook-access-token
   omniauth-google-oauth2!
   omniauth-oauth2 (~> 1.4)
+  paranoia (~> 2.0)
   pesapal
   pg
   puma

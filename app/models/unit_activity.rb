@@ -12,6 +12,7 @@
 #
 
 class UnitActivity < ActiveRecord::Base
+	acts_as_paranoid
 	belongs_to :unit 
 	belongs_to :user
 
