@@ -10,7 +10,7 @@
 #
 
 class Year < ActiveRecord::Base
-	has_many :semesters
+	has_many :semesters, :dependent => :destroy
 	belongs_to :course
 
 	def semester semester_id

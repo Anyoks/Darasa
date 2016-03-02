@@ -10,7 +10,7 @@
 #
 
 class Semester < ActiveRecord::Base
-	has_many :units 
+	has_many :units , :dependent => :destroy
 	belongs_to :year
 	# has_many :topics, through: :units
 end

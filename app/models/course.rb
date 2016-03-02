@@ -10,7 +10,7 @@
 #
 
 class Course < ActiveRecord::Base
-	has_many :years
+	has_many :years, :dependent => :destroy
 	belongs_to :university
 
 	def year course_id

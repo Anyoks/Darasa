@@ -26,5 +26,5 @@ class Question < ActiveRecord::Base
  #      )
  #    end
  	#lOGGIN USER ACTIVITIES
-	has_many :question_activities
+	has_many :question_activities, :dependent => :destroy
 end

@@ -17,11 +17,11 @@ class Unit < ActiveRecord::Base
 	has_many :topics,:dependent => :destroy
 	belongs_to :semester
 	# has_many :cats
-	has_many :exams
+	has_many :exams, :dependent => :destroy
 	belongs_to :price
 	
 	#lOGGIN USER ACTIVITIES
-	has_many :unit_activities
+	has_many :unit_activities, :dependent => :destroy
 	
 
 	def all_units
