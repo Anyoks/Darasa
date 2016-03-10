@@ -11,6 +11,7 @@
 
 class Semester < ActiveRecord::Base
 	acts_as_paranoid
+	# self.per_page = 10
 	has_many :units , :dependent => :destroy
 	belongs_to :year
 	# has_many :topics, through: :units

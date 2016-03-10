@@ -10,5 +10,6 @@
 
 class University < ActiveRecord::Base
 	acts_as_paranoid
+	# self.per_page = 10
 	has_many :courses, :dependent => :destroy
 end
