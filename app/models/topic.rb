@@ -17,6 +17,8 @@ class Topic < ActiveRecord::Base
 
 	acts_as_paranoid
 
+	# self.per_page = 10
+
 	validates_presence_of :name, :unit # make sure these two are entered
 
 	belongs_to :unit
@@ -24,6 +26,8 @@ class Topic < ActiveRecord::Base
 	has_many :subtopics,  :dependent => :destroy
 
 	has_many :purchases, :dependent => :destroy
+
+	has_many :questions, :through => :subtopics
 	
 	#LOGGING USER ACTIVITES
 	has_many :topic_activities, :dependent => :destroy

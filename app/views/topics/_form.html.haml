@@ -9,17 +9,8 @@
   .field
     = f.label :name
     = f.text_field :name
-  / .field
-  /   = f.label :code
-  /   = f.text_field :code
-  / .field
-  /   = f.label :attachment
-  /   = f.file_field :attachment
   .field
     =f.label :unit
     =f.select :unit_id, Unit.all.map { |u| [u.name, u.id]}
-  / .field
-  /   =f.label :semester
-  /   =f.select :unit_id, Semester.all.map { |e| [s.name, s.id]}
   .actions
     = f.submit 'Save'

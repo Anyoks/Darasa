@@ -1,45 +1,11 @@
-.container
-	.row
-		.col-xs-12.col-sm-6.col-md-6
-			.well.well-sm
-				.row
-					.col-sm-6.col-md-4
-						/ %p= image_tag @topic.attachment_url(:large), height: "200", class: "img.img-rounded.img-responsive"
-					.col-sm-6.col-md-8
-						%h4
-							%p=@topic.name
-						%p
-							%p Unit name #{@topic.unit.name}
-						%small
-							%cite{:title => "Unit Code"}
-								%p #{@topic.unit.semester.name}, #{@topic.unit.semester.year.year}
-						%p
-							%i.glyphicon.glyphicon-queen
-							#{@topic.unit.semester.year.course.name}
-							%br/
-							%i.glyphicon.glyphicon-tower
-							#{@topic.unit.semester.year.course.university.name}
-							%br/
-							= succeed "June" do
-								%i.glyphicon.glyphicon-gift
-							02, 1988
-						/ Split button
-						-if current_user && current_user.is_admin?
-							= link_to 'Edit', edit_topic_path(@topic), class: "btn btn-primary"
-							= link_to 'Back', topics_path, class: "btn btn-default"
-						.btn-group
-							%button.btn.btn-primary{:type => "button"}
-								Social
-							%button.btn.btn-primary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-								%span.caret
-								%span.sr-only Social
-							%ul.dropdown-menu{:role => "menu"}
-								%li
-									%a{:href => "#"} Twitter
-								%li
-									%a{:href => "https://plus.google.com/+Jquery2dotnet/posts"} Google +
-								%li
-									%a{:href => "https://www.facebook.com/jquery2dotnet"} Facebook
-								%li.divider
-								%li
-									%a{:href => "#"} Github
+%h1 Questions for this Topic #{@topic.name}
+
+
+-if @questions.nil?
+	%p
+		There are no Questions for this topic yet
+	%br
+		= link_to 'New Question', new_question_path, class: "btn btn-primary"
+-else
+	=render "questions/table", questions: @questions#the table that was previously here was extracted to the partial to be DRY. seems like I needed it more than I thought! :-)
+/ # = link_to 'Back to ...', request.env["HTTP_REFERER"], class: "btn btn-primary"

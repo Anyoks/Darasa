@@ -17,7 +17,14 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
-      @topics = Topic.find(params[:id])
+     session[:return_to] ||= request.referer
+     @back1_url =  session[:return_to]
+      @topic = Topic.find(params[:id])
+      @topic.subtopics.each do |subtopic|
+        subtopic.questions.each do |question|
+              @questions = subtopic.questions.order('created_at DESC').page(params[:page]).per_page(7)
+          end
+        end
   end
 
   # GET /topics/new
