@@ -1,6 +1,7 @@
 class SmsesController < ApplicationController
   def index
-  	@smses = Sms.all.order(created_at: :desc)
+  	@smses = Sms.order('created_at DESC').page(params[:page]).per_page(7)
+    
   end
 
   def show

@@ -19,6 +19,8 @@ class Sms < ActiveRecord::Base
 	# before_save :extract
 	acts_as_paranoid
 
+	# self.per_page = 10
+
 	def extract text
 		text_message = text
 		data_raw = text.split
