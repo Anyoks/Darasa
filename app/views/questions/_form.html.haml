@@ -1,13 +1,29 @@
-= form_for @response do |f|
-  - if @response.errors.any?
+= form_for @question do |f|
+  - if @question.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@response.errors.count, "error")} prohibited this response from being saved:"
+      %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
       %ul
-        - @response.errors.full_messages.each do |msg|
+        - @question.errors.full_messages.each do |msg|
           %li= msg
 
   .field
-    = f.label :response
-    = f.text_area :response
+    / =f.label :topic
+    / =f.select :topic_id, Topic.all.map { |t| [t.name, t.id] }
+
+    = f.label :Subtopic
+    =f.select :subtopic_id, Subtopic.all.map { |t| [t.title, t.id] }
+    
+  %br/
+
+  .field
+    = f.label :question
+    = f.cktext_area  :question
+
+  .field
+    = f.simple_fields_for :response do |r|
+      = render "response_fields", f: r
+
+  %br/
   .actions
-    = f.submit 'Save'
+
+    = f.submit 'Save Changes', class: "btn btn-success pull-right"

@@ -1,13 +1,14 @@
-%br/
-= f.label :question, "Question"
-%br/
-= f.text_area :question
-%br/
-= f.check_box :_destroy
-= f.label :_destroy, "Remove Question"
+.nested-fields
+	%br/
+	= f.label :question, "Question"
+	/ = link_to_remove_association "Remove Question", f, class: "label label-danger"
+	
+	%br/
+	= f.cktext_area :question, :cols => 30, :extraPlugins => 'eqneditor',:ckeditor => { :toolbar => 'full'}
+	%br/
+	= f.fields_for :response do |answer|
+		=render "response_fields", f: answer
 
-= f.fields_for :response do |builder|
-	=render "answers/answer_fields", :f => builder
 
 
 / = f.simple_fields_for :tasks do |task|
