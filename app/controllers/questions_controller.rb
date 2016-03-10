@@ -5,21 +5,31 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.order('created_at ASC').page(params[:page]).per_page(7)#Question.paginate(:page => params[:page])
+    # Question.order('created_at DESC').page(params[:page])
+    # @posts = Post.paginate(:page => params[:page])
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+    session[:return_to] = request.env["HTTP_REFERER"]
+    @back_url =  session[:return_to]
+    @questions = Question.order('created_at ASC').page(params[:page]).per_page(7)
+
   end
 
   # GET /questions/new
   def new
     @question = Question.new
+    @question.build_response
+    session[:return_to] ||= request.referer
   end
 
   # GET /questions/1/edit
   def edit
+    @question = Question.find(params[:id])
+    @back_url =  session[:return_to]
   end
 
   # POST /questions
@@ -29,7 +39,8 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        # format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html {redirect_to session.delete(:return_to), notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
@@ -70,7 +81,8 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:question,
-        response: [:id, :answer, :question_id])
+      params.require(:question).permit(:question, :subtopic_id,
+        response_attributes:[:id, :answer, :question_id, :video,:_destroy]
+        )
     end
 end
