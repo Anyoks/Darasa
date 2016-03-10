@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user_from_token!
   # before_action :authenticate_user!
   protect_from_forgery with: :exception
-  before_action :find_units, :find_semesters, :find_years, :find_courses, :find_universities, :find_exams #every singel action in this app will run this code
+  before_action :find_units, :find_semesters, :find_years, :find_courses, :find_universities, :find_topics, :find_exams, :find_questions #every singel action in this app will run this code
   before_filter :configure_permitted_parameters, if: :devise_controller?
   # before_action :authenticate_user! #, only: [:show ]
   before_action :authenticate_user!
@@ -39,6 +39,13 @@ class ApplicationController < ActionController::Base
 
   def find_exams
     @exams = Exam.all
+  end
+  def find_topics
+    @topics = Topic.all
+  end
+
+  def find_questions
+    @question = Question.all
   end
 
   # def accept_tos
