@@ -118,3 +118,6 @@ gem 'devise_lastseenable', '~> 0.0.6'
 
 #Act as Paranoid
 gem "paranoia", "~> 2.0"
+#pagination
+# gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
