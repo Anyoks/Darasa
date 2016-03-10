@@ -23,6 +23,8 @@ class Unit < ActiveRecord::Base
 	
 	#lOGGIN USER ACTIVITIES
 	has_many :unit_activities, :dependent => :destroy
+
+	self.per_page = 10
 	
 
 	def all_units
