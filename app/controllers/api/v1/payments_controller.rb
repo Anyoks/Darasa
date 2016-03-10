@@ -22,6 +22,8 @@ class Api::V1::PaymentsController < ApplicationController
 
 		@payment = Payment.new(payment_params)
 
+		@payment.mpesa_code.upcase! # Just incase the user enters the code in small letters
+
 		###***somehwere here I have to check if the Mpesa code is in the Sms table ***###
 		###***I think it should be here ***###
 

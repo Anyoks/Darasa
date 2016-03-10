@@ -16,4 +16,21 @@ class Purchase < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :topic
 	belongs_to :payment
+
+
+	#Make an admin own all topics 
+	def self.own_all user
+		topic_ids = Topic.select('id count(*)').group('id').pluck('id')
+		user_id = user
+
+		mpesa_code = "ADMIN_OWNERSHIP"
+		num = 0
+		
+		topic_ids.each do |topic|
+			p = Payment.new(:topic_id => "#{topic}", :mpesa_code => "#{mpesa_code}", :user_id => "#{user_id}" )
+			p.save
+			num +=1
+			mpesa_code = mpesa_code + num.to_s 
+		end
+	end
 end
