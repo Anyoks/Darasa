@@ -33,7 +33,7 @@ class ExamsController < ApplicationController
   def edit
      @exam = Exam.find(params[:id])
      # @exam.questions.build
-     @exam.questions.build.build_response
+     # @exam.questions.build.build_response
   end
 
   # POST /exams
