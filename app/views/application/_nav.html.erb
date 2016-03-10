@@ -14,18 +14,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"> <%= link_to "Exams", exams_path %> </a></li>
-        <li class="dropdown">
-          <%= link_to "#", data: { toggle: "dropdown"} do %>
-            Units
-            <span class="caret"></span>
-            <%- end %>
-          <ul class="dropdown-menu">
-            <% @units.each do |unit|%>
-              <li><%= link_to unit.name, unit %></li>
-              <% end %>
-          </ul>
-        </li> 
+        <% if user_signed_in? %>
+          <% if current_user.is_admin? || current_user.is_moderator? %>
+              <li class="active"> <%= link_to "Topics", topics_path %> </a></li>
+              <li> <%= link_to "Subtopics", subtopics_path %> </a></li>
+              <li> <%= link_to "All Questions", questions_path %> </a></li>
+              <li class="dropdown">
+                <%= link_to "#", data: { toggle: "dropdown"} do %>
+                  Units
+                  <span class="caret"></span>
+                  <%- end %>
+                <ul class="dropdown-menu">
+                  <% @units.each do |unit|%>
+                    <li><%= link_to unit.name, unit %></li>
+                    <% end %>
+                </ul>
+              </li> 
+              <%end%>
+            <%end%>
         <!-- <li class="dropdown">
           <%= link_to "#", data: { toggle: "dropdown"} do %>
             Semesters
