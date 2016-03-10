@@ -13,10 +13,8 @@
 class Response < ActiveRecord::Base
 	acts_as_paranoid
 	belongs_to :question
-	mount_uploader :video, VideoUploader
 
-	def destroy_assets
-	  self.video.remove! if self.video
-	  self.save!
-	end
+	# validates_presence_of :answer, :question_id
+	# self.per_page = 10
+	# mount_uploader :video, VideoUploader
 end
