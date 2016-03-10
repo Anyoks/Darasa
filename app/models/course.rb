@@ -14,6 +14,8 @@ class Course < ActiveRecord::Base
 	has_many :years, :dependent => :destroy
 	belongs_to :university
 
+	# self.per_page = 10
+
 	def year course_id
 		year = Year.all
 		year.find { |y| y.course_id == course_id }
