@@ -5,14 +5,26 @@ class UnitsController < ApplicationController
   # GET /units
   # GET /units.json
   def index
-    @units = Unit.all
-    @semesters = Semester.all #II need to look into this.
+    @units = Unit.order('created_at ASC').page(params[:page])
+    # @semesters = Semester.all #II need to look into this.
+
   end
 
   # GET /units/1
   # GET /units/1.json
   def show
     @topics = @unit.topics
+    @unit = Unit.find(params[:id])
+    
+     @unit.topics.each do |topic|
+      topic.subtopics.each do |subtopic|
+        subtopic.questions.each do |question|
+              @questions = subtopic.questions.order('created_at ASC').page(params[:page])
+            end
+          end
+        end
+
+    # questions = Question.order('created_at ASC').page(params[:page])
   end
 
   # GET /units/new
