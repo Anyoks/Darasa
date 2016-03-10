@@ -8,20 +8,12 @@
         - @subtopic.errors.full_messages.each do |msg|
           %li= msg
 
-  
+ 
   .field
     = f.label :Title
-    = f.text_field :title, size: 100, :placeholder => "Enter the subtopic's title"
-    =f.label :topic
-    =f.select :topic_id, Topic.all.map { |t| [t.name, t.id] }
-  %br/
-  
+    = f.text_field :title, :placeholder => "Enter the subtopic's title"
   .field
-    = f.simple_fields_for :questions do |question|
-      = render "question_fields", f: question
-  %br/
-
+    =f.label :topic
+    =f.select :topic_id, Topic.all.map { |t| [t.name, t.id]}
   .actions
-    = f.submit 'Save Changes', class: "btn btn-success pull-right"#, "pull-right"
-
-  %br/
+    = f.submit 'Save', class: "btn btn-default"

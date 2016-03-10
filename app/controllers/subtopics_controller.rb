@@ -11,21 +11,22 @@ class SubtopicsController < ApplicationController
   # GET /subtopics/1.json
   def show
     @subtopic = Subtopic.find(params[:id])
+
+    @questions = @subtopic.questions.order('created_at ASC').page(params[:page]).per_page(7)
+
   end
 
   # GET /subtopics/new
   def new
     @subtopic = Subtopic.new
     @subtopic.questions.build.build_response
-      # end
   end
 
   # GET /subtopics/1/edit
   def edit
     @subtopic = Subtopic.find(params[:id])
-    # @exam.questions.build
-    @subtopic.questions.build.build_response
   end
+
 
   # POST /subtopics
   # POST /subtopics.json

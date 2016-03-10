@@ -6,8 +6,8 @@
 	%br/
 	= f.cktext_area :question, :cols => 30, :extraPlugins => 'eqneditor',:ckeditor => { :toolbar => 'full'}
 	%br/
-
-
 	= f.fields_for :response do |answer|
 		=render "response_fields", f: answer
+
+
 

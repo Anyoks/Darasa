@@ -11,6 +11,7 @@
 
 class Subtopic < ActiveRecord::Base
 	acts_as_paranoid
+	# self.per_page = 10
 	
 	belongs_to :topic
 
@@ -20,5 +21,7 @@ class Subtopic < ActiveRecord::Base
 
 	has_many :answers, :through => :questions
 
-	accepts_nested_attributes_for :questions,  :allow_destroy => true
+	accepts_nested_attributes_for :questions, reject_if: proc { |attributes| attributes['question'].blank? }, :allow_destroy => true
+
+	
 end

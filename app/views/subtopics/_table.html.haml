@@ -17,6 +17,8 @@
         / %td= image_tag subtopics.attachment_url(:thumb)
         %td
           -if current_user && current_user.is_admin?
-            = link_to 'Edit', edit_subtopic_path(subtopic), class: "label label-warning"
+            = link_to 'Edit', edit_subtopic_path(subtopic), class: "label label-default"
+            = link_to "Show", subtopic, class: "label label-warning"
             = link_to 'Destroy', subtopic, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
-            = link_to "Download", download_topic_path(subtopic), class: "label label-success"
+          -elsif current_user && current_user.is_moderator?
+            = link_to 'Edit', edit_subtopic_path(subtopic), class: "label label-warning"
