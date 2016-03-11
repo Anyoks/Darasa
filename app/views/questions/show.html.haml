@@ -8,10 +8,12 @@
   %b Answer:
   %ul
     = raw @question.response.answer
+    edit_subtopic_question_path(:id=>question.id, :subtopic_id =>question.subtopic.id), class: "label label-pill label-
 
-= link_to 'Edit', edit_question_path(@question), class: "btn btn-default"
+= link_to 'Edit', edit_question_path(:id => @question, :subtopic_id =>@question.subtopic.id), class: "btn btn-default"
+/ edit_subtopic_question_path(:id=>question.id, :subtopic_id =>question.subtopic.id)
 \|
 = link_to 'Back to Questions', questions_path, class: "btn btn-primary"
-= link_to 'Back to ...', request.env["HTTP_REFERER"], class: "btn btn-primary"
-= link_to 'New Question', new_question_path, class: "btn btn-primary"
+/ # = link_to 'Back to ...', request.env["HTTP_REFERER"], class: "btn btn-primary"
+/ = link_to 'New Question', new_question_path, class: "btn btn-primary"
 %br

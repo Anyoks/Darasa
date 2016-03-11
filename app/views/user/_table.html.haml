@@ -47,7 +47,7 @@
         %td 
           %span.label.label-default.label-pill.pull-xs-right  #{user.purchases.count} 
         %td
-          -if current_user && current_user.is_moderator? || current_user.is_admin?
+          -if current_user && current_user.is_admin?
             = link_to 'Show Details',  user, class: "label label-warning"
             = link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
             -if user.is_moderator?

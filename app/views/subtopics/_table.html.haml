@@ -21,4 +21,5 @@
             = link_to "See Questions", subtopic, class: "label label-warning"
             = link_to 'Destroy', subtopic, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
           -elsif current_user && current_user.is_moderator?
-            = link_to 'Edit', edit_subtopic_path(subtopic), class: "label label-warning"
+            = link_to 'Edit', edit_subtopic_path(subtopic), class: "label label-default"
+            = link_to "See Questions", subtopic, class: "label label-warning"
