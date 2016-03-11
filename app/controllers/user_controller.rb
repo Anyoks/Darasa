@@ -15,7 +15,7 @@ class UserController < ApplicationController
       format.json { head :no_content }
     end
   end
-  def make_normal
+  def make_normal_user
     @user = User.find(params[:user_id])
     @user.make_normal_user
     respond_to do |format|
