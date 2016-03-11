@@ -52,7 +52,7 @@
             = link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-danger"
             -unless current_user == user
               -if user.is_moderator?
-                = link_to " Moderator Make Normal user", user_make_normal_user_path(user), class: "label label-pill label-default"
+                = link_to " Moderator - Make Normal user", user_make_normal_user_path(user), class: "label label-pill label-default"
               -elsif user.is_admin?
                 = link_to " Admin Make Normal user",  user_make_normal_user_path(user), :data => { :confirm => 'Are you sure?' }, class: "label label-pill label-info"
               -else

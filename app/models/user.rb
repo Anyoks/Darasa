@@ -100,15 +100,22 @@ class User < ActiveRecord::Base
 	
 	#if the user has not accepted terms and conditions, they are not a moderator!
 	def is_moderator?
-		if accept_terms
-			if self.role.nil? #they could be an admin!
-				make_moderator
-			elsif
-				self.role.name =='moderator'
-				true
-			else
-				false
-			end
+		# if accept_terms
+		# 	if self.role.nil? #they could be an admin!
+		# 		make_moderator
+		# 	elsif
+		# 		self.role.name =='moderator'
+		# 		true
+		# 	else
+		# 		false
+		# 	end
+		# else
+		# 	false
+		# end
+		if self.role.nil?
+			false
+		elsif self.role.name == "moderator"
+			true
 		else
 			false
 		end
