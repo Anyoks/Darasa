@@ -7,6 +7,25 @@ class UserController < ApplicationController
   	@user = User.find(params[:id])
   end
 
+  def make_moderator
+    @user = User.find(params[:user_id])
+    @user.make_moderator
+    respond_to do |format|
+      format.html { redirect_to user_index_path, notice:  " #{@user.first_name} is now a Moderator." }
+      format.json { head :no_content }
+    end
+  end
+  def make_normal
+    @user = User.find(params[:user_id])
+    @user.make_normal_user
+    respond_to do |format|
+      format.html { redirect_to user_index_path, notice:  " #{@user.first_name} is now a Normal User." }
+      format.json { head :no_content }
+    end
+  end
+
+
+
   def destroy
   	@user = User.find(params[:id])
     @user.destroy

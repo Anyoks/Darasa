@@ -175,7 +175,11 @@ Rails.application.routes.draw do
   # devise_for :users    
   delete 'user/:id' => 'user#destroy', :via => :delete #, :as => :admin_destroy_user
   get 'user/:id' => 'user#show', as: :user
-  
+  # get 'user/:id'
+  resources :user do
+    get :make_moderator
+    get :make_normal_user
+  end
 
   # namespace :api do
   #   namespace :v1 do
