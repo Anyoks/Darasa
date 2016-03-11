@@ -7,11 +7,10 @@
           %li= msg
 
   .field
-    / =f.label :topic
-    / =f.select :topic_id, Topic.all.map { |t| [t.name, t.id] }
-
-    = f.label :Subtopic
-    =f.select :subtopic_id, Subtopic.all.map { |t| [t.title, t.id] }
+    - @subtopic = Subtopic.find(params[:subtopic_id])
+    = f.label @subtopic.title
+    =f.select :subtopic_id, :selected => params[:subtopic_id]
+    / <%= f.select :project_id, @project_select, :selected => params[:pid] %>
     
   %br/
 

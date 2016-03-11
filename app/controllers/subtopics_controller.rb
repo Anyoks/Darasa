@@ -12,7 +12,7 @@ class SubtopicsController < ApplicationController
   def show
     @subtopic = Subtopic.find(params[:id])
 
-    @questions = @subtopic.questions.order('created_at ASC').page(params[:page]).per_page(7)
+    @questions = @subtopic.questions.order('created_at DESC').page(params[:page]).per_page(7)
 
   end
 

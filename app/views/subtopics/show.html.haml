@@ -1,12 +1,16 @@
 %h1 Questions for this Topic #{@subtopic.title}
-
+%br
+= link_to 'New Question For this Subtopic', new_subtopic_question_path(@subtopic), class: "btn btn-primary"
+%br
+%br
 
 -if @questions.nil?
 	%p
 		There are no Questions for this subtopic yet
 
 	%br
-	= link_to 'New Question', new_question_path, class: "btn btn-primary"
+	= link_to 'New Question', new_subtopic_question_path(@subtopic), class: "btn btn-primary"
 -else
 	=render "questions/table", questions: @questions#the table that was previously here was extracted to the partial to be DRY. seems like I needed it more than I thought! :-)
 / # = link_to 'Back to ...', request.env["HTTP_REFERER"], class: "btn btn-primary"
+= link_to 'New Question For this Subtopic', new_subtopic_question_path(@subtopic), class: "btn btn-primary"

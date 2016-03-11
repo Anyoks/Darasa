@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.order('created_at ASC').page(params[:page]).per_page(7)#Question.paginate(:page => params[:page])
+    @questions = Question.order('created_at DESC').page(params[:page]).per_page(7)#Question.paginate(:page => params[:page])
     # Question.order('created_at DESC').page(params[:page])
     # @posts = Post.paginate(:page => params[:page])
   end
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   def show
     session[:return_to] = request.env["HTTP_REFERER"]
     @back_url =  session[:return_to]
-    @questions = Question.order('created_at ASC').page(params[:page]).per_page(7)
+    @questions = Question.order('created_at DESC').page(params[:page]).per_page(7)
 
   end
 
@@ -28,8 +28,9 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+     session[:return_to] ||= request.referer
     @question = Question.find(params[:id])
-    @back_url =  session[:return_to]
+    # @back_url =  url_for(action: 'show', controller: "#{@question.subtopic}")
   end
 
   # POST /questions
@@ -40,7 +41,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.save
         # format.html { redirect_to @question, notice: 'Question was successfully created.' }
-        format.html {redirect_to session.delete(:return_to), notice: 'Question was successfully created.' }
+        format.html {redirect_to @question.subtopic, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }

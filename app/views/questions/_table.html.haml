@@ -2,19 +2,21 @@
   - questions.each do |question|
     %li
       = raw question.question
+      %br
+    %b Answer:
+    %ul
+      = raw question.response.answer
     %br
       -if current_user && current_user.is_admin?
         = link_to 'Show', question,class: "label label-pill label-warning"
-        = link_to 'Edit', edit_question_path(question), class: "label label-pill label-default"
+        = link_to 'Edit', edit_subtopic_question_path(:id=>question.id, :subtopic_id =>question.subtopic.id), class: "label label-pill label-default"
         = link_to 'Destroy', question, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-pill label-danger"
       -elsif current_user && current_user.is_moderator?
         = link_to 'Edit', edit_question_path(question), class: "label label-pill label-default"
         = link_to 'Show', question, class: "label label-pill label-warning"
     %br
 
-
-
 = will_paginate questions, renderer: BootstrapPagination::Rails
 %br
 -if current_user && current_user.is_admin? || current_user && current_user.is_moderator?
-  = link_to 'New Question', new_question_path, class: "btn btn-primary"
+  / = link_to 'New Question', new_question_path, class: "btn btn-primary"

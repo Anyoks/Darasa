@@ -109,6 +109,13 @@ Rails.application.routes.draw do
       put :accept_tos
     end
   end
+
+  resources :subtopics do
+      resources :questions do 
+        resources :responses
+    end
+  end
+
   
   namespace :api do
     namespace :v1 do
