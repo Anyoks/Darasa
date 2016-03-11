@@ -70,7 +70,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
   devise_scope :user do
     authenticated :user do
-      root 'exams#index'
+      root 'subtopics#index'
     end
     unauthenticated :user do
       root :to => 'devise/registrations#new', as: :unauthenticated_root
