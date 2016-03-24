@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302124407) do
+ActiveRecord::Schema.define(version: 20160324165212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,11 +155,15 @@ ActiveRecord::Schema.define(version: 20160302124407) do
 
   create_table "questions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "question"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.uuid     "exam_id"
     t.uuid     "subtopic_id"
     t.datetime "deleted_at"
+    t.string   "html_file_name"
+    t.string   "html_content_type"
+    t.integer  "html_file_size"
+    t.datetime "html_updated_at"
   end
 
   add_index "questions", ["deleted_at"], name: "index_questions_on_deleted_at", using: :btree
@@ -216,10 +220,14 @@ ActiveRecord::Schema.define(version: 20160302124407) do
 
   create_table "subtopics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.uuid     "topic_id"
     t.datetime "deleted_at"
+    t.string   "html_file_name"
+    t.string   "html_content_type"
+    t.integer  "html_file_size"
+    t.datetime "html_updated_at"
   end
 
   add_index "subtopics", ["deleted_at"], name: "index_subtopics_on_deleted_at", using: :btree
@@ -312,6 +320,18 @@ ActiveRecord::Schema.define(version: 20160302124407) do
   end
 
   add_index "universities", ["deleted_at"], name: "index_universities_on_deleted_at", using: :btree
+
+  create_table "uploads", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "subtopic_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
+
+  add_index "uploads", ["subtopic_id"], name: "index_uploads_on_subtopic_id", using: :btree
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "email",                                             null: false

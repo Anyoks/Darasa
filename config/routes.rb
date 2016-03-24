@@ -114,6 +114,8 @@ Rails.application.routes.draw do
       resources :questions do 
         resources :responses
     end
+    post '/upload' , :to => 'subtopics#upload'
+    get '/upload', :to => 'subtopics#upload_show'
   end
 
   

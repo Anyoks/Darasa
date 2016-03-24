@@ -13,6 +13,9 @@
 class Question < ActiveRecord::Base
 	# require 'json'
 	acts_as_paranoid
+
+	has_attached_file :html
+	
 	validates_presence_of :question,:subtopic_id
 
 	belongs_to :exam

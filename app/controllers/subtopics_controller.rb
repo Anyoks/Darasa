@@ -27,6 +27,20 @@ class SubtopicsController < ApplicationController
     @subtopic = Subtopic.find(params[:id])
   end
 
+  def upload
+    @subtopic = Subtopic.find(params[:subtopic_id])
+    @subtopic.html = params[:subtopic][:html]
+    @subtopic.save
+    
+  end
+
+  def upload_show
+    @subtopic = Subtopic.find(params[:subtopic_id])
+    # @subtopic.html = params[:html]
+    # @subtopic.save
+    
+  end
+
 
   # POST /subtopics
   # POST /subtopics.json
@@ -79,7 +93,7 @@ class SubtopicsController < ApplicationController
       # params[:subtopic]
       # params.require(:subtopic).permit(:title, :topic_id)
 
-      params.require(:subtopic).permit(:title, :topic_id,
+      params.require(:subtopic).permit(:title, :topic_id,:html,
         questions_attributes:[ :id, :question, :subtopic_id,  :_destroy,
         response_attributes:[:id, :answer, :question_id, :video,:_destroy]]
         )

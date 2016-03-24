@@ -117,3 +117,9 @@ gem "paranoia", "~> 2.0"
 #pagination
 # gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
+#doc_bot
+gem 'docx', '~> 0.2.07', :require => ["docx"]
+gem 'publishr'
+gem 'docx_converter'
+#file uploading
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"

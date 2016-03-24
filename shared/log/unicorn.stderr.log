@@ -3388,3 +3388,267 @@ F, [2016-03-14T11:17:12.181662 #2282] FATAL -- : error adding listener addr=/hom
 	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
 	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
 	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-14T16:46:13.557203 #2981]  INFO -- : Refreshing Gem list
+F, [2016-03-14T16:46:28.712767 #2981] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-15T08:15:05.665231 #3032]  INFO -- : Refreshing Gem list
+F, [2016-03-15T08:15:13.099793 #3032] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-15T18:55:55.822112 #2881]  INFO -- : Refreshing Gem list
+F, [2016-03-15T18:56:04.022164 #2881] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-16T06:46:00.961074 #3079]  INFO -- : Refreshing Gem list
+F, [2016-03-16T06:46:08.224287 #3079] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-17T06:45:18.336047 #2624]  INFO -- : Refreshing Gem list
+F, [2016-03-17T06:45:37.238099 #2624] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-17T09:06:24.040857 #3066]  INFO -- : Refreshing Gem list
+F, [2016-03-17T09:06:46.008236 #3066] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-17T15:21:56.969911 #2256]  INFO -- : Refreshing Gem list
+F, [2016-03-17T15:22:00.421695 #2256] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-18T05:03:26.163444 #2094]  INFO -- : Refreshing Gem list
+F, [2016-03-18T05:03:30.514154 #2094] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-21T08:59:23.115377 #2438]  INFO -- : Refreshing Gem list
+F, [2016-03-21T08:59:40.232440 #2438] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-22T07:55:35.018969 #2437]  INFO -- : Refreshing Gem list
+F, [2016-03-22T07:56:24.180596 #2437] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-22T09:27:28.402727 #2336]  INFO -- : Refreshing Gem list
+F, [2016-03-22T09:27:32.896835 #2336] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-22T09:39:41.565832 #2343]  INFO -- : pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid possibly stale, got EPERM signalling PID:2336
+I, [2016-03-22T09:39:41.910902 #2343]  INFO -- : Refreshing Gem list
+F, [2016-03-22T09:39:51.120724 #2343] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-22T14:02:00.205755 #2374]  INFO -- : Refreshing Gem list
+F, [2016-03-22T14:02:04.579703 #2374] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-22T14:12:52.870281 #2378]  INFO -- : pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid possibly stale, got EPERM signalling PID:2374
+I, [2016-03-22T14:12:53.215103 #2378]  INFO -- : Refreshing Gem list
+F, [2016-03-22T14:12:57.575696 #2378] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:206:in `pid=': Already running on PID:2378 (or pid=/home/orinamokaya/deploy/darasa_app/shared/pids/unicorn.pid is stale) (ArgumentError)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:135:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-23T07:33:07.684876 #2285]  INFO -- : Refreshing Gem list
+F, [2016-03-23T07:33:20.435132 #2285] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-24T10:07:27.457891 #2307]  INFO -- : Refreshing Gem list
+F, [2016-03-24T10:07:41.498036 #2307] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
+I, [2016-03-24T18:31:47.385520 #2806]  INFO -- : Refreshing Gem list
+F, [2016-03-24T18:31:52.035905 #2806] FATAL -- : error adding listener addr=/home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock
+/home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `initialize': No such file or directory - connect(2) for /home/orinamokaya/deploy/darasa_app/shared/sockets/unicorn.sock (Errno::ENOENT)
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `new'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:242:in `listen'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `block in bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `each'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:813:in `bind_new_listeners!'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:138:in `start'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `load'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/unicorn:23:in `<main>'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `eval'
+	from /home/orinamokaya/.rvm/gems/ruby-2.2.1/bin/ruby_executable_hooks:15:in `<main>'
