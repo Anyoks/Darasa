@@ -29,8 +29,8 @@ class SubtopicsController < ApplicationController
 
   def upload
     @subtopic = Subtopic.find(params[:subtopic_id])
-    @subtopic.html = params[:subtopic][:html]
-    @subtopic.save
+    @upload = @subtopic.uploads.new( :subtopic_id => @subtopic.id, :document => params[:subtopic][:document])
+    @upload.save
     
   end
 

@@ -18,5 +18,5 @@
 / # = link_to 'Back to ...', request.env["HTTP_REFERER"], class: "btn btn-primary"
 = link_to 'New Question For this Subtopic', new_subtopic_question_path(@subtopic), class: "btn btn-primary"
 %br
-= link_to 'Upload Question file', "/subtopics/#{@subtopic.id}/upload",  class: "btn btn-primary"
+= link_to 'Upload Question file',  new_subtopic_upload_path(@subtopic.id),  class: "btn btn-primary"
 %br

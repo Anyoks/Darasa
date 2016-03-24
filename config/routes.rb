@@ -87,6 +87,7 @@ Rails.application.routes.draw do
   resources :units
   resources :topics
   resources :subtopics
+  resources :uploads
 
   resources :topics do
     member do
@@ -114,6 +115,7 @@ Rails.application.routes.draw do
       resources :questions do 
         resources :responses
     end
+    resources :uploads
     post '/upload' , :to => 'subtopics#upload'
     get '/upload', :to => 'subtopics#upload_show'
   end

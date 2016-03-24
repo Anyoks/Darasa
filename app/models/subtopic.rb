@@ -13,11 +13,11 @@ class Subtopic < ActiveRecord::Base
 	acts_as_paranoid
 	# self.per_page = 10
 
-	has_attached_file :html , styles: { medium: "300x300>", thumb: "100x100>" },  :url => "/system/:class/:attachment/:id_partition/:style/:filename",
-	 :path  => ":rails_root/public:url"
+	# has_attached_file :html , styles: { medium: "300x300>", thumb: "100x100>" },  :url => "/system/:class/:attachment/:id_partition/:style/:filename",
+	 # :path  => ":rails_root/public:url"
   # validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-  do_not_validate_attachment_file_type :html
-	
+  # do_not_validate_attachment_file_type :html
+	# 
 	belongs_to :topic
 
 	validates_presence_of :title, :topic

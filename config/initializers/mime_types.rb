@@ -7,3 +7,5 @@
 Mime::Type.register "api/v1", :jsonapi
 ActionDispatch::ParamsParser::DEFAULT_PARSERS[Mime::JSONAPI] = -> body { JSON.parse body
 }
+
+# Mime::Type.register "text/html", :html
