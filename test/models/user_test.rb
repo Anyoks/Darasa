@@ -26,6 +26,9 @@
 #  authentication_token   :text
 #  id                     :uuid             not null, primary key
 #  unique_session_id      :string(20)
+#  last_seen_at           :datetime
+#  last_seen              :datetime
+#  deleted_at             :datetime
 #
 
 require 'test_helper'

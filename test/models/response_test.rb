@@ -8,6 +8,7 @@
 #  id          :uuid             not null, primary key
 #  question_id :uuid
 #  video       :string
+#  deleted_at  :datetime
 #
 
 require 'test_helper'

@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  payment_id :uuid
+#  deleted_at :datetime
 #
 
 class Purchase < ActiveRecord::Base

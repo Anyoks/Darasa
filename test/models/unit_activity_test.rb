@@ -9,6 +9,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  note       :string
+#  name       :string
+#  deleted_at :datetime
 #
 
 require 'test_helper'

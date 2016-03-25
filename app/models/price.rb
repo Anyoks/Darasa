@@ -2,9 +2,10 @@
 #
 # Table name: prices
 #
-#  amount  :float
-#  id      :uuid             not null, primary key
-#  content :string
+#  amount     :float
+#  id         :uuid             not null, primary key
+#  content    :string
+#  deleted_at :datetime
 #
 
 class Price < ActiveRecord::Base

@@ -9,6 +9,7 @@
 #  topic_id   :uuid
 #  user_id    :uuid
 #  status     :string
+#  deleted_at :datetime
 #
 
 class Payment < ActiveRecord::Base

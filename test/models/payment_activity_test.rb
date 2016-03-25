@@ -10,6 +10,9 @@
 #  time       :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  name       :string
+#  status     :string
+#  deleted_at :datetime
 #
 
 require 'test_helper'

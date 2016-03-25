@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  mpesa_code :string
 #  amount     :string
+#  deleted_at :datetime
 #
 
 require 'test_helper'

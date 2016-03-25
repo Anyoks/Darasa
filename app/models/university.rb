@@ -6,6 +6,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  id         :uuid             not null, primary key
+#  deleted_at :datetime
 #
 
 class University < ActiveRecord::Base

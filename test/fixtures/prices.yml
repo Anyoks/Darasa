@@ -2,9 +2,10 @@
 #
 # Table name: prices
 #
-#  amount  :float
-#  id      :uuid             not null, primary key
-#  content :string
+#  amount     :float
+#  id         :uuid             not null, primary key
+#  content    :string
+#  deleted_at :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

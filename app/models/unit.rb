@@ -11,6 +11,7 @@
 #  semester_id   :uuid
 #  price_id      :uuid
 #  available     :boolean          default(FALSE)
+#  deleted_at    :datetime
 #
 
 class Unit < ActiveRecord::Base

@@ -7,6 +7,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  terms      :boolean          default(FALSE)
+#  deleted_at :datetime
 #
 
 class Role < ActiveRecord::Base
