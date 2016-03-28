@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    # @questions = params[:question]
     @question.build_response
     session[:return_to] ||= request.referer
   end

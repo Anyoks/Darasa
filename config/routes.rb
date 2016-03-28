@@ -53,28 +53,28 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-  namespace :v1 do
-    get 'processpayment/process(:parameters)' , :to => "processpayment#process"
+    namespace :v1 do
+      get 'processpayment/process(:parameters)' , :to => "processpayment#process"
+          end
         end
-      end
-    
-      resources :responses
-        # resources :answerss
       
-      resources :questions
-  mount Ckeditor::Engine => '/ckeditor'
- # resources :exams
-  resources :cats
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+        resources :responses
+          # resources :answerss
+        
+        resources :questions
+    mount Ckeditor::Engine => '/ckeditor'
+   # resources :exams
+    resources :cats
+    devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
-  mount Sidekiq::Web => '/sidekiq'
-  devise_scope :user do
-    authenticated :user do
-      root 'subtopics#index'
-    end
-    unauthenticated :user do
-      root :to => 'devise/registrations#new', as: :unauthenticated_root
-    end
+    mount Sidekiq::Web => '/sidekiq'
+    devise_scope :user do
+      authenticated :user do
+        root 'subtopics#index'
+      end
+      unauthenticated :user do
+        root :to => 'devise/registrations#new', as: :unauthenticated_root
+      end
   end
 
   # root "public/index"
@@ -90,6 +90,7 @@ Rails.application.routes.draw do
 
   resources :uploads do
     post :process_document, :to => 'uploads#get_questions'
+    post :process_questions, :to => 'uploads#process_questions'
   end
 
   resources :topics do
@@ -119,8 +120,10 @@ Rails.application.routes.draw do
         resources :responses
     end
     resources :uploads
-    post '/upload' , :to => 'subtopics#upload'
-    get '/upload', :to => 'subtopics#upload_show'
+    # post '/upload' , :to => 'subtopics#upload'
+    # get '/upload', :to => 'subtopics#upload_show'
+    post :process_document, :to => 'uploads#get_questions'
+    post :process_questions, :to => 'uploads#process_questions'
   end
 
   

@@ -1,7 +1,7 @@
 / %p#notice= notice
 
 
-= link_to 'Process document', upload_process_document_path(@upload.id), :method => :post,:data => { :confirm => 'Are you sure?' }, class: "btn btn-primary"
+= link_to 'Process document',  upload_process_document_path(:upload_id => @upload.id, :subtopic_id => @upload.subtopic_id), :method => :post,:data => { :confirm => 'Are you sure?' }, class: "btn btn-primary"
 
 / # = link_to 'Upload Question file',  new_subtopic_upload_path(@subtopic.id),  class: "btn btn-primary"
 

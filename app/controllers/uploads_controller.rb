@@ -65,10 +65,31 @@ class UploadsController < ApplicationController
   def get_questions
     @upload = Upload.find(params[:upload_id])
 
+    @subtopic = Subtopic.find(params[:subtopic_id])
+
     @questions =  table(@upload.document.path)
+
+    @answers = table(@upload.response.path)
+
+    @questions.zip(@answers).each do |question, answer|
+      # p "#{question}  ::::::::::::: #{answer}"
+       @subtopic.questions.create!(:question => question).build_response(:answer => answer).save
+      # @q.save 
+    end
+
     
-    # respond_to do |format|
-    #   format.html { redirect_to get_questions_url, notice: 'Document was successfully processed.' }
+
+  end
+
+  def process_questions
+
+     # if @questions.save
+      respond_to do |format|
+        format.html { redirect_to get_questions_url, notice: 'Document was successfully processed.' }
+      end
+    # else
+    #     format.html { render :edit }
+    #     format.json { render json: @upload.errors, status: :unprocessable_entity }
     # end
   end
 
@@ -140,7 +161,7 @@ class UploadsController < ApplicationController
                     # break if next_par_in_qn.parent.parent.parent.name != 'table' 
                     # next_paragraph_counter +=1
                     next_par_in_qn = doc.css('p')[index+next_paragraph_counter]
-                    next_paragraph_counter +=2
+                    next_paragraph_counter +=1
                     break if next_par_in_qn.parent.parent.parent.name != 'table' 
                    }
                   p "EVEN TEMP LAST  #{even_temp.length}"

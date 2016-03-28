@@ -10,13 +10,10 @@
     - @subtopic = Subtopic.find(params[:subtopic_id])
     = f.label @subtopic.title
     =f.select :subtopic_id, :selected => params[:subtopic_id]
-    / <%= f.select :project_id, @project_select, :selected => params[:pid] %>
     
   %br/
 
   .field
-    = f.label :question
-    = f.file_field :html
     = f.cktext_area  :question
 
   .field
