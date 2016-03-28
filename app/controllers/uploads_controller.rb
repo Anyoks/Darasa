@@ -35,6 +35,7 @@ class UploadsController < ApplicationController
         format.json { render json: @upload.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /uploads/1
@@ -61,7 +62,127 @@ class UploadsController < ApplicationController
     end
   end
 
+  def get_questions
+    @upload = Upload.find(params[:upload_id])
+
+    @questions =  table(@upload.document.path)
+    
+    # respond_to do |format|
+    #   format.html { redirect_to get_questions_url, notice: 'Document was successfully processed.' }
+    # end
+  end
+
   private
+
+  def table path
+    doc = path
+    doc = Nokogiri::HTML(open("#{doc}"))
+
+    # tags = %w[p ul li h6 h5 h4 h3 h2 h1 em strong i b table thead tbody th tr td]
+    tags = %w[p ul li font b h6 h5 h4 h3 h2 h1 em table thead tbody th tr td]
+
+    nodes = doc.css(tags.join(', '))
+
+    question = []
+    extra = []
+    info = []
+    regex =/\b^(QUESTION)\b\s\d+$/
+    index = []
+    temp = []
+    space = " "
+    img = []
+    even_temp = []
+
+  doc.css('p').each_with_index do |par, index|
+    next_paragraph_counter = 0
+    
+    if regex.match(par.text.squish)
+      puts "found a QUESTION!! #{par.text}"
+      next_paragraph_counter +=1
+      temp << par.to_html + space
+      next_par = doc.css('p')[index+next_paragraph_counter]
+      next_par_in_qn = next_par
+      loop do
+        
+        if next_par_in_qn.nil? ||regex.match(next_par_in_qn.text.squish)  
+          break
+        else
+          
+            if regex.match(next_par_in_qn.text.squish)
+              break
+            else
+              # p "The current paragraph #{index}"
+              # p "THE current par counter = #{next_paragraph_counter}"
+              # p "THE CURRENT PARA #{par.to_s}"
+              # p "nxt par in this question itself XXXXX #{next_par_in_qn.to_s} XXXXXX "
+              # p "OOOOOOOOOOOOOOOOOOO"
+              # p "Unsquished text #{next_par_in_qn.inner_html}"
+              # p "squished text #{next_par_in_qn.content.squish}"
+              # p "OOOOOOOOOOOOOOOOOOO"
+              # p " " 
+              # p " adding next par to array "
+
+              # if par.content == ""
+              #     p "#{par.to_s}"
+              # end
+              if next_par_in_qn.parent.parent.parent.name == 'table'
+                # even_temp.clear
+                # break if next_par_in_qn.parent.parent.parent.name != 'table' 
+                # next_paragraph_counter +=1
+                # next_par_in_qn = doc.css('p')[index+next_paragraph_counter]
+                
+                # even_temp << next_par_in_qn.parent.parent.parent.to_html
+                  loop { 
+
+                    p "next item in table #{next_par_in_qn.content.squish}"
+                    even_temp << next_par_in_qn.parent.parent.parent.to_html
+
+                    # break if next_par_in_qn.parent.parent.parent.name != 'table' 
+                    # next_paragraph_counter +=1
+                    next_par_in_qn = doc.css('p')[index+next_paragraph_counter]
+                    next_paragraph_counter +=2
+                    break if next_par_in_qn.parent.parent.parent.name != 'table' 
+                   }
+                  p "EVEN TEMP LAST  #{even_temp.length}"
+                # temp << even_temp.last
+              else
+                if even_temp.last.nil?
+                  temp << next_par_in_qn.to_html #+ even_temp.last
+                else
+                  p "EVEN TEMP LAST#{even_temp.length-1}"
+                  temp << even_temp.last + next_par_in_qn.to_html 
+                  even_temp.clear
+                end
+              end
+              # next_par_in_qn.content = next_par_in_qn.content.squish!
+              
+              # p " going to the next paragraph within a question"
+              # next_paragraph_counter +=1
+              # next_par_in_qn = doc.css('p')[index+next_paragraph_counter]
+              # p " " 
+              # p " " 
+              break if next_par_in_qn.text.squish == "END" || next_paragraph_counter == doc.css('p').count || regex.match(next_par_in_qn.text.squish )
+              next_paragraph_counter +=1
+              next_par_in_qn = doc.css('p')[index+next_paragraph_counter]
+              
+              
+            end
+        end
+      end
+      question << temp.join + space
+      temp.clear
+
+    else
+      # p "I'm going to the next question"
+      #   if par.content == ""
+      #             p "#{par.to_s}"
+      #   end
+      next
+    end
+  end
+  return question
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_upload
       @upload = Upload.find(params[:id])

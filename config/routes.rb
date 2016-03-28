@@ -87,7 +87,10 @@ Rails.application.routes.draw do
   resources :units
   resources :topics
   resources :subtopics
-  resources :uploads
+
+  resources :uploads do
+    post :process_document, :to => 'uploads#get_questions'
+  end
 
   resources :topics do
     member do
