@@ -1,4 +1,5 @@
-%h1 New upload
+-@subtopic=Subtopic.find(params[:subtopic_id])
+%h1 Upload Question and Answer files for #{@subtopic.title}
 
 = render 'form'
 
