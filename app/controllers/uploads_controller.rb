@@ -99,6 +99,24 @@ class UploadsController < ApplicationController
     doc = path
     doc = Nokogiri::HTML(open("#{doc}"))
 
+    ###*******Update image paths first**********########
+    live = "http://darasa.co.ke"
+    local = "localhost:3000"
+    folder = "/uploads/ckeditor/pictures/1/"
+
+    doc.css('img').each do |img, index|
+       
+      image = img.attributes.first[1].value # img name
+        # question << image
+
+        if Rails.env["development"]
+            img.attributes.first[1].value = local + folder + image
+        else
+            img.attributes.first[1].value = live + folder + image
+        end
+        # question <<   img.attributes.first[1].value
+    end
+
     # tags = %w[p ul li h6 h5 h4 h3 h2 h1 em strong i b table thead tbody th tr td]
     tags = %w[p ul li font b h6 h5 h4 h3 h2 h1 em table thead tbody th tr td]
 
