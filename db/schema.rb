@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325050956) do
+ActiveRecord::Schema.define(version: 20160329115423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,15 +155,11 @@ ActiveRecord::Schema.define(version: 20160325050956) do
 
   create_table "questions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "question"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.uuid     "exam_id"
     t.uuid     "subtopic_id"
     t.datetime "deleted_at"
-    t.string   "html_file_name"
-    t.string   "html_content_type"
-    t.integer  "html_file_size"
-    t.datetime "html_updated_at"
   end
 
   add_index "questions", ["deleted_at"], name: "index_questions_on_deleted_at", using: :btree
@@ -220,14 +216,10 @@ ActiveRecord::Schema.define(version: 20160325050956) do
 
   create_table "subtopics", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "title"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.uuid     "topic_id"
     t.datetime "deleted_at"
-    t.string   "html_file_name"
-    t.string   "html_content_type"
-    t.integer  "html_file_size"
-    t.datetime "html_updated_at"
   end
 
   add_index "subtopics", ["deleted_at"], name: "index_subtopics_on_deleted_at", using: :btree
