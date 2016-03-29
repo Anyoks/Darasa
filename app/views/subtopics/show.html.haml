@@ -1,6 +1,23 @@
 %h1 Questions for this Topic #{@subtopic.title}
 %br
-= link_to 'New Question For this Subtopic', new_subtopic_question_path(@subtopic), class: "btn btn-primary"
+
+
+%table.table.table-hover
+	%thead
+		%tr
+			%th Manually upload
+			%th Auto-upload
+			%th
+
+		%tbody
+			%tr
+			%td= link_to 'Type Q/A', new_subtopic_question_path(@subtopic), class: "btn btn-primary"
+			%td= link_to 'Upload Q/A files',  new_subtopic_upload_path(@subtopic.id),  class: "btn btn-primary"
+
+
+%br
+	
+%br
 %br
 %br
 
@@ -17,6 +34,4 @@
 	=render "questions/table", questions: @questions#the table that was previously here was extracted to the partial to be DRY. seems like I needed it more than I thought! :-)
 / # = link_to 'Back to ...', request.env["HTTP_REFERER"], class: "btn btn-primary"
 = link_to 'New Question For this Subtopic', new_subtopic_question_path(@subtopic), class: "btn btn-primary"
-%br
-= link_to 'Upload Question file',  new_subtopic_upload_path(@subtopic.id),  class: "btn btn-primary"
 %br

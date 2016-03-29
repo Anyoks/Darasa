@@ -6,28 +6,28 @@
   %thead
     %tr
       %th Question
-      %th Options
+      %th ANSWERS
       %th
 
   %tbody
-    -@questions.each_with_index do |question, index|
+    -@questions.zip(@answers).each do |question, answer|
       %tr
         %td=question.html_safe
-        %td=index
+        %td=answer.html_safe
 
 / = link_to 'Process Questions', upload_process_questions_path(@questions), :method => :post,:data => { :confirm => 'Are you sure?' }, class: "btn btn-primary"
 
-%h1 ANSWERS
+/ %h1 ANSWERS
 
-%table.table.table-hover
-  %thead
-    %tr
-      %th Question
-      %th Options
-      %th
+/ %table.table.table-hover
+/   %thead
+/     %tr
+/       %th Question
+/       %th Options
+/       %th
 
-  %tbody
-    -@answers.each_with_index do |answer, index|
-      %tr
-        %td=answer.html_safe
-        %td=index
+/   %tbody
+/     -@answers.each_with_index do |answer, index|
+/       %tr
+/         %td=answer.html_safe
+/         %td=index
