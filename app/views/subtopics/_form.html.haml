@@ -12,7 +12,7 @@
   .field
     = f.label :Title
     = f.text_field :title, :placeholder => "Enter the subtopic's title"
-    = f.file_field :html
+    / = f.file_field :html
   .field
     =f.label :topic
     =f.select :topic_id, Topic.all.map { |t| [t.name, t.id]}
