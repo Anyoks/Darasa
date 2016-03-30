@@ -13,7 +13,7 @@
     - @types.each do |type|
       %tr
         %td= type.type_name
-        %td= type.system_id
+        %td= type.system.system_name
         %td= link_to 'Show', type
         %td= link_to 'Edit', edit_type_path(type)
         %td= link_to 'Destroy', type, :method => :delete, :data => { :confirm => 'Are you sure?' }

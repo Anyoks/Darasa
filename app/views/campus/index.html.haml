@@ -15,7 +15,7 @@
       %tr
         %td= campu.campus_name
         %td= campu.location
-        %td= campu.institution_id
+        %td= campu.institution.name
         %td= link_to 'Show', campu
         %td= link_to 'Edit', edit_campu_path(campu)
         %td= link_to 'Destroy', campu, :method => :delete, :data => { :confirm => 'Are you sure?' }

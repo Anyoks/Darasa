@@ -4,7 +4,9 @@
   .form-inputs
     = f.input :campus_name
     = f.input :location
-    = f.input :institution_id
+
+    =f.select :institution_id, Institution.all.map { |i| [i.name, i.id]}
+    / = f.input :institution_id
 
   .form-actions
     = f.button :submit
