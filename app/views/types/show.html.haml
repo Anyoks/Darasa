@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Type name:
+  = @type.type_name
+%p
+  %b System:
+  = @type.system_id
+
+= link_to 'Edit', edit_type_path(@type)
+\|
+= link_to 'Back', types_path

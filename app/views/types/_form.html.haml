@@ -1,0 +1,9 @@
+= simple_form_for(@type) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :type_name
+    = f.input :system_id
+
+  .form-actions
+    = f.button :submit
