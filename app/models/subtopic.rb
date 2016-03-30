@@ -27,7 +27,7 @@ class Subtopic < ActiveRecord::Base
 
 	has_many :answers, :through => :questions
 
-	has_many :uploads
+	has_many :uploads, :dependent => :destroy
 
 	accepts_nested_attributes_for :questions, reject_if: proc { |attributes| attributes['question'].blank? }, :allow_destroy => true
 

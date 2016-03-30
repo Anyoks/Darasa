@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Campus name:
+  = @campu.campus_name
+%p
+  %b Location:
+  = @campu.location
+%p
+  %b Institution:
+  = @campu.institution_id
+
+= link_to 'Edit', edit_campu_path(@campu)
+\|
+= link_to 'Back', campus_path

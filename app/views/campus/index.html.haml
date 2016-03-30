@@ -1,0 +1,25 @@
+%h1 Listing campus
+
+%table
+  %thead
+    %tr
+      %th Campus name
+      %th Location
+      %th Institution
+      %th
+      %th
+      %th
+
+  %tbody
+    - @campus.each do |campu|
+      %tr
+        %td= campu.campus_name
+        %td= campu.location
+        %td= campu.institution_id
+        %td= link_to 'Show', campu
+        %td= link_to 'Edit', edit_campu_path(campu)
+        %td= link_to 'Destroy', campu, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Campu', new_campu_path
