@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+
+
   resources :campus
   resources :types
   resources :systems
@@ -175,6 +177,13 @@ Rails.application.routes.draw do
       get "/is_owner", :to => 'details#do_i_own_this_topic'
       get "/unit_name", :to => 'details#show_unit' # remove this end point
       get "/my_topics", :to => 'details#my_topics'
+
+      #institutions
+      get "/institutions", :to => 'institutions#index'
+      #show campus
+      get "/campus", :to =>'campus#index'
+      #show courses
+      get "/courses", :to =>'courses#index'
 
       devise_scope :user do
         post"/update", :to => 'registrations#update'

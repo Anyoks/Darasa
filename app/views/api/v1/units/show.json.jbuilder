@@ -26,6 +26,5 @@ json.data  exam_for_this_unit do |exam|
 	json.id exam.id
 	json.text exam.title
 
-	
 end
 

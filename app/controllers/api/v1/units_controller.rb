@@ -53,6 +53,11 @@ class Api::V1::UnitsController < ApplicationController
       @unit = Unit.includes(:topics).find(params[:id]) #include(:topics) includes all teh topics in that unit pre-emptively, saving alot ot memory and computing resources
     end
 
+    def ensure_param_exists(param)
+      return unless params[param].blank?
+      render json:{ success: false, error: "Missing #{param} parameter"}, status: :unprocessable_entity
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_params
       params.require(:unit).permit(:name, :semester_id)
