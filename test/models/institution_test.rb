@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: universities
+# Table name: institutions
 #
 #  name       :string
 #  created_at :datetime         not null
