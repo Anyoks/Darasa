@@ -85,11 +85,11 @@
         </li> 
         <li class="dropdown">
           <%= link_to "#", data: { toggle: "dropdown"} do %>
-            Universities
+            Institutions
             <span class="caret"></span>
             <%- end %>
           <ul class="dropdown-menu">
-            <% @universities.each do |uni|%>
+            <% @institutions.each do |uni|%>
               <li><%= link_to uni.name, uni %></li>
               <% end %>
           </ul>

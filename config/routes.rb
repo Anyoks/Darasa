@@ -80,7 +80,7 @@ Rails.application.routes.draw do
   # root "public/index"
 
 
-  resources :universities
+  resources :institutions
   resources :courses
   resources :years
   resources :semesters

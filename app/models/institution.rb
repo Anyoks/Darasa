@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: universities
+# Table name: institutions
 #
 #  name       :string
 #  created_at :datetime         not null
@@ -9,7 +9,7 @@
 #  deleted_at :datetime
 #
 
-class University < ActiveRecord::Base
+class Institution < ActiveRecord::Base
 	acts_as_paranoid
 	# self.per_page = 10
 	has_many :courses, :dependent => :destroy
