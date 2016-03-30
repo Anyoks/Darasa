@@ -3,7 +3,10 @@
 
   .form-inputs
     = f.input :type_name
-    = f.input :system_id
+    
+  .form-inputs
+    =f.label :System
+    =f.select :system_id, System.all.map { |s| [s.system_name, s.id]}
 
   .form-actions
     = f.button :submit

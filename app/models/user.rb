@@ -46,10 +46,12 @@ class User < ActiveRecord::Base
   has_many :failed_payments, dependent: :destroy
 
   #lOGGIN USER ACTIVITIES
-  has_many :unit_activities, :dependent => :destroy
-  has_many :topic_activities, :dependent => :destroy
-  has_many :question_activities, :dependent => :destroy
-  has_many :payment_activities, :dependent => :destroy
+  has_many :unit_activities, dependent: :destroy
+  has_many :topic_activities, dependent: :destroy
+  has_many :question_activities, dependent: :destroy
+  has_many :payment_activities, dependent: :destroy
+
+  has_one :profile, dependent: :destroy
 
 
 

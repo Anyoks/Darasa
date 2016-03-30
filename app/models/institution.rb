@@ -16,4 +16,5 @@ class Institution < ActiveRecord::Base
 	# self.per_page = 10
 	has_many :courses, :dependent => :destroy
 	has_many :campus, :dependent => :destroy
+	has_many :profiles
 end

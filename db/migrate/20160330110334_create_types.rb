@@ -1,6 +1,6 @@
 class CreateTypes < ActiveRecord::Migration
   def change
-    create_table :types do |t|
+    create_table :types, id: :uuid do |t|
       t.string :type_name
       t.uuid :system_id
 

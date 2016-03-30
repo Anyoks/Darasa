@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330113819) do
+ActiveRecord::Schema.define(version: 20160330121448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 20160330113819) do
     t.uuid     "institution_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.datetime "deleted_at"
   end
 
+  add_index "campus", ["deleted_at"], name: "index_campus_on_deleted_at", using: :btree
   add_index "campus", ["institution_id"], name: "index_campus_on_institution_id", using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -147,6 +149,24 @@ ActiveRecord::Schema.define(version: 20160330113819) do
 
   add_index "prices", ["deleted_at"], name: "index_prices_on_deleted_at", using: :btree
 
+  create_table "profiles", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "user_id"
+    t.uuid     "institution_id"
+    t.uuid     "course_id"
+    t.uuid     "campu_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.hstore   "level",          default: {}
+    t.datetime "deleted_at"
+  end
+
+  add_index "profiles", ["campu_id"], name: "index_profiles_on_campu_id", using: :btree
+  add_index "profiles", ["course_id"], name: "index_profiles_on_course_id", using: :btree
+  add_index "profiles", ["deleted_at"], name: "index_profiles_on_deleted_at", using: :btree
+  add_index "profiles", ["institution_id"], name: "index_profiles_on_institution_id", using: :btree
+  add_index "profiles", ["level"], name: "profiles_level_idx", using: :gin
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
   create_table "purchases", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "user_id"
     t.uuid     "topic_id"
@@ -253,7 +273,10 @@ ActiveRecord::Schema.define(version: 20160330113819) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.datetime "deleted_at"
   end
+
+  add_index "systems", ["deleted_at"], name: "index_systems_on_deleted_at", using: :btree
 
   create_table "table_prices", force: :cascade do |t|
     t.string "content"
@@ -303,13 +326,15 @@ ActiveRecord::Schema.define(version: 20160330113819) do
 
   add_index "trials", ["user_id"], name: "index_trials_on_user_id", using: :btree
 
-  create_table "types", force: :cascade do |t|
+  create_table "types", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "type_name"
     t.uuid     "system_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
+  add_index "types", ["deleted_at"], name: "index_types_on_deleted_at", using: :btree
   add_index "types", ["system_id"], name: "index_types_on_system_id", using: :btree
 
   create_table "unit_activities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

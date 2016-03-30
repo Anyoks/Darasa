@@ -14,6 +14,7 @@ class Course < ActiveRecord::Base
 	acts_as_paranoid
 	has_many :years, :dependent => :destroy
 	belongs_to :institution
+	has_many :profiles
 
 	# self.per_page = 10
 
