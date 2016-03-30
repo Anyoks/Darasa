@@ -18,6 +18,8 @@ config/database.yml
 config/secrets.yml
 config/pesapal.yml
 public/uploads
+public/docx/
+public/system/
 #public/assets/
 shared/log/*
 b/shared/log/*
