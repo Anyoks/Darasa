@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160330111208) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "campus", force: :cascade do |t|
+  create_table "campus", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "campus_name"
     t.string   "location"
     t.uuid     "institution_id"

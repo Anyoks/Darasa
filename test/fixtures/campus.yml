@@ -2,7 +2,7 @@
 #
 # Table name: campus
 #
-#  id             :integer          not null, primary key
+#  id             :uuid             not null, primary key
 #  campus_name    :string
 #  location       :string
 #  institution_id :uuid
