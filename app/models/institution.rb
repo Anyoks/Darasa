@@ -7,6 +7,8 @@
 #  updated_at :datetime         not null
 #  id         :uuid             not null, primary key
 #  deleted_at :datetime
+#  country    :string
+#  type_id    :uuid
 #
 
 class Institution < ActiveRecord::Base
