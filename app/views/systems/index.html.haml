@@ -1,0 +1,23 @@
+%h1 Listing systems
+
+%table
+  %thead
+    %tr
+      %th System name
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @systems.each do |system|
+      %tr
+        %td= system.system_name
+        %td= system.description
+        %td= link_to 'Show', system
+        %td= link_to 'Edit', edit_system_path(system)
+        %td= link_to 'Destroy', system, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New System', new_system_path

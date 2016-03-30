@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :systems
   get 'actvities/unit'
 
   get 'actvities/topic'
