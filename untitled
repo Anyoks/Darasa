@@ -1,0 +1,16 @@
+def table
+	doc = Nokogiri::HTML(open("d.html"))
+
+	tags = %w[p ol ul li h6 h5 h4 h3 h2 h1 em strong i b table thead tbody th tr td]
+
+	nodes = doc.css(tags.join(', '))
+
+	question = []
+	regex = /\b^(QUESTION)\b\s[0-9]$/
+	temp = []
+	space = " "
+	img = []
+
+	
+
+end
