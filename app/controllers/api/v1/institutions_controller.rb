@@ -1,7 +1,7 @@
 class Api::V1::InstitutionsController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 	before_filter :authenticate_user!
-	before_filter :ensure_authentication_token_param_exists
+	before_filter :ensure_authentication_token_param_exists, :ensure_type_param_exists
 
 	def index
 		resource =  User.find_by_authentication_token(params[:auth_token])
@@ -12,10 +12,10 @@ class Api::V1::InstitutionsController < ApplicationController
 		#****if not, they'll view what we have approved*********####
 
 		if resource.is_admin?
-		  @institutions = Institution.all
+		  @institutions = Institution.where(:type_id => param[:type_id])
 		  return no_institutions if @institutions.empty?
 		else
-		  @institutions =  Institution.all#where("available = 'true'")
+		  @institutions =  Institution.where(:type_id => params[:type_id])
 		   return no_institutions if @institutions.empty?
 		end
 		
@@ -27,6 +27,10 @@ class Api::V1::InstitutionsController < ApplicationController
 
 	def ensure_authentication_token_param_exists
 	  ensure_param_exists :auth_token
+	end
+
+	def ensure_type_param_exists
+	  ensure_param_exists :type_id
 	end
 
 	def no_institutions
