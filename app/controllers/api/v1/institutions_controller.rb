@@ -12,7 +12,7 @@ class Api::V1::InstitutionsController < ApplicationController
 		#****if not, they'll view what we have approved*********####
 
 		if resource.is_admin?
-		  @institutions = Institution.where(:type_id => param[:type_id])
+		  @institutions = Institution.where(:type_id => params[:type_id])
 		  return no_institutions if @institutions.empty?
 		else
 		  @institutions =  Institution.where(:type_id => params[:type_id])
