@@ -3,6 +3,12 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
 
 
+  namespace :api do
+  namespace :v1 do
+    get 'profile/index'
+    end
+  end
+
   resources :campus
   resources :types
   resources :systems
@@ -184,6 +190,10 @@ Rails.application.routes.draw do
       get "/campus", :to =>'campus#index'
       #show courses
       get "/courses", :to =>'courses#index'
+      #show types
+      get "/types", :to => 'types#index'
+      #update profile
+      post "/profile", :to => 'profile#index'
 
       devise_scope :user do
         post"/update", :to => 'registrations#update'
