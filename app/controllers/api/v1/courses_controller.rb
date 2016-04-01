@@ -1,7 +1,7 @@
 class Api::V1::CoursesController < ApplicationController
 
 		skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
-		before_filter :authenticate_user!
+		before_filter :authenticate_user!, except: [:index]
 		before_filter :ensure_authentication_token_param_exists
 		before_filter :ensure_institution_id_param_exists
 
