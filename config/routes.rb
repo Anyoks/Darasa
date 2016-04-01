@@ -185,13 +185,13 @@ Rails.application.routes.draw do
       get "/my_topics", :to => 'details#my_topics'
 
       #institutions
-      get "/institutions", :to => 'institutions#index'
+      post "/institutions", :to => 'institutions#index'
       #show campus
-      get "/campus", :to =>'campus#index'
+      post "/campus", :to =>'campus#index'
       #show courses
-      get "/courses", :to =>'courses#index'
+      post "/courses", :to =>'courses#index'
       #show types
-      get "/types", :to => 'types#index'
+      post "/types", :to => 'types#index'
       #update profile
       post "/profile", :to => 'profile#index'
 
