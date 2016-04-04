@@ -3,7 +3,7 @@
     %tr
       %th Name
       %th Unit
-      %th University
+      %th institution
       %th
 
   %tbody
@@ -11,7 +11,7 @@
       %tr
         %td= link_to exam.title, exam
         %td= exam.unit.name
-        %td= exam.unit.semester.year.course.university.name
+        %td= exam.unit.semester.year.course.institution.name
         %td
           -if current_user && current_user.is_admin?
             = link_to 'Edit', edit_exam_path(exam), class: "label label-warning"

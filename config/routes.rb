@@ -73,6 +73,7 @@ Rails.application.routes.draw do
           # resources :answerss
         
         resources :questions
+    # get 'questions' 
     mount Ckeditor::Engine => '/ckeditor'
    # resources :exams
     resources :cats
@@ -96,8 +97,8 @@ Rails.application.routes.draw do
   resources :years
   resources :semesters
   resources :units
-  resources :topics
-  resources :subtopics
+  # resources :topics
+  # resources :subtopics
 
   resources :uploads do
     post :process_document, :to => 'uploads#get_questions'
@@ -205,12 +206,14 @@ Rails.application.routes.draw do
   end
 
   # devise_for :users    
-  delete 'user/:id' => 'user#destroy', :via => :delete #, :as => :admin_destroy_user
-  get 'user/:id' => 'user#show', as: :user
+  # delete 'user/:id' => 'user#destroy', :via => :delete #, :as => :admin_destroy_user
+  # get 'user/:id' => 'user#show', as: :user
   # get 'user/:id'
   resources :user do
     get :make_moderator
     get :make_normal_user
+    delete 'user/:id' => 'user#destroy', :via => :delete #, :as => :admin_destroy_user
+  get 'user/:id' => 'user#show', as: :user
   end
 
   # namespace :api do

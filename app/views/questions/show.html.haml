@@ -8,7 +8,6 @@
   %b Answer:
   %ul
     = raw @question.response.answer
-    edit_subtopic_question_path(:id=>question.id, :subtopic_id =>question.subtopic.id), class: "label label-pill label-
 
 = link_to 'Edit', edit_question_path(:id => @question, :subtopic_id =>@question.subtopic.id), class: "btn btn-default"
 / edit_subtopic_question_path(:id=>question.id, :subtopic_id =>question.subtopic.id)
