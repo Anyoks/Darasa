@@ -1,20 +1,21 @@
 %h1 Questions for this Topic #{@topic.name}
 
--if @topic.is_sample?
-	%p This topic is a sample, All users have access to the answers for this topic
-	= link_to 'Remove sample', topic_undo_sample_path(@topic), class: "btn btn-primary"
-	%br
--else
-	%p This topic is a Not a sample
-	%br
-	= link_to 'Make sample', topic_make_sample_path(@topic), class: "btn btn-primary"
-	%br
+-if current_user && current_user.is_admin?
+	-if @topic.is_sample?
+		%p This topic is a sample, All users have access to the answers for this topic.
+		= link_to 'Remove sample', topic_undo_sample_path(@topic), class: "btn btn-primary"
+		%br
+	-else
+		%p This topic is a Not a sample
+		%br
+		= link_to 'Make sample', topic_make_sample_path(@topic), class: "btn btn-primary"
+		%br
 
 
 -if @questions.nil?
 	%br
 	%p
-		There are no Questions for this topic yet. Questions are added in the subtopics section
+		There are no Questions for this topic yet. Questions are added in the subtopics section.
 	%br
 -else
 	%br
