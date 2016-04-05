@@ -33,6 +33,7 @@ class Api::V1::DetailsController < ApplicationController
 	def my_topics
 		@resource = User.find_by_authentication_token(params[:auth_token])
 		return invalid_user unless @resource
+		@samples = Topic.where(:sample => :true)
 	end
 
 	def show_unit
