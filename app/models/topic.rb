@@ -33,5 +33,17 @@ class Topic < ActiveRecord::Base
 	#LOGGING USER ACTIVITES
 	has_many :topic_activities, :dependent => :destroy
 	has_many :payment_activities, :dependent => :destroy
+
+	def make_sample
+		self.update_attributes :sample => true
+	end
+
+	def undo_sample
+		self.update_attributes :sample => false
+	end
+
+	def is_sample?
+		self.sample?
+	end
 	
 end

@@ -109,6 +109,8 @@ Rails.application.routes.draw do
     member do
       get :download
     end
+    get :make_sample
+    get :undo_sample
   end
 
   resources :cats do

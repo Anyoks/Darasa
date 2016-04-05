@@ -85,6 +85,25 @@ class TopicsController < ApplicationController
                 type: "application/pdf")
     end
 
+    def make_sample
+      @topic = Topic.find(params[:topic_id])
+      @topic.make_sample
+      respond_to do |format|
+        format.html { redirect_to @topic, notice:  " #{@topic.name} is now a Sample." }
+        format.json { head :no_content }
+      end
+    end
+
+    def undo_sample
+      @topic = Topic.find(params[:topic_id])
+      @topic.undo_sample
+      respond_to do |format|
+        format.html { redirect_to @topic, notice:  " #{@topic.name} is Not a Sample." }
+        format.json { head :no_content }
+      end
+    end
+      
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
