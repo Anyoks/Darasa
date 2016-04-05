@@ -105,14 +105,24 @@ class UploadsController < ApplicationController
     folder = "/uploads/ckeditor/pictures/1/"
 
     doc.css('img').each do |img, index|
+
+      image_name = img.attributes.first[1].value # img name
+
+      image_file = Ckeditor.picture_model.new
+
+      file = File.open("/home/orinamokaya/Desktop/one/Darasa dev files/Real documents/tax edited/solution/solution/#{image_name}")
+
+      image_file.data = file
+      image_file.save!
+
        
-      image = img.attributes.first[1].value # img name
+     
         # question << image
 
         if Rails.env["development"]
-            img.attributes.first[1].value = local + folder + image
+            img.attributes.first[1].value = image_file.url
         else
-            img.attributes.first[1].value = live + folder + image
+            img.attributes.first[1].value = image_file.url
         end
         # question <<   img.attributes.first[1].value
     end
