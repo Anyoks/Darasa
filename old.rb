@@ -1,5 +1,5 @@
 def table
-	doc = Nokogiri::HTML(open("with_table.html"))
+	doc = Nokogiri::HTML(open("QUESTIONS.html"))
 
 	question = []
 	extra = []
