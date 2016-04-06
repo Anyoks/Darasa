@@ -21,18 +21,16 @@ class Api::V1::PaymentsController < ApplicationController
 
 
 		@payment = Payment.new(payment_params)
-
-		@payment.mpesa_code.upcase! # Just incase the user enters the code in small letters
-		# byebug
-		###***somehwere here I have to check if the Mpesa code is in the Sms table ***###
-		###***I think it should be here ***###
-
+		
+		# Just incase the user enters the code in small letters
+		@payment.mpesa_code.upcase! 
+		
 		#basicallically all i want to do is check does this @payment.mpesa_code exist in the Sms table? if yes, 
 		#user has paid, if not, that's a fake mpesa code.
 		cash = mpesa_payment_text_exists @payment.mpesa_code
-		# byebug
+		
 		if cash.present?
-			if cash.amount.to_i >= 50 #i'll have to change this to seperate the large payments from the smaller ones
+			if cash.amount.to_i >= 1500 #i'll have to change this to seperate the large payments from the smaller ones
 			#check if it has been used i.e it is in the payments
 				if @payment.save
 					unless user.has_admin_previlages?
@@ -59,7 +57,7 @@ class Api::V1::PaymentsController < ApplicationController
 					log_payment_activity user, topic_name, "#{user.first_name} paid less while purchasing this topic, #{topic.name}"
 				end
 
-				return invalid_amount
+				return invalid_amount cash
 			end
 		else
 			@failed_payment = FailedPayment.new(payment_params)
@@ -109,11 +107,12 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	def invalid_payment_details
-	  render json: { success: false, error: "Error that Mpesa code has been used or does not exist!"}, status: :unauthorized
+	  render json: { success: false, error: "Sorry that Mpesa code has been used for a purchase or does not exist, Please Contact us from the help menu for futher assistance "}, status: :unauthorized
 	end
 
-	def invalid_amount
-	  render json: { success: false, error: "Error You paid Much less than expected for this service!"}, status: :unauthorized
+	def invalid_amount cash
+		cash = cash
+	  render json: { success: false, error: "Oh no, You paid #{cash.amount.to_i}/- which is much less than the 1500/- expected for this service!, Contact us from the help menu for futher assistance."}, status: :unauthorized
 	end
 
 	def invalid_topic
@@ -121,7 +120,7 @@ class Api::V1::PaymentsController < ApplicationController
 	end
 
 	def payment_successful topic_name
-		render json: { success: true, msg: "The payment was successful, you now own #{topic_name}" }, status: :ok
+		render json: { success: true, msg: "The payment was successful, you now own #{topic_name}. Happy studying!" }, status: :ok
 		# return
 	end
 
