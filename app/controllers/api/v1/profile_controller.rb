@@ -1,8 +1,8 @@
 class Api::V1::ProfileController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 	before_filter :authenticate_user!
-	before_filter :ensure_authentication_token_param_exists, :ensure_level_param_exists, :ensure_campus_id_param_exists, :ensure_course_id_param_exists,
-	:ensure_institution_id_param_exists, :ensure_user_id_param_exists, :ensure_auth_token_param_exists
+	before_filter :ensure_authentication_token_param_exists #, :ensure_level_param_exists, :ensure_campus_id_param_exists, :ensure_course_id_param_exists,
+	#:ensure_institution_id_param_exists, :ensure_user_id_param_exists, :ensure_auth_token_param_exists
 
   def index
   	resource =  User.find_by_authentication_token(params[:auth_token])
