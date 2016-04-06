@@ -77,7 +77,7 @@ class UploadsController < ApplicationController
       # @q.save 
     end
 
-    
+    byebug
 
   end
 
