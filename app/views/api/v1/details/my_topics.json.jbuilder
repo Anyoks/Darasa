@@ -5,9 +5,10 @@ if @resource.purchases.empty?
 	json.status @status
 	json.error  @error
 	
-	json.data @samples.each do | sample|
+	json.samples @samples.each do | sample|
 		json.id  sample.id
 		json.name  sample.name
+		json.sample true
 	end
 
 	
