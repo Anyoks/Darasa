@@ -21,11 +21,13 @@ else
 	json.data @resource.purchases.each do | owned|
 			json.id  owned.topic_id
 			json.name  owned.topic.name
+			json.sample false
 	end
 
 	json.samples @samples.each do | sample|
 			json.id  sample.id
 			json.name  sample.name
+			json.sample true
 	end
 end
 
