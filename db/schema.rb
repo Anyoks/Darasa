@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405110846) do
+ActiveRecord::Schema.define(version: 20160406112145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -381,6 +381,10 @@ ActiveRecord::Schema.define(version: 20160405110846) do
     t.string   "response_content_type"
     t.integer  "response_file_size"
     t.datetime "response_updated_at"
+    t.string   "pictures_file_name"
+    t.string   "pictures_content_type"
+    t.integer  "pictures_file_size"
+    t.datetime "pictures_updated_at"
   end
 
   add_index "uploads", ["subtopic_id"], name: "index_uploads_on_subtopic_id", using: :btree

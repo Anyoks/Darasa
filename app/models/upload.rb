@@ -37,6 +37,11 @@ class Upload < ActiveRecord::Base
 	# validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 	do_not_validate_attachment_file_type :response
 
+	has_attached_file :pictures , :url => "/system/:class/:attachment/:id_partition/:filename",
+	:path  => ":rails_root/public:url"
+
+	do_not_validate_attachment_file_type :pictures
+
 	# def get_questions url
 	# 	doc = Nokogiri::HTML(open("url"))
 	# end

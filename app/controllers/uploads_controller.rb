@@ -67,17 +67,34 @@ class UploadsController < ApplicationController
 
     @subtopic = Subtopic.find(params[:subtopic_id])
 
-    @questions =  table(@upload.document.path)
+    logger.debug "Loading image file "
 
-    @answers = table(@upload.response.path)
+    @images = @upload.pictures.path
+
+    logger.debug "compleated Loading image file #{@images}"
+
+    logger.debug "Loading Questions ====>"
+
+    @questions =  table @upload.document.path , @images
+
+    logger.debug "Completed Loading  Questions "
+
+    logger.debug "Loading Answers ====>"
+
+    @answers = table @upload.response.path, @images
+
+    logger.debug "Completed Loading  Answers "
+
+    num = 0;
 
     @questions.zip(@answers).each do |question, answer|
       # p "#{question}  ::::::::::::: #{answer}"
+      logger.debug "Saving Question & Answer #{num}"
        @subtopic.questions.create!(:question => question).build_response(:answer => answer).save
-      # @q.save 
+      num +=1
     end
 
-    byebug
+    
 
   end
 
@@ -95,37 +112,49 @@ class UploadsController < ApplicationController
 
   private
 
-  def table path
+  def table path , image_file_path
+
+    image_path = image_file_path
     doc = path
     doc = Nokogiri::HTML(open("#{doc}"))
 
-    ###*******Update image paths first**********########
-    live = "http://darasa.co.ke"
-    local = "localhost:3000"
-    folder = "/uploads/ckeditor/pictures/1/"
+    ###*******extract images from zipped file**********########
+   
+  unless image_path.empty?
+
+    Zip::File.open("#{image_path}") do |zipfile|
+      zipfile.each do |entry|
+        f_path=File.join("#{image_path}destination_path", entry.name )
+        FileUtils.mkdir_p(File.dirname(f_path))
+        zipfile.extract(entry, f_path) unless File.exist?(f_path)
+        logger.debug "Loading image"
+      end
+    end
+
+  end
+
+  ##*********Find  all images in the document and upload them to the DB and update their paths as well.********###
 
     doc.css('img').each do |img, index|
 
       image_name = img.attributes.first[1].value # img name
 
-      # image_file = Ckeditor.picture_model.new
+      image_file = Ckeditor.picture_model.new #create new Ckeditor asset
 
-      # file = File.open("/home/orinamokaya/Desktop/one/Darasa dev files/Real documents/tax edited/solution/solution/#{image_name}")
+      location =  File.expand_path("..", image_path) + "/#{File.basename image_path}destination_path" #get location for the unziped image.
 
-      # image_file.data = file
-      # image_file.save!
+# byebug
+      file = File.open(location + "/#{image_name}") #open the file
 
-       
-     
-        # question << image
+      ##*****upload and save it!)*****#####
+      image_file.data = file
+      image_file.save!
 
-        # if Rails.env["development"]
-        #     img.attributes.first[1].value = image_file.url
-        # else
-        #     img.attributes.first[1].value = image_file.url
-        # end
-        # question <<   img.attributes.first[1].value
+       ##***Update image url****#####
+      img.attributes.first[1].value = image_file.url
+        
     end
+  
 
     # tags = %w[p ul li h6 h5 h4 h3 h2 h1 em strong i b table thead tbody th tr td]
     tags = %w[p ul li font b h6 h5 h4 h3 h2 h1 em table thead tbody th tr td]
@@ -239,6 +268,6 @@ class UploadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def upload_params
-      params.require(:upload).permit(:subtopic_id, :document, :response)
+      params.require(:upload).permit(:subtopic_id, :document, :response, :pictures)
     end
 end

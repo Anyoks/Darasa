@@ -26,7 +26,14 @@
   .field
     = f.label :Answer
     = f.file_field :response
-    
+
+    %br
+    %br
+  %p Upload the pictures zipped folder here. (put the pictures required for both documents in the same zipped file)
+  .field
+    = f.label :Pictures
+    = f.file_field :pictures
+  %b
   .actions
     = f.submit 'Save', class: "btn btn-default"
 
