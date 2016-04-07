@@ -38,6 +38,9 @@ class Api::V1::TopicsController < ApplicationController
 	     unless resource.has_admin_previlages?
 			log_topic_activity resource , @topic.name, "#{resource.first_name} clicked this topic, #{@topic.name}" 
 		end
+
+		@questions = @topic.questions.page(params[:page]).per_page(15)
+
 	  end
 
 

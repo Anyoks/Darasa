@@ -24,8 +24,11 @@ end
 
 json.status @status
 json.error  @error
+json.current_page @questions.current_page
+json.per_page  @questions.per_page
+json.total_entries @questions.total_entries
 	
-json.data  questions_for_this_topic do |questions|
+json.data  @questions do |questions|
 	json.subtopic questions.subtopic.title
 	json.id questions.id
 	json.text questions.question
