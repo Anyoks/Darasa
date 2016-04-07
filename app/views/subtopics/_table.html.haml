@@ -4,6 +4,8 @@
     %tr
       %th Name
       %th Topic
+      %th Unit
+      %th Institution
       %th Options
       %th
 
@@ -13,6 +15,10 @@
         %td= link_to subtopic.title, subtopic
         /%td= subtopics.code
         %td= link_to subtopic.topic.name, topics_path
+
+        %td= subtopic.topic.unit.name
+
+        %td= subtopic.topic.unit.institution.name
         / %td= subtopics.unit.name
         / %td= image_tag subtopics.attachment_url(:thumb)
         %td
