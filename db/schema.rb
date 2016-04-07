@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406112145) do
+ActiveRecord::Schema.define(version: 20160407132636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -355,17 +355,19 @@ ActiveRecord::Schema.define(version: 20160406112145) do
 
   create_table "units", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
     t.float    "answers_price"
     t.float    "videos_price"
     t.uuid     "semester_id"
     t.uuid     "price_id"
-    t.boolean  "available",     default: false
+    t.boolean  "available",      default: false
     t.datetime "deleted_at"
+    t.uuid     "institution_id", default: "02d051f9-9644-44b0-bc22-b53cd6b7096f"
   end
 
   add_index "units", ["deleted_at"], name: "index_units_on_deleted_at", using: :btree
+  add_index "units", ["institution_id"], name: "index_units_on_institution_id", using: :btree
   add_index "units", ["price_id"], name: "index_units_on_price_id", using: :btree
   add_index "units", ["semester_id"], name: "index_units_on_semester_id", using: :btree
 

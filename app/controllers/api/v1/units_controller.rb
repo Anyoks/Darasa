@@ -17,7 +17,7 @@ class Api::V1::UnitsController < ApplicationController
     if resource.is_admin?
       @units = Unit.all
     else
-      @units =  Unit.where("available = 'true'")
+      @units =   Unit.where(:available => :true, :institution_id => "#{resource.profile.institution_id}")
     end
     # @semesters = Semester.all #II need to look into this.
   end
@@ -60,6 +60,6 @@ class Api::V1::UnitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_params
-      params.require(:unit).permit(:name, :semester_id)
+      params.require(:unit).permit(:name, :semester_id, :institution_id)
     end
 end

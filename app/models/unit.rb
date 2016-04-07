@@ -21,6 +21,8 @@ class Unit < ActiveRecord::Base
 	# has_many :cats
 	has_many :exams, :dependent => :destroy
 	belongs_to :price
+
+	belongs_to :institution
 	
 	#lOGGIN USER ACTIVITIES
 	has_many :unit_activities, :dependent => :destroy

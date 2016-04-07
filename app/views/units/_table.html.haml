@@ -2,18 +2,29 @@
   %thead
     %tr
       %th Name
+      %th Institution
+      %th Availability
       
 
   %tbody
     - units.each do |unit|
       %tr
         %td= unit.name
-        %td= link_to unit.semester.name, semesters_path
+        %td= unit.institution.name
+        %td
+          -if unit.available?
+            %p.text-success Available
+          -else
+            %p.text-default  Unavailable
         %td
           -if current_user && current_user.is_admin?
             = link_to 'Edit', edit_unit_path(unit), class: "label label-pill label-default"
             = link_to 'Destroy', unit, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "label label-pill label-danger"
             = link_to 'Show', unit, class: "label label-pill label-warning"
+            -if unit.available?
+              = link_to " Make Unavailable", unit_make_unavailable_path(unit), class: "label label-pill label-default"            
+            -else
+              = link_to "Make Available", unit_make_available_path(unit), :data => { :confirm => 'Are you sure?' }, class: "label label-success"
           -elsif current_user && current_user.is_moderator?
             = link_to 'Edit', edit_unit_path(unit), class: "label label-pill label-default"
             = link_to 'Show', unit, class: "label label-pill label-warning"

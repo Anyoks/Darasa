@@ -13,8 +13,11 @@ class UnitsController < ApplicationController
   # GET /units/1
   # GET /units/1.json
   def show
+
+     @unit = Unit.find(params[:id])
     @topics = @unit.topics
-    @unit = Unit.find(params[:id])
+    
+
     
      @unit.topics.each do |topic|
       topic.subtopics.each do |subtopic|
@@ -76,6 +79,26 @@ class UnitsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+   def make_available
+      @unit = Unit.find(params[:unit_id])
+
+      @unit.make_available
+      respond_to do |format|
+        format.html { redirect_to units_url, notice: "Unit #{@unit.name} is now available" }
+        format.json { head :no_content }
+      end
+   end
+
+   def make_unavailable
+       @unit = Unit.find(params[:unit_id])
+
+       @unit.make_unavailable
+       respond_to do |format|
+         format.html { redirect_to units_url, notice: "Unit  #{@unit.name} is now unavailable" }
+         format.json { head :no_content }
+       end
+   end
 
   private
     # Use callbacks to share common setup or constraints between actions.

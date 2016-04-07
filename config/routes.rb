@@ -96,7 +96,12 @@ Rails.application.routes.draw do
   resources :courses
   resources :years
   resources :semesters
-  resources :units
+
+  resources :units do
+    get :make_available
+    get :make_unavailable
+  end
+
   # resources :topics
   # resources :subtopics
 

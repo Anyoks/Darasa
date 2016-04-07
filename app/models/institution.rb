@@ -17,4 +17,7 @@ class Institution < ActiveRecord::Base
 	has_many :courses, :dependent => :destroy
 	has_many :campus, :dependent => :destroy
 	has_many :profiles
+	has_many :units
+
+	belongs_to :type
 end

@@ -12,4 +12,6 @@
 class Type < ActiveRecord::Base
 	acts_as_paranoid
 	belongs_to :system
+	
+	has_many :institutions
 end
