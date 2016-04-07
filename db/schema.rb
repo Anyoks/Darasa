@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407132636) do
+ActiveRecord::Schema.define(version: 20160407144207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,11 +151,11 @@ ActiveRecord::Schema.define(version: 20160407132636) do
 
   create_table "profiles", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "user_id"
-    t.uuid     "institution_id"
+    t.uuid     "institution_id", default: "02d051f9-9644-44b0-bc22-b53cd6b7096f"
     t.uuid     "course_id"
     t.uuid     "campu_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
     t.hstore   "level",          default: {}
     t.datetime "deleted_at"
   end
