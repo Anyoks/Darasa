@@ -60,7 +60,7 @@ class Api::V1::ExamsController < ApplicationController
 			@answer = @question.response.answer
 			return no_answer unless @answer
 		else
-			return you_dont_own_topic
+			return you_dont_own_topic 
 		end
 		
 		unless @resource.has_admin_previlages?
@@ -85,8 +85,8 @@ class Api::V1::ExamsController < ApplicationController
 		render json: { success: false, error: "This question has no topic" }, status: :unprocessable_entity
 	end
 
-	def you_dont_own_topic
-		render json: { success: false, error: "Error you don't own this topic"}, status: :unauthorized
+	def you_dont_own_topic 
+		render json: { success: false, sample: false, error: "Error you don't own this topic"}, status: :unauthorized
 	end
 
 	def no_question
