@@ -8,6 +8,7 @@ end
 
 json.status @status
 json.error  @error
+json.sample @topic.sample?
 	
 json.data  @answer
 

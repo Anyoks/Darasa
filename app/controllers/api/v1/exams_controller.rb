@@ -44,6 +44,8 @@ class Api::V1::ExamsController < ApplicationController
 		@question = Question.where(:id => "#{params[:question_id]}").first
 		return invalid_question unless @question.present?
 
+		@topic = @question.subtopic.topic
+
 		topic_id =	@question.subtopic.topic.id
 		return there_no_topic unless topic_id
 
@@ -52,6 +54,8 @@ class Api::V1::ExamsController < ApplicationController
 		if @resource.is_admin? #the boss sees it all
 			@answer = @question.response.answer
 			return no_answer unless @answer
+		elsif @topic.sample?
+			@answer = @question.response.answer
 		elsif	@resource.owns? topic_id
 			@answer = @question.response.answer
 			return no_answer unless @answer
