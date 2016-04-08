@@ -120,7 +120,7 @@ class UploadsController < ApplicationController
 
     ###*******extract images from zipped file**********########
    
-  unless image_path.empty?
+  unless image_path.nil?
 
     Zip::File.open("#{image_path}") do |zipfile|
       zipfile.each do |entry|
@@ -131,29 +131,31 @@ class UploadsController < ApplicationController
       end
     end
 
+        doc.css('img').each do |img, index|
+
+          image_name = img.attributes.first[1].value # img name
+
+          image_file = Ckeditor.picture_model.new #create new Ckeditor asset
+
+          location =  File.expand_path("..", image_path) + "/#{File.basename image_path}destination_path" #get location for the unziped image.
+
+    # byebug
+          file = File.open(location + "/#{image_name}") #open the file
+
+          ##*****upload and save it!)*****#####
+          image_file.data = file
+          image_file.save!
+
+           ##***Update image url****#####
+          img.attributes.first[1].value = image_file.url
+            
+        end
+
   end
 
   ##*********Find  all images in the document and upload them to the DB and update their paths as well.********###
 
-    doc.css('img').each do |img, index|
-
-      image_name = img.attributes.first[1].value # img name
-
-      image_file = Ckeditor.picture_model.new #create new Ckeditor asset
-
-      location =  File.expand_path("..", image_path) + "/#{File.basename image_path}destination_path" #get location for the unziped image.
-
-# byebug
-      file = File.open(location + "/#{image_name}") #open the file
-
-      ##*****upload and save it!)*****#####
-      image_file.data = file
-      image_file.save!
-
-       ##***Update image url****#####
-      img.attributes.first[1].value = image_file.url
-        
-    end
+    
   
 
     # tags = %w[p ul li h6 h5 h4 h3 h2 h1 em strong i b table thead tbody th tr td]
