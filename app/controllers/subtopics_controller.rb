@@ -93,9 +93,11 @@ class SubtopicsController < ApplicationController
       # params[:subtopic]
       # params.require(:subtopic).permit(:title, :topic_id)
 
-      params.require(:subtopic).permit(:title, :topic_id,:html,
-        questions_attributes:[ :id, :question, :subtopic_id,  :_destroy,
-        response_attributes:[:id, :answer, :question_id, :video,:_destroy]]
-        )
+      # params.require(:subtopic).permit(:title, :topic_id,:html,
+      #   questions_attributes:[ :id, :question, :subtopic_id,  :_destroy,
+      #   response_attributes:[:id, :answer, :question_id, :video,:_destroy]]
+      #   )
+
+      params.require(:subtopic).permit(:title, :topic_id)
     end
 end
