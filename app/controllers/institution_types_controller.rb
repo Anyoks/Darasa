@@ -1,10 +1,10 @@
-class TypesController < ApplicationController
+class InstitutionTypesController < ApplicationController
   before_action :set_type, only: [:show, :edit, :update, :destroy]
 
   # GET /types
   # GET /types.json
   def index
-    @types = Type.all
+    @types = InstitutionType.all
   end
 
   # GET /types/1
@@ -14,7 +14,7 @@ class TypesController < ApplicationController
 
   # GET /types/new
   def new
-    @type = Type.new
+    @type = InstitutionType.new
   end
 
   # GET /types/1/edit
@@ -24,11 +24,11 @@ class TypesController < ApplicationController
   # POST /types
   # POST /types.json
   def create
-    @type = Type.new(type_params)
+    @type = InstitutionType.new(type_params)
 
     respond_to do |format|
       if @type.save
-        format.html { redirect_to @type, notice: 'Type was successfully created.' }
+        format.html { redirect_to @type, notice: 'InstitutionType was successfully created.' }
         format.json { render :show, status: :created, location: @type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TypesController < ApplicationController
   def update
     respond_to do |format|
       if @type.update(type_params)
-        format.html { redirect_to @type, notice: 'Type was successfully updated.' }
+        format.html { redirect_to @type, notice: 'InstitutionType was successfully updated.' }
         format.json { render :show, status: :ok, location: @type }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TypesController < ApplicationController
   def destroy
     @type.destroy
     respond_to do |format|
-      format.html { redirect_to types_url, notice: 'Type was successfully destroyed.' }
+      format.html { redirect_to institution_types_path, notice: 'InstitutionType was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,11 +64,11 @@ class TypesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_type
-      @type = Type.find(params[:id])
+      @type = InstitutionType.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def type_params
-      params.require(:type).permit(:type_name, :system_id)
+      params.require(:institution_type).permit(:type_name, :system_id)
     end
 end

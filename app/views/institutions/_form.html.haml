@@ -11,6 +11,6 @@
     = f.text_field :name
   
   .field
-    =f.select :type_id, Type.all.map { |t| [t.type_name, t.id]}
+    =f.select :institution_type_id, InstitutionType.all.map { |t| [t.type_name, t.id]}
   .actions
     = f.submit 'Save'

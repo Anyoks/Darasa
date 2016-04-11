@@ -19,5 +19,11 @@ class Institution < ActiveRecord::Base
 	has_many :profiles
 	has_many :units
 
-	belongs_to :type
+	belongs_to :institution_type
+
+	def self.with_type(type_name)
+		type  = InstitutionType.where( :type_name => type_name).first
+		where(:institution_type_id => type.id)
+		
+	end
 end

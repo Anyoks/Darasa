@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :campus
-  resources :types
+  resources :institution_types
   resources :systems
   get 'actvities/unit'
 

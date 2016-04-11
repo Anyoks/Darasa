@@ -9,9 +9,12 @@
 #  updated_at :datetime         not null
 #
 
-class Type < ActiveRecord::Base
+class InstitutionType < ActiveRecord::Base
 	acts_as_paranoid
 	belongs_to :system
 	
 	has_many :institutions
+	has_many :units, :through => :institutions
+	
+
 end
