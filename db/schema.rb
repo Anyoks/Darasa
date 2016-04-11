@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407144207) do
+ActiveRecord::Schema.define(version: 20160411105825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,17 +83,28 @@ ActiveRecord::Schema.define(version: 20160407144207) do
   add_index "failed_payments", ["topic_id"], name: "index_failed_payments_on_topic_id", using: :btree
   add_index "failed_payments", ["user_id"], name: "index_failed_payments_on_user_id", using: :btree
 
-  create_table "institutions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.string   "name"
+  create_table "institution_types", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "type_name"
+    t.uuid     "system_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
+  end
+
+  add_index "institution_types", ["deleted_at"], name: "index_institution_types_on_deleted_at", using: :btree
+  add_index "institution_types", ["system_id"], name: "index_institution_types_on_system_id", using: :btree
+
+  create_table "institutions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.datetime "deleted_at"
     t.string   "country"
-    t.uuid     "type_id"
+    t.uuid     "institution_type_id"
   end
 
   add_index "institutions", ["deleted_at"], name: "index_institutions_on_deleted_at", using: :btree
-  add_index "institutions", ["type_id"], name: "index_institutions_on_type_id", using: :btree
+  add_index "institutions", ["institution_type_id"], name: "index_institutions_on_institution_type_id", using: :btree
 
   create_table "order_urls", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text   "order_url"
@@ -326,17 +337,6 @@ ActiveRecord::Schema.define(version: 20160407144207) do
   end
 
   add_index "trials", ["user_id"], name: "index_trials_on_user_id", using: :btree
-
-  create_table "types", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.string   "type_name"
-    t.uuid     "system_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
-  end
-
-  add_index "types", ["deleted_at"], name: "index_types_on_deleted_at", using: :btree
-  add_index "types", ["system_id"], name: "index_types_on_system_id", using: :btree
 
   create_table "unit_activities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "user_id"

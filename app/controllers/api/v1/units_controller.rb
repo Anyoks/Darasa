@@ -1,5 +1,5 @@
 class Api::V1::UnitsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:index, :show]
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
   respond_to :json
 
@@ -17,7 +17,9 @@ class Api::V1::UnitsController < ApplicationController
     if resource.is_admin?
       @units = Unit.all
     else
-      @units =   Unit.where(:available => :true, :institution_id => "#{resource.profile.institution_id}")
+      # @units =   Unit.where(:available => :true, :institution_id => "#{resource.profile.institution_id}")
+      institution =  Institution.find(resource.profile.institution_id).institution_type_id 
+      @units  = InstitutionType.find(institution).units.where(:available => true)
     end
     # @semesters = Semester.all #II need to look into this.
   end
