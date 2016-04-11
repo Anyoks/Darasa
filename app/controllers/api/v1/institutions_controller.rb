@@ -16,10 +16,10 @@ class Api::V1::InstitutionsController < ApplicationController
 
 		if resource.is_admin?
 		# if current_user.is_admin?
-		  @institutions = Institution.where(:type_id => params[:type_id])
+		  @institutions = Institution.where(:institution_type_id=> params[:type_id])
 		  return no_institutions if @institutions.empty?
 		else
-		  @institutions =  Institution.where(:type_id => params[:type_id])
+		  @institutions =  Institution.where(:institution_type_id => params[:type_id])
 		   return no_institutions if @institutions.empty?
 		end
 		
