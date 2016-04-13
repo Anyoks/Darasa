@@ -123,3 +123,6 @@ gem 'publishr'
 gem 'docx_converter'
 #file uploading
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+#User insteraction
+gem "intercom-rails"
