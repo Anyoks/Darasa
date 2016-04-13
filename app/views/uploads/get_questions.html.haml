@@ -1,4 +1,4 @@
-%h1 DOCUMENT
+%h1 DOCUMENT: #{@questions.count} Questions, #{@answers.count} Answers
 
 / = link_to 'Process Questions', upload_process_questions_path(@questions), :method => :post,:data => { :confirm => 'Are you sure?' }, class: "btn btn-primary"
 
@@ -13,23 +13,12 @@
     -@questions.zip(@answers).each do |question, answer|
       %tr
         %td=question.html_safe
-        %td=answer.html_safe
+        %td
+          -if answer.nil?
+            %p No Answer for this question
+          -else
+            =answer.html_safe
        
 
 
 / = link_to 'Process Questions', upload_process_questions_path(@questions), :method => :post,:data => { :confirm => 'Are you sure?' }, class: "btn btn-primary"
-
-%h1 ANSWERS
-
-%table.table.table-hover
-  %thead
-    %tr
-      %th Question
-      %th Options
-      %th
-
-  %tbody
-    -@questions.each_with_index do |answer, index|
-      %tr
-        %td=answer.html_safe
-        %td=index
