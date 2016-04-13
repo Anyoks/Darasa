@@ -13,7 +13,7 @@ IntercomRails.config do |config|
   # This is required for some Intercom rake tasks like importing your users;
   # you can generate one at https://app.intercom.io/apps/api_keys.
   #
-  # config.api_key = "..."
+  config.api_key = "b505f64477d12b3375524315399786d54e28f9b7"
 
   # == Enabled Environments
   # Which environments is auto inclusion of the Javascript enabled for
@@ -24,7 +24,7 @@ IntercomRails.config do |config|
   # The method/variable that contains the logged in user in your controllers.
   # If it is `current_user` or `@user`, then you can ignore this
   #
-  # config.user.current = Proc.new { current_user }
+  config.user.current = Proc.new { current_user }
 
   # == Include for logged out Users
   # If set to true, include the Intercom messenger on all pages, regardless of whether
@@ -34,7 +34,7 @@ IntercomRails.config do |config|
   # == User model class
   # The class which defines your user model
   #
-  # config.user.model = Proc.new { User }
+  config.user.model = Proc.new { User }
 
   # == Exclude users
   # A Proc that given a user returns true if the user should be excluded
