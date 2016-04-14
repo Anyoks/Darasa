@@ -90,6 +90,9 @@ class UploadsController < ApplicationController
     @questions.zip(@answers).each do |question, answer|
       # p "#{question}  ::::::::::::: #{answer}"
       logger.debug "Saving Question & Answer #{num}"
+      # byebug
+      question = question.force_encoding("UTF-8")
+      answer = answer.force_encoding("UTF-8")
        @subtopic.questions.create!(:question => question).build_response(:answer => answer).save
       num +=1
     end
@@ -140,14 +143,19 @@ class UploadsController < ApplicationController
           location =  File.expand_path("..", image_path) + "/#{File.basename image_path}destination_path" #get location for the unziped image.
 
     # byebug
-          file = File.open(location + "/#{image_name}") #open the file
-
+          begin
+            file = File.open(location + "/#{image_name}") #open the file
+            rescue
+              logger.debug " Error File Not  found!"
+            else
+              logger.debug " #{file.path} File found!"
           ##*****upload and save it!)*****#####
-          image_file.data = file
-          image_file.save!
+              image_file.data = file
+              image_file.save!
 
-           ##***Update image url****#####
-          img.attributes.first[1].value = image_file.url
+               ##***Update image url****#####
+              img.attributes.first[1].value = image_file.url
+          end
             
         end
 
