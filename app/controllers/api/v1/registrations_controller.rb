@@ -11,7 +11,7 @@ class Api::V1::RegistrationsController < ApplicationController
 	    intercom.users.create(:user_id => "#{resource.id}",
 			:email => "#{resource.email}", 
 			:name => "#{resource.first_name} #{resource.second_name}",
-			:signed_up_at => "#{resource.created_at}",
+			:signed_up_at => "#{resource.created_at.to_i}",
 			:last_seen_ip => "#{resource.current_sign_in_ip}",
 			:custom_attributes => {
 				:paid_subscriber => resource.payments.nil?
@@ -56,7 +56,7 @@ class Api::V1::RegistrationsController < ApplicationController
 			intercom.users.create(:user_id => "#{resource.id}",
 				:email => "#{resource.email}", 
 				:name => "#{resource.first_name} #{resource.second_name}",
-				:signed_up_at => "#{resource.signed_up_at}",
+				:signed_up_at => "#{resource.signed_up_at.to_i}",
 				:last_seen_ip => "#{resource.current_sign_in_ip}",
 				:custom_attributes => {
 					:paid_subscriber => resource.payments.nil?
