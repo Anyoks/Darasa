@@ -126,3 +126,5 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 #User insteraction
 gem "intercom-rails"
+#Intercom Ap1
+gem 'intercom', "~> 3.4.0"
