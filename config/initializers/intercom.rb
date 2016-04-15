@@ -1,7 +1,7 @@
 IntercomRails.config do |config|
   # == Intercom app_id
   #
-  config.app_id = ENV["INTERCOM_APP_ID"] || "b505f64477d12b3375524315399786d54e28f9b7"
+  config.app_id = ENV["INTERCOM_APP_ID"] || "ahd0euu5"
 
   # == Intercom secret key
   # This is required to enable secure mode, you can find it on your Setup
@@ -47,10 +47,11 @@ IntercomRails.config do |config|
   # You can provide either a method name which will be sent to the current
   # user object, or a Proc which will be passed the current user.
   #
-  # config.user.custom_data = {
-  #   :plan => Proc.new { |current_user| current_user.plan.name },
-  #   :favorite_color => :favorite_color
-  # }
+  config.user.custom_data = {
+    # :plan => Proc.new { |current_user| current_user.plan.name },
+    :first_name => Proc.new { |current_user| current_user.first_name },
+    # :favorite_color => :favorite_color
+  }
 
   # == User -> Company association
   # A Proc that given a user returns an array of companies
