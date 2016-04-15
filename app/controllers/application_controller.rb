@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   # before_action :authenticate_user! #, only: [:show ]
   before_action :authenticate_user!
-  # before_action :authenticate_user
+  before_action :intercom
   protect_from_forgery with: :null_session,
      if: Proc.new { |c| c.request.format =~ %r{application/json} }
 # byebug
@@ -90,6 +90,10 @@ class ApplicationController < ActionController::Base
   #   # # end
   #   "haha"
   # end
+
+  def intercom
+     intercom = Intercom::Client.new(app_id: 'ahd0euu5', api_key: 'b505f64477d12b3375524315399786d54e28f9b7')
+  end
 
   protected
 

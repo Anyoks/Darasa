@@ -4,17 +4,28 @@ class Api::V1::RegistrationsController < ApplicationController
 	respond_to :json
 	def create
 
-	  user = User.new(user_params)
+	  resource = User.new(user_params)
 	  # byebug
-	  if user.save
-	    # render json: user.authentication_token #as_json(auth_token: user.authentication_token), status: :created
-	    render json: { success: true, authentication_token: user.authentication_token }, status: :created
+	  if resource.save
+	    # render json: resource.authentication_token #as_json(auth_token: resource.authentication_token), status: :created
+	    intercom.users.create(:user_id => "#{resource.id}",
+			:email => "#{resource.email}", 
+			:name => "#{resource.first_name} #{resource.second_name}",
+			:signed_up_at => "#{resource.signed_up_at}",
+			:last_seen_ip => "#{resource.current_sign_in_ip}",
+			:custom_attributes => {
+				:paid_subscriber => resource.payments.nil?
+			}
+		)
+
+	    render json: { success: true, authentication_token: resource.authentication_token }, status: :created
+	    
 	    return
 	  else
 	    warden.custom_failure!
 	    error = ""
 	    message = ""
-	    user.errors.messages.each do |k,v|
+	    resource.errors.messages.each do |k,v|
 	    	error = v 
 	    	message = k
 	    end
@@ -42,6 +53,16 @@ class Api::V1::RegistrationsController < ApplicationController
 		end
 
 		if resource.update(update_params) #resource.valid_for_authentication?  
+			intercom.users.create(:user_id => "#{resource.id}",
+				:email => "#{resource.email}", 
+				:name => "#{resource.first_name} #{resource.second_name}",
+				:signed_up_at => "#{resource.signed_up_at}",
+				:last_seen_ip => "#{resource.current_sign_in_ip}",
+				:custom_attributes => {
+					:paid_subscriber => resource.payments.nil?
+				}
+			)
+
 			render json: { success: true }, status: :ok
 		else
 			invalid_credentials

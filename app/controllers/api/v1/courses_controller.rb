@@ -23,7 +23,6 @@ class Api::V1::CoursesController < ApplicationController
 	  	  @courses =  Course.where(:institution_id => params[:institution_id])
 	  	  return no_courses if @courses.empty?
 	  	end
-
 	  end
 
 
