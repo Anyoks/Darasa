@@ -91,8 +91,8 @@ class UploadsController < ApplicationController
       # p "#{question}  ::::::::::::: #{answer}"
       logger.debug "Saving Question & Answer #{num}"
       # byebug
-      question = question.force_encoding("UTF-8")
-      answer = answer.force_encoding("UTF-8")
+      # question = question.force_encoding("UTF-8")
+      # answer = answer.force_encoding("UTF-8")
        @subtopic.questions.create!(:question => question).build_response(:answer => answer).save
       num +=1
     end
@@ -120,9 +120,10 @@ class UploadsController < ApplicationController
     image_path = image_file_path
     doc = path
     doc = Nokogiri::HTML(open("#{doc}"))
-
+  # byebug
     ###*******extract images from zipped file**********########
-   
+     
+   f_path_1 = ""
   unless image_path.nil?
 
     Zip::File.open("#{image_path}") do |zipfile|
@@ -130,31 +131,39 @@ class UploadsController < ApplicationController
         f_path=File.join("#{image_path}destination_path", entry.name )
         FileUtils.mkdir_p(File.dirname(f_path))
         zipfile.extract(entry, f_path) unless File.exist?(f_path)
-        logger.debug "Loading image"
+        logger.debug "Extracting image"
+        f_path_1 = f_path
       end
+      # f_path_1 = f_path
     end
-
+ byebug
         doc.css('img').each do |img, index|
 
-          image_name = img.attributes.first[1].value # img name
+          # image_name = img.attributes.first[1].value # img name
+
+          image_name = img.attributes["src"]
 
           image_file = Ckeditor.picture_model.new #create new Ckeditor asset
 
-          location =  File.expand_path("..", image_path) + "/#{File.basename image_path}destination_path" #get location for the unziped image.
-
-    # byebug
+          location =  File.expand_path("..", image_path) + "/#{File.basename image_path}destination_path/" #get location for the unziped image.
+          loc2 = File.expand_path("..", f_path_1)
+    byebug
           begin
-            file = File.open(location + "/#{image_name}") #open the file
+            file = File.open( location + "/#{image_name}") #open the file
+            byebug
             rescue
               logger.debug " Error File Not  found!"
+              byebug
             else
-              logger.debug " #{file.path} File found!"
+              logger.debug "  File found!"
           ##*****upload and save it!)*****#####
               image_file.data = file
               image_file.save!
 
                ##***Update image url****#####
-              img.attributes.first[1].value = image_file.url
+              # img.attributes.first[1].value = image_file.url ++> old. for files convvert over the internet.
+               img.attributes["src"].value = image_file.url
+              byebug
           end
             
         end
@@ -180,6 +189,7 @@ class UploadsController < ApplicationController
     space = " "
     img = []
     even_temp = []
+    is_in_table = ["tr","td"]
 
   doc.css('p').each_with_index do |par, index|
     next_paragraph_counter = 0
@@ -213,7 +223,9 @@ class UploadsController < ApplicationController
               # if par.content == ""
               #     p "#{par.to_s}"
               # end
-              if next_par_in_qn.parent.parent.parent.name == 'table'
+
+              #check if the parent of a paragraph is a table.   || Check whether the 4th parent of the paragraph is part of the table.  
+              if next_par_in_qn.parent.parent.parent.name == 'table'  #|| next_par_in_qn.parent.parent.parent.parent.name == "tr"
                 # even_temp.clear
                 # break if next_par_in_qn.parent.parent.parent.name != 'table' 
                 # next_paragraph_counter +=1
@@ -229,7 +241,7 @@ class UploadsController < ApplicationController
                     # next_paragraph_counter +=1
                     next_par_in_qn = doc.css('p')[index+next_paragraph_counter]
                     next_paragraph_counter +=1
-                    break if next_par_in_qn.parent.parent.parent.name != 'table' 
+                    break if next_par_in_qn.parent.parent.parent.name != 'table' || next_par_in_qn.parent.parent.parent.parent.name != "td" 
                    }
                   p "EVEN TEMP LAST  #{even_temp.length}"
                 # temp << even_temp.last
