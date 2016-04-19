@@ -149,11 +149,11 @@ class UploadsController < ApplicationController
           loc2 = File.expand_path("..", f_path_1)
     # byebug
           begin
-            file = File.open( location + "/#{image_name}") #open the file
+            file = File.open( location + "/#{image_name.to_s.gsub!('%20', ' ')}") #open the file  - change name from url to string .
             # byebug
             rescue
               logger.debug " Error Image File Not found!"
-              # byebug
+              byebug
             else
               logger.debug "Image File found!"
           ##*****upload and save it!)*****#####
