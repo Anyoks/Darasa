@@ -136,7 +136,7 @@ class UploadsController < ApplicationController
       end
       # f_path_1 = f_path
     end
- byebug
+ # byebug
         doc.css('img').each do |img, index|
 
           # image_name = img.attributes.first[1].value # img name
@@ -147,13 +147,13 @@ class UploadsController < ApplicationController
 
           location =  File.expand_path("..", image_path) + "/#{File.basename image_path}destination_path/" #get location for the unziped image.
           loc2 = File.expand_path("..", f_path_1)
-    byebug
+    # byebug
           begin
             file = File.open( location + "/#{image_name}") #open the file
-            byebug
+            # byebug
             rescue
               logger.debug " Error File Not  found!"
-              byebug
+              # byebug
             else
               logger.debug "  File found!"
           ##*****upload and save it!)*****#####
@@ -163,7 +163,7 @@ class UploadsController < ApplicationController
                ##***Update image url****#####
               # img.attributes.first[1].value = image_file.url ++> old. for files convvert over the internet.
                img.attributes["src"].value = image_file.url
-              byebug
+              # byebug
           end
             
         end
