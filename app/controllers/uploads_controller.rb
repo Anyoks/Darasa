@@ -125,7 +125,7 @@ class UploadsController < ApplicationController
      
    f_path_1 = ""
   unless image_path.nil?
-
+    logger.debug "****** Extracting Images ******************"
     Zip::File.open("#{image_path}") do |zipfile|
       zipfile.each do |entry|
         f_path=File.join("#{image_path}destination_path", entry.name )
@@ -138,7 +138,7 @@ class UploadsController < ApplicationController
     end
  # byebug
         doc.css('img').each do |img, index|
-
+           logger.debug "****** Uploading Images ******************"
           # image_name = img.attributes.first[1].value # img name
 
           image_name = img.attributes["src"]
@@ -152,17 +152,20 @@ class UploadsController < ApplicationController
             file = File.open( location + "/#{image_name}") #open the file
             # byebug
             rescue
-              logger.debug " Error File Not  found!"
+              logger.debug " Error Image File Not found!"
               # byebug
             else
-              logger.debug "  File found!"
+              logger.debug "Image File found!"
           ##*****upload and save it!)*****#####
               image_file.data = file
               image_file.save!
 
+              logger.debug "Image uploaded!"
+
                ##***Update image url****#####
               # img.attributes.first[1].value = image_file.url ++> old. for files convvert over the internet.
                img.attributes["src"].value = image_file.url
+               logger.debug "updated Image src to #{img.attributes["src"].value}"
               # byebug
           end
             
@@ -195,7 +198,8 @@ class UploadsController < ApplicationController
     next_paragraph_counter = 0
     
     if regex.match(par.text.squish)
-      puts "found a QUESTION!! #{par.text}"
+      # puts "found a QUESTION!! #{par.text}"
+      logger.debug "Found A QUESTION #{par.text.squish} "
       next_paragraph_counter +=1
       temp << par.to_html + space
       next_par = doc.css('p')[index+next_paragraph_counter]
@@ -226,6 +230,7 @@ class UploadsController < ApplicationController
 
               #check if the parent of a paragraph is a table.   || Check whether the 4th parent of the paragraph is part of the table.  
               if next_par_in_qn.parent.parent.parent.name == 'table'  #|| next_par_in_qn.parent.parent.parent.parent.name == "tr"
+                logger.debug "Found A TABLE "
                 # even_temp.clear
                 # break if next_par_in_qn.parent.parent.parent.name != 'table' 
                 # next_paragraph_counter +=1
@@ -234,7 +239,8 @@ class UploadsController < ApplicationController
                 # even_temp << next_par_in_qn.parent.parent.parent.to_html
                   loop { 
 
-                    p "next item in table #{next_par_in_qn.content.squish}"
+                    # p "next item in table #{next_par_in_qn.content.squish}"
+
                     even_temp << next_par_in_qn.parent.parent.parent.to_html
 
                     # break if next_par_in_qn.parent.parent.parent.name != 'table' 
@@ -243,13 +249,16 @@ class UploadsController < ApplicationController
                     next_paragraph_counter +=1
                     break if next_par_in_qn.parent.parent.parent.name != 'table' || next_par_in_qn.parent.parent.parent.parent.name != "td" 
                    }
-                  p "EVEN TEMP LAST  #{even_temp.length}"
+                  # p "EVEN TEMP LAST  #{even_temp.length}"
+                  logger.debug "Done Looping through Table elements"
                 # temp << even_temp.last
               else
                 if even_temp.last.nil?
+                  logger.debug "No table: adding only Question "
                   temp << next_par_in_qn.to_html #+ even_temp.last
                 else
-                  p "EVEN TEMP LAST#{even_temp.length-1}"
+                  logger.debug "Adding table in the Question"
+                  # p "EVEN TEMP LAST#{even_temp.length-1}"
                   temp << even_temp.last + next_par_in_qn.to_html 
                   even_temp.clear
                 end
@@ -269,10 +278,12 @@ class UploadsController < ApplicationController
             end
         end
       end
+      logger.debug "Completed Adding Question "
       question << temp.join + space
       temp.clear
 
     else
+      logger.debug "Going to the next Question"
       # p "I'm going to the next question"
       #   if par.content == ""
       #             p "#{par.to_s}"
@@ -280,6 +291,7 @@ class UploadsController < ApplicationController
       next
     end
   end
+  logger.debug "Done Uploading Questions...."
   return question
   end
 
