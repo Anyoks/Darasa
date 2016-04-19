@@ -28,11 +28,12 @@ class Purchase < ActiveRecord::Base
 		num = 0
 		
 		topic_ids.each do |topic|
-			num +=1
+			# num +=1
+			mpesa_code = mpesa_code + rand.to_s
 			p = Payment.new(:topic_id => "#{topic}", :mpesa_code => "#{mpesa_code}", :user_id => "#{user_id}" )
 			p.save
 			# num +=1
-			mpesa_code = mpesa_code + num.to_s 
+			# mpesa_code = mpesa_code + rand.to_s
 		end
 	end
 end
