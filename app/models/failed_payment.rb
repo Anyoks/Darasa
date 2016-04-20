@@ -15,4 +15,10 @@
 class FailedPayment < ActiveRecord::Base
 	acts_as_paranoid
 	belongs_to :user
+	
+	#Finding The topic this failed payment is for.
+	def topic
+		topic = Topic.find(self.topic_id)
+		return topic
+	end
 end

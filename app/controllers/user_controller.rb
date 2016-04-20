@@ -5,6 +5,7 @@ class UserController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @failed_payments = @user.failed_payments
   end
 
   def make_moderator

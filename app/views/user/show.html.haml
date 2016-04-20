@@ -1,4 +1,4 @@
-%h1 #{@user.first_name}  User details
+%h1 #{@user.first_name} #{@user.second_name} Darasa Activities
 - Time.zone = 'Nairobi'
 .container
 	.row-fluid
@@ -88,3 +88,24 @@
 						%h4
 							%p Failed Payments for #{@user.first_name} 
 				= pie_chart @user.failed_payments.group(:topic_id).count
+
+
+%h1 #{@user.first_name}  #{@user.second_name}  Failed Payment Details
+
+%table.table.table-hover
+	%thead
+		%tr
+		%th Topic
+		%th Unit
+		%th Institution
+		%th Mpesa Code
+		%th Time
+
+	%tbody
+		- @failed_payments.each do |payment|
+			%tr
+				%td= payment.topic.name
+				%td= payment.topic.unit.name
+				%td= payment.topic.unit.institution.name
+				%td= payment.mpesa_code
+				%td= payment.created_at
