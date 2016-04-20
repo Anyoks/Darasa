@@ -39,7 +39,7 @@ class Api::V1::TopicsController < ApplicationController
 			log_topic_activity resource , @topic.name, "#{resource.first_name} clicked this topic, #{@topic.name}" 
 		end
 
-		@questions = @topic.questions.page(params[:page]).per_page(5)
+		@questions = @topic.questions.page(params[:page]).per_page(10)
 
 	  end
 
