@@ -27,6 +27,40 @@ class Payment < ActiveRecord::Base
 
 	# private
 
+	#** incase a use has issues with payment. An adminc can pay for them.
+
+	def pay_for_me code, topic_id 
+		user_id = self.user_id
+		mpesa_code = code
+		topic = topic_id
+		
+		#Check if Topic Exists
+		if find_topic topic
+			#Check if Mpesa code Exists
+			if find_sms mpesa_code
+				pay = Payment.new
+				pay.topic_id =  topic
+				pay.user_id = user_id
+				pay.mpesa_code = mpesa_code
+
+				begin
+					#Make the payment
+					pay.save!
+				#Incase there Mpesa code is taken
+				rescue Exception => e
+					p "That Mpesa Code has been used before!"
+				#everything is okay.
+				else
+					p "Done! Now The user has owns that topic! "
+				end
+			else
+				"Payment has not been received. That Mpesa code is invalid"
+			end
+		else
+			"Topic Not found. Please enter the correct Topic Id"
+		end
+	end
+
 	def add_topic_to_user_purchases
 		user_id = self.user_id
 		topic_id = self.topic_id
@@ -36,6 +70,30 @@ class Payment < ActiveRecord::Base
 			p "You now own this topic"
 		else
 			p "No you don't"
+		end
+	end
+
+	def find_sms mpesa_code
+		sms =  Sms.find_by_mpesa_code mpesa_code
+
+		begin
+			if sms.nil?
+				raise ArgumentError.new("Sms does not exist")
+			end
+		rescue
+			false
+		else
+			true
+		end
+	end
+
+	def find_topic topic_id
+		begin
+			Topic.find topic_id
+		rescue => e
+			false
+		else
+			true
 		end
 	end
 
