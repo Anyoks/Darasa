@@ -144,7 +144,7 @@ class Api::V1::PaymentsController < ApplicationController
 
 	def invalid_amount_cpa cash
 		cash = cash
-	  render json: { success: false, error: "Oh no, You paid #{cash.amount.to_i}/- which is much less than the 1500/- expected for this service!, Contact us from the help menu for futher assistance."}, status: :unauthorized
+	  render json: { success: false, error: "Oh no, You paid #{cash.amount.to_i}/- which is much less than the 500/- expected for this service!, Contact us from the help menu for futher assistance."}, status: :unauthorized
 	end
 
 	def invalid_amount_uni cash
