@@ -108,4 +108,4 @@
 				%td= payment.topic.unit.name
 				%td= payment.topic.unit.institution.name
 				%td= payment.mpesa_code
-				%td= payment.created_at
+				%td= payment.created_at.strftime("%b %d, %Y %A  %l:%M%P")
