@@ -31,7 +31,7 @@ class Api::V1::PaymentsController < ApplicationController
 		
 		if cash.present?
 			if topic.unit.institution.institution_type.type_name == "Professional"
-				if cash.amount.to_i >= 1500 #i'll have to change this to seperate the large payments from the smaller ones
+				if cash.amount.to_i >= 500 #i'll have to change this to seperate the large payments from the smaller ones
 					#check if it has been used i.e it is in the payments
 					if @payment.save
 						unless user.has_admin_previlages?
