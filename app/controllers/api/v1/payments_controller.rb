@@ -30,34 +30,66 @@ class Api::V1::PaymentsController < ApplicationController
 		cash = mpesa_payment_text_exists @payment.mpesa_code
 		
 		if cash.present?
-			if cash.amount.to_i >= 1500 #i'll have to change this to seperate the large payments from the smaller ones
-			#check if it has been used i.e it is in the payments
-				if @payment.save
-					unless user.has_admin_previlages?
-						log_payment_activity user, topic_name, "#{user.first_name} successfully purchased this topic, #{topic.name}"
-					end
+			if topic.unit.institution.institution_type.type_name == "Professional"
+				if cash.amount.to_i >= 1500 #i'll have to change this to seperate the large payments from the smaller ones
+					#check if it has been used i.e it is in the payments
+					if @payment.save
+						unless user.has_admin_previlages?
+							log_payment_activity user, topic_name, "#{user.first_name} successfully purchased this topic, #{topic.name}"
+						end
 
-					return payment_successful topic_name
+						return payment_successful topic_name
+					else
+						@failed_payment = FailedPayment.new(payment_params)
+						@failed_payment.save
+
+						unless user.has_admin_previlages?
+							log_payment_activity user, topic_name,  "#{user.first_name} just attempted to purchase this topic with a fake or duplicate Mpesa code, #{topic.name}"
+						end
+
+						return invalid_payment_details
+					end
 				else
 					@failed_payment = FailedPayment.new(payment_params)
 					@failed_payment.save
+					@failed_payment.update_attribute(:amount, cash.amount)
 
 					unless user.has_admin_previlages?
-						log_payment_activity user, topic_name,  "#{user.first_name} just attempted to purchase this topic with a fake or duplicate Mpesa code, #{topic.name}"
+						log_payment_activity user, topic_name, "#{user.first_name} paid less while purchasing this topic, #{topic.name}"
 					end
 
-					return invalid_payment_details
+					return invalid_amount_cpa cash
 				end
 			else
-				@failed_payment = FailedPayment.new(payment_params)
-				@failed_payment.save
-				@failed_payment.update_attribute(:amount, cash.amount)
+				if cash.amount.to_i >= 50 #i'll have to change this to seperate the large payments from the smaller ones
+					#check if it has been used i.e it is in the payments
+					if @payment.save
+						unless user.has_admin_previlages?
+							log_payment_activity user, topic_name, "#{user.first_name} successfully purchased this topic, #{topic.name}"
+						end
 
-				unless user.has_admin_previlages?
-					log_payment_activity user, topic_name, "#{user.first_name} paid less while purchasing this topic, #{topic.name}"
+						return payment_successful topic_name
+					else
+						@failed_payment = FailedPayment.new(payment_params)
+						@failed_payment.save
+
+						unless user.has_admin_previlages?
+							log_payment_activity user, topic_name,  "#{user.first_name} just attempted to purchase this topic with a fake or duplicate Mpesa code, #{topic.name}"
+						end
+
+						return invalid_payment_details
+					end
+				else
+					@failed_payment = FailedPayment.new(payment_params)
+					@failed_payment.save
+					@failed_payment.update_attribute(:amount, cash.amount)
+
+					unless user.has_admin_previlages?
+						log_payment_activity user, topic_name, "#{user.first_name} paid less while purchasing this topic, #{topic.name}"
+					end
+
+					return invalid_amount_uni cash
 				end
-
-				return invalid_amount cash
 			end
 		else
 			@failed_payment = FailedPayment.new(payment_params)
@@ -110,9 +142,14 @@ class Api::V1::PaymentsController < ApplicationController
 	  render json: { success: false, error: "Sorry that Mpesa code has been used for a purchase or does not exist, Please Contact us from the help menu for futher assistance "}, status: :unauthorized
 	end
 
-	def invalid_amount cash
+	def invalid_amount_cpa cash
 		cash = cash
 	  render json: { success: false, error: "Oh no, You paid #{cash.amount.to_i}/- which is much less than the 1500/- expected for this service!, Contact us from the help menu for futher assistance."}, status: :unauthorized
+	end
+
+	def invalid_amount_uni cash
+		cash = cash
+	  render json: { success: false, error: "Oh no, You paid #{cash.amount.to_i}/- which is much less than the 50/- expected for this service!, Contact us from the help menu for futher assistance."}, status: :unauthorized
 	end
 
 	def invalid_topic
