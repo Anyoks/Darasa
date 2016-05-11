@@ -16,6 +16,10 @@
 //= require bootstrap-sprockets
 //= require ckeditor/init
 //= require ckeditor/config
+//= require bootstrap
+//= require app
+//= require Chart
+//= require excanvas
 //= require_tree .
 //= require cocoon
 

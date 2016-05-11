@@ -12,7 +12,11 @@
           .col-sm-6.col-md-8
             %h4
               %p User signups
-        = line_chart User.group_by_day(:created_at).count
+
+      - data = { }
+
+        = chartjs_line_chart User.group_by_day(:created_at).to_json 
+        / = line_chart User.group_by_day(:created_at).count
 
   .row-fluid
     .col-xs-12.col-sm-6.col-md-6

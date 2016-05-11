@@ -1,6 +1,26 @@
 class UserController < ApplicationController
   def index
   	@users = User.all.order(created_at: :desc)
+    data = []
+    @data = {
+      User.group_by_month(:created_at).count.each do |key, value|
+        p "#{key.strftime("%B")} #{value}"
+       end;0
+
+      lables: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [
+        {
+           User.group_by_day(:created_at).count.each do |key, value|
+            data << value
+          end
+        }
+
+
+      ]
+
+
+
+    }
   end
 
   def show
