@@ -17,7 +17,7 @@
 //= require ckeditor/init
 //= require ckeditor/config
 //= require_tree .
-stub home
+//= stub home
 //= require cocoon
 
 
