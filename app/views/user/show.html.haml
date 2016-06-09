@@ -50,7 +50,7 @@
 					.col-sm-6.col-md-8
 						%h4
 							%p Units that #{@user.first_name} clicked
-				= pie_chart @user.unit_activities.group(:name).count
+				= chartjs_doughnut_chart @unit_data, @options
 .container
 	.row-fluid
 		.col-xs-12.col-sm-6.col-md-6
@@ -87,7 +87,8 @@
 					.col-sm-6.col-md-8
 						%h4
 							%p Failed Payments for #{@user.first_name} 
-				= pie_chart @user.failed_payments.group(:topic_id).count
+				= chartjs_pie_chart  @pieData, @options
+				- byebug
 
 
 %h1 #{@user.first_name}  #{@user.second_name}  Failed Payment Details

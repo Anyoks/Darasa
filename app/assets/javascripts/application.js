@@ -32,3 +32,16 @@
 // $('a[data-popup]').on('click', function(e) {
 // 	 window.open($(this).attr('href')); e.preventDefault(); 
 // 	});
+
+$(document).ready(function() {
+  $.AdminLTE2.layout.activate();
+});
+
+$(document).on('page:load', function() {
+  var o;
+  o = $.AdminLTE2.options;
+  if (o.sidebarPushMenu) {
+    $.AdminLTE2.pushMenu.activate(o.sidebarToggleSelector);
+  }
+  $.AdminLTE2.layout.activate();
+});

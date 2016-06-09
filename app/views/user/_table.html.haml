@@ -1,22 +1,21 @@
+/ = chartjs_pie_chart @data1
 .row
   .span6
     - Time.zone = 'Nairobi'
   /   = line_chart User.group_by_day(:created_at).count
   / .span6
   /   = line_chart User.group_by_day(:created_at).count
-.container
-  .row-fluid
-    .col-xs-12.col-sm-6.col-md-6
-      .well.well-sm
-        .row
-          .col-sm-6.col-md-8
-            %h4
-              %p User signups
-
-      - data = { }
-
-        = chartjs_line_chart User.group_by_day(:created_at).to_json 
-        / = line_chart User.group_by_day(:created_at).count
+.row
+  .col-md-6
+    .box.box-primary
+      .box-header.with-border
+        .box-title
+          %h3 Signups
+        .box-tools.pull-right
+          %button.btn.btn-box-tool{"data-widget" => "collapse", :type => "button"}
+            %i.fa.fa-minus
+      .box-body.chart-responsive
+        = chartjs_line_chart data, options 
 
   .row-fluid
     .col-xs-12.col-sm-6.col-md-6
@@ -26,6 +25,8 @@
             %h4
               %p Unit Activities Today
         = pie_chart  UnitActivity.group_by_hour_of_day(:created_at, range: 1.day.ago..Time.now).count
+
+
 
 
 %table.table.table-hover
