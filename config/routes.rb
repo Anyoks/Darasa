@@ -3,6 +3,8 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
 
 
+  root to: 'sites#new' 
+  resources :sites
   namespace :api do
   namespace :v1 do
     get 'profile/index'
@@ -82,7 +84,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
     devise_scope :user do
       authenticated :user do
-        root 'subtopics#index'
+        root 'subtopics#index', as: :authenticated_root
       end
       unauthenticated :user do
         root :to => 'devise/registrations#new', as: :unauthenticated_root

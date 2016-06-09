@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411105825) do
+ActiveRecord::Schema.define(version: 20160609093722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -251,6 +251,12 @@ ActiveRecord::Schema.define(version: 20160411105825) do
 
   add_index "semesters", ["deleted_at"], name: "index_semesters_on_deleted_at", using: :btree
   add_index "semesters", ["year_id"], name: "index_semesters_on_year_id", using: :btree
+
+  create_table "sites", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sms", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.text     "message"

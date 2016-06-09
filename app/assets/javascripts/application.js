@@ -17,7 +17,9 @@
 //= require ckeditor/init
 //= require ckeditor/config
 //= require_tree .
+stub home
 //= require cocoon
+
 
 // $('.ckeditor').ckeditor({
 //   // optional config

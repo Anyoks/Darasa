@@ -1,0 +1,7 @@
+/ = link_to 'New Site', new_site_path
+
+%form#signup-form{:action => "in", :method => "post"}
+  %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}/
+  %input{:type => "submit", :value => "Sign Up"}/
+
+/ = render 'form'
