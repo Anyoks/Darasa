@@ -1,10 +1,11 @@
-//= require home
+
 
 /*
 	Eventually by Pixelarity
 	html5up.net | @ajlkn
 	License: pixelarity.com/license
 */
+
 
 (function() {
 

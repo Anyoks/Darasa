@@ -2,10 +2,10 @@
  
   = f.text_field :email,:placeholder => "Email Address", :type => "email", :input_html => {:maxlength =>100,:style=> 'width: 300px'},  label: false
   %br
-  = f.button :submit, :value => "Sign Up", :type => "submit"
+  = f.button :submit, :value => "Sign Up", :type => "submit", class: "input"
 
 
 
-%form#signup-form{:action => "in", :method => "post"}
-  %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}/
-  %input{:type => "submit", :value => "Sign Up"}/
+/ %form#signup-form{:action => "in", :method => "post"}
+/   %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}/
+/   %input{:type => "submit", :value => "Sign Up"}/

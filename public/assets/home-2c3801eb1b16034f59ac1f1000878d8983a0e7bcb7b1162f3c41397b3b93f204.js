@@ -1,10 +1,11 @@
-//= require home
+
 
 /*
 	Eventually by Pixelarity
 	html5up.net | @ajlkn
 	License: pixelarity.com/license
 */
+
 
 (function() {
 
@@ -41,9 +42,9 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'assets/img/bg01.png': 'center',
-							'assets/img/bg02.png': 'center',
-							'assets/img/bg03.png': 'center'
+							'images/bg1.jpg': 'center',
+							'images/bg2.jpg': 'center',
+							'images/bg3.jpg': 'center'
 						},
 
 					// Delay.
