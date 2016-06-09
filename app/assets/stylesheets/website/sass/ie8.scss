@@ -4,40 +4,21 @@
 @import 'libs/skel';
 
 /*
-	Elevation by Pixelarity
-	pixelarity.com @pixelarity
+	Eventually by Pixelarity
+	html5up.net | @ajlkn
 	License: pixelarity.com/license
 */
 
-/* List */
+/* BG */
 
-	ul {
-		&.labeled-icons {
-			li {
-				.icon {
-					-ms-behavior: url('assets/js/ie/PIE.htc');
-				}
-			}
-		}
+	#bg {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
 	}
 
-/* Button */
+/* Type */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	.button {
-		&.alt {
-			border: solid 2px _palette(border);
-		}
-	}
-
-/* Icon */
-
-	.icon {
-		&.major {
-			-ms-behavior: url('assets/js/ie/PIE.htc');
-		}
+	body, input, select, textarea {
+		color: _palette(fg-bold);
 	}
 
 /* Form */
@@ -45,39 +26,7 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	select {
-		line-height: _size(element-height);
-	}
-
-/* Wrapper */
-
-	.wrapper {
-		&.style2 {
-			input[type="submit"],
-			input[type="reset"],
-			input[type="button"],
-			.button {
-				&.alt {
-					border: solid 2px #fff;
-				}
-			}
-		}
-	}
-
-/* Header */
-
-	.dropotron {
-		&.level-0 {
-			margin-top: 0;
-
-			&:before {
-				display: none;
-			}
-		}
-	}
-
-/* Banner */
-
-	#banner {
-		background-image: url('images/ie/banner.png');
+	select,
+	textarea {
+		border: solid _size(border-width) _palette(fg-bold);
 	}
