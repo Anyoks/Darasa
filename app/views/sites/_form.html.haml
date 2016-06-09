@@ -1,4 +1,4 @@
-= form_for @site, :html => {:class =>  "signup-form", :html => { :id => "signup-form"} }do |f|
+= form_for @site, :html => {:class =>  "signup-form" }do |f|
  
   = f.text_field :email,:placeholder => "Email Address", :type => "email", :input_html => {:maxlength =>100,:style=> 'width: 300px'},  label: false
   %br
