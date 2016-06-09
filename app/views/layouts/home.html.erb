@@ -15,7 +15,6 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
 	<body>
-<%= render 'flash'%>
 		<!-- Header -->
 			<header id="header">
 				<h1>Dasara App</h1>
@@ -23,14 +22,19 @@
 				<p>Unlimited access to quality CPA notes.<br />
 				Enter your email below to register.</p>
 			</header>
+<div class='container'>	
 
+
+	<%= render 'flash'%>
+	<%= yield %>
+</div>
 		<!-- Signup Form -->
 			<!-- <form id="signup-form" method="post" action="#">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<input type="submit" value="Sign Up" />
 			</form> -->
-			
-			 <%= yield %>
+
+			 
 
 		<!-- Footer -->
 			<footer id="footer">

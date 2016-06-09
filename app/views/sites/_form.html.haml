@@ -1,7 +1,11 @@
-= simple_form_for(@site, :defaults => { :input_html => { :id => "signup-form" } }) do |f|
-  %form#signup-form{:action => "new", :method => "post"}
-    / %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}
-    = f.input :email,:placeholder => "Email Address", :type => "email", :input_html => {:maxlength =>100,:style=> 'width: 300px'},  label: false
-    %br
-    = f.button :submit, :value => "Sign Up", :type => "submit"
-    / %input{:type => "submit", :value => "Sign Up"}/
+= form_for @site, :html => {:class =>  "signup-form"}do |f|
+ 
+  = f.text_field :email,:placeholder => "Email Address", :type => "email", :input_html => {:maxlength =>100,:style=> 'width: 300px'},  label: false
+  %br
+  = f.button :submit, :value => "Sign Up", :type => "submit"
+
+
+
+%form#signup-form{:action => "in", :method => "post"}
+  %input#email{:name => "email", :placeholder => "Email Address", :type => "email"}/
+  %input{:type => "submit", :value => "Sign Up"}/
