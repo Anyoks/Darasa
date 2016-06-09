@@ -1,0 +1,3979 @@
+@import url("font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,900");
+/*
+	Elevation by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+/* Reset */
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+body {
+  line-height: 1;
+}
+
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 537, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+body {
+  -webkit-text-size-adjust: none;
+}
+
+/* Box Model */
+/* line 167, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Containers */
+/* line 394, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.container.\31 25\25 {
+  width: 100%;
+  max-width: 93.75em;
+  min-width: 75em;
+}
+
+/* line 222, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.container.\37 5\25 {
+  width: 56.25em;
+}
+
+/* line 223, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.container.\35 0\25 {
+  width: 37.5em;
+}
+
+/* line 224, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.container.\32 5\25 {
+  width: 18.75em;
+}
+
+/* line 227, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.container {
+  width: 75em;
+}
+
+@media screen and (max-width: 1680px) {
+  /* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\31 25\25 {
+    width: 100%;
+    max-width: 93.75em;
+    min-width: 75em;
+  }
+
+  /* line 222, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\37 5\25 {
+    width: 56.25em;
+  }
+
+  /* line 223, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\35 0\25 {
+    width: 37.5em;
+  }
+
+  /* line 224, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\32 5\25 {
+    width: 18.75em;
+  }
+
+  /* line 227, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container {
+    width: 75em;
+  }
+}
+@media screen and (max-width: 1280px) {
+  /* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\31 25\25 {
+    width: 100%;
+    max-width: 81.25em;
+    min-width: 65em;
+  }
+
+  /* line 222, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\37 5\25 {
+    width: 48.75em;
+  }
+
+  /* line 223, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\35 0\25 {
+    width: 32.5em;
+  }
+
+  /* line 224, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\32 5\25 {
+    width: 16.25em;
+  }
+
+  /* line 227, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container {
+    width: 65em;
+  }
+}
+@media screen and (max-width: 980px) {
+  /* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\31 25\25 {
+    width: 100%;
+    max-width: 112.5%;
+    min-width: 90%;
+  }
+
+  /* line 222, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\37 5\25 {
+    width: 67.5%;
+  }
+
+  /* line 223, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\35 0\25 {
+    width: 45%;
+  }
+
+  /* line 224, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\32 5\25 {
+    width: 22.5%;
+  }
+
+  /* line 227, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 840px) {
+  /* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\31 25\25 {
+    width: 100%;
+    max-width: 112.5%;
+    min-width: 90%;
+  }
+
+  /* line 222, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\37 5\25 {
+    width: 67.5%;
+  }
+
+  /* line 223, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\35 0\25 {
+    width: 45%;
+  }
+
+  /* line 224, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\32 5\25 {
+    width: 22.5%;
+  }
+
+  /* line 227, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\31 25\25 {
+    width: 100%;
+    max-width: 125%;
+    min-width: 100%;
+  }
+
+  /* line 222, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\37 5\25 {
+    width: 75%;
+  }
+
+  /* line 223, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\35 0\25 {
+    width: 50%;
+  }
+
+  /* line 224, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\32 5\25 {
+    width: 25%;
+  }
+
+  /* line 227, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\31 25\25 {
+    width: 100%;
+    max-width: 125%;
+    min-width: 100%;
+  }
+
+  /* line 222, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\37 5\25 {
+    width: 75%;
+  }
+
+  /* line 223, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\35 0\25 {
+    width: 50%;
+  }
+
+  /* line 224, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container.\32 5\25 {
+    width: 25%;
+  }
+
+  /* line 227, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .container {
+    width: 100% !important;
+  }
+}
+/* Grid */
+/* line 454, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row {
+  border-bottom: solid 1px transparent;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 461, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row > * {
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 468, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row:after, .row:before {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+/* line 475, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform > * > :first-child {
+  margin-top: 0;
+}
+
+/* line 479, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform > * > :last-child {
+  margin-bottom: 0;
+}
+
+/* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\30 \25  > * {
+  padding: 0 0 0 0em;
+}
+
+/* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\30 \25 {
+  margin: 0 0 -1px 0em;
+}
+
+/* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\30 \25  > * {
+  padding: 0em 0 0 0em;
+}
+
+/* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\30 \25 {
+  margin: 0em 0 -1px 0em;
+}
+
+/* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row > * {
+  padding: 0 0 0 3em;
+}
+
+/* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row {
+  margin: 0 0 -1px -3em;
+}
+
+/* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform > * {
+  padding: 3em 0 0 3em;
+}
+
+/* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform {
+  margin: -3em 0 -1px -3em;
+}
+
+/* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\32 00\25  > * {
+  padding: 0 0 0 6em;
+}
+
+/* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\32 00\25 {
+  margin: 0 0 -1px -6em;
+}
+
+/* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\32 00\25  > * {
+  padding: 6em 0 0 6em;
+}
+
+/* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\32 00\25 {
+  margin: -6em 0 -1px -6em;
+}
+
+/* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\31 50\25  > * {
+  padding: 0 0 0 4.5em;
+}
+
+/* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\31 50\25 {
+  margin: 0 0 -1px -4.5em;
+}
+
+/* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\31 50\25  > * {
+  padding: 4.5em 0 0 4.5em;
+}
+
+/* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\31 50\25 {
+  margin: -4.5em 0 -1px -4.5em;
+}
+
+/* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\35 0\25  > * {
+  padding: 0 0 0 1.5em;
+}
+
+/* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\35 0\25 {
+  margin: 0 0 -1px -1.5em;
+}
+
+/* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\35 0\25  > * {
+  padding: 1.5em 0 0 1.5em;
+}
+
+/* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\35 0\25 {
+  margin: -1.5em 0 -1px -1.5em;
+}
+
+/* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\32 5\25  > * {
+  padding: 0 0 0 0.75em;
+}
+
+/* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.\32 5\25 {
+  margin: 0 0 -1px -0.75em;
+}
+
+/* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\32 5\25  > * {
+  padding: 0.75em 0 0 0.75em;
+}
+
+/* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.row.uniform.\32 5\25 {
+  margin: -0.75em 0 -1px -0.75em;
+}
+
+/* line 257, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\31 2u, .\31 2u\24 {
+  width: 100%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\31 1u, .\31 1u\24 {
+  width: 91.6666666667%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\31 0u, .\31 0u\24 {
+  width: 83.3333333333%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 260, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\39 u, .\39 u\24 {
+  width: 75%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 261, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\38 u, .\38 u\24 {
+  width: 66.6666666667%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 262, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\37 u, .\37 u\24 {
+  width: 58.3333333333%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 263, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\36 u, .\36 u\24 {
+  width: 50%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\35 u, .\35 u\24 {
+  width: 41.6666666667%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 265, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\34 u, .\34 u\24 {
+  width: 33.3333333333%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 266, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\33 u, .\33 u\24 {
+  width: 25%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 267, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\32 u, .\32 u\24 {
+  width: 16.6666666667%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 268, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\31 u, .\31 u\24 {
+  width: 8.3333333333%;
+  clear: none;
+  margin-left: 0;
+}
+
+/* line 270, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\31 2u\24  + *,
+.\31 1u\24  + *,
+.\31 0u\24  + *,
+.\39 u\24  + *,
+.\38 u\24  + *,
+.\37 u\24  + *,
+.\36 u\24  + *,
+.\35 u\24  + *,
+.\34 u\24  + *,
+.\33 u\24  + *,
+.\32 u\24  + *,
+.\31 u\24  + * {
+  clear: left;
+}
+
+/* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-11u {
+  margin-left: 91.66666667%;
+}
+
+/* line 286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-10u {
+  margin-left: 83.33333333%;
+}
+
+/* line 287, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-9u {
+  margin-left: 75%;
+}
+
+/* line 288, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-8u {
+  margin-left: 66.66666667%;
+}
+
+/* line 289, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-7u {
+  margin-left: 58.33333333%;
+}
+
+/* line 290, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-6u {
+  margin-left: 50%;
+}
+
+/* line 291, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-5u {
+  margin-left: 41.66666667%;
+}
+
+/* line 292, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-4u {
+  margin-left: 33.33333333%;
+}
+
+/* line 293, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-3u {
+  margin-left: 25%;
+}
+
+/* line 294, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-2u {
+  margin-left: 16.66666667%;
+}
+
+/* line 295, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+.\-1u {
+  margin-left: 8.33333333%;
+}
+
+@media screen and (max-width: 1680px) {
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row > * {
+    padding: 0 0 0 2.5em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row {
+    margin: 0 0 -1px -2.5em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform > * {
+    padding: 2.5em 0 0 2.5em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform {
+    margin: -2.5em 0 -1px -2.5em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25  > * {
+    padding: 0 0 0 5em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25 {
+    margin: 0 0 -1px -5em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25  > * {
+    padding: 5em 0 0 5em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25 {
+    margin: -5em 0 -1px -5em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25  > * {
+    padding: 0 0 0 3.75em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25 {
+    margin: 0 0 -1px -3.75em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25  > * {
+    padding: 3.75em 0 0 3.75em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25 {
+    margin: -3.75em 0 -1px -3.75em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25  > * {
+    padding: 0 0 0 1.25em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25 {
+    margin: 0 0 -1px -1.25em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25  > * {
+    padding: 1.25em 0 0 1.25em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25 {
+    margin: -1.25em 0 -1px -1.25em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25  > * {
+    padding: 0 0 0 0.625em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25 {
+    margin: 0 0 -1px -0.625em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25  > * {
+    padding: 0.625em 0 0 0.625em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25 {
+    margin: -0.625em 0 -1px -0.625em;
+  }
+
+  /* line 257, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\28wide\29, .\31 2u\24\28wide\29 {
+    width: 100%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 1u\28wide\29, .\31 1u\24\28wide\29 {
+    width: 91.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 0u\28wide\29, .\31 0u\24\28wide\29 {
+    width: 83.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 260, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\39 u\28wide\29, .\39 u\24\28wide\29 {
+    width: 75%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 261, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\38 u\28wide\29, .\38 u\24\28wide\29 {
+    width: 66.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 262, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\37 u\28wide\29, .\37 u\24\28wide\29 {
+    width: 58.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 263, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\36 u\28wide\29, .\36 u\24\28wide\29 {
+    width: 50%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\35 u\28wide\29, .\35 u\24\28wide\29 {
+    width: 41.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 265, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\34 u\28wide\29, .\34 u\24\28wide\29 {
+    width: 33.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 266, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\33 u\28wide\29, .\33 u\24\28wide\29 {
+    width: 25%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 267, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\32 u\28wide\29, .\32 u\24\28wide\29 {
+    width: 16.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 268, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 u\28wide\29, .\31 u\24\28wide\29 {
+    width: 8.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 270, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\24\28wide\29  + *,
+  .\31 1u\24\28wide\29  + *,
+  .\31 0u\24\28wide\29  + *,
+  .\39 u\24\28wide\29  + *,
+  .\38 u\24\28wide\29  + *,
+  .\37 u\24\28wide\29  + *,
+  .\36 u\24\28wide\29  + *,
+  .\35 u\24\28wide\29  + *,
+  .\34 u\24\28wide\29  + *,
+  .\33 u\24\28wide\29  + *,
+  .\32 u\24\28wide\29  + *,
+  .\31 u\24\28wide\29  + * {
+    clear: left;
+  }
+
+  /* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-11u\28wide\29 {
+    margin-left: 91.66666667%;
+  }
+
+  /* line 286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-10u\28wide\29 {
+    margin-left: 83.33333333%;
+  }
+
+  /* line 287, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-9u\28wide\29 {
+    margin-left: 75%;
+  }
+
+  /* line 288, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-8u\28wide\29 {
+    margin-left: 66.66666667%;
+  }
+
+  /* line 289, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-7u\28wide\29 {
+    margin-left: 58.33333333%;
+  }
+
+  /* line 290, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-6u\28wide\29 {
+    margin-left: 50%;
+  }
+
+  /* line 291, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-5u\28wide\29 {
+    margin-left: 41.66666667%;
+  }
+
+  /* line 292, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-4u\28wide\29 {
+    margin-left: 33.33333333%;
+  }
+
+  /* line 293, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-3u\28wide\29 {
+    margin-left: 25%;
+  }
+
+  /* line 294, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-2u\28wide\29 {
+    margin-left: 16.66666667%;
+  }
+
+  /* line 295, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-1u\28wide\29 {
+    margin-left: 8.33333333%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row > * {
+    padding: 0 0 0 2em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row {
+    margin: 0 0 -1px -2em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform > * {
+    padding: 2em 0 0 2em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform {
+    margin: -2em 0 -1px -2em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25  > * {
+    padding: 0 0 0 4em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25 {
+    margin: 0 0 -1px -4em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25  > * {
+    padding: 4em 0 0 4em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25 {
+    margin: -4em 0 -1px -4em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25  > * {
+    padding: 0 0 0 3em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25 {
+    margin: 0 0 -1px -3em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25  > * {
+    padding: 3em 0 0 3em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25 {
+    margin: -3em 0 -1px -3em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25  > * {
+    padding: 0 0 0 1em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25 {
+    margin: 0 0 -1px -1em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25  > * {
+    padding: 1em 0 0 1em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25 {
+    margin: -1em 0 -1px -1em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25  > * {
+    padding: 0 0 0 0.5em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25 {
+    margin: 0 0 -1px -0.5em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25  > * {
+    padding: 0.5em 0 0 0.5em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25 {
+    margin: -0.5em 0 -1px -0.5em;
+  }
+
+  /* line 257, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\28normal\29, .\31 2u\24\28normal\29 {
+    width: 100%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 1u\28normal\29, .\31 1u\24\28normal\29 {
+    width: 91.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 0u\28normal\29, .\31 0u\24\28normal\29 {
+    width: 83.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 260, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\39 u\28normal\29, .\39 u\24\28normal\29 {
+    width: 75%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 261, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\38 u\28normal\29, .\38 u\24\28normal\29 {
+    width: 66.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 262, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\37 u\28normal\29, .\37 u\24\28normal\29 {
+    width: 58.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 263, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\36 u\28normal\29, .\36 u\24\28normal\29 {
+    width: 50%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\35 u\28normal\29, .\35 u\24\28normal\29 {
+    width: 41.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 265, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\34 u\28normal\29, .\34 u\24\28normal\29 {
+    width: 33.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 266, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\33 u\28normal\29, .\33 u\24\28normal\29 {
+    width: 25%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 267, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\32 u\28normal\29, .\32 u\24\28normal\29 {
+    width: 16.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 268, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 u\28normal\29, .\31 u\24\28normal\29 {
+    width: 8.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 270, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\24\28normal\29  + *,
+  .\31 1u\24\28normal\29  + *,
+  .\31 0u\24\28normal\29  + *,
+  .\39 u\24\28normal\29  + *,
+  .\38 u\24\28normal\29  + *,
+  .\37 u\24\28normal\29  + *,
+  .\36 u\24\28normal\29  + *,
+  .\35 u\24\28normal\29  + *,
+  .\34 u\24\28normal\29  + *,
+  .\33 u\24\28normal\29  + *,
+  .\32 u\24\28normal\29  + *,
+  .\31 u\24\28normal\29  + * {
+    clear: left;
+  }
+
+  /* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-11u\28normal\29 {
+    margin-left: 91.66666667%;
+  }
+
+  /* line 286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-10u\28normal\29 {
+    margin-left: 83.33333333%;
+  }
+
+  /* line 287, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-9u\28normal\29 {
+    margin-left: 75%;
+  }
+
+  /* line 288, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-8u\28normal\29 {
+    margin-left: 66.66666667%;
+  }
+
+  /* line 289, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-7u\28normal\29 {
+    margin-left: 58.33333333%;
+  }
+
+  /* line 290, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-6u\28normal\29 {
+    margin-left: 50%;
+  }
+
+  /* line 291, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-5u\28normal\29 {
+    margin-left: 41.66666667%;
+  }
+
+  /* line 292, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-4u\28normal\29 {
+    margin-left: 33.33333333%;
+  }
+
+  /* line 293, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-3u\28normal\29 {
+    margin-left: 25%;
+  }
+
+  /* line 294, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-2u\28normal\29 {
+    margin-left: 16.66666667%;
+  }
+
+  /* line 295, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-1u\28normal\29 {
+    margin-left: 8.33333333%;
+  }
+}
+@media screen and (max-width: 980px) {
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row > * {
+    padding: 0 0 0 2em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row {
+    margin: 0 0 -1px -2em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform > * {
+    padding: 2em 0 0 2em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform {
+    margin: -2em 0 -1px -2em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25  > * {
+    padding: 0 0 0 4em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25 {
+    margin: 0 0 -1px -4em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25  > * {
+    padding: 4em 0 0 4em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25 {
+    margin: -4em 0 -1px -4em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25  > * {
+    padding: 0 0 0 3em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25 {
+    margin: 0 0 -1px -3em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25  > * {
+    padding: 3em 0 0 3em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25 {
+    margin: -3em 0 -1px -3em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25  > * {
+    padding: 0 0 0 1em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25 {
+    margin: 0 0 -1px -1em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25  > * {
+    padding: 1em 0 0 1em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25 {
+    margin: -1em 0 -1px -1em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25  > * {
+    padding: 0 0 0 0.5em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25 {
+    margin: 0 0 -1px -0.5em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25  > * {
+    padding: 0.5em 0 0 0.5em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25 {
+    margin: -0.5em 0 -1px -0.5em;
+  }
+
+  /* line 257, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\28narrow\29, .\31 2u\24\28narrow\29 {
+    width: 100%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 1u\28narrow\29, .\31 1u\24\28narrow\29 {
+    width: 91.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 0u\28narrow\29, .\31 0u\24\28narrow\29 {
+    width: 83.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 260, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\39 u\28narrow\29, .\39 u\24\28narrow\29 {
+    width: 75%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 261, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\38 u\28narrow\29, .\38 u\24\28narrow\29 {
+    width: 66.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 262, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\37 u\28narrow\29, .\37 u\24\28narrow\29 {
+    width: 58.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 263, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\36 u\28narrow\29, .\36 u\24\28narrow\29 {
+    width: 50%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\35 u\28narrow\29, .\35 u\24\28narrow\29 {
+    width: 41.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 265, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\34 u\28narrow\29, .\34 u\24\28narrow\29 {
+    width: 33.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 266, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\33 u\28narrow\29, .\33 u\24\28narrow\29 {
+    width: 25%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 267, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\32 u\28narrow\29, .\32 u\24\28narrow\29 {
+    width: 16.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 268, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 u\28narrow\29, .\31 u\24\28narrow\29 {
+    width: 8.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 270, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\24\28narrow\29  + *,
+  .\31 1u\24\28narrow\29  + *,
+  .\31 0u\24\28narrow\29  + *,
+  .\39 u\24\28narrow\29  + *,
+  .\38 u\24\28narrow\29  + *,
+  .\37 u\24\28narrow\29  + *,
+  .\36 u\24\28narrow\29  + *,
+  .\35 u\24\28narrow\29  + *,
+  .\34 u\24\28narrow\29  + *,
+  .\33 u\24\28narrow\29  + *,
+  .\32 u\24\28narrow\29  + *,
+  .\31 u\24\28narrow\29  + * {
+    clear: left;
+  }
+
+  /* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-11u\28narrow\29 {
+    margin-left: 91.66666667%;
+  }
+
+  /* line 286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-10u\28narrow\29 {
+    margin-left: 83.33333333%;
+  }
+
+  /* line 287, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-9u\28narrow\29 {
+    margin-left: 75%;
+  }
+
+  /* line 288, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-8u\28narrow\29 {
+    margin-left: 66.66666667%;
+  }
+
+  /* line 289, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-7u\28narrow\29 {
+    margin-left: 58.33333333%;
+  }
+
+  /* line 290, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-6u\28narrow\29 {
+    margin-left: 50%;
+  }
+
+  /* line 291, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-5u\28narrow\29 {
+    margin-left: 41.66666667%;
+  }
+
+  /* line 292, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-4u\28narrow\29 {
+    margin-left: 33.33333333%;
+  }
+
+  /* line 293, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-3u\28narrow\29 {
+    margin-left: 25%;
+  }
+
+  /* line 294, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-2u\28narrow\29 {
+    margin-left: 16.66666667%;
+  }
+
+  /* line 295, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-1u\28narrow\29 {
+    margin-left: 8.33333333%;
+  }
+}
+@media screen and (max-width: 840px) {
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row > * {
+    padding: 0 0 0 2em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row {
+    margin: 0 0 -1px -2em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform > * {
+    padding: 2em 0 0 2em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform {
+    margin: -2em 0 -1px -2em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25  > * {
+    padding: 0 0 0 4em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25 {
+    margin: 0 0 -1px -4em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25  > * {
+    padding: 4em 0 0 4em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25 {
+    margin: -4em 0 -1px -4em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25  > * {
+    padding: 0 0 0 3em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25 {
+    margin: 0 0 -1px -3em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25  > * {
+    padding: 3em 0 0 3em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25 {
+    margin: -3em 0 -1px -3em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25  > * {
+    padding: 0 0 0 1em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25 {
+    margin: 0 0 -1px -1em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25  > * {
+    padding: 1em 0 0 1em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25 {
+    margin: -1em 0 -1px -1em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25  > * {
+    padding: 0 0 0 0.5em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25 {
+    margin: 0 0 -1px -0.5em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25  > * {
+    padding: 0.5em 0 0 0.5em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25 {
+    margin: -0.5em 0 -1px -0.5em;
+  }
+
+  /* line 257, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\28narrower\29, .\31 2u\24\28narrower\29 {
+    width: 100%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 1u\28narrower\29, .\31 1u\24\28narrower\29 {
+    width: 91.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 0u\28narrower\29, .\31 0u\24\28narrower\29 {
+    width: 83.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 260, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\39 u\28narrower\29, .\39 u\24\28narrower\29 {
+    width: 75%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 261, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\38 u\28narrower\29, .\38 u\24\28narrower\29 {
+    width: 66.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 262, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\37 u\28narrower\29, .\37 u\24\28narrower\29 {
+    width: 58.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 263, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\36 u\28narrower\29, .\36 u\24\28narrower\29 {
+    width: 50%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\35 u\28narrower\29, .\35 u\24\28narrower\29 {
+    width: 41.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 265, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\34 u\28narrower\29, .\34 u\24\28narrower\29 {
+    width: 33.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 266, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\33 u\28narrower\29, .\33 u\24\28narrower\29 {
+    width: 25%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 267, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\32 u\28narrower\29, .\32 u\24\28narrower\29 {
+    width: 16.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 268, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 u\28narrower\29, .\31 u\24\28narrower\29 {
+    width: 8.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 270, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\24\28narrower\29  + *,
+  .\31 1u\24\28narrower\29  + *,
+  .\31 0u\24\28narrower\29  + *,
+  .\39 u\24\28narrower\29  + *,
+  .\38 u\24\28narrower\29  + *,
+  .\37 u\24\28narrower\29  + *,
+  .\36 u\24\28narrower\29  + *,
+  .\35 u\24\28narrower\29  + *,
+  .\34 u\24\28narrower\29  + *,
+  .\33 u\24\28narrower\29  + *,
+  .\32 u\24\28narrower\29  + *,
+  .\31 u\24\28narrower\29  + * {
+    clear: left;
+  }
+
+  /* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-11u\28narrower\29 {
+    margin-left: 91.66666667%;
+  }
+
+  /* line 286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-10u\28narrower\29 {
+    margin-left: 83.33333333%;
+  }
+
+  /* line 287, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-9u\28narrower\29 {
+    margin-left: 75%;
+  }
+
+  /* line 288, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-8u\28narrower\29 {
+    margin-left: 66.66666667%;
+  }
+
+  /* line 289, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-7u\28narrower\29 {
+    margin-left: 58.33333333%;
+  }
+
+  /* line 290, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-6u\28narrower\29 {
+    margin-left: 50%;
+  }
+
+  /* line 291, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-5u\28narrower\29 {
+    margin-left: 41.66666667%;
+  }
+
+  /* line 292, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-4u\28narrower\29 {
+    margin-left: 33.33333333%;
+  }
+
+  /* line 293, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-3u\28narrower\29 {
+    margin-left: 25%;
+  }
+
+  /* line 294, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-2u\28narrower\29 {
+    margin-left: 16.66666667%;
+  }
+
+  /* line 295, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-1u\28narrower\29 {
+    margin-left: 8.33333333%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row > * {
+    padding: 0 0 0 2em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row {
+    margin: 0 0 -1px -2em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform > * {
+    padding: 2em 0 0 2em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform {
+    margin: -2em 0 -1px -2em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25  > * {
+    padding: 0 0 0 4em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25 {
+    margin: 0 0 -1px -4em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25  > * {
+    padding: 4em 0 0 4em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25 {
+    margin: -4em 0 -1px -4em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25  > * {
+    padding: 0 0 0 3em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25 {
+    margin: 0 0 -1px -3em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25  > * {
+    padding: 3em 0 0 3em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25 {
+    margin: -3em 0 -1px -3em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25  > * {
+    padding: 0 0 0 1em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25 {
+    margin: 0 0 -1px -1em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25  > * {
+    padding: 1em 0 0 1em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25 {
+    margin: -1em 0 -1px -1em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25  > * {
+    padding: 0 0 0 0.5em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25 {
+    margin: 0 0 -1px -0.5em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25  > * {
+    padding: 0.5em 0 0 0.5em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25 {
+    margin: -0.5em 0 -1px -0.5em;
+  }
+
+  /* line 257, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\28mobile\29, .\31 2u\24\28mobile\29 {
+    width: 100%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 1u\28mobile\29, .\31 1u\24\28mobile\29 {
+    width: 91.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 0u\28mobile\29, .\31 0u\24\28mobile\29 {
+    width: 83.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 260, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\39 u\28mobile\29, .\39 u\24\28mobile\29 {
+    width: 75%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 261, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\38 u\28mobile\29, .\38 u\24\28mobile\29 {
+    width: 66.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 262, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\37 u\28mobile\29, .\37 u\24\28mobile\29 {
+    width: 58.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 263, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\36 u\28mobile\29, .\36 u\24\28mobile\29 {
+    width: 50%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\35 u\28mobile\29, .\35 u\24\28mobile\29 {
+    width: 41.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 265, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\34 u\28mobile\29, .\34 u\24\28mobile\29 {
+    width: 33.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 266, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\33 u\28mobile\29, .\33 u\24\28mobile\29 {
+    width: 25%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 267, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\32 u\28mobile\29, .\32 u\24\28mobile\29 {
+    width: 16.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 268, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 u\28mobile\29, .\31 u\24\28mobile\29 {
+    width: 8.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 270, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\24\28mobile\29  + *,
+  .\31 1u\24\28mobile\29  + *,
+  .\31 0u\24\28mobile\29  + *,
+  .\39 u\24\28mobile\29  + *,
+  .\38 u\24\28mobile\29  + *,
+  .\37 u\24\28mobile\29  + *,
+  .\36 u\24\28mobile\29  + *,
+  .\35 u\24\28mobile\29  + *,
+  .\34 u\24\28mobile\29  + *,
+  .\33 u\24\28mobile\29  + *,
+  .\32 u\24\28mobile\29  + *,
+  .\31 u\24\28mobile\29  + * {
+    clear: left;
+  }
+
+  /* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-11u\28mobile\29 {
+    margin-left: 91.66666667%;
+  }
+
+  /* line 286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-10u\28mobile\29 {
+    margin-left: 83.33333333%;
+  }
+
+  /* line 287, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-9u\28mobile\29 {
+    margin-left: 75%;
+  }
+
+  /* line 288, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-8u\28mobile\29 {
+    margin-left: 66.66666667%;
+  }
+
+  /* line 289, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-7u\28mobile\29 {
+    margin-left: 58.33333333%;
+  }
+
+  /* line 290, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-6u\28mobile\29 {
+    margin-left: 50%;
+  }
+
+  /* line 291, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-5u\28mobile\29 {
+    margin-left: 41.66666667%;
+  }
+
+  /* line 292, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-4u\28mobile\29 {
+    margin-left: 33.33333333%;
+  }
+
+  /* line 293, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-3u\28mobile\29 {
+    margin-left: 25%;
+  }
+
+  /* line 294, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-2u\28mobile\29 {
+    margin-left: 16.66666667%;
+  }
+
+  /* line 295, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-1u\28mobile\29 {
+    margin-left: 8.33333333%;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row > * {
+    padding: 0 0 0 2em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row {
+    margin: 0 0 -1px -2em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform > * {
+    padding: 2em 0 0 2em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform {
+    margin: -2em 0 -1px -2em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25  > * {
+    padding: 0 0 0 4em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 00\25 {
+    margin: 0 0 -1px -4em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25  > * {
+    padding: 4em 0 0 4em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 00\25 {
+    margin: -4em 0 -1px -4em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25  > * {
+    padding: 0 0 0 3em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\31 50\25 {
+    margin: 0 0 -1px -3em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25  > * {
+    padding: 3em 0 0 3em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\31 50\25 {
+    margin: -3em 0 -1px -3em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25  > * {
+    padding: 0 0 0 1em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\35 0\25 {
+    margin: 0 0 -1px -1em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25  > * {
+    padding: 1em 0 0 1em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\35 0\25 {
+    margin: -1em 0 -1px -1em;
+  }
+
+  /* line 322, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25  > * {
+    padding: 0 0 0 0.5em;
+  }
+
+  /* line 323, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.\32 5\25 {
+    margin: 0 0 -1px -0.5em;
+  }
+
+  /* line 326, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25  > * {
+    padding: 0.5em 0 0 0.5em;
+  }
+
+  /* line 327, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .row.uniform.\32 5\25 {
+    margin: -0.5em 0 -1px -0.5em;
+  }
+
+  /* line 257, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\28mobilep\29, .\31 2u\24\28mobilep\29 {
+    width: 100%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 1u\28mobilep\29, .\31 1u\24\28mobilep\29 {
+    width: 91.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 0u\28mobilep\29, .\31 0u\24\28mobilep\29 {
+    width: 83.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 260, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\39 u\28mobilep\29, .\39 u\24\28mobilep\29 {
+    width: 75%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 261, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\38 u\28mobilep\29, .\38 u\24\28mobilep\29 {
+    width: 66.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 262, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\37 u\28mobilep\29, .\37 u\24\28mobilep\29 {
+    width: 58.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 263, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\36 u\28mobilep\29, .\36 u\24\28mobilep\29 {
+    width: 50%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\35 u\28mobilep\29, .\35 u\24\28mobilep\29 {
+    width: 41.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 265, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\34 u\28mobilep\29, .\34 u\24\28mobilep\29 {
+    width: 33.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 266, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\33 u\28mobilep\29, .\33 u\24\28mobilep\29 {
+    width: 25%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 267, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\32 u\28mobilep\29, .\32 u\24\28mobilep\29 {
+    width: 16.6666666667%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 268, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 u\28mobilep\29, .\31 u\24\28mobilep\29 {
+    width: 8.3333333333%;
+    clear: none;
+    margin-left: 0;
+  }
+
+  /* line 270, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\31 2u\24\28mobilep\29  + *,
+  .\31 1u\24\28mobilep\29  + *,
+  .\31 0u\24\28mobilep\29  + *,
+  .\39 u\24\28mobilep\29  + *,
+  .\38 u\24\28mobilep\29  + *,
+  .\37 u\24\28mobilep\29  + *,
+  .\36 u\24\28mobilep\29  + *,
+  .\35 u\24\28mobilep\29  + *,
+  .\34 u\24\28mobilep\29  + *,
+  .\33 u\24\28mobilep\29  + *,
+  .\32 u\24\28mobilep\29  + *,
+  .\31 u\24\28mobilep\29  + * {
+    clear: left;
+  }
+
+  /* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-11u\28mobilep\29 {
+    margin-left: 91.66666667%;
+  }
+
+  /* line 286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-10u\28mobilep\29 {
+    margin-left: 83.33333333%;
+  }
+
+  /* line 287, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-9u\28mobilep\29 {
+    margin-left: 75%;
+  }
+
+  /* line 288, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-8u\28mobilep\29 {
+    margin-left: 66.66666667%;
+  }
+
+  /* line 289, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-7u\28mobilep\29 {
+    margin-left: 58.33333333%;
+  }
+
+  /* line 290, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-6u\28mobilep\29 {
+    margin-left: 50%;
+  }
+
+  /* line 291, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-5u\28mobilep\29 {
+    margin-left: 41.66666667%;
+  }
+
+  /* line 292, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-4u\28mobilep\29 {
+    margin-left: 33.33333333%;
+  }
+
+  /* line 293, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-3u\28mobilep\29 {
+    margin-left: 25%;
+  }
+
+  /* line 294, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-2u\28mobilep\29 {
+    margin-left: 16.66666667%;
+  }
+
+  /* line 295, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_skel.scss */
+  .\-1u\28mobilep\29 {
+    margin-left: 8.33333333%;
+  }
+}
+/* Basic */
+/* line 56, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+body {
+  background: #ffffff;
+}
+
+/* line 60, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+body, input, select, textarea {
+  color: #808080;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 13pt;
+  font-weight: 400;
+  line-height: 1.65em;
+}
+
+/* line 68, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+a {
+  -moz-transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  color: #e98b6c;
+  text-decoration: underline;
+}
+/* line 73, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+a:hover {
+  color: #e98b6c !important;
+  text-decoration: none;
+}
+
+/* line 79, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+strong, b {
+  color: #555555;
+  font-weight: 600;
+}
+
+/* line 84, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 88, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+p {
+  margin: 0 0 2em 0;
+}
+
+/* line 92, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #555555;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1em;
+  margin: 0 0 1em 0;
+  text-indent: -0.05em;
+  text-transform: uppercase;
+}
+/* line 101, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 107, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+h2 {
+  font-size: 1.75em;
+  line-height: 1.5em;
+}
+
+/* line 112, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+h3 {
+  font-size: 1.35em;
+  line-height: 1.5em;
+}
+
+/* line 117, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+h4 {
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+/* line 122, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+h5 {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+/* line 127, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+h6 {
+  font-size: 0.7em;
+  line-height: 1.5em;
+}
+
+/* line 132, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+sub {
+  font-size: 0.8em;
+  position: relative;
+  top: 0.5em;
+}
+
+/* line 138, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+sup {
+  font-size: 0.8em;
+  position: relative;
+  top: -0.5em;
+}
+
+/* line 144, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+hr {
+  border: 0;
+  border-bottom: solid 1px #dddddd;
+  margin: 2em 0;
+}
+/* line 151, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+hr.major {
+  margin: 3em 0;
+}
+
+/* line 156, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+blockquote {
+  border-left: solid 4px #dddddd;
+  font-style: italic;
+  margin: 0 0 2em 0;
+  padding: 0.5em 0 0.5em 2em;
+}
+
+/* line 163, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+pre {
+  -webkit-overflow-scrolling: touch;
+  background: #f0f0f0;
+  font-family: monospace;
+  font-size: 0.9em;
+  line-height: 1.75em;
+  margin: 0 0 2em 0;
+  overflow-x: auto;
+  padding: 1em 1.5em;
+}
+
+/* line 174, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+code {
+  background: #f0f0f0;
+  font-family: monospace;
+  font-size: 0.9em;
+  margin: 0 0.25em;
+  padding: 0.25em 0.65em;
+}
+
+/* line 182, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.align-left {
+  text-align: left;
+}
+
+/* line 186, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.align-center {
+  text-align: center;
+}
+
+/* line 190, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.align-right {
+  text-align: right;
+}
+
+/* Section/Article */
+/* line 197, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+section.special, article.special {
+  text-align: center;
+}
+
+/* line 203, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header p {
+  color: #aaa;
+  margin: 0 0 1.5em 0;
+  position: relative;
+}
+/* line 209, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header h2 + p {
+  font-size: 1.25em;
+  line-height: 1.5em;
+  margin-top: -1em;
+}
+/* line 215, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header h3 + p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin-top: -0.85em;
+}
+/* line 221, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header h4 + p,
+header h5 + p,
+header h6 + p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin-top: -0.75em;
+}
+/* line 229, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header.major {
+  margin: 0 auto 4em auto;
+  max-width: 56.25em;
+  text-align: center;
+}
+/* line 234, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header.major > :first-child {
+  white-space: nowrap;
+}
+/* line 237, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header.major > :first-child:before, header.major > :first-child:after {
+  background-image: url("images/header-major-on-light.svg");
+  background-repeat: no-repeat;
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 150px;
+}
+/* line 247, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header.major > :first-child:before {
+  background-position: center right;
+  margin-right: 1em;
+}
+/* line 252, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header.major > :first-child:after {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  background-position: center left;
+  margin-left: 1em;
+}
+/* line 259, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+header.major p {
+  color: #808080;
+  font-size: 1.1em;
+  line-height: 1.65em;
+  margin: 0 auto 0 auto;
+}
+
+/* Form */
+/* line 273, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+form {
+  margin: 0 0 2em 0;
+}
+
+/* line 277, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+label {
+  color: #555555;
+  display: block;
+  font-size: 0.9em;
+  font-weight: 900;
+  margin: 0 0 1em 0;
+}
+
+/* line 285, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border: 0;
+  border: solid 1px #dddddd;
+  border-radius: 0;
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
+}
+/* line 301, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid,
+select:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+/* line 305, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #e98b6c;
+  box-shadow: 0 0 0 1px #e98b6c;
+}
+
+/* line 311, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.select-wrapper {
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+/* line 7, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_mixins.scss */
+.select-wrapper:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+/* line 316, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.select-wrapper:before {
+  content: '\f078';
+  color: #dddddd;
+  display: block;
+  height: 2.75em;
+  line-height: 2.75em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 2.75em;
+}
+/* line 330, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.select-wrapper select::-ms-expand {
+  display: none;
+}
+
+/* line 335, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  height: 2.75em;
+}
+
+/* line 342, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+textarea {
+  padding: 0.75em 1em;
+}
+
+/* line 346, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: block;
+  float: left;
+  margin-right: -2em;
+  opacity: 0;
+  width: 1em;
+  z-index: -1;
+}
+/* line 356, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  text-decoration: none;
+  color: #808080;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  padding-left: 2.4em;
+  padding-right: 0.75em;
+  position: relative;
+}
+/* line 7, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_mixins.scss */
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+/* line 367, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  background: #f0f0f0;
+  content: '';
+  display: inline-block;
+  height: 1.65em;
+  left: 0;
+  line-height: 1.58125em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 1.65em;
+}
+/* line 382, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  background: #4e485a;
+  color: #ffffff;
+  content: '\f00c';
+}
+/* line 390, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+  box-shadow: 0 0 0 2px #e98b6c;
+}
+
+/* line 398, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="radio"] + label:before {
+  border-radius: 100%;
+}
+
+/* line 404, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+::-webkit-input-placeholder {
+  color: #aaa !important;
+  opacity: 1.0;
+}
+
+/* line 409, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+:-moz-placeholder {
+  color: #aaa !important;
+  opacity: 1.0;
+}
+
+/* line 414, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+::-moz-placeholder {
+  color: #aaa !important;
+  opacity: 1.0;
+}
+
+/* line 419, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+:-ms-input-placeholder {
+  color: #aaa !important;
+  opacity: 1.0;
+}
+
+/* line 424, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.formerize-placeholder {
+  color: #aaa !important;
+  opacity: 1.0;
+}
+
+/* Box */
+/* line 431, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.box {
+  background: #fff;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+  padding: 2.25em;
+}
+/* line 437, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.box > :last-child,
+.box > :last-child > :last-child,
+.box > :last-child > :last-child > :last-child {
+  margin-bottom: 0;
+}
+/* line 443, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.box.special {
+  padding: 3em 2.25em;
+}
+/* line 447, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.box.alt {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Icon */
+/* line 456, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+}
+/* line 7, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_mixins.scss */
+.icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+/* line 461, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.icon > .label {
+  display: none;
+}
+/* line 465, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.icon.major {
+  background-image: -moz-linear-gradient(45deg, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 0%);
+  background-image: -webkit-linear-gradient(45deg, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 0%);
+  background-image: -ms-linear-gradient(45deg, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 0%);
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 0%);
+  background-color: #e98b6c;
+  border-radius: 100%;
+  color: #ffffff;
+  cursor: default;
+  display: block;
+  height: 4.5em;
+  line-height: 4.5em;
+  margin: 0 auto 2em auto;
+  text-align: center;
+  width: 4.5em;
+}
+/* line 478, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.icon.major:before {
+  font-size: 32px;
+}
+/* line 482, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.icon.major.alt {
+  background-color: #4e485a;
+  color: #ffffff;
+}
+
+/* Image */
+/* line 491, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.image {
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+/* line 496, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.image img {
+  display: block;
+}
+/* line 500, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.image.left {
+  float: left;
+  padding: 0 1.5em 1em 0;
+  top: 0.25em;
+}
+/* line 506, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.image.right {
+  float: right;
+  padding: 0 0 1em 1.5em;
+  top: 0.25em;
+}
+/* line 512, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.image.fit {
+  display: block;
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+/* line 517, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.image.fit img {
+  display: block;
+  width: 100%;
+}
+
+/* List */
+/* line 526, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ol {
+  list-style: decimal;
+  margin: 0 0 2em 0;
+  padding-left: 1.25em;
+}
+/* line 531, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ol li {
+  padding-left: 0.25em;
+}
+
+/* line 536, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul {
+  list-style: disc;
+  margin: 0 0 2em 0;
+  padding-left: 1em;
+}
+/* line 541, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul li {
+  padding-left: 0.5em;
+}
+/* line 545, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.alt {
+  list-style: none;
+  padding-left: 0;
+}
+/* line 549, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.alt li {
+  border-top: solid 1px #dddddd;
+  padding: 0.5em 0;
+}
+/* line 553, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.alt li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+/* line 560, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+/* line 565, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.icons li {
+  display: inline-block;
+  padding: 0 1em 0 0;
+}
+/* line 569, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.icons li:last-child {
+  padding-right: 0;
+}
+/* line 574, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.icons li .icon:before {
+  font-size: 2em;
+}
+/* line 581, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+/* line 586, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li {
+  border-top: solid 1px #dddddd;
+  padding: 1.25em 0 1.25em 2.75em;
+  position: relative;
+}
+/* line 591, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+/* line 595, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li:first-child .icon {
+  top: 0;
+}
+/* line 600, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li a {
+  color: inherit;
+  text-decoration: none;
+}
+/* line 605, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li .icon {
+  background-color: #808080;
+  border-radius: 100%;
+  color: #ffffff;
+  cursor: default;
+  font-size: 1em;
+  height: 1.75em;
+  left: 0;
+  line-height: 1.75em;
+  position: absolute;
+  text-align: center;
+  top: 1.25em;
+  width: 1.75em;
+}
+/* line 619, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li .icon:before {
+  font-size: 16px;
+}
+/* line 623, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li .icon.fa-twitter {
+  background-color: #4eafdc;
+}
+/* line 624, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li .icon.fa-facebook {
+  background-color: #456bc9;
+}
+/* line 625, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.labeled-icons li .icon.fa-linkedin {
+  background-color: #0291d9;
+}
+/* line 630, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.menu {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+/* line 635, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.menu li {
+  border-left: solid 1px #dddddd;
+  display: inline-block;
+  line-height: 1em;
+  margin: 0 0 0 1em;
+  padding: 0 0 0 1em;
+}
+/* line 642, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.menu li:first-child {
+  border-left: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 650, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+/* line 655, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions li {
+  display: inline-block;
+  padding: 0 1em 0 0;
+  vertical-align: middle;
+}
+/* line 660, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions li:last-child {
+  padding-right: 0;
+}
+/* line 666, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.small li {
+  padding: 0 0.5em 0 0;
+}
+/* line 672, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.vertical li {
+  display: block;
+  padding: 1em 0 0 0;
+}
+/* line 676, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.vertical li:first-child {
+  padding-top: 0;
+}
+/* line 680, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.vertical li > * {
+  margin-bottom: 0;
+}
+/* line 686, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.vertical.small li {
+  padding: 0.5em 0 0 0;
+}
+/* line 689, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.vertical.small li:first-child {
+  padding-top: 0;
+}
+/* line 696, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.fit {
+  display: table;
+  margin-left: -1em;
+  padding: 0;
+  table-layout: fixed;
+  width: calc(100% + 1em);
+}
+/* line 703, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.fit li {
+  display: table-cell;
+  padding: 0 0 0 1em;
+}
+/* line 707, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.fit li > * {
+  margin-bottom: 0;
+}
+/* line 712, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.fit.small {
+  margin-left: -0.5em;
+  width: calc(100% + 0.5em);
+}
+/* line 716, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+ul.actions.fit.small li {
+  padding: 0 0 0 0.5em;
+}
+
+/* line 724, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+dl {
+  margin: 0 0 2em 0;
+}
+
+/* Table */
+/* line 730, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.table-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+/* line 735, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table {
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+/* line 741, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table tbody tr:nth-child(2n + 1) {
+  background-color: #f0f0f0;
+}
+/* line 747, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table td {
+  padding: 0.75em 0.75em;
+}
+/* line 751, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table th {
+  color: #555555;
+  font-size: 0.9em;
+  font-weight: 900;
+  padding: 0 0.75em 0.75em 0.75em;
+  text-align: left;
+}
+/* line 759, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table thead {
+  border-bottom: solid 2px #dddddd;
+}
+/* line 763, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table tfoot {
+  border-top: solid 2px #dddddd;
+}
+/* line 767, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table.alt {
+  border-collapse: separate;
+}
+/* line 772, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table.alt tbody tr td {
+  border: solid 1px #dddddd;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+/* line 777, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table.alt tbody tr td:first-child {
+  border-left-width: 1px;
+}
+/* line 783, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table.alt tbody tr:first-child td {
+  border-top-width: 1px;
+}
+/* line 790, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table.alt thead {
+  border-bottom: 0;
+}
+/* line 794, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+table.alt tfoot {
+  border-top: 0;
+}
+
+/* Button */
+/* line 802, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #e98b6c;
+  border: 0;
+  border-radius: 0;
+  color: #ffffff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 900;
+  height: 3em;
+  letter-spacing: 0.05em;
+  line-height: 3em;
+  padding: 0 1.75em;
+  text-align: center;
+  text-decoration: none;
+  text-indent: -0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* line 825, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover {
+  background-color: #ec9d82;
+  color: #ffffff !important;
+}
+/* line 830, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+.button:active {
+  background-color: #e67956;
+}
+/* line 834, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].icon,
+input[type="reset"].icon,
+input[type="button"].icon,
+.button.icon {
+  padding-left: 1.35em;
+}
+/* line 837, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].icon:before,
+input[type="reset"].icon:before,
+input[type="button"].icon:before,
+.button.icon:before {
+  margin-right: 0.5em;
+}
+/* line 842, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].fit,
+input[type="reset"].fit,
+input[type="button"].fit,
+.button.fit {
+  display: block;
+  margin: 0 0 1em 0;
+  width: 100%;
+}
+/* line 848, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].small,
+input[type="reset"].small,
+input[type="button"].small,
+.button.small {
+  font-size: 0.8em;
+  height: 2.475em;
+  line-height: 2.475em;
+}
+/* line 854, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].big,
+input[type="reset"].big,
+input[type="button"].big,
+.button.big {
+  font-size: 1.25em;
+  height: 2.475em;
+  line-height: 2.475em;
+}
+/* line 860, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].alt,
+input[type="reset"].alt,
+input[type="button"].alt,
+.button.alt {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #dddddd;
+  color: #555555 !important;
+}
+/* line 865, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].alt:hover,
+input[type="reset"].alt:hover,
+input[type="button"].alt:hover,
+.button.alt:hover {
+  background-color: #f0f0f0;
+}
+/* line 869, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].alt:active,
+input[type="reset"].alt:active,
+input[type="button"].alt:active,
+.button.alt:active {
+  background-color: #dddddd;
+}
+/* line 874, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].alt.icon:before,
+input[type="reset"].alt.icon:before,
+input[type="button"].alt.icon:before,
+.button.alt.icon:before {
+  color: #aaa;
+}
+/* line 880, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].special,
+input[type="reset"].special,
+input[type="button"].special,
+.button.special {
+  background-color: #e98b6c;
+  color: #ffffff !important;
+}
+/* line 884, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].special:hover,
+input[type="reset"].special:hover,
+input[type="button"].special:hover,
+.button.special:hover {
+  background-color: #ec9d82;
+}
+/* line 888, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].special:active,
+input[type="reset"].special:active,
+input[type="button"].special:active,
+.button.special:active {
+  background-color: #e67956;
+}
+/* line 893, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+input[type="submit"].disabled, input[type="submit"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+.button.disabled,
+.button:disabled {
+  background-color: #808080 !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  cursor: default;
+  opacity: 0.25;
+}
+
+/* Wrapper */
+/* line 905, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper {
+  padding: 6em 0;
+}
+/* line 908, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style1 {
+  background: #f5f5f5;
+}
+/* line 912, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 {
+  background: #e98b6c;
+  color: #fceee9;
+}
+/* line 916, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6, .wrapper.style2 strong, .wrapper.style2 b, .wrapper.style2 th, .wrapper.style2 label {
+  color: #ffffff;
+}
+/* line 921, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 header p {
+  color: #fceee9;
+}
+/* line 927, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 header.major > :first-child:before, .wrapper.style2 header.major > :first-child:after {
+  background-image: url("images/header-major-on-dark.svg");
+}
+/* line 935, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 .box {
+  background: #ec9d82;
+}
+/* line 939, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 input[type="submit"],
+.wrapper.style2 input[type="reset"],
+.wrapper.style2 input[type="button"],
+.wrapper.style2 .button {
+  color: #e98b6c !important;
+  background: #ffffff;
+}
+/* line 946, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 input[type="submit"].alt,
+.wrapper.style2 input[type="reset"].alt,
+.wrapper.style2 input[type="button"].alt,
+.wrapper.style2 .button.alt {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  color: #ffffff !important;
+}
+/* line 951, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 input[type="submit"].alt:hover,
+.wrapper.style2 input[type="reset"].alt:hover,
+.wrapper.style2 input[type="button"].alt:hover,
+.wrapper.style2 .button.alt:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* line 955, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 input[type="submit"].alt:active,
+.wrapper.style2 input[type="reset"].alt:active,
+.wrapper.style2 input[type="button"].alt:active,
+.wrapper.style2 .button.alt:active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+/* line 960, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style2 input[type="submit"].alt.icon:before,
+.wrapper.style2 input[type="reset"].alt.icon:before,
+.wrapper.style2 input[type="button"].alt.icon:before,
+.wrapper.style2 .button.alt.icon:before {
+  color: #f8dcd3;
+}
+/* line 968, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.wrapper.style3 {
+  background: #ffffff;
+}
+
+/* Header */
+/* line 975, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#page-wrapper {
+  padding-top: 3em;
+}
+
+/* line 980, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+body.landing #page-wrapper {
+  padding-top: 0;
+}
+
+@-moz-keyframes reveal-header {
+  0% {
+    top: -5em;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-webkit-keyframes reveal-header {
+  0% {
+    top: -5em;
+  }
+  100% {
+    top: 0;
+  }
+}
+@-ms-keyframes reveal-header {
+  0% {
+    top: -5em;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes reveal-header {
+  0% {
+    top: -5em;
+  }
+  100% {
+    top: 0;
+  }
+}
+/* line 990, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header {
+  background: #332D3D;
+  color: #e0e0e2;
+  cursor: default;
+  height: 3.25em;
+  left: 0;
+  line-height: 3.25em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+/* line 1002, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header h1 {
+  height: inherit;
+  left: 1.25em;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+/* line 1011, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header h1 a {
+  font-size: 1.25em;
+  color: #fff !important;
+}
+/* line 1017, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav {
+  height: inherit;
+  line-height: inherit;
+  position: absolute;
+  right: 1.25em;
+  top: 0;
+  vertical-align: middle;
+}
+/* line 1025, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+/* line 1030, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul > li {
+  display: inline-block;
+  margin-left: 3em;
+  padding-left: 0;
+}
+/* line 1035, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul > li > ul {
+  display: none;
+}
+/* line 1039, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul > li a {
+  color: #fff !important;
+  display: inline-block;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-indent: -0.05em;
+  text-transform: uppercase;
+}
+/* line 1049, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul > li a.icon:before {
+  margin-right: 0.75em;
+  opacity: 0.5;
+}
+/* line 1057, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul > li.active > a {
+  color: #fff;
+}
+/* line 1062, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul > li:first-child {
+  margin-left: 0;
+}
+/* line 1066, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header nav > ul > li .button {
+  height: 2.25em;
+  line-height: 2.25em;
+  margin-bottom: 0;
+  padding: 0 1.25em;
+  position: relative;
+  top: -0.075em;
+  vertical-align: middle;
+}
+/* line 1079, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header.reveal {
+  -moz-animation: reveal-header 0.5s;
+  -webkit-animation: reveal-header 0.5s;
+  -ms-animation: reveal-header 0.5s;
+  animation: reveal-header 0.5s;
+}
+/* line 1083, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header.alt {
+  -moz-animation: none;
+  -webkit-animation: none;
+  -ms-animation: none;
+  animation: none;
+  background: none;
+  margin-top: 0.75em;
+  position: absolute;
+}
+/* line 1089, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header.alt h1 {
+  left: 2em;
+}
+/* line 1093, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header.alt nav {
+  right: 2.5em;
+}
+/* line 1098, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header .container {
+  position: relative;
+}
+/* line 1101, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header .container h1 {
+  left: 0;
+}
+/* line 1105, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#header .container nav {
+  right: 0;
+}
+
+/* line 1111, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron {
+  background: #ffffff;
+  border: solid 1px #e0e0e0;
+  box-shadow: 0 0.15em 0.15em 0 rgba(0, 0, 0, 0.05);
+  color: #808080;
+  list-style: none;
+  margin-top: -0.75em;
+  min-width: 12em;
+  padding: 0.75em 0;
+}
+/* line 1121, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron.level-0 {
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+/* line 1125, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron.level-0:before {
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #ffffff;
+  border: 0;
+  border-color: #e0e0e0;
+  border-style: solid;
+  border-left-width: 1px;
+  border-top-width: 1px;
+  content: '';
+  display: block;
+  height: 1em;
+  left: 50%;
+  margin-left: -0.5em;
+  position: absolute;
+  top: -0.5em;
+  width: 1em;
+}
+/* line 1144, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron li {
+  border-top: solid 1px #dddddd;
+}
+/* line 1147, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron li > a {
+  -moz-transition: none;
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
+  color: #808080 !important;
+  text-decoration: none;
+  display: block;
+  padding: 0.25em 0.75em;
+}
+/* line 1155, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron li:first-child {
+  border-top: 0;
+}
+/* line 1159, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron li.active, .dropotron li:hover {
+  background: #e98b6c;
+}
+/* line 1163, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+.dropotron li.active > a, .dropotron li:hover > a {
+  color: #ffffff !important;
+}
+
+/* Banner */
+/* line 1172, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner {
+  background-color: #3a3347;
+  background-image: url("images/banner.svg");
+  background-position: 25% bottom;
+  background-repeat: repeat-x;
+  background-size: 1500px 300px;
+  color: #fff;
+  padding: 16em 0 14em 0;
+  text-align: center;
+}
+/* line 1182, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner :last-child {
+  margin-bottom: 0;
+}
+/* line 1186, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner h2 {
+  color: inherit;
+  font-size: 3em;
+  line-height: 1.25em;
+  margin: 0 0 0.5em 0;
+  padding: 0;
+}
+/* line 1194, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner p {
+  color: #e98b6c;
+  font-size: 2em;
+  margin-bottom: 1.75em;
+}
+/* line 1204, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner input[type="submit"].alt,
+#banner input[type="reset"].alt,
+#banner input[type="button"].alt,
+#banner .button.alt {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  color: #ffffff !important;
+}
+/* line 1209, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner input[type="submit"].alt:hover,
+#banner input[type="reset"].alt:hover,
+#banner input[type="button"].alt:hover,
+#banner .button.alt:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1213, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner input[type="submit"].alt:active,
+#banner input[type="reset"].alt:active,
+#banner input[type="button"].alt:active,
+#banner .button.alt:active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+/* line 1218, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#banner input[type="submit"].alt.icon:before,
+#banner input[type="reset"].alt.icon:before,
+#banner input[type="button"].alt.icon:before,
+#banner .button.alt.icon:before {
+  color: #f8dcd3;
+}
+
+/* Footer */
+/* line 1228, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#footer {
+  background: #ececec;
+  color: #aaa;
+  padding: 4em 0 8em 0;
+  text-align: center;
+}
+/* line 1234, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#footer .copyright {
+  font-size: 0.9em;
+  margin: 2em 0 0 0;
+  padding: 0;
+}
+/* line 1241, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#footer .menu li {
+  border-color: #ccc;
+}
+/* line 1245, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#footer .menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Wide */
+@media screen and (max-width: 1680px) {
+  /* Basic */
+  /* line 1258, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body, input, select, textarea {
+    font-size: 11pt;
+  }
+
+  /* Banner */
+  /* line 1264, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner {
+    background-size: 1125px 225px;
+    padding: 12em 0 10em 0;
+  }
+}
+/* Normal */
+@media screen and (max-width: 1280px) {
+  /* Basic */
+  /* line 1277, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body, input, select, textarea {
+    font-size: 11pt;
+  }
+
+  /* Section/Article */
+  /* line 1286, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child:before, header.major > :first-child:after {
+    background-size: 75px 20px;
+    width: 75px;
+  }
+
+  /* Box */
+  /* line 1297, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box {
+    padding: 1.75em 1.5em;
+  }
+  /* line 1300, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box.special {
+    padding: 3em 2.25em;
+  }
+
+  /* Wrapper */
+  /* line 1307, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .wrapper {
+    padding: 5em 0;
+  }
+
+  /* Banner */
+  /* line 1313, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner {
+    background-size: 900px 180px;
+    padding: 10em 0 8em 0;
+  }
+  /* line 1317, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner h2 {
+    font-size: 2.5em;
+  }
+}
+/* Narrow */
+@media screen and (max-width: 980px) {
+  /* Basic */
+  /* line 1330, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body, input, select, textarea {
+    font-size: 11pt;
+  }
+}
+/* Narrower */
+/* line 1338, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+#navPanel, #navButton {
+  display: none;
+}
+
+@media screen and (max-width: 840px) {
+  /* Basic */
+  /* line 1346, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* line 1350, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body, input, select, textarea {
+    font-size: 11pt;
+  }
+
+  /* Section/Article */
+  /* line 1357, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major {
+    overflow-x: hidden;
+  }
+  /* line 1360, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child {
+    display: inline-block;
+    margin: 0;
+    padding: 0 1em;
+    position: relative;
+  }
+  /* line 1366, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child:before, header.major > :first-child:after {
+    background-position: right center;
+    background-size: 300% 20px;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 200%;
+  }
+  /* line 1377, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child:before {
+    left: 100%;
+  }
+  /* line 1381, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child:after {
+    right: 100%;
+  }
+  /* line 1385, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child + p {
+    margin-top: 2em;
+  }
+
+  /* Box */
+  /* line 1394, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box {
+    padding: 3em;
+  }
+  /* line 1397, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box.special {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    padding: 4em 3em;
+    width: 35em;
+  }
+
+  /* Wrapper */
+  /* line 1408, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .wrapper {
+    padding: 4em 0;
+  }
+
+  /* Header */
+  /* line 1414, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #page-wrapper {
+    padding-top: 0;
+  }
+
+  /* line 1418, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #header {
+    display: none;
+  }
+
+  /* Banner */
+  /* line 1424, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner {
+    padding: 8em 2em;
+  }
+
+  /* Contact */
+  /* line 1431, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #contact .actions {
+    text-align: center;
+  }
+  /* line 1435, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #contact .labeled-icons {
+    border-top: solid 1px #dddddd;
+    margin: 2em 0 0 0;
+    padding: 4em 0 0 0;
+  }
+
+  /* Off-Canvas Navigation */
+  /* line 1444, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #page-wrapper {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    padding-bottom: 1px;
+  }
+
+  /* line 1450, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navButton {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    display: block;
+    height: 4em;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 6em;
+    z-index: 10001;
+  }
+  /* line 1461, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navButton .toggle {
+    text-decoration: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border: 0;
+    outline: 0;
+  }
+  /* line 7, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/libs/_mixins.scss */
+  #navButton .toggle:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+  }
+  /* line 1471, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navButton .toggle:before {
+    content: '\f0c9';
+    background: rgba(144, 144, 144, 0.65);
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    height: 2.25em;
+    left: 0.5em;
+    line-height: 2.25em;
+    position: absolute;
+    text-align: center;
+    top: 0.5em;
+    width: 3.5em;
+  }
+
+  /* line 1488, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transform: translateX(-275px);
+    -webkit-transform: translateX(-275px);
+    -ms-transform: translateX(-275px);
+    transform: translateX(-275px);
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 275px;
+    z-index: 10002;
+    background: #1f1c26;
+    color: #e0e0e2;
+  }
+  /* line 1503, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link {
+    border-bottom: 0;
+    border-top: solid 1px rgba(255, 255, 255, 0.05);
+    color: #888;
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 1em 0 1em;
+    text-decoration: none;
+  }
+  /* line 1513, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link:first-child {
+    border-top: 0;
+  }
+  /* line 1517, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link.depth-0 {
+    color: #fff;
+  }
+  /* line 1521, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link .indent-1 {
+    display: inline-block;
+    width: 1em;
+  }
+  /* line 1522, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link .indent-2 {
+    display: inline-block;
+    width: 2em;
+  }
+  /* line 1523, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link .indent-3 {
+    display: inline-block;
+    width: 3em;
+  }
+  /* line 1524, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link .indent-4 {
+    display: inline-block;
+    width: 4em;
+  }
+  /* line 1525, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #navPanel .link .indent-5 {
+    display: inline-block;
+    width: 5em;
+  }
+
+  /* line 1531, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body.navPanel-visible #page-wrapper {
+    -moz-transform: translateX(275px);
+    -webkit-transform: translateX(275px);
+    -ms-transform: translateX(275px);
+    transform: translateX(275px);
+  }
+  /* line 1535, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body.navPanel-visible #navButton {
+    -moz-transform: translateX(275px);
+    -webkit-transform: translateX(275px);
+    -ms-transform: translateX(275px);
+    transform: translateX(275px);
+  }
+  /* line 1539, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body.navPanel-visible #navPanel {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/* Mobile */
+@media screen and (max-width: 736px) {
+  /* Basic */
+  /* line 1553, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body, input, select, textarea {
+    font-size: 11pt;
+  }
+
+  /* line 1557, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  h2 {
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
+
+  /* line 1562, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  h3 {
+    font-size: 1.1em;
+    line-height: 1.5em;
+  }
+
+  /* line 1567, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  h4 {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+
+  /* Section/Article */
+  /* line 1575, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major {
+    margin-bottom: 3em;
+  }
+  /* line 1578, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child {
+    padding: 0 0.5em;
+  }
+  /* line 1581, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major > :first-child:before, header.major > :first-child:after {
+    background-size: 300% 10px;
+  }
+  /* line 1587, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  header.major p {
+    font-size: 1em;
+  }
+
+  /* Box */
+  /* line 1595, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box {
+    padding: 2em;
+  }
+  /* line 1598, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box.special {
+    padding: 2em;
+    width: 28em;
+  }
+
+  /* Wrapper */
+  /* line 1606, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .wrapper {
+    padding: 3em 2em;
+  }
+
+  /* Banner */
+  /* line 1612, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner {
+    background-size: 675px 135px;
+    padding: 5em 2em 4em 2em;
+  }
+  /* line 1616, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner h2 {
+    font-size: 2em;
+  }
+  /* line 1620, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner p {
+    font-size: 1.25em;
+  }
+
+  /* Main */
+  /* line 1627, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #main {
+    padding: 2em 0;
+  }
+
+  /* Footer */
+  /* line 1633, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #footer {
+    padding: 2em 0;
+  }
+  /* line 1637, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #footer .copyright li {
+    border-left: 0;
+    display: block;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+/* Mobile (Portrait) */
+@media screen and (max-width: 480px) {
+  /* Basic */
+  /* line 1654, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  html, body {
+    min-width: 320px;
+  }
+
+  /* line 1658, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  body, input, select, textarea {
+    font-size: 11pt;
+  }
+
+  /* List */
+  /* line 1665, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.actions {
+    margin: 0 0 2em 0;
+  }
+  /* line 1668, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.actions li {
+    display: block;
+    padding: 1em 0 0 0;
+    text-align: center;
+    width: 100%;
+  }
+  /* line 1674, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.actions li:first-child {
+    padding-top: 0;
+  }
+  /* line 1678, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.actions li > * {
+    width: 100%;
+    margin: 0 !important;
+  }
+  /* line 1683, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.actions li > *.icon:before {
+    margin-left: -2em;
+  }
+  /* line 1691, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.actions.small li {
+    padding: 0.5em 0 0 0;
+  }
+  /* line 1694, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.actions.small li:first-child {
+    padding-top: 0;
+  }
+  /* line 1702, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  ul.menu li {
+    border: 0;
+    display: block;
+    margin: 1em 0 0 0;
+    padding: 0;
+  }
+
+  /* Button */
+  /* line 1713, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  .button {
+    padding: 0;
+  }
+
+  /* Box */
+  /* line 1722, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box {
+    padding: 2em 1em;
+  }
+  /* line 1725, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .box.special {
+    padding: 2em 1em;
+    width: 100%;
+  }
+
+  /* Wrapper */
+  /* line 1733, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  .wrapper {
+    padding: 3em 1em;
+  }
+
+  /* Banner */
+  /* line 1739, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #banner {
+    background-size: 540px 108px;
+    padding: 7em 2em 6em 2em;
+  }
+
+  /* Contact */
+  /* line 1746, /home/orinamokaya/deploy/darasa_app/app/assets/stylesheets/website/sass/main.scss */
+  #contact {
+    padding-top: 1em;
+  }
+}
