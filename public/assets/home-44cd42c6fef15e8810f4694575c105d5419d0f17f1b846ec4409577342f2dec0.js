@@ -1,10 +1,11 @@
-//= require home
+
 
 /*
 	Eventually by Pixelarity
 	html5up.net | @ajlkn
 	License: pixelarity.com/license
 */
+
 
 (function() {
 
@@ -110,9 +111,8 @@
 		(function() {
 
 			// Vars.
-				var $form = document.querySelectorAll('.signup-form')[0],
-					email = $('#site_email').val(),
-					$submit = document.querySelectorAll('.site-button')[0],
+				var $form = document.querySelectorAll('#new_site')[0],
+					$submit = document.querySelectorAll('#new_site input[type="submit"]')[0],
 					$message;
 
 			// Bail if addEventListener isn't supported.
@@ -144,31 +144,14 @@
 			// Note: If you're *not* using AJAX, get rid of this event listener.
 				$form.addEventListener('submit', function(event) {
 
-					
 					event.stopPropagation();
 					event.preventDefault();
-					
-					console.log(this);
-					 // $valuestosubmit = $(this).serialize();
-					    // $form({
-					    //     type: "POST",
-					    //     url: $(this).attr('action'), //sumbits it to the given url of the form
-					    //     data: $valuesToSubmit
-					    // });
-					/* Send the data using post and put the results in a div */
-					    $.ajax({
-					      url: "/sites?email="+email,
-					      type: "post",
-					      data: values,
-					    });
 
 					// Hide message.
 						$message._hide();
 
 					// Disable submit.
 						$submit.disabled = true;
-
-					// $form.post
 
 					// Process form.
 					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),

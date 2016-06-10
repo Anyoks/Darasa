@@ -1,10 +1,11 @@
-//= require home
+
 
 /*
 	Eventually by Pixelarity
 	html5up.net | @ajlkn
 	License: pixelarity.com/license
 */
+
 
 (function() {
 
@@ -111,7 +112,6 @@
 
 			// Vars.
 				var $form = document.querySelectorAll('.signup-form')[0],
-					email = $('#site_email').val(),
 					$submit = document.querySelectorAll('.site-button')[0],
 					$message;
 
@@ -147,28 +147,12 @@
 					
 					event.stopPropagation();
 					event.preventDefault();
-					
-					console.log(this);
-					 // $valuestosubmit = $(this).serialize();
-					    // $form({
-					    //     type: "POST",
-					    //     url: $(this).attr('action'), //sumbits it to the given url of the form
-					    //     data: $valuesToSubmit
-					    // });
-					/* Send the data using post and put the results in a div */
-					    $.ajax({
-					      url: "/sites?email="+email,
-					      type: "post",
-					      data: values,
-					    });
 
 					// Hide message.
 						$message._hide();
 
 					// Disable submit.
 						$submit.disabled = true;
-
-					// $form.post
 
 					// Process form.
 					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
@@ -182,6 +166,7 @@
 								$submit.disabled = false;
 
 							// Show message.
+							
 								$message._show('success', 'Thank you!');
 								// $message._show('failure', 'Something went wrong. Please try again.');
 

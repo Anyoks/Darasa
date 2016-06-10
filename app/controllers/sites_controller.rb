@@ -32,9 +32,11 @@ class SitesController < ApplicationController
     respond_to do |format|
       if @site.save
         format.html { redirect_to root_path, notice: 'Site was successfully created.' }
+        format.js { redirect_to root_path }
         format.json { render :show, status: :created, location: @site }
       else
         format.html { render :new }
+        format.js { redirect_to root_path }
         format.json { render json: @site.errors, status: :unprocessable_entity }
       end
     end

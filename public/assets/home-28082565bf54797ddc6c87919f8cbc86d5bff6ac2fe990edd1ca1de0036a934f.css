@@ -1,5 +1,4 @@
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
 
 /*
@@ -602,7 +601,7 @@
 			-webkit-transform: scale(1.05);
 			-ms-transform: scale(1.05);
 			transform: scale(1.05);
-			height: 2.75em;
+			/*height: 2.75em;*/
 			line-height: 2.75em;
 			opacity: 0;
 		}
@@ -960,7 +959,7 @@
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 700;
-		height: 2.75em;
+		/*height: 2.75em;*/
 		line-height: 2.75em;
 		padding: 0 1.125em;
 		text-align: center;

@@ -128,3 +128,5 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem "intercom-rails"
 #Intercom Ap1
 gem 'intercom', "~> 3.4.0"
+#font-awesome
+gem 'font-awesome-sass'

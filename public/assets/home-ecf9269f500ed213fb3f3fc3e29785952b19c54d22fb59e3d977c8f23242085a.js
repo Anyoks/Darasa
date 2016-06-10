@@ -1,10 +1,11 @@
-//= require home
+
 
 /*
 	Eventually by Pixelarity
 	html5up.net | @ajlkn
 	License: pixelarity.com/license
 */
+
 
 (function() {
 
@@ -111,7 +112,7 @@
 
 			// Vars.
 				var $form = document.querySelectorAll('.signup-form')[0],
-					email = $('#site_email').val(),
+					$email = $('#site_email').val(),
 					$submit = document.querySelectorAll('.site-button')[0],
 					$message;
 
@@ -157,8 +158,8 @@
 					    // });
 					/* Send the data using post and put the results in a div */
 					    $.ajax({
-					      url: "/sites?email="+email,
-					      type: "post",
+					      url: "/sites/?email="+$email,
+					      type: "get",
 					      data: values,
 					    });
 
