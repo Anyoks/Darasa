@@ -184,8 +184,6 @@ GEM
       multi_json
       rack-oauth2 (>= 1.1)
       url_safe_base64
-    font-awesome-sass (4.6.2)
-      sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     groupdate (2.5.2)
@@ -441,7 +439,6 @@ DEPENDENCIES
   docx (~> 0.2.07)
   docx_converter
   fb_graph2
-  font-awesome-sass
   groupdate
   haml-rails
   html2haml
