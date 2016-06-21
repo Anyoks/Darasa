@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Back-end of Darasa mobile app.
 
-Things you may want to cover:
+Darasa is a mobile application that enables students in the University of Nairobi in Kenya and CPA students to access Revision material in form of Questions and answers from past papers.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The following are the operations that can be done On the back-end:
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Mange Users
+
+* View Users' activities on the mobile app
+      * See what Questions Users have viewed
+      * see most popular units and topics
+      * see Most popular Secstion in CPA
+      * See most recent activities
+      * See user payment details, failed payments and successful ones.
+
+* Upload Revision content
+
+* Awesome Features
+      *Bot that enables automatic upload of .docx documents into the system. This make it super easy
+      to get 1000s of lines of text uploaded in seconds.
